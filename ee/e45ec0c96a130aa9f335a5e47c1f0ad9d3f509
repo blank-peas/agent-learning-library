@@ -1,0 +1,47 @@
+docs/index.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 16
+scripts/sync-sources.mjs
+  s_efdcfec5c50839::t_2a3e4614438c8f 240
+docs/chapters/06-上下文与记忆/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/03-rag/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/04-工具与mcp/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/10-项目实战/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/12-附录与索引/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/05-编排与多agent/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/02-agent原理/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/09-codingagent/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/11-面试与求职/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/08-评测安全可观测/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/07-ts产品工程/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+docs/chapters/01-模型与提示/_sidebar.md
+  s_efdcfec5c50839::t_2a3e4614438c8f 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "eee45ec0c96a130aa9f335a5e47c1f0ad9d3f509",
+  "prompts": {},
+  "sessions": {
+    "s_efdcfec5c50839": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08155-7c2a-71e1-9f5b-92d974699c6d",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "liuzhe.87 <liuzhe.87@jd.com>"
+    }
+  }
+}
