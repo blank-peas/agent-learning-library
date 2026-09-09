@@ -17,6 +17,11 @@
         repo: '',
         homepage: 'index.md',
         loadSidebar: true,
+        // QA 作为子模块挂载时，继续沿用主学习库的导航，避免子模块
+        // 独立站点的根路径链接跳出当前目录。
+        alias: {
+          '/13-interview-qa/_sidebar.md': '/_sidebar.md'
+        },
         auto2top: true,
         // 与 Hello-Agents 一致：仅展开当前页面的正文目录。
         subMaxLevel: 3,
