@@ -34,6 +34,17 @@ const skip = new Set(['.git', 'node_modules', '.DS_Store', '__pycache__'])
 const markdownExtensions = new Set(['.md', '.mdx'])
 const mediaExtensions = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.avif', '.pdf'])
 
+// 学习库服务于“理解并能落地”的主线，而不是保存一次完整爬取。社区项目的
+// 输出快照、补丁记录和自动生成文本缺少上下文、复用价值低，且会淹没正式教程。
+// 上游文件仍留在 source-references 中，需要时可重新纳入。
+function isPublishedDocument(rel) {
+  const path = `/${rel.replaceAll('\\', '/').toLowerCase()}`
+  if (path.includes('/co-creation-projects/')) return false
+  if (/(^|\/)_(sidebar|sidebar_en)\.(md|mdx)$/.test(path)) return false
+  if (/(^|\/)(patch-applied|patch-failed)\.(md|mdx)$/.test(path)) return false
+  return true
+}
+
 function listFiles(dir, out = []) {
   for (const entry of readdirSync(dir, {withFileTypes: true})) {
     if (skip.has(entry.name)) continue
@@ -107,7 +118,7 @@ for (const source of sources) {
   for (const file of listFiles(sourceDir)) {
     const rel = relative(sourceDir, file).split(sep).join('/')
     const extension = extname(file).toLowerCase()
-    if (markdownExtensions.has(extension)) {
+    if (markdownExtensions.has(extension) && isPublishedDocument(rel)) {
       const content = normalizePresentationHtml(removeLeadingFrontmatter(readFileSync(file, 'utf8')))
       documents.push({source, sourceDir, file, rel, content, chapter: classify(rel, content), title: extractTitle(content, basename(file, extension))})
     } else if (mediaExtensions.has(extension)) {

@@ -1,9 +1,0 @@
-# HEARTBEAT.md
-
-> **资料来源**：[Hello-Agents](https://github.com/datawhalechina/hello-agents) · 原文件：`Co-creation-projects/tino-chen-HelloClaw/src/workspace/templates/HEARTBEAT.md`。
-
-
-## 保持此文件为空（或只有注释）以跳过心跳 API 调用。
-
-## 当你希望智能体定期检查某些事情时，在下面添加任务。
-
