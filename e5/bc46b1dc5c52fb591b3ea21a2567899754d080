@@ -1,0 +1,19 @@
+docs/index.html
+  s_efdcfec5c50839::t_164e63c6baf244 20-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "e5bc46b1dc5c52fb591b3ea21a2567899754d080",
+  "prompts": {},
+  "sessions": {
+    "s_efdcfec5c50839": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08155-7c2a-71e1-9f5b-92d974699c6d",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "liuzhe.87 <liuzhe.87@jd.com>"
+    }
+  }
+}
