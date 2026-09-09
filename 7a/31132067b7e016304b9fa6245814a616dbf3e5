@@ -1,0 +1,19 @@
+.gitmodules
+  s_efdcfec5c50839::t_11c11e5dc016bf 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "7a31132067b7e016304b9fa6245814a616dbf3e5",
+  "prompts": {},
+  "sessions": {
+    "s_efdcfec5c50839": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08155-7c2a-71e1-9f5b-92d974699c6d",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "liuzhe.87 <liuzhe.87@jd.com>"
+    }
+  }
+}
