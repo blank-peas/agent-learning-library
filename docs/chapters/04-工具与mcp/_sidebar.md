@@ -1,6 +1,6 @@
 - [Agent 学习书架](/index.md)
   - [阅读使用说明](/00-开始这里/README.md)
-  - [AI Agent 开发面经 QA 冲刺](/13-面经QA/README.md)
+  - [AI Agent 开发面经 QA 冲刺](/13-interview-qa/README.md)
 
 - <strong>第一部分：模型与 Agent 基础</strong>
   - [第一章：模型、Prompt 与结构化输出](/chapters/01-模型与提示/README.md)

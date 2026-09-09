@@ -237,7 +237,7 @@ const createSidebarMarkdown = (activeChapterId) => {
     return `- <strong>${group.title}</strong>\n${chapterLinks}`
   }).join('\n\n')
 
-  return `- [Agent 学习书架](/index.md)\n  - [阅读使用说明](/00-开始这里/README.md)\n  - [AI Agent 开发面经 QA 冲刺](/13-面经QA/README.md)\n\n${sidebarMarkdown}\n`
+  return `- [Agent 学习书架](/index.md)\n  - [阅读使用说明](/00-开始这里/README.md)\n  - [AI Agent 开发面经 QA 冲刺](/13-interview-qa/README.md)\n\n${sidebarMarkdown}\n`
 }
 
 writeFileSync(join(docsRoot, '_sidebar.md'), createSidebarMarkdown(), 'utf8')
