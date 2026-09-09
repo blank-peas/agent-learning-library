@@ -1,0 +1,57 @@
+# 通过沙箱让 Claude Code 更安全更自主
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`industry/anthropic/claude-code-sandboxing.md`。
+
+
+- 原文标题：Beyond permission prompts: making Claude Code more secure and autonomous
+- 原文链接：https://www.anthropic.com/engineering/claude-code-sandboxing
+- 发布时间：2025-10-20
+- 来源：Anthropic Engineering
+- 主题：Claude Code、沙箱、权限提示、安全自主性
+
+> 本文是中文精读笔记，不是原文全文翻译。
+
+### 这篇文章解决什么问题
+
+Claude Code 要变得更自主，就不能每个命令都要求用户确认；但越自主，越需要硬边界。文章讨论如何从权限提示转向沙箱，让 Agent 能做更多事，同时限制它不能造成不可接受的损害。
+
+### 核心内容
+
+- 权限提示适合少量高风险动作，不适合作为所有安全的基础。
+- 沙箱把安全从“用户判断每一步”转为“系统限制可做范围”。
+- Coding Agent 的沙箱要覆盖文件系统、网络、命令执行和凭据访问。
+- 安全自主性来自低风险操作的自动化与高风险操作的边界控制。
+
+### 深度精读
+
+这篇文章和 auto mode 是一组。auto mode 关注“什么时候可以跳过权限提示”，sandboxing 关注“即使跳过提示，系统边界如何保证安全”。这两者结合起来，才能让 Coding Agent 同时更自主、更安全。
+
+权限提示的问题在于它把安全责任推给用户。开发者在紧张工作时看到几十个弹窗，很难逐个判断命令是否危险。沙箱的思路是让系统默认限制 Agent 的行动范围：它可以在工作目录里改文件、跑测试，但不能随便读取凭据、访问任意网络、破坏系统目录或执行不可逆操作。
+
+沙箱也不是越严越好。太严会让 Agent 连正常测试都跑不起来，用户会关闭安全机制；太松则失去保护。好的沙箱应该贴合开发任务：允许常见低风险操作顺畅完成，把跨边界行为变成显式事件。
+
+### 学习时重点看什么
+
+- 权限提示解决的是用户确认，沙箱解决的是系统边界。
+- Coding Agent 的安全重点是文件、命令、网络和凭据。
+- 安全机制必须可用，否则用户会绕过它。
+
+### 工程启发
+
+- 沙箱能提高可用性，因为它减少了无意义审批。
+- Agent 安全要优先保护凭据、生产环境和不可逆操作。
+- 自动化越强，审计日志越重要。
+
+### 和本站章节的关系
+
+- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [Agent 工程化 - 安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)
+- [Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code)
+- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+
+### 面试追问
+
+- 为什么沙箱比权限弹窗更适合高频开发动作？
+- Coding Agent 的沙箱应该默认禁止什么？
+- 如何处理必须访问外部网络的任务？
+

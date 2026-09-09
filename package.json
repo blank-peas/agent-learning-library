@@ -1,0 +1,14 @@
+{
+  "name": "agent-learning-library",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "sync:sources": "node scripts/sync-sources.mjs",
+    "docs:dev": "vite docs",
+    "docs:build": "npm run sync:sources && vite build docs",
+    "docs:preview": "vite preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}

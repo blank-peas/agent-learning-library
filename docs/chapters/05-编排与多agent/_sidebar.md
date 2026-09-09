@@ -1,0 +1,55 @@
+- [Agent 学习书架](/index.md)
+  - [阅读使用说明](/00-开始这里/README.md)
+  - [AI Agent 开发面经 QA 冲刺](/13-面经QA/README.md)
+
+- <strong>第一部分：模型与 Agent 基础</strong>
+  - [第一章：模型、Prompt 与结构化输出](/chapters/01-模型与提示/README.md)
+  - [第二章：Agent 核心原理与设计模式](/chapters/02-agent原理/README.md)
+
+- <strong>第二部分：RAG、工具与编排</strong>
+  - [第三章：RAG 与知识增强](/chapters/03-rag/README.md)
+  - [第四章：Function Calling、Tool Use 与 MCP](/chapters/04-工具与mcp/README.md)
+  - [第五章：编排、状态机与多 Agent](/chapters/05-编排与多agent/README.md)
+    - [06｜多智能体系统（Multi-Agent Systems）](/chapters/05-编排与多agent/ai-agent-interview-guide-docs-01-面试八股文-06-多智能体)
+    - [比较主流多 Agent 框架：CrewAI、AutoGen、LangGraph](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-036-multi-agent-frameworks)
+    - [编排模式（顺序 / 并行 / 条件 / 循环）](/chapters/05-编排与多agent/agent-camp-workflow-patterns)
+    - [第十六章 毕业设计：构建属于你的多智能体应用](/chapters/05-编排与多agent/hello-agents-docs-chapter16-第十六章-毕业设计)
+    - [调度者-工作者 Orchestrator-Worker](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)
+    - [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)
+    - [多 Agent 通信模式：消息传递、共享状态、黑板模式](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-032-communication-patterns)
+    - [多 Agent 系统中的冲突解决机制](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-035-conflict-resolution)
+    - [多 Agent 系统中的涌现行为与可控性](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-038-emergent-behavior)
+    - [如何调试和监控多 Agent 系统？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-039-debugging-monitoring-multi-agent)
+    - [如何设计 Agent 间的任务分配与协调？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-034-task-allocation-coordination)
+    - [如何实现 Agent 间的 Handoff（任务交接）？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-037-agent-handoff)
+    - [什么是多 Agent 系统？与单 Agent 相比有何优势？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-031-what-is-multi-agent)
+    - [先规划后执行 Plan-and-Execute / ReWOO](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)
+    - [主流 Agent 框架概览：LangChain、LlamaIndex、Haystack](/chapters/05-编排与多agent/agent-interview-100-11-frameworks-096-framework-overview)
+    - [A2A（Agent-to-Agent）协议是什么？它与 MCP 有何区别？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-101-a2a-protocol)
+    - [Agent 编排模式：Hub-Spoke、Pipeline、Hierarchical](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-033-orchestration-patterns)
+    - [Agent 架构模式详解：ReAct、Plan-and-Execute、LATS、Proactive](/chapters/05-编排与多agent/agent-interview-100-01-agent-architecture-003-agent-architecture-pattern)
+    - [Agent 框架选型面试深挖：自研薄封装不是重新造 LangChain](/chapters/05-编排与多agent/agent-camp-frameworks-framework-selection-interview)
+    - [Agent 通信协议 A2A / ACP / AGNTCY](/chapters/05-编排与多agent/agent-camp-multi-agent-communication)
+    - [Agent 协作策略 Debate / Voting / Role-Play / Reviewer](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)
+    - [Anthropic 如何构建多 Agent 研究系统](/chapters/05-编排与多agent/agent-camp-industry-anthropic-multi-agent-research-system)
+    - [Chapter 16: Graduation Project - Building Your Own Multi-Agent Application](/chapters/05-编排与多agent/hello-agents-docs-chapter16-Chapter16-Graduation-Project)
+    - [Codex 编排开源规范：Symphony](/chapters/05-编排与多agent/agent-camp-industry-openai-open-source-codex-orchestration-symphony)
+    - [LangChain / LangGraph 深度剖析](/chapters/05-编排与多agent/agent-camp-frameworks-langchain)
+    - [LangChain & LangGraph 深度解析与面试题](/chapters/05-编排与多agent/agent-interview-hub-通用知识-LangChain与LangGraph深度解析)
+    - [LangGraph 的核心概念：节点、边、状态](/chapters/05-编排与多agent/agent-interview-100-11-frameworks-097-langgraph-concepts)
+    - [LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph)
+    - [MetaGPT 与 ChatDev 案例剖析](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)
+    - [Prompt Chaining：多步骤 Prompt 的设计与编排](/chapters/05-编排与多agent/agent-interview-100-07-prompt-engineering-063-prompt-chaining)
+
+- <strong>第三部分：上下文与工程实践</strong>
+  - [第六章：上下文工程与记忆](/chapters/06-上下文与记忆/README.md)
+  - [第七章：TypeScript 产品化与工程实践](/chapters/07-ts产品工程/README.md)
+  - [第八章：评测、安全与可观测性](/chapters/08-评测安全可观测/README.md)
+  - [第九章：Coding Agent 与 Harness](/chapters/09-codingagent/README.md)
+
+- <strong>第四部分：项目与职业进阶</strong>
+  - [第十章：项目实战与作品集](/chapters/10-项目实战/README.md)
+  - [第十一章：面试、岗位与求职准备](/chapters/11-面试与求职/README.md)
+
+- <strong>附录：索引与补充材料</strong>
+  - [附录：索引、环境与补充材料](/chapters/12-附录与索引/README.md)

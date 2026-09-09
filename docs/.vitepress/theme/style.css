@@ -1,0 +1,282 @@
+:root {
+  --vp-c-brand-1: #4c9d90;
+  --vp-c-brand-2: #5ca99c;
+  --vp-c-brand-3: #438d81;
+  --vp-c-brand-soft: rgba(76, 157, 144, 0.055);
+  --vp-c-text-1: #3f454a;
+  --vp-c-text-2: #767d83;
+  --vp-c-text-3: #a2a8ad;
+  --vp-c-divider: #eceeef;
+  --vp-c-bg: #fff;
+  --vp-c-bg-alt: #fafcfb;
+  --vp-font-family-base: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Inter, ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --wiki-sidebar-width: 300px;
+}
+
+/* Hello Agents: near-white page, thin rules, restrained green only as a marker. */
+.VPApp {
+  border-top: 1px solid #48b18a;
+  background: #fff;
+}
+
+.VPNav {
+  border-bottom: 0;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.VPNavBar {
+  border-bottom: 0;
+  height: 78px;
+}
+
+.VPNavBar .container,
+.VPNavBar .content {
+  max-width: none;
+}
+
+.VPNavBarTitle .title {
+  padding-left: 34px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: #4b5054;
+}
+
+.VPNavBarTitle .title:hover { color: #4b5054; }
+
+.VPNavBarMenu {
+  gap: 6px;
+}
+
+.VPNavBarMenuLink {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #545b60;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active { color: #4b5054; }
+
+.VPLocalNav,
+.VPNavBarAppearance { border-color: #e7ebe8; }
+
+.VPNavBarSearch {
+  margin-left: 8px;
+}
+
+.DocSearch-Button {
+  border: 1px solid #eceeef;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.DocSearch-Button:hover {
+  border-color: #d9dfde;
+  background: #fff;
+}
+
+.VPSidebar {
+  width: var(--wiki-sidebar-width);
+  padding-top: 30px;
+  border-right: 1px solid #f0f1f1;
+  background: #fff;
+}
+
+.VPSidebarItem {
+  padding: 0 28px;
+}
+
+/* The reference sidebar keeps chapter items on one clean left edge.
+   VitePress normally indents every nested list, which made this look right-aligned. */
+.VPSidebarItem .items {
+  padding-left: 0;
+}
+
+.VPSidebarItem.level-0 > .item > .text,
+.VPSidebarItem .text {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #6d7479;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  margin: 18px 0 6px;
+  font-size: 12px;
+  color: #a8adb0;
+  letter-spacing: 0.04em;
+}
+
+.VPSidebarItem .item .link {
+  margin-left: -9px;
+  padding: 5px 0 5px 9px;
+  border-left: 1px solid transparent;
+}
+
+.VPSidebarItem .item .link:hover,
+.VPSidebarItem .item .link.active {
+  border-left-color: #b8d9d3;
+  color: #4d5558;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.VPSidebarItem .item .link.active .text { color: #4d5558; }
+
+.VPContent.has-sidebar {
+  padding-left: var(--wiki-sidebar-width);
+}
+
+.VPDoc {
+  padding: 106px 72px 90px;
+}
+
+.VPDoc .container {
+  max-width: 1280px;
+}
+
+.VPDoc .content-container {
+  max-width: 850px;
+}
+
+.VPDoc .content {
+  font-size: 15px;
+  line-height: 2;
+  color: #52585c;
+}
+
+.VPDoc .content h1 {
+  margin: 0 0 72px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e7ebe8;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.045em;
+  color: #41474b;
+}
+
+.VPDoc .content h2 {
+  margin: 66px 0 24px;
+  padding-top: 0;
+  border-top: 0;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+  color: #454b4f;
+}
+
+.VPDoc .content h2::before {
+  display: none;
+}
+
+.VPDoc .content h3 {
+  margin: 38px 0 14px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #4b5155;
+}
+
+.VPDoc .content p { margin: 18px 0; }
+
+.VPDoc .content a {
+  color: #4b5557;
+  font-weight: 400;
+  text-decoration-color: #cbd1d0;
+  text-underline-offset: 3px;
+}
+
+.VPDoc .content a:hover { color: #4c9d90; }
+
+.VPDoc .content blockquote {
+  margin: 28px 0;
+  padding: 16px 20px;
+  border-left: 1px solid #cfd7d5;
+  border-radius: 0;
+  background: #fafbfb;
+  color: #697175;
+}
+
+.VPDoc .content ul,
+.VPDoc .content ol { padding-left: 1.35em; }
+
+.VPDoc .content li::marker { color: #9ca5a5; }
+
+.VPDoc .content :not(pre) > code {
+  border: 1px solid #eceff0;
+  border-radius: 2px;
+  background: #f8f9f9;
+  color: #4e565a;
+}
+
+.VPDoc .content div[class*='language-'] {
+  margin: 28px 0;
+  border: 1px solid #e7e9e9;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.VPDoc .content table {
+  display: table;
+  margin: 30px 0;
+  font-size: 14px;
+}
+
+.VPDoc .content th {
+  background: #fafafa;
+  color: #50575a;
+  font-weight: 500;
+}
+
+.VPDoc .content th,
+.VPDoc .content td { border-color: #e8ece9; }
+
+.VPDocAside {
+  padding-top: 110px;
+}
+
+.VPDocAsideOutline .outline-title {
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #a2a8aa;
+}
+
+.VPDocAsideOutline .outline-link {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #858b8e;
+}
+
+.VPDocAsideOutline .outline-link.active {
+  border-left-color: #b8d9d3;
+  color: #4d5558;
+}
+
+.VPDocFooter { margin-top: 72px; }
+.VPDocFooter .pager-link { border-color: #e7ebe8; box-shadow: none; }
+.VPDocFooter .pager-link:hover { border-color: #d6dddc; }
+
+@media (min-width: 1440px) {
+  .VPDoc .container { max-width: 1340px; }
+  .VPDoc .content-container { max-width: 890px; }
+}
+
+@media (max-width: 959px) {
+  .VPNavBarTitle .title { padding-left: 12px; }
+  .VPDoc { padding: 66px 28px 64px; }
+  .VPDoc .content h1 { margin-bottom: 50px; font-size: 30px; }
+  .VPDocAside { display: none; }
+}
+
+@media (max-width: 639px) {
+  .VPNavBar { height: 64px; }
+  .VPDoc { padding: 44px 20px 56px; }
+  .VPDoc .content { font-size: 15px; line-height: 1.9; }
+  .VPDoc .content h1 { margin-bottom: 40px; padding-bottom: 22px; font-size: 28px; }
+  .VPDoc .content h2 { margin-top: 48px; font-size: 21px; }
+}

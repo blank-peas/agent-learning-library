@@ -1,0 +1,57 @@
+# 长周期应用开发的 Harness 设计
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`industry/anthropic/harness-design-long-running-apps.md`。
+
+
+- 原文标题：Harness design for long-running application development
+- 原文链接：https://www.anthropic.com/engineering/harness-design-long-running-apps
+- 发布时间：2026-03-24
+- 来源：Anthropic Engineering
+- 主题：长周期任务、应用开发、Agent harness
+
+> 本文是中文精读笔记，不是原文全文翻译。
+
+### 这篇文章解决什么问题
+
+让 Agent 写一个小函数和让 Agent 长时间开发应用，是两类完全不同的问题。长周期应用开发需要稳定的任务输入、可恢复状态、可靠验证和清晰边界。文章围绕这些要求讨论 harness 设计。
+
+### 核心内容
+
+- harness 要为 Agent 提供一致的任务环境，而不是每轮对话临时拼 prompt。
+- 长任务需要把目标、约束、当前状态和验收标准显式化。
+- 应用开发任务要让 Agent 能运行、测试、观察和修复，而不是只生成代码。
+- 可恢复性是核心能力：失败后要知道做到了哪一步，能从哪里继续。
+
+### 深度精读
+
+这篇文章把“让 Agent 做应用开发”从提示词问题拉回工程系统问题。一个长周期应用任务可能包含需求澄清、架构设计、文件修改、运行服务、看日志、修 bug、写测试、视觉检查和部署准备。把这些都塞进一条 prompt，模型很容易丢状态或误解优先级。
+
+好的 harness 会把任务环境稳定下来。它要告诉 Agent：项目怎么启动，测试怎么跑，哪里看日志，怎样确认页面可用，哪些文件不能动，用户最终要验收什么。这样模型每次行动都不是在猜，而是在一个可观察、可验证的工程回路里推进。
+
+长周期应用开发还需要里程碑。比如先搭页面骨架，再接数据，再做错误处理，再跑测试，再视觉验证。每个里程碑都应该有能自动或半自动检查的信号。没有这些检查点，Agent 可能写了很多代码，却在很早的地方偏航。
+
+### 学习时重点看什么
+
+- 应用开发 Agent 需要“开发环境说明书”，不只是任务描述。
+- 可运行、可观察、可测试，是 harness 的三件套。
+- 长任务要拆成带验收信号的阶段，而不是让模型自由发挥到底。
+
+### 工程启发
+
+- 长任务 Agent 的关键不是更长上下文，而是更好的状态管理。
+- 测试、日志和可视化反馈是应用开发 harness 的核心输入。
+- 任务拆分要让每个子目标都有明确验证方式。
+
+### 和本站章节的关系
+
+- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [上下文工程](https://github.com/yibo365/agent-camp)
+- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+
+### 面试追问
+
+- 长周期应用开发和单次代码生成有什么本质区别？
+- harness 如何帮助 Agent 恢复任务？
+- 应用开发 Agent 的验收标准应该怎么写？
+

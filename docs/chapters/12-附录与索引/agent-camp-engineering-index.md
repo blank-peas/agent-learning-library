@@ -1,0 +1,40 @@
+# Agent 工程化
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`engineering/index.md`。
+
+
+从 Demo 到生产，中间隔着评估、监控、成本、安全四座大山。本章覆盖 Agent 生产落地的全部工程问题。
+
+### 本章内容
+
+- [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — SWE-bench、GAIA、AgentBench、τ-bench、MMAU
+- [Agent 离线评测数据集](./chapters/08-评测安全可观测/agent-camp-engineering-offline-eval-datasets) — 从生产 trace、失败 case、业务规则和确定性环境构建回归评测
+- [用模型评估模型](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) — 用大模型作为评审的最佳实践与陷阱
+- [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — LangSmith、Langfuse、Arize Phoenix、Helicone
+- [Agent 线上回复监测面试深挖](./chapters/11-面试与求职/agent-camp-engineering-online-response-monitoring-interview) — 语义异常、false success、隐式反馈、在线裁判与告警策略
+- [Agent 线上质量治理面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) — trace、自动裁判、badcase 归因与回归集
+- [Agent 业务效果与 ROI 面试深挖](./chapters/11-面试与求职/agent-camp-engineering-business-roi-interview) — 任务完成、自动化率、转人工、重复咨询和单次成功成本
+- [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness) — 状态、工具、权限、验证和恢复
+- [Agent 确定性控制面试深挖](./chapters/01-模型与提示/agent-camp-engineering-deterministic-control-interview) — 代码下沉、结构化输出、verifier 和定向修复
+- [Agent 工程异常处理面试深挖](./chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview) — RAG 证据冲突、记忆冲突、规划死循环与停止条件
+- [从业务 Agent 到 Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) — 生产级业务 Agent 的六个运行时平面
+- [Agent Runtime 面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-runtime-interview) — 匿名真实面经里的平台/引擎追问链
+- [Loop Engineering 循环工程](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering) — 调度、并行 worktree、持久状态、maker/checker
+- [AI Coding SDLC 面试深挖](./chapters/11-面试与求职/agent-camp-engineering-ai-coding-sdlc-interview) — PRD、技术方案、任务拆解、TDD、review gate 与研发指标
+- [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) — 提示词缓存、模型路由、蒸馏、批处理
+- [Agent 首 Token 与 P95 延迟面试深挖](./chapters/11-面试与求职/agent-camp-engineering-latency-interview) — TTFT、critical path、P95 长尾、prompt cache 与预取
+- [安全](./chapters/08-评测安全可观测/agent-camp-engineering-security) — 提示词注入、越狱、护栏、敏感信息脱敏
+- [Agent 流式输出安全面试深挖](./chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview) — buffer 审查、同步/异步 guardrail、撤回语义与审计
+- [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) — 速率限制、降级、熔断、退避重试
+- [Agent 高可用与容灾面试深挖](./chapters/11-面试与求职/agent-camp-engineering-reliability-interview) — RTO/RPO、依赖分级、降级模式、演练和事故复盘
+
+### 学习路径
+
+1. **评估体系** 是工程化第一步：没有评估就没有迭代；准备落到业务私有数据时接着看 **Agent 离线评测数据集**
+2. **可观测性** 紧随其后，没有调用链等于在黑盒里抓瞎；上线监控追问接着看 **Agent 线上回复监测面试深挖**
+3. 准备上线效果追问时先看 **Agent 业务效果与 ROI 面试深挖**，再看 **Agent 线上质量治理面试深挖**，把业务 outcome、trace、eval、badcase 和回归集串起来
+4. 做长周期任务前补 **Harness 设计**，遇到“模型漏段、算错、JSON 不稳”这类追问时补 **Agent 确定性控制面试深挖**；遇到“RAG 证据冲突、记忆冲突、规划死循环”这类工程异常追问时补 **Agent 工程异常处理面试深挖**；如果要把单个业务 Agent 抽成可复用平台，再看 **Agent Runtime**；准备平台/引擎岗位时接着看 **Agent Runtime 面试深挖**；想让 Agent 无人值守地自己跑，再上 **Loop Engineering**（harness 的上一层）
+5. 准备 AI Coding / 研发效能方向时看 **AI Coding SDLC 面试深挖**，把个人工具使用升级成团队流程和质量门禁
+6. 上线后两条主线并行优化：**成本** 与 **安全**；准备性能追问时补 **Agent 首 Token 与 P95 延迟面试深挖**，准备高风险输出追问时补 **Agent 流式输出安全面试深挖**
+7. 高并发场景必读 **限流降级**；准备负责人/架构面时补 **Agent 高可用与容灾面试深挖**
+

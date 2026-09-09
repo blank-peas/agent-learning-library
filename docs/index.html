@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Agent 学习书架">
+    <title>Agent 学习书架</title>
+    <!-- Hello-Agents 使用的 Docsify Vue 主题。 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@latest/lib/themes/vue.css">
+  </head>
+  <body>
+    <div id="app">正在加载 Agent 学习书架…</div>
+    <script>
+      window.$docsify = {
+        name: 'Agent 学习书架',
+        repo: '',
+        homepage: 'index.md',
+        loadSidebar: true,
+        auto2top: true,
+        // 与 Hello-Agents 一致：仅展开当前页面的正文目录。
+        subMaxLevel: 3,
+        relativePath: false,
+        pagination: {
+          previousText: '上一章节',
+          nextText: '下一章节'
+        },
+        count: {
+          countable: true,
+          fontsize: '0.9em',
+          color: 'rgb(90,90,90)',
+          language: 'chinese'
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@latest/dist/docsify-pagination.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="https://unpkg.com/docsify-count/dist/countable.js"></script>
+  </body>
+</html>

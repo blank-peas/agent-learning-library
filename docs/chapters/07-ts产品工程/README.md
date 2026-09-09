@@ -1,0 +1,133 @@
+# 第七章：TypeScript 产品化与工程实践
+
+**学习阶段：第 8 周**  
+把 Agent 做成可用产品：BFF、流式状态、权限、失败态与部署。
+
+本章收录 124 篇独立文章。文章保留来源标记，原文中的可解析内部链接会跳转到本 Wiki 对应页面；不能映射的链接则回退到来源仓库，避免出现本地 404。
+
+## 本章文章
+
+- [“think” 工具：让 Claude 在复杂工具使用中停下来思考](./chapters/07-ts产品工程/agent-camp-industry-anthropic-claude-think-tool) · Agent Camp
+- [💖 NPC好感度系统使用指南](./chapters/07-ts产品工程/hello-agents-code-chapter15-Helloagents-AI-Town-AFFINITY-SYSTEM-GUIDE) · Hello-Agents
+- [🗺️ AI Agent 工程师学习路线图（2025-2026）](./chapters/07-ts产品工程/agent-interview-hub-Agent工程师学习路线图) · Agent Interview Hub
+- [05. 如何写出好的 Skill](./chapters/07-ts产品工程/hello-agents-Extra-Chapter-Extra08-如何写出好的Skill) · Hello-Agents
+- [100 题前沿热点大更新 · 设计文档](./chapters/07-ts产品工程/agent-interview-100-docs-superpowers-specs-2026-07-15-100题前沿热点大更新-设计) · Agent Interview 100
+- [100 题前沿热点大更新 Implementation Plan](./chapters/07-ts产品工程/agent-interview-100-docs-superpowers-plans-2026-07-15-100题前沿热点大更新) · Agent Interview 100
+- [12 周 AI Agent 工程师进阶路线](./chapters/07-ts产品工程/agent-interview-hub-通用知识-12周Agent工程师进阶路线) · Agent Interview Hub
+- [场景题：你的 Agent 在生产环境出了故障，如何系统性排查和修复？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) · Agent Interview 100
+- [从模型到 Agent：为 Responses API 配备计算机环境](./chapters/07-ts产品工程/agent-camp-industry-openai-equip-responses-api-computer-environment) · Agent Camp
+- [从业务 Agent 到 Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) · Agent Camp
+- [代码 Review 题：找出这段 Agent 代码中的设计问题并修复](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-107-agent-code-review) · Agent Interview 100
+- [低代码平台 Dify / Coze / FastGPT](./chapters/07-ts产品工程/agent-camp-workflow-dify) · Agent Camp
+- [第二章 智能体发展史](./chapters/07-ts产品工程/hello-agents-docs-chapter2-第二章-智能体发展史) · Hello-Agents
+- [第七章 构建你的智能体框架](./chapters/07-ts产品工程/hello-agents-docs-chapter7-第七章-构建你的Agent框架) · Hello-Agents
+- [第十二章 智能体性能评估](./chapters/07-ts产品工程/hello-agents-docs-chapter12-第十二章-智能体性能评估) · Hello-Agents
+- [第十三章 智能旅行助手](./chapters/07-ts产品工程/hello-agents-docs-chapter13-第十三章-智能旅行助手) · Hello-Agents
+- [第十四章 自动化深度研究智能体](./chapters/07-ts产品工程/hello-agents-docs-chapter14-第十四章-自动化深度研究智能体) · Hello-Agents
+- [第十五章 构建赛博小镇](./chapters/07-ts产品工程/hello-agents-docs-chapter15-第十五章-构建赛博小镇) · Hello-Agents
+- [第十一章 Agentic-RL](./chapters/07-ts产品工程/hello-agents-docs-chapter11-第十一章-Agentic-RL) · Hello-Agents
+- [第十章 智能体通信协议](./chapters/07-ts产品工程/hello-agents-docs-chapter10-第十章-智能体通信协议) · Hello-Agents
+- [第四章 智能体经典范式构建](./chapters/07-ts产品工程/hello-agents-docs-chapter4-第四章-智能体经典范式构建) · Hello-Agents
+- [第五章 基于低代码平台的智能体搭建](./chapters/07-ts产品工程/hello-agents-docs-chapter5-第五章-基于低代码平台的智能体搭建) · Hello-Agents
+- [第一章 初识智能体](./chapters/07-ts产品工程/hello-agents-docs-chapter1-第一章-初识智能体) · Hello-Agents
+- [对话日志系统使用指南](./chapters/07-ts产品工程/hello-agents-code-chapter15-Helloagents-AI-Town-DIALOGUE-LOG-GUIDE) · Hello-Agents
+- [高并发场景下的 Agent 系统扩展策略](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-094-scaling-strategies) · Agent Interview 100
+- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) · Agent Camp
+- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) · Agent Camp
+- [工作流与 Agent 的边界](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) · Agent Camp
+- [构建高效 Agent](./chapters/07-ts产品工程/agent-camp-industry-anthropic-building-effective-agents) · Agent Camp
+- [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) · Agent Camp
+- [客服 Agent](./chapters/07-ts产品工程/agent-camp-vertical-customer-service) · Agent Camp
+- [框架 vs 自研：什么时候应该自己构建 Agent 框架？](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom) · Agent Interview 100
+- [扩展托管 Agent：把“大脑”和“手”解耦](./chapters/07-ts产品工程/agent-camp-industry-anthropic-managed-agents) · Agent Camp
+- [浏览器 / 电脑操作 Agent](./chapters/07-ts产品工程/agent-camp-vertical-browser-agent) · Agent Camp
+- [模型路由（Model Routing）：如何根据任务复杂度选择模型？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing) · Agent Interview 100
+- [模型微调完全指南（SFT / LoRA / QLoRA / RLHF）](./chapters/07-ts产品工程/agent-interview-hub-通用知识-模型微调完全指南) · Agent Interview Hub
+- [内容过滤与毒性检测在 Agent 系统中的实现](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-083-content-filtering-toxici) · Agent Interview 100
+- [配图标准(diagram-standards)](./chapters/07-ts产品工程/agent-interview-100-docs-diagram-standards) · Agent Interview 100
+- [前言](./chapters/07-ts产品工程/hello-agents-docs-前言) · Hello-Agents
+- [人工智能在智慧城市建设中的应用](./chapters/07-ts产品工程/hello-agents-code-chapter10-a2a-document-20251009-024100) · Hello-Agents
+- [如何检测和缓解 Agent 的幻觉（Hallucination）？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-082-hallucination-detection) · Agent Interview 100
+- [如何设计 Tool Gateway 和工具权限管理？](./chapters/07-ts产品工程/agent-interview-100-03-tool-use-024-tool-gateway-permissions) · Agent Interview 100
+- [如何设计可测试、可扩展的 Agent 框架抽象层？](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-100-testable-extensible-framework) · Agent Interview 100
+- [如何设计一个分层 Agent 架构（Orchestrator / Worker 模式）？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-005-layered-agent-architecture) · Agent Interview 100
+- [如何实现 Agent 的灰度发布和 A/B 测试？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-093-canary-ab-testing) · Agent Interview 100
+- [如何实现 Agent 的自我反思（Self-Reflection）和自我纠正？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-009-self-reflection-correction) · Agent Interview 100
+- [如何实现动态工具发现和注册？](./chapters/07-ts产品工程/agent-interview-100-03-tool-use-029-dynamic-tool-discovery) · Agent Interview 100
+- [三个近期问题复盘](./chapters/07-ts产品工程/agent-camp-industry-anthropic-a-postmortem-of-three-recent-issues) · Agent Camp
+- [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching) · Agent Camp
+- [上下文污染与清理](./chapters/07-ts产品工程/agent-camp-context-pollution) · Agent Camp
+- [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression) · Agent Camp
+- [什么是 12-Factor Agents？如何用它评审生产级 Agent？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-116-12-factor-agents) · Agent Interview 100
+- [什么是 Computer Use / Browser Use Agent？它与 API Agent 有何区别？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-113-computer-use-agent) · Agent Interview 100
+- [使用 Responses API 的 WebSocket 加速 Agent 工作流](./chapters/07-ts产品工程/agent-camp-industry-openai-speeding-up-agentic-workflows-with-websockets) · Agent Camp
+- [数据分析 Agent](./chapters/07-ts产品工程/agent-camp-vertical-data-analysis) · Agent Camp
+- [用 Agent 编写有效的 Agent 工具](./chapters/07-ts产品工程/agent-camp-industry-anthropic-writing-tools-for-agents) · Agent Camp
+- [用 Agent Skills 装备真实世界 Agent](./chapters/07-ts产品工程/agent-camp-industry-anthropic-equipping-agents-for-the-real-world-with-a) · Agent Camp
+- [用 Claude 3.5 Sonnet 提升 SWE-bench Verified 表现](./chapters/07-ts产品工程/agent-camp-industry-anthropic-swe-bench-sonnet) · Agent Camp
+- [用 Codex 构建可自我改进的税务 Agent](./chapters/07-ts产品工程/agent-camp-industry-openai-building-self-improving-tax-agents-with-codex) · Agent Camp
+- [用一组并行 Claude 构建 C 编译器](./chapters/07-ts产品工程/agent-camp-industry-anthropic-building-c-compiler) · Agent Camp
+- [语音 Agent](./chapters/07-ts产品工程/agent-camp-vertical-voice-agent) · Agent Camp
+- [长上下文模型对比](./chapters/07-ts产品工程/agent-camp-context-long-context) · Agent Camp
+- [自我反思 Reflexion / Self-Refine](./chapters/07-ts产品工程/agent-camp-agent-reflexion) · Agent Camp
+- [自我纠错 Self-Correction](./chapters/07-ts产品工程/agent-camp-agent-self-correction) · Agent Camp
+- [Agent 产品如何做合规设计？EU AI Act 对 Agent 有何影响？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-115-agent-compliance-eu-ai-a) · Agent Interview 100
+- [Agent 成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) · Agent Camp
+- [Agent 的权限最小化原则与沙箱执行](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi) · Agent Interview 100
+- [Agent 定义与认知架构](./chapters/07-ts产品工程/agent-camp-agent-definition) · Agent Camp
+- [Agent 对齐问题：如何确保 Agent 行为符合人类意图？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-084-agent-alignment) · Agent Interview 100
+- [Agent 框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison) · Agent Camp
+- [Agent 系统的日志、监控与告警设计](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-092-logging-monitoring-) · Agent Interview 100
+- [Agent 系统的延迟优化：Streaming、缓存、批处理](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio) · Agent Interview 100
+- [Agent 系统的灾难恢复与高可用设计](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-095-disaster-recovery-h) · Agent Interview 100
+- [Agent 运行循环 Agent Loop](./chapters/07-ts产品工程/agent-camp-agent-agent-loop) · Agent Camp
+- [Agent Loop 设计：循环控制、终止条件与错误恢复](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-006-agent-loop-and-error-recov) · Agent Interview 100
+- [Agent Sandbox / Runtime 选型：E2B / Daytona / Modal / Cloudflare Sandbox 隔离强度 + cold start + egress](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti) · Agent Interview 100
+- [Agent Self-Evolution：智能体自进化的四类闭环](./chapters/07-ts产品工程/hello-agents-Extra-Chapter-Extra10-Agent自进化) · Hello-Agents
+- [Agent Skills：把经验做成可加载能力](./chapters/07-ts产品工程/agent-camp-agent-skills) · Agent Camp
+- [AI Agent 工程师 - 通用技术知识点](./chapters/07-ts产品工程/agent-interview-hub-通用知识-技术知识点汇总) · Agent Interview Hub
+- [AI Agent 开源框架全景（2025）](./chapters/07-ts产品工程/agent-interview-hub-通用知识-Agent框架全景) · Agent Interview Hub
+- [AI Agent框架研究报告](./chapters/07-ts产品工程/hello-agents-code-chapter10-report) · Hello-Agents
+- [Aider 源码剖析](./chapters/07-ts产品工程/agent-camp-source-aider) · Agent Camp
+- [AIME数据生成与评估完整运行指南](./chapters/07-ts产品工程/hello-agents-code-chapter12-data-generation-运行指南) · Hello-Agents
+- [Browser Use 源码剖析](./chapters/07-ts产品工程/agent-camp-source-browser-use) · Agent Camp
+- [Chapter 1: Introduction to Agents](./chapters/07-ts产品工程/hello-agents-docs-chapter1-Chapter1-Introduction-to-Agents) · Hello-Agents
+- [Chapter 10: Agent Communication Protocols](./chapters/07-ts产品工程/hello-agents-docs-chapter10-Chapter10-Agent-Communication-Protocols) · Hello-Agents
+- [Chapter 11 Agentic-RL](./chapters/07-ts产品工程/hello-agents-docs-chapter11-Chapter11-Agentic-RL) · Hello-Agents
+- [Chapter 13 Intelligent Travel Assistant](./chapters/07-ts产品工程/hello-agents-docs-chapter13-Chapter13-Intelligent-Travel-Assistant) · Hello-Agents
+- [Chapter 14: Automated Deep Research Agent](./chapters/07-ts产品工程/hello-agents-docs-chapter14-Chapter14-Automated-Deep-Research-Agent) · Hello-Agents
+- [Chapter 15: Building Cyber Town](./chapters/07-ts产品工程/hello-agents-docs-chapter15-Chapter15-Building-Cyber-Town) · Hello-Agents
+- [Chapter 2: History of Agents](./chapters/07-ts产品工程/hello-agents-docs-chapter2-Chapter2-History-of-Agents) · Hello-Agents
+- [Chapter 3: Fundamentals of Large Language Models](./chapters/07-ts产品工程/hello-agents-docs-chapter3-Chapter3-Fundamentals-of-Large-Language-Model) · Hello-Agents
+- [Chapter 4: Building Classic Agent Paradigms](./chapters/07-ts产品工程/hello-agents-docs-chapter4-Chapter4-Building-Classic-Agent-Paradigms) · Hello-Agents
+- [Chapter 5: Building Agents with Low-Code Platforms](./chapters/07-ts产品工程/hello-agents-docs-chapter5-Chapter5-Building-Agents-with-Low-Code-Platfo) · Hello-Agents
+- [Chapter 6 Framework Development Practice](./chapters/07-ts产品工程/hello-agents-docs-chapter6-Chapter6-Framework-Development-Practice) · Hello-Agents
+- [Chapter 7 Building Your Agent Framework](./chapters/07-ts产品工程/hello-agents-docs-chapter7-Chapter7-Building-Your-Agent-Framework) · Hello-Agents
+- [Claude 跨产品隔离与约束](./chapters/07-ts产品工程/agent-camp-industry-anthropic-how-we-contain-claude) · Agent Camp
+- [Claude Agent SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) · Agent Camp
+- [Claude Developer Platform 的高级工具使用](./chapters/07-ts产品工程/agent-camp-industry-anthropic-advanced-tool-use) · Agent Camp
+- [Claude Opus 4.8 与 Dynamic Workflows](./chapters/07-ts产品工程/agent-camp-industry-anthropic-claude-opus-4-8-dynamic-workflows) · Agent Camp
+- [Claude Tag：团队协作型 Agent 的新形态](./chapters/07-ts产品工程/agent-camp-industry-anthropic-claude-tag) · Agent Camp
+- [Cline 源码剖析](./chapters/07-ts产品工程/agent-camp-source-cline) · Agent Camp
+- [Codex for every role, tool, and workflow](./chapters/07-ts产品工程/agent-camp-industry-openai-codex-for-every-role-tool-workflow) · Agent Camp
+- [Codex-Maxxing：长周期工作的 Agent 使用法](./chapters/07-ts产品工程/agent-camp-industry-openai-codex-maxxing-long-running-work) · Agent Camp
+- [Deep Research Agent](./chapters/07-ts产品工程/agent-camp-vertical-deep-research) · Agent Camp
+- [GitHub 热门 AI Agent 资源整理](./chapters/07-ts产品工程/agent-interview-hub-通用知识-GitHub热门Agent资源整理) · Agent Interview Hub
+- [GPT Engineer 源码剖析](./chapters/07-ts产品工程/agent-camp-source-gpt-engineer) · Agent Camp
+- [Hello-Agents](./chapters/07-ts产品工程/hello-agents-README-EN) · Hello-Agents
+- [Hello-Agents](./chapters/07-ts产品工程/hello-agents-docs-README-EN) · Hello-Agents
+- [Hello-Agents 视频课录制共创](./chapters/07-ts产品工程/hello-agents-Extra-Chapter-Extra13-Hello-Agents视频课录制共创) · Hello-Agents
+- [Hello-Agents Datawhale常见问题 FAQ](./chapters/07-ts产品工程/hello-agents-Extra-Chapter-Extra04-DatawhaleFAQ) · Hello-Agents
+- [Hermes Agent 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent) · Agent Camp
+- [Human-in-the-Loop：何时以及如何引入人工审核？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-080-human-in-the-loop) · Agent Interview 100
+- [LlamaIndex 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-llamaindex) · Agent Camp
+- [LlamaIndex Workflows](./chapters/07-ts产品工程/agent-camp-workflow-llamaindex-workflows) · Agent Camp
+- [OpenAI Agents SDK / Swarm 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) · Agent Camp
+- [OpenAI Responses API / Agents SDK vs Anthropic Claude Agent SDK 对比](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk) · Agent Interview 100
+- [OpenAI：Agent 如何改变工作](./chapters/07-ts产品工程/agent-camp-industry-openai-how-agents-are-transforming-work) · Agent Camp
+- [OpenClaw 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-openclaw) · Agent Camp
+- [Pi 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-pi) · Agent Camp
+- [Pi 源码剖析](./chapters/07-ts产品工程/agent-camp-source-pi-mono) · Agent Camp
+- [Red Teaming：如何对 Agent 系统进行对抗测试？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-085-red-teaming-agents) · Agent Interview 100
+- [SWE-agent 源码剖析](./chapters/07-ts产品工程/agent-camp-source-swe-agent) · Agent Camp
+- [Workflow vs Agent：什么时候用确定性工作流，什么时候用自主 Agent？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-007-workflow-vs-agent) · Agent Interview 100

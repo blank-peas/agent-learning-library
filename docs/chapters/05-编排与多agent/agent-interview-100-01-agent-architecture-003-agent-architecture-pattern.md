@@ -1,0 +1,478 @@
+# Agent 架构模式详解：ReAct、Plan-and-Execute、LATS、Proactive
+
+> **资料来源**：[Agent Interview 100](https://github.com/BigKunLun/Agent-Interview-100) · 原文件：`01-agent-architecture/003-agent-architecture-patterns.md`。
+
+
+> 难度：中级
+> 分类：Agent 架构
+
+### 简短回答
+
+主流 Agent 架构模式各有侧重：**ReAct** 交替推理与行动，灵活且可解释性强，但 token 消耗高；**Plan-and-Execute** 先规划后执行，高效但适应性低；**LATS** 用树搜索探索多条路径，质量最高但成本是 ReAct 的 3-5 倍；**Proactive Agent** 主动预测用户需求，提前执行操作，提升用户体验但实现复杂度高。实际生产中，大多数系统采用混合模式：先生成粗略计划，再以 ReAct 方式逐步执行，保留偏离计划的自由度。
+
+### 详细解析
+
+#### 1. ReAct（Reason + Act）
+
+ReAct（Reasoning + Acting）是由 Yao et al. (2022) 提出的 LLM Agent 框架，核心思想是让 LLM 交替进行推理（Thought）和行动（Action），并根据外部环境的反馈（Observation）动态调整下一步。与纯推理（Chain-of-Thought）不同，ReAct 通过工具调用获取真实信息，有效减少幻觉；与纯行动（直接调用工具）不同，ReAct 通过显式推理提升了可解释性和决策质量。
+
+##### 核心循环：Thought -> Action -> Observation
+
+ReAct 的运行机制是一个迭代循环：
+
+1. **Thought（思考）**：LLM 分析当前状态，思考下一步应该做什么
+2. **Action（行动）**：基于思考结果，选择并执行一个工具/操作
+3. **Observation（观察）**：接收工具的执行结果作为新的上下文
+4. 重复上述过程，直到 LLM 认为已有足够信息给出最终答案
+
+```
+Thought 1: 我需要查找某公司的最新财报数据
+Action 1: search_web("Company X Q4 2025 earnings report")
+Observation 1: Company X reported revenue of $5.2B in Q4 2025...
+
+Thought 2: 现在我有了财报数据，需要计算同比增长率
+Action 2: calculator("(5.2 - 4.8) / 4.8 * 100")
+Observation 2: 8.33
+
+Thought 3: 我现在有了足够信息来回答问题
+Final Answer: Company X 的 Q4 2025 营收为 $5.2B，同比增长 8.33%。
+```
+
+##### 为什么不用纯推理（CoT）？
+
+Chain-of-Thought (CoT) 让 LLM 逐步推理，但完全依赖模型的内部知识。问题在于：
+
+- **幻觉（Hallucination）**：模型可能"编造"看似合理但实际错误的事实
+- **知识过时**：模型的训练数据有截止日期，无法获取最新信息
+- **错误传播**：一步推理出错，后续步骤全部基于错误前提
+
+ReAct 通过在推理过程中引入工具调用（Action），让模型能够从外部环境获取真实、最新的信息，形成"事实锚点"（Ground Truth Anchor），有效缓解这些问题。
+
+##### 为什么不用纯行动（直接工具调用）？
+
+直接让 LLM 调用工具，跳过推理步骤，问题在于：
+
+- **缺乏规划**：不知道"为什么"调用这个工具，调用顺序可能不合理
+- **不可解释**：无法追踪决策逻辑
+- **无法纠错**：没有反思机制，一旦选错工具就无法调整
+
+ReAct 的 Thought 步骤提供了显式的推理 trace，使得决策过程透明、可调试、可审计。
+
+##### ReAct 的 Prompt 结构
+
+一个典型的 ReAct Prompt 模板：
+
+```
+Answer the following questions as best you can. You have access to the following tools:
+
+{tool_descriptions}
+
+Use the following format:
+
+Question: the input question you must answer
+Thought: you should always think about what to do
+Action: the action to take, should be one of [{tool_names}]
+Action Input: the input to the action
+Observation: the result of the action
+... (this Thought/Action/Observation cycle can repeat N times)
+Thought: I now know the final answer
+Final Answer: the final answer to the original input question
+```
+
+##### Python 实现（简化版）
+
+```python
+import re
+import anthropic
+
+client = anthropic.Anthropic()
+
+TOOLS = {
+    "search": lambda q: web_search(q),
+    "calculate": lambda expr: str(eval(expr)),  # ⚠️ 安全警告：生产环境不应使用 eval()，应使用安全的数学解析库（如 numexpr 或 asteval）
+}
+
+SYSTEM_PROMPT = """You are a helpful assistant. You can use these tools:
+- search: Search the web. Input: search query string.
+- calculate: Do math. Input: math expression.
+
+Use this format:
+Thought: <your reasoning>
+Action: <tool_name>
+Action Input: <input>
+
+When you have the final answer:
+Thought: I now know the final answer
+Final Answer: <answer>
+"""
+
+def react_agent(question: str, max_steps: int = 10) -> str:
+    """简化版 ReAct Agent"""
+    prompt = f"Question: {question}\n"
+
+    for step in range(max_steps):
+        response = client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=1024,
+            system=SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        text = response.content[0].text
+        prompt += text + "\n"
+
+        # 检查是否有最终答案
+        if "Final Answer:" in text:
+            return text.split("Final Answer:")[-1].strip()
+
+        # 解析并执行 Action
+        action_match = re.search(r"Action: (\w+)\nAction Input: (.+)", text)
+        if action_match:
+            tool, tool_input = action_match.groups()
+            observation = TOOLS[tool](https://github.com/BigKunLun/Agent-Interview-100))
+            prompt += f"Observation: {observation}\n"
+
+    return "达到最大步数限制，未能得出结论。"
+```
+
+##### ReAct 的实际效果
+
+原始论文（Yao et al., 2022）的实验结果表明：
+- 在 **HotpotQA**（多跳问答）上，ReAct 通过与 Wikipedia API 交互，显著超越纯 CoT，减少了幻觉和错误传播
+- 在 **Fever**（事实验证）上，ReAct 的事实核查能力优于基线方法
+- ReAct 生成的执行轨迹（Trajectory）更接近人类的问题解决方式，可解释性更强
+
+##### 主流框架中的 ReAct
+
+ReAct 已成为 Agent 框架的默认模式：
+- **LangChain/LangGraph**：`create_react_agent()` 直接创建 ReAct Agent
+- **CrewAI**：Agent 默认使用 ReAct 范式交替推理和行动
+- **Anthropic Claude**：通过 Tool Use API 天然支持 ReAct 模式（模型自动在思考和工具调用间交替）
+
+##### ReAct 优劣势总结
+
+**优势：**
+- 高度灵活，能根据中间结果动态调整策略
+- 可解释性强，每步都有显式的推理 trace
+- 适合探索性、不确定性高的任务
+
+**劣势：**
+- 每步都需要完整的 LLM 调用（携带全部上下文），token 消耗高
+- 8 步任务可能消耗 50K-100K tokens
+- 无法并行执行，所有步骤严格顺序
+- 可能陷入推理循环
+
+**适用场景：** 需要动态探索、中间结果不可预测的任务，如开放域问答、研究调查、交互式调试。
+
+#### 2. Plan-and-Execute
+
+**核心机制：** 将任务分为两个阶段——Planner（规划器）生成完整的行动计划，Executor（执行器）逐步执行计划中的每一步。
+
+```
+阶段 1 — 规划:
+  Plan:
+    Step 1: 搜索 X 的最新数据
+    Step 2: 从结果中提取关键指标
+    Step 3: 计算同比增长率
+    Step 4: 生成分析报告
+
+阶段 2 — 执行:
+  Execute Step 1 → Result 1
+  Execute Step 2 → Result 2
+  Execute Step 3 → Result 3
+  Execute Step 4 → Final Output
+```
+
+**优势：**
+- LLM 调用次数少（规划一次 + 每步执行一次，执行可用更小的模型）
+- 成本显著低于 ReAct
+- 强制 LLM 预先想清楚完整步骤，减少遗漏
+- 每步执行可以并行化（如果步骤间无依赖）
+
+**劣势：**
+- 初始计划的质量是瓶颈——计划错了，后续全错
+- 适应性差，面对意外情况难以偏离原计划
+- 需要额外的 Replanning 机制来应对执行中的变化
+- 不适合高度动态、不确定的任务
+
+**适用场景：** 结构明确的多步任务，如数据处理流水线、报告生成、自动化测试。
+
+#### 3. Proactive Agent（主动式 Agent）
+
+**核心机制：** 不同于 Reactive Agent（被动响应用户指令），Proactive Agent 会主动预测用户需求、提前执行相关操作，在用户明确要求之前就做好准备。
+
+```
+Reactive Agent:
+  用户: "帮我查一下明天的天气"
+  Agent: [查询] "明天是晴天"
+
+Proactive Agent:
+  用户: "我明天要去上海出差"
+  Agent: [自动] "我来帮你准备出差所需信息：明天上海天气、航班信息、酒店推荐、会议安排..."
+```
+
+**核心特性：**
+
+1. **需求预测**
+   - 从对话上下文推断用户潜在需求
+   - 利用用户历史行为模式
+   - 结合时间、地点、角色等上下文信息
+
+2. **主动行动**
+   - 无需用户明确指令即可执行
+   - 提前获取可能需要的资源
+   - 预加载相关数据以减少延迟
+
+3. **适度性判断**
+   - 判断何时应该主动，何时需要确认
+   - 避免过度打扰用户
+   - 在效率和用户体验间取得平衡
+
+```python
+class ProactiveAgent:
+    def __init__(self, llm, tools, user_profile):
+        self.llm = llm
+        self.tools = tools
+        self.user_profile = user_profile  # 用户偏好、历史行为等
+
+    def process(self, user_input: str, context: dict) -> str:
+        # 1. 理解用户显式需求
+        explicit_needs = self._parse_needs(user_input)
+
+        # 2. 预测潜在需求
+        implicit_needs = self._predict_needs(user_input, context)
+
+        # 3. 判断哪些潜在需求值得主动处理
+        proactive_actions = []
+        for need in implicit_needs:
+            if self._should_be_proactive(need):
+                proactive_actions.append(need)
+
+        # 4. 执行主动操作（可并行）
+        proactive_results = self._execute_proactively(proactive_actions)
+
+        # 5. 组合响应
+        response = self._generate_response(
+            explicit_needs,
+            proactive_results,
+            show_what=self._decide_visibility(proactive_actions)
+        )
+        return response
+
+    def _predict_needs(self, user_input: str, context: dict) -> list[Need]:
+        """基于上下文预测潜在需求"""
+        prompt = f"""
+        用户说：{user_input}
+        当前时间：{context.get('time')}
+        用户位置：{context.get('location')}
+        用户角色：{self.user_profile.role}
+
+        预测用户可能需要的额外信息（不要过度推断）：
+        """
+        return parse_needs(self.llm.generate(prompt))
+
+    def _should_be_proactive(self, need: Need) -> bool:
+        """判断是否值得主动处理"""
+        criteria = {
+            'relevance': need.confidence > 0.8,  # 高相关性
+            'cost': need.execution_cost < 0.5,  # 低执行成本
+            'privacy': not need.sensitive,       # 不涉及隐私
+            'frequency': self.user_profile.likes_proactive,  # 用户喜欢主动服务
+        }
+        return all(criteria.values())
+```
+
+**优势：**
+- 显著提升用户体验，减少用户操作步骤
+- 更接近人类助手的自然交互方式
+- 可以在后台预加载，减少感知延迟
+- 适合长期陪伴式场景（如个人助理、客服）
+
+**劣势：**
+- 需求预测准确度难以保证，可能误判
+- 过度主动可能打扰用户
+- 消耗更多资源（执行了用户未明确要求的操作）
+- 对隐私敏感的操作需要谨慎
+
+**应用场景：**
+1. **个人助理** - 检测到用户要出差时，主动准备天气、交通、酒店信息
+2. **客服系统** - 用户咨询产品时，主动展示相关文档、使用教程
+3. **代码助手** - 检测到用户在调试时，主动加载相关错误文档
+4. **数据分析师** - 用户选择某个指标时，自动展示相关趋势和对比
+
+**关键设计原则：**
+
+| 原则 | 说明 |
+|------|------|
+| **透明化** | 让用户知道 Agent 主动做了什么，以及为什么 |
+| **可撤销** | 主动操作的结果应能被用户轻松取消或忽略 |
+| **渐进式** | 初期保守，随着用户信任建立逐渐增加主动性 |
+| **学习性** | 根据用户反馈（接受/拒绝）调整主动策略 |
+
+**与 Reactive Agent 的对比：**
+
+| 维度 | Reactive Agent | Proactive Agent |
+|------|---------------|-----------------|
+| **触发方式** | 用户指令 | 指令 + 上下文预测 |
+| **用户体验** | 明确但需要多步 | 高效但可能意外 |
+| **资源消耗** | 按需消耗 | 可能有冗余消耗 |
+| **实现复杂度** | 中等 | 高（需预测和适度性判断） |
+| **适用场景** | 任务执行工具 | 陪伴式服务 |
+
+**实现模式：**
+
+```python
+## 模式 1：置信度阈值
+if predicted_need.confidence > 0.9:
+    execute_immediately()
+elif predicted_need.confidence > 0.7:
+    ask_user("我检测到可能需要 X，是否处理？")
+else:
+    ignore()
+
+## 模式 2：异步预加载
+execute_async(predicted_needs)  # 后台执行
+if user_explicitly_requests():
+    return_cached_result()
+```
+
+#### 4. LATS（Language Agent Tree Search）
+
+**核心机制：** 借鉴蒙特卡洛树搜索（MCTS），将 Agent 的行动空间建模为一棵树，同时探索多条路径，评估每条路径的质量，在死胡同时回溯尝试其他分支。
+
+```mermaid
+flowchart TD
+    R["根节点<br/>初始状态"] --> A["行动 A"]
+    R --> B["行动 B"]
+    R --> C["行动 C"]
+    A --> A1["A1 ✗ 死路"]
+    A --> A2["A2 ✓ 有效"]
+    B --> B1["B1 ✓ 有效"]
+    C --> C1["C1 ✗ 死路"]
+    C --> C2["C2 ✓ 有效"]
+    A1 -.->|"回溯"| A
+    C1 -.->|"回溯"| C
+    A2 -->|"继续展开"| O["最优路径"]
+    B1 -->|"继续展开"| O
+    C2 -->|"继续展开"| O
+    classDef agent fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
+    classDef proc fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef err fill:#ffebee,stroke:#c62828,color:#b71c1c
+    class R agent
+    class A,B,C,A2,B1,C2,O proc
+    class A1,C1 err
+```
+*LATS 把行动空间建模为树：并行探索多分支，死路回溯，有效分支继续展开，最终收敛到最优路径。*
+
+**优势：**
+- 通过并行探索多条路径，找到更高质量的解
+- 具备回溯能力，不会被单一错误路径困死
+- Zhou et al. (2023) 的论文表明 LATS 在多步推理任务上超越 ReAct
+- 特别适合有多种可行方案需要比较的场景
+
+**劣势：**
+- 成本极高：通常是 ReAct 的 3-5 倍
+- 延迟更大：需要并行生成和评估多个分支
+- 实现复杂度高
+- 对简单任务过度设计
+
+**适用场景：** 复杂推理、代码生成（需要探索多种实现方案）、数学证明、需要高可靠性的关键决策。
+
+#### 综合对比
+
+| 维度 | ReAct | Plan-and-Execute | Proactive | LATS |
+|------|-------|-------------------|----------|------|
+| **核心思路** | 边想边做 | 想好再做 | 主动预测需求 | 多条路同时探索 |
+| **灵活性** | 高 | 低（无 replanning 时） | 高（主动适应） | 极高 |
+| **成本** | 中高 | 低 | 中（含冗余预测） | 极高（3-5x ReAct） |
+| **延迟** | 中 | 低 | 低（预加载） | 高 |
+| **结果质量** | 良好 | 结构化任务优秀 | 优秀（用户体验佳） | 最高 |
+| **可解释性** | 强（每步有 Thought） | 中（有计划但执行不透明） | 中（需说明主动行为原因） | 中（有树结构但复杂） |
+| **并行能力** | 无 | 部分（独立步骤） | 强（预加载并行） | 强（多分支并行） |
+| **错误恢复** | 动态调整 | 需要显式 replanning | 需用户反馈调整 | 自动回溯 |
+| **实现难度** | 低 | 中 | 中高（需适度性判断） | 高 |
+
+#### 混合模式：生产实践中的最佳选择
+
+实际生产中，大多数团队不会只用一种模式，而是组合使用：
+
+```python
+## 混合模式：Plan-and-Execute + ReAct
+class HybridAgent:
+    def run(self, task: str):
+        # 阶段 1：用强模型生成粗略计划
+        plan = self.planner.generate_plan(task)
+
+        # 阶段 2：用 ReAct 方式逐步执行
+        # 每步都可以根据实际情况偏离计划
+        results = []
+        for step in plan.steps:
+            result = self.react_executor.execute_with_reasoning(
+                step=step,
+                context=results,
+                allow_deviation=True  # 允许偏离计划
+            )
+            results.append(result)
+
+            # 如果偏离过大，触发 replanning
+            if result.deviated_significantly:
+                plan = self.planner.replan(task, results)
+
+        return self.synthesizer.combine(results)
+```
+
+**常见混合策略：**
+1. **ReAct + Reflexion**：在 ReAct 失败后加入反思，从失败中学习
+2. **Plan-and-Execute + ReAct**：先计划，再用 ReAct 执行每一步，允许动态调整
+3. **LATS + Plan-and-Execute**：用 LATS 探索多种计划方案，选最优计划后执行
+4. **分层混合**：高层用 Plan-and-Execute 做战略规划，低层用 ReAct 做战术执行
+
+#### 选择决策树
+
+```mermaid
+flowchart TD
+    Q1{"任务结构明确?"} -- "是" --> Q2{"步骤间<br/>大量依赖?"}
+    Q1 -- "否" --> Q3{"需要<br/>高可靠性?"}
+    Q2 -- "是" --> P1["Plan-and-Execute"]
+    Q2 -- "否" --> P2["Plan-and-Execute<br/>并行执行"]
+    Q3 -- "否" --> P3["ReAct"]
+    Q3 -- "是" --> Q4{"预算允许<br/>高成本?"}
+    Q4 -- "是" --> P4["LATS"]
+    Q4 -- "否" --> P5["ReAct + Reflexion"]
+    classDef decision fill:#fffde7,stroke:#f9a825,color:#795548
+    classDef proc fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    class Q1,Q2,Q3,Q4 decision
+    class P1,P2,P3,P4,P5 proc
+```
+*按任务结构明确性、依赖关系、可靠性需求、预算四问选出架构模式。*
+
+### 常见误区 / 面试追问
+
+1. **误区："ReAct 就是 Function Calling"** — Function Calling 是底层能力（让 LLM 生成结构化的工具调用请求），ReAct 是上层模式（在推理和行动之间交替的决策框架）。ReAct 可以基于 Function Calling 实现，但两者不是一回事。
+
+2. **误区："ReAct 是最先进的，应该总是使用"** — ReAct 适合探索性任务，但对结构明确的任务来说，Plan-and-Execute 更高效、更便宜。没有通用最优架构。
+
+3. **误区："Plan-and-Execute 无法处理变化"** — 加入 Replanning 机制后，Plan-and-Execute 也能应对执行中的意外。关键是设计好触发 replan 的条件。
+
+4. **追问："ReAct 的主要缺陷是什么？"** — (1) 高 token 消耗和延迟；(2) 可能陷入推理循环（反复调用同一工具）；(3) 无法并行执行多个独立操作，因为每步都是顺序的。
+
+5. **追问："如何改进 ReAct？"** — (1) 加入 Reflexion 机制让 Agent 从失败中学习；(2) 混合 Plan-and-Execute，先生成粗略计划再 ReAct 执行；(3) 设置最大步数和重复检测来防止死循环。
+
+6. **追问："如何在成本和质量间取舍？"** — 从 ReAct 开始建立 baseline，如果质量不够再考虑 LATS。用 Model Routing 对简单任务用 ReAct + 小模型，复杂任务用 LATS + 强模型。
+
+7. **追问："Proactive Agent 的核心挑战是什么？"** — 适度性判断：太主动会打扰用户，太保守又失去意义。需要建立反馈循环，学习用户的接受度阈值。
+
+8. **追问："Gartner 预测 40% 的企业应用将包含 Agent，主流模式是什么？"** — 混合模式（Planning Preamble + ReAct Execution），因为它在灵活性和成本间取得了最佳平衡。
+
+### 参考资料
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models (arXiv:2210.03629)](https://arxiv.org/abs/2210.03629)
+- [ReAct Prompting (Prompt Engineering Guide)](https://www.promptingguide.ai/techniques/react)
+- [What is a ReAct Agent? (IBM)](https://www.ibm.com/think/topics/react-agent)
+- [A Simple Python Implementation of the ReAct Pattern (Simon Willison)](https://til.simonwillison.net/llms/python-react-pattern)
+- [ReAct Pattern: Interleaving Reasoning and Action (Michael Brenndoerfer)](https://mbrenndoerfer.com/writing/react-pattern-llm-reasoning-action-agents)
+- [ReAct vs Plan-and-Execute: A Practical Comparison (DEV Community)](https://dev.to/jamesli/react-vs-plan-and-execute-a-practical-comparison-of-llm-agent-patterns-4gh9)
+- [Navigating Modern LLM Agent Architectures (Wollen Labs)](https://www.wollenlabs.com/blog-posts/navigating-modern-llm-agent-architectures-multi-agents-plan-and-execute-rewoo-tree-of-thoughts-and-react)
+- [Agent Architectures: ReAct, Self-Ask, Plan-and-Execute (APXML)](https://apxml.com/courses/langchain-production-llm/chapter-2-sophisticated-agents-tools/agent-architectures)
+- [How to Build a Plan-and-Execute AI Agent (EMA)](https://www.ema.ai/additional-blogs/addition-blogs/build-plan-execute-agents)
+- [LATS: Language Agent Tree Search (Zhou et al., 2023)](https://arxiv.org/abs/2310.04406)
+

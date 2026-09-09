@@ -1,0 +1,56 @@
+# 揭开 AI Agent 评测的面纱
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`industry/anthropic/demystifying-evals-for-ai-agents.md`。
+
+
+- 原文标题：Demystifying evals for AI agents
+- 原文链接：https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+- 发布时间：2026-01-09
+- 来源：Anthropic Engineering
+- 主题：Agent eval、成功标准、任务设计
+
+> 本文是中文精读笔记，不是原文全文翻译。
+
+### 这篇文章解决什么问题
+
+Agent eval 经常被说得很玄，但本质是工程化的反馈系统：定义任务、运行 Agent、收集轨迹、判断是否成功、分析失败并迭代。文章用更清晰的方式拆解 Agent 评测应该怎么做。
+
+### 核心内容
+
+- Agent eval 要从真实任务出发，而不是只测孤立问答。
+- 成功标准要明确、可重复，并尽量减少人工主观性。
+- 轨迹分析比最终答案更重要，因为 Agent 可能在工具调用、规划或恢复阶段失败。
+- 好的 eval 应该能指导下一步改进，而不只是给一个分数。
+
+### 深度精读
+
+这篇文章可以作为 Agent 评测入门。普通 LLM eval 通常是输入一段文本，输出一个答案，然后判断答案好坏；Agent eval 则要评估一个过程：模型如何计划、选择工具、读取结果、修正错误、继续行动，最后是否完成任务。
+
+原文强调，评测设计要从真实任务开始。比如客服 Agent 的真实任务不是“回答一条知识题”，而是理解用户问题、查知识库、确认账户状态、避免泄露隐私并给出可执行下一步。Coding Agent 的真实任务也不是“写一个函数”，而是理解仓库、定位 bug、修改代码、跑测试、解释改动。
+
+好的 Agent eval 应该能定位失败阶段。如果任务失败，是目标理解错了，检索结果不对，工具参数错了，还是遇到错误后没有恢复？只有知道失败发生在哪一环，评测才会变成工程迭代工具，而不是排行榜数字。
+
+### 学习时重点看什么
+
+- Agent eval 评估的是轨迹，不只是最终输出。
+- 每个任务都要有明确成功标准和失败分类。
+- 历史生产失败样例应该进入回归评测集。
+
+### 工程启发
+
+- 每个生产 Agent 都应该有自己的小型高质量评测集。
+- 评测样例要覆盖典型任务、边界任务和历史失败任务。
+- LLM-as-judge 可以用，但要有校准和抽检。
+
+### 和本站章节的关系
+
+- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [用模型评估模型](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)
+- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+
+### 面试追问
+
+- Agent eval 和普通 LLM eval 有什么不同？
+- 为什么要看工具调用轨迹？
+- 如何设计一个能驱动迭代的评测集？
+

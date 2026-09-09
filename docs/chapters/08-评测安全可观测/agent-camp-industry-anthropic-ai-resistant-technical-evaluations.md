@@ -1,0 +1,56 @@
+# 设计抗 AI 的技术评测
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`industry/anthropic/ai-resistant-technical-evaluations.md`。
+
+
+- 原文标题：Designing AI-resistant technical evaluations
+- 原文链接：https://www.anthropic.com/engineering/AI-resistant-technical-evaluations
+- 发布时间：2026-01-21
+- 来源：Anthropic Engineering
+- 主题：技术面试、AI-resistant eval、评测泄漏
+
+> 本文是中文精读笔记，不是原文全文翻译。
+
+### 这篇文章解决什么问题
+
+当候选人可以使用 AI，传统笔试、算法题和 take-home 项目会发生变化：评测不再只衡量候选人能力，也衡量他们使用 AI 的能力、题目泄漏程度和监督方式。文章讨论如何重新设计技术评测。
+
+### 核心内容
+
+- AI 让可复制、标准答案明确的题目更容易失效。
+- 更好的评测应关注问题澄清、设计取舍、调试过程和解释能力。
+- 如果允许 AI，评测应明确允许范围，并观察候选人如何验证 AI 输出。
+- 如果不允许 AI，需要设计更强的环境控制和题目新鲜度机制。
+
+### 深度精读
+
+这篇文章表面上讲技术招聘，实际上也适用于企业内部的工程能力评估。AI 让传统评测的假设失效：过去一道算法题能测编码熟练度，现在它可能主要测候选人是否会把题交给模型；过去 take-home 项目能看工程能力，现在可能变成模型生成代码后的包装。
+
+抗 AI 的评测不是简单禁止 AI。真正的思路是重新定义要测什么。如果岗位需要日常使用 AI，那么会不会提出好问题、审查模型输出、发现隐藏 bug、解释设计取舍，反而是核心能力。如果岗位不允许使用 AI，则需要明确规则、控制环境、提高题目新鲜度，并避免公开题库被训练或传播。
+
+对 Agent 工程师来说，这篇文章尤其有用，因为“与 AI 协作”本身就是岗位能力。一个候选人完全依赖模型但无法解释结果，和一个能借助模型快速探索但最终自己验证边界的人，表现会非常不同。
+
+### 学习时重点看什么
+
+- AI 时代评测应该从“答案正确”转向“过程可信”。
+- 允许 AI 和禁止 AI 都需要明确规则，否则评测信号会失真。
+- 审查 AI 输出、设计验证和解释取舍，是新的工程能力。
+
+### 工程启发
+
+- 企业内部能力评测也会受 AI 影响，不能继续依赖旧题库。
+- 对 Agent 工程师来说，能否审查和约束 AI 输出本身就是能力。
+- 抗 AI 评测不是反 AI，而是测出人类在 AI 协作中的真实贡献。
+
+### 和本站章节的关系
+
+- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [面试知识体系首页](https://github.com/yibo365/agent-camp)
+
+### 面试追问
+
+- AI 时代的技术面试应该测什么？
+- take-home 项目如何避免变成纯 AI 代写？
+- 如何评价候选人使用 AI 的能力？
+

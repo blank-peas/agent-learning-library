@@ -1,0 +1,57 @@
+# Claude Developer Platform 的高级工具使用
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`industry/anthropic/advanced-tool-use.md`。
+
+
+- 原文标题：Introducing advanced tool use on the Claude Developer Platform
+- 原文链接：https://www.anthropic.com/engineering/advanced-tool-use
+- 发布时间：2025-11-24
+- 来源：Anthropic Engineering
+- 主题：工具调用、Claude Platform、开发者能力
+
+> 本文是中文精读笔记，不是原文全文翻译。
+
+### 这篇文章解决什么问题
+
+工具调用从“模型返回一个函数名和参数”演进到更复杂的工作流：模型可能需要多个工具、长结果、代码执行、外部状态和更细的控制。文章介绍 Claude 平台在高级工具使用上的能力演进。
+
+### 核心内容
+
+- 高级工具使用强调模型和工具之间的结构化协作。
+- 工具定义要帮助模型理解何时调用、如何调用、失败时怎么处理。
+- 开发者平台需要提供更好的调试、观测和控制能力。
+- 工具调用能力越强，权限和安全边界越重要。
+
+### 深度精读
+
+这篇文章可以从“工具调用成熟度”来读。最早的 function calling 更像让模型填一个函数参数；高级工具使用则更接近一个持续交互系统：模型要选择工具、处理长结果、根据错误重试、组合多个工具，并在必要时把中间状态保留下来。
+
+工具定义的目标不是复刻后端 API 文档，而是帮助模型做决策。比如同一个搜索 API，给人看的文档会强调 endpoint、鉴权和分页；给模型看的工具说明要强调适用场景、参数语义、结果含义、失败时如何调整查询。模型越清楚工具边界，就越不容易乱调工具。
+
+平台能力同样重要。开发者需要看到工具调用轨迹、参数、返回值、失败原因和延迟，才能判断问题是模型没选对工具、schema 写得差、工具返回太噪，还是下游服务不稳定。高级工具使用不是单个 API 特性，而是一整套调试和治理能力。
+
+### 学习时重点看什么
+
+- 工具说明要服务模型决策，而不是照搬接口文档。
+- 多工具流程需要错误恢复、状态管理和观测。
+- 工具越强，权限和审计越要前置设计。
+
+### 工程启发
+
+- 工具 schema 不是 API 文档的复制品，而是给模型看的操作界面。
+- 高级工具工作流要考虑错误恢复和多步状态。
+- 工具调用平台要支持可观测性，否则很难定位失败原因。
+
+### 和本站章节的关系
+
+- [函数调用规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)
+- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)
+- [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)
+- [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)
+
+### 面试追问
+
+- 工具 schema 应该为模型优化哪些信息？
+- 多工具调用时如何避免上下文污染？
+- 工具平台应该暴露哪些调试信息？
+

@@ -1,0 +1,57 @@
+# AI Agent 的有效上下文工程
+
+> **资料来源**：[Agent Camp](https://github.com/yibo365/agent-camp) · 原文件：`industry/anthropic/effective-context-engineering-for-ai-agents.md`。
+
+
+- 原文标题：Effective context engineering for AI agents
+- 原文链接：https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+- 发布时间：2025-09-29
+- 来源：Anthropic Engineering
+- 主题：上下文工程、prompt、工具、示例、长周期任务
+
+> 本文是中文精读笔记，不是原文全文翻译。
+
+### 这篇文章解决什么问题
+
+Agent 失败常常不是因为模型能力不足，而是上下文组织混乱：指令太长、工具太多、历史太脏、示例不相关、检索内容噪声过大。文章系统讨论如何把 context 当作有限资源管理。
+
+### 核心内容
+
+- 上下文不是越多越好，关键是高信噪比。
+- system prompt、工具定义、示例、历史、检索结果都会争夺同一个上下文预算。
+- 工具说明要清晰但不冗长，避免模型在工具选择上迷路。
+- 长周期 Agent 要主动压缩、分层和清理上下文。
+
+### 深度精读
+
+这篇文章是理解 2025 年以后 Agent 工程的核心材料。Prompt engineering 更关注“怎么写一段指令”，context engineering 关注的是“模型在决策时看到的整个信息环境”。这个环境包括 system prompt、用户目标、工具定义、历史记录、检索证据、示例、当前状态和失败反馈。
+
+上下文窗口变长以后，很多人会误以为问题解决了。但长上下文只是提供空间，不保证模型能正确利用。噪声越多，模型越容易被无关信息干扰；工具越多，模型越难选择；历史越长，旧决策越容易污染当前任务。真正的上下文工程，是持续决定什么该进来、什么该保留、什么该压缩、什么该删除。
+
+文章里的一个重要启发是分层。稳定规则放在 system prompt，任务状态放在短状态块，外部证据放在隔离区域，长历史用摘要管理，工具说明按需要加载。这样模型每次行动时看到的是结构化工作台，而不是一锅粥。
+
+### 学习时重点看什么
+
+- context engineering 管的是全局信息环境，不是某一句 prompt。
+- 长上下文会放大噪声问题，不能替代信息筛选。
+- 工具、历史、检索和示例都要为当前任务服务。
+
+### 工程启发
+
+- 上下文工程是 Agent 产品的核心工程能力，不是 prompt 小技巧。
+- 要把不同类型内容分区：指令、状态、任务、工具、证据和历史。
+- 定期清理无用历史，比盲目依赖长上下文更可靠。
+
+### 和本站章节的关系
+
+- [上下文工程](https://github.com/yibo365/agent-camp)
+- [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)
+- [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)
+- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)
+
+### 面试追问
+
+- context engineering 和 prompt engineering 有什么区别？
+- 为什么工具列表过长会降低 Agent 表现？
+- 长周期 Agent 如何避免上下文污染？
+
