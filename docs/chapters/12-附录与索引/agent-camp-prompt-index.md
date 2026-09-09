@@ -7,15 +7,15 @@ Prompt 是与大模型对话的语言。本章覆盖从基础原则到高级模�
 
 ### 本章内容
 
-- [基础原则](./chapters/01-模型与提示/agent-camp-prompt-basics) — 清晰性、结构化、角色设定、约束注入
-- [少样本学习（Few-shot）](./chapters/01-模型与提示/agent-camp-prompt-few-shot) — 示例驱动学习与示例选择策略
-- [思维链 CoT / ToT / GoT](./chapters/01-模型与提示/agent-camp-prompt-cot) — 推理链、推理树、推理图
-- [自一致性与自我反思](./chapters/01-模型与提示/agent-camp-prompt-self-consistency) — 多路径采样与自我修正
-- [ReAct 模式](./chapters/02-agent原理/agent-camp-prompt-react) — 推理与行动交替的核心范式
-- [系统提示词设计](./chapters/01-模型与提示/agent-camp-prompt-system-prompt) — 角色定义、行为约束、示例注入
-- [提示词模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates) — Jinja、LangChain PromptTemplate、版本管理
-- [提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) — 注入攻击、越狱与防御策略
-- [提示词压缩](./chapters/01-模型与提示/agent-camp-prompt-compression) — LLMLingua、Token 节流技巧
+- [基础原则](/chapters/01-模型与提示/agent-camp-prompt-basics) — 清晰性、结构化、角色设定、约束注入
+- [少样本学习（Few-shot）](/chapters/01-模型与提示/agent-camp-prompt-few-shot) — 示例驱动学习与示例选择策略
+- [思维链 CoT / ToT / GoT](/chapters/01-模型与提示/agent-camp-prompt-cot) — 推理链、推理树、推理图
+- [自一致性与自我反思](/chapters/01-模型与提示/agent-camp-prompt-self-consistency) — 多路径采样与自我修正
+- [ReAct 模式](/chapters/02-agent原理/agent-camp-prompt-react) — 推理与行动交替的核心范式
+- [系统提示词设计](/chapters/01-模型与提示/agent-camp-prompt-system-prompt) — 角色定义、行为约束、示例注入
+- [提示词模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates) — Jinja、LangChain PromptTemplate、版本管理
+- [提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) — 注入攻击、越狱与防御策略
+- [提示词压缩](/chapters/01-模型与提示/agent-camp-prompt-compression) — LLMLingua、Token 节流技巧
 
 ### 学习路径
 

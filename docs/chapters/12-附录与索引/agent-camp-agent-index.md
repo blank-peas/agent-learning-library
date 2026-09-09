@@ -7,15 +7,15 @@ Agent 是一套围绕目标、环境、工具、状态和反馈组织起来的�
 
 ### 本章内容
 
-- [Agent 定义与认知架构](./chapters/07-ts产品工程/agent-camp-agent-definition) — Agent / Workflow / Chatbot 的边界
-- [ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern) — 推理与行动交替的原始论文与实现
-- [先规划后执行 Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute) — Planner / Executor 分工与 ReWOO 变体
-- [自我反思 Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion) — 失败反馈如何写回下一轮尝试
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop) — 从用户输入到任务完成的状态机
-- [规划算法](./chapters/02-agent原理/agent-camp-agent-planning) — ToT、MCTS、任务图在 Agent 中的用法
-- [记忆架构](./chapters/06-上下文与记忆/agent-camp-agent-memory-arch) — MemGPT、Mem0、LangMem 的工程取舍
-- [Agent Skills](./chapters/07-ts产品工程/agent-camp-agent-skills) — 把稳定经验做成可加载能力包
-- [自我纠错机制](./chapters/07-ts产品工程/agent-camp-agent-self-correction) — 检测、回滚、重试和拒绝
+- [Agent 定义与认知架构](/chapters/07-ts产品工程/agent-camp-agent-definition) — Agent / Workflow / Chatbot 的边界
+- [ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern) — 推理与行动交替的原始论文与实现
+- [先规划后执行 Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute) — Planner / Executor 分工与 ReWOO 变体
+- [自我反思 Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion) — 失败反馈如何写回下一轮尝试
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop) — 从用户输入到任务完成的状态机
+- [规划算法](/chapters/02-agent原理/agent-camp-agent-planning) — ToT、MCTS、任务图在 Agent 中的用法
+- [记忆架构](/chapters/06-上下文与记忆/agent-camp-agent-memory-arch) — MemGPT、Mem0、LangMem 的工程取舍
+- [Agent Skills](/chapters/07-ts产品工程/agent-camp-agent-skills) — 把稳定经验做成可加载能力包
+- [自我纠错机制](/chapters/07-ts产品工程/agent-camp-agent-self-correction) — 检测、回滚、重试和拒绝
 
 ### 学习路径
 

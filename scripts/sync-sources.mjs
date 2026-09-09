@@ -179,7 +179,9 @@ function resolveTarget(document, target) {
     return `/original-assets/${document.source.folder}/${relative(document.sourceDir, absolute).split(sep).join('/')}${suffix}`
   }
   const targetDocument = absolute && documentBySourcePath.get(absolute)
-  if (targetDocument) return `${targetDocument.wikiPath}${suffix}`
+  // Docsify 在嵌套路由中会把 ./chapters/... 解析成当前文章的子路径。
+  // 统一输出站点根路径，确保正文里的“相关文章”跨章节跳转不会落到 404。
+  if (targetDocument) return `/${targetDocument.wikiPath.slice(2)}${suffix}`
 
   // 上游原文中存在大量未导入的目录页、示例代码和历史链接。它们不能指到一个
   // 必然 404 的本地路径；统一回退到可追溯的上游仓库首页。

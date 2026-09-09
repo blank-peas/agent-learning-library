@@ -128,7 +128,7 @@ content = browser.get("https://random-blog.com/article")
 context += content   # 污染就此进入
 ```
 
-Token 中毒和 [Prompt Injection](./chapters/08-评测安全可观测/agent-camp-prompt-injection) **高度重叠但范围更广**：
+Token 中毒和 [Prompt Injection](/chapters/08-评测安全可观测/agent-camp-prompt-injection) **高度重叠但范围更广**：
 - prompt injection 强调"恶意攻击"——攻击者主动构造
 - token 中毒包含**所有低质量数据进入 context 的情况**——可能是攻击，也可能是无意的（一个写得很烂的文档、一个返回 500 错误页的工具）
 
@@ -149,7 +149,7 @@ Claude Code 团队在 2024 年的 incident review 里提到过：一个看似无
 模型: "好的，关于 mock vs stub 的对比表..."   ← 原始任务"重构支付模块"已被遗忘
 ```
 
-漂移本质上是 [Lost in the Middle](./chapters/06-上下文与记忆/agent-camp-context-window-bias) 的衍生——原始任务在 prompt 远端中段，recency bias 让模型只关注最近几轮。
+漂移本质上是 [Lost in the Middle](/chapters/06-上下文与记忆/agent-camp-context-window-bias) 的衍生——原始任务在 prompt 远端中段，recency bias 让模型只关注最近几轮。
 
 #### 类型 4：冗余累积 (Redundancy Buildup)
 
@@ -201,7 +201,7 @@ Step 5 Action: check_indexes()
 （实际问题可能是网络延迟，但模型从 Step 1 就锁定 DB 方向）
 ```
 
-这种污染在 [Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion) 之类的自我纠错机制里特别明显——如果"反思"环节本身基于污染的 context，反思结果也会被污染。
+这种污染在 [Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion) 之类的自我纠错机制里特别明显——如果"反思"环节本身基于污染的 context，反思结果也会被污染。
 
 ---
 
@@ -349,7 +349,7 @@ Phase 3: 执行 step 2 (只看计划文档 + 当前 step 描述)
 Phase N: 汇总结果
 ```
 
-这是 [Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute) 模式天然的优势——计划阶段和执行阶段隔离，执行某一步时不会被其他步的 context 污染。
+这是 [Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute) 模式天然的优势——计划阶段和执行阶段隔离，执行某一步时不会被其他步的 context 污染。
 
 Claude Code 的 sub-agent 机制本质上也是这个思路——主 Agent 把一个子任务委托给新的 context，子 Agent 完成后只把"结果摘要"返回主 Agent，不污染主 context。
 
@@ -416,7 +416,7 @@ def hard_reset_with_summary(history, llm):
     return [{"role": "system", "content": summary}]
 ```
 
-[上下文压缩](./chapters/07-ts产品工程/agent-camp-context-compression) 章节详细讲了压缩的具体技巧。这里的关键洞察是：**压缩既能消除污染，也可能加剧污染**——如果压缩 prompt 自己被污染了，那摘要里也会带着错。
+[上下文压缩](/chapters/07-ts产品工程/agent-camp-context-compression) 章节详细讲了压缩的具体技巧。这里的关键洞察是：**压缩既能消除污染，也可能加剧污染**——如果压缩 prompt 自己被污染了，那摘要里也会带着错。
 
 ---
 
@@ -577,7 +577,7 @@ OpenAI 2024 上线的"Memory"功能让 ChatGPT 跨会话记住用户信息。但
 
 攻击者甚至能用 prompt injection 让 ChatGPT 主动往 memory 里写"用户喜欢英文回复"或者"用户的姓名是 X"——污染从一次会话扩散到永久状态。
 
-这是 [memory](./chapters/06-上下文与记忆/agent-camp-context-memory) 章节讨论的核心问题：**长期记忆是污染最危险的载体**，因为它没有"会话结束"的自然清理点。
+这是 [memory](/chapters/06-上下文与记忆/agent-camp-context-memory) 章节讨论的核心问题：**长期记忆是污染最危险的载体**，因为它没有"会话结束"的自然清理点。
 
 #### 案例 4：Multi-agent 的污染传染
 
@@ -585,7 +585,7 @@ CrewAI / AutoGen 这类 multi-agent 框架里，一个常见反模式：所有 A
 
 实测表明，如果 Agent A 在某一步产生了错误结论，并写入共享 context，Agent B/C/D 都会基于这个错误继续推理——污染从一个 Agent 传染到整个团队。
 
-正确做法：**Agent 间通信用结构化消息（明确的输入/输出），不是共享 context**。这是 [多 Agent 协作](./chapters/05-编排与多agent/agent-camp-multi-agent-communication) 的核心设计原则之一。
+正确做法：**Agent 间通信用结构化消息（明确的输入/输出），不是共享 context**。这是 [多 Agent 协作](/chapters/05-编排与多agent/agent-camp-multi-agent-communication) 的核心设计原则之一。
 
 ---
 
@@ -600,8 +600,8 @@ CrewAI / AutoGen 这类 multi-agent 框架里，一个常见反模式：所有 A
 | **Hallucination** | 模型生成错误内容 | 输出端问题（污染是输入端） |
 
 辨析要点：
-- 看到 [Prompt Injection](./chapters/08-评测安全可观测/agent-camp-prompt-injection) 想到"恶意污染"，上下文污染包含**所有污染**（无意 + 恶意）
-- [Lost in the Middle](./chapters/06-上下文与记忆/agent-camp-context-window-bias) 是"信息在但看不见"，污染是"信息不该在但在"
+- 看到 [Prompt Injection](/chapters/08-评测安全可观测/agent-camp-prompt-injection) 想到"恶意污染"，上下文污染包含**所有污染**（无意 + 恶意）
+- [Lost in the Middle](/chapters/06-上下文与记忆/agent-camp-context-window-bias) 是"信息在但看不见"，污染是"信息不该在但在"
 - Hallucination 是污染的**症状**之一——污染了 context 后，模型基于错误前提生成内容看起来像 hallucination
 
 ---
@@ -647,7 +647,7 @@ def clean(context, llm):
 
 把 Agent 跨会话记忆当成"无限记忆"，从不清理。三个月后，memory 里 70% 是过期信息（用户早就不用那个项目了、那个 API 早就改了）。
 
-修法：[memory](./chapters/06-上下文与记忆/agent-camp-context-memory) 设计时就要有 TTL、置信度衰减、定期 reflective consolidation。
+修法：[memory](/chapters/06-上下文与记忆/agent-camp-context-memory) 设计时就要有 TTL、置信度衰减、定期 reflective consolidation。
 
 #### 陷阱 6：把"重启"当成"失败"
 
@@ -661,7 +661,7 @@ def clean(context, llm):
 
 #### Q: Agent 跑了 30 步后输出和最初任务无关，最可能的原因是什么？
 
-**30 秒版本**：最大可能是**上下文漂移 + 错误累积的 combo**。具体机制：(1) 早期某步出现小错（typo、错误假设、误判工具结果），错误进入 context 成为"事实"；(2) 后续推理基于这个错误展开，逐步偏离原始任务；(3) [Lost in the Middle](./chapters/06-上下文与记忆/agent-camp-context-window-bias) 让原始任务描述被埋在 context 远端中段，模型的注意力集中在最近几步——而最近几步全是错误衍生的内容；(4) 没有清理机制，污染单调累积。**根因不是模型变笨了，是 context 信噪比崩了**——模型在做"基于错信息的正确推理"。
+**30 秒版本**：最大可能是**上下文漂移 + 错误累积的 combo**。具体机制：(1) 早期某步出现小错（typo、错误假设、误判工具结果），错误进入 context 成为"事实"；(2) 后续推理基于这个错误展开，逐步偏离原始任务；(3) [Lost in the Middle](/chapters/06-上下文与记忆/agent-camp-context-window-bias) 让原始任务描述被埋在 context 远端中段，模型的注意力集中在最近几步——而最近几步全是错误衍生的内容；(4) 没有清理机制，污染单调累积。**根因不是模型变笨了，是 context 信噪比崩了**——模型在做"基于错信息的正确推理"。
 
 **追问**：那怎么定位是哪一步出的错？
 看 context 历史，找"思路第一次偏离原始目标"的节点——通常是某一步 Thought 里出现了和任务无关的概念。生产里建议每 5 步打 checkpoint：计算"当前 Thought 和原始 task 的 embedding 相似度"，曲线突降的点就是污染起源。Anthropic 在 Computer Use 的故障分析文档里就用了类似的"trajectory analysis"方法。
@@ -685,7 +685,7 @@ def clean(context, llm):
 
 #### Q: Reflexion / 自我纠错机制能清理上下文污染吗？
 
-**30 秒版本**：**能纠错但不能根治污染，有时甚至加剧**。[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion) 的核心是失败后让模型反思并写出"教训"，下次尝试时把教训作为额外 context。这能缓解"重复犯同一个错"，但对污染的处理有限：(1) **反思本身可能基于污染 context**——如果失败的根因是 context 里某个错误信息，模型反思时还是看不到根因；(2) **反思笔记会进一步累积**——每次反思都加几句话到 context，多轮后笔记本身成了污染源；(3) **反思不能识别"信息过期"**——它只能识别"推理错了"，不能识别"事实变了"。所以 Reflexion 适合应对"决策错误"型问题，不适合应对"context 信息熵增"型问题。
+**30 秒版本**：**能纠错但不能根治污染，有时甚至加剧**。[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion) 的核心是失败后让模型反思并写出"教训"，下次尝试时把教训作为额外 context。这能缓解"重复犯同一个错"，但对污染的处理有限：(1) **反思本身可能基于污染 context**——如果失败的根因是 context 里某个错误信息，模型反思时还是看不到根因；(2) **反思笔记会进一步累积**——每次反思都加几句话到 context，多轮后笔记本身成了污染源；(3) **反思不能识别"信息过期"**——它只能识别"推理错了"，不能识别"事实变了"。所以 Reflexion 适合应对"决策错误"型问题，不适合应对"context 信息熵增"型问题。
 
 **追问**：那 Reflexion 应该怎么和 context 清理配合？
 推荐组合：(1) Reflexion 负责"记住失败教训"，但教训写入**独立的 lessons store** 而不是直接进 context；(2) 每 N 步触发一次 sanitize（去重 + 过期标注），保持主 context 干净；(3) lessons 在新尝试开始时被选择性注入——只注入和当前任务相关的几条，而不是全量。这样 Reflexion 的"学习能力"和 sanitize 的"清理能力"互补，不会互相干扰。这种架构在 SWE-Bench 的 SOTA 方案里能看到——比如 SWE-agent 就把"任务级记忆"和"会话级 context"分开管理。
@@ -712,5 +712,5 @@ def clean(context, llm):
 - **GitHub：SWE-agent** ([github.com/princeton-nlp/SWE-agent](https://github.com/princeton-nlp/SWE-agent))
   SWE-Bench 顶级方案。读它的 trajectory 管理代码——`agent/agents.py` 里能看到污染检测 + context 截断的实现。
 
-- **配套阅读**：[Prompt Injection 攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)——污染的恶意子集；[上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)——清理的常用手段；[会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)——对话级污染的处理；[Agent 记忆架构](./chapters/06-上下文与记忆/agent-camp-agent-memory-arch)——长期记忆里的污染问题；[Self-correction](./chapters/07-ts产品工程/agent-camp-agent-self-correction)——纠错与清理的协作。
+- **配套阅读**：[Prompt Injection 攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)——污染的恶意子集；[上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)——清理的常用手段；[会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)——对话级污染的处理；[Agent 记忆架构](/chapters/06-上下文与记忆/agent-camp-agent-memory-arch)——长期记忆里的污染问题；[Self-correction](/chapters/07-ts产品工程/agent-camp-agent-self-correction)——纠错与清理的协作。
 

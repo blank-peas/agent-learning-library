@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **工具 schema 文本本身的写法**——name、description、parameters、return 怎么设计。**调用协议**（OpenAI / Anthropic 的 JSON Schema 格式、tool_use / tool_result 流转）见 [function calling 规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)；**端到端实战**（定义到部署）见 [自定义工具实现](./chapters/10-项目实战/agent-camp-tools-custom-tools)；**MCP 协议层**见 [MCP 协议](./chapters/04-工具与mcp/agent-camp-tools-mcp)；**错误返回的具体格式**见 [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)。本文是协议无关的"内容设计"原则。
+> **本文边界**：聚焦 **工具 schema 文本本身的写法**——name、description、parameters、return 怎么设计。**调用协议**（OpenAI / Anthropic 的 JSON Schema 格式、tool_use / tool_result 流转）见 [function calling 规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling)；**端到端实战**（定义到部署）见 [自定义工具实现](/chapters/10-项目实战/agent-camp-tools-custom-tools)；**MCP 协议层**见 [MCP 协议](/chapters/04-工具与mcp/agent-camp-tools-mcp)；**错误返回的具体格式**见 [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)。本文是协议无关的"内容设计"原则。
 
 ### 面试官想考什么
 
@@ -450,7 +450,7 @@ JSON Schema 的 `required` 数组定义哪些字段必填。**最容易踩的坑
 }
 ```
 
-详细的错误设计模式见 [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)——本文只说**错误本身也是 schema 的一部分**，要在 description 里告诉模型"可能返回 error，error.code 有以下几种：..."，否则模型遇到错误返回时不知道该怎么处理。
+详细的错误设计模式见 [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)——本文只说**错误本身也是 schema 的一部分**，要在 description 里告诉模型"可能返回 error，error.code 有以下几种：..."，否则模型遇到错误返回时不知道该怎么处理。
 
 #### 长结果的截断
 
@@ -734,7 +734,7 @@ TOOLS_GOOD = [{
 2. **按厂商分离 schema 版本**——同一个工具维护两份 schema，在适配层根据 provider 选用
 3. **用 schema 生成库**（pydantic、zod）+ 适配器——一份源、多种输出
 
-详见 [function calling 规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling) 对协议层差异的展开。
+详见 [function calling 规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling) 对协议层差异的展开。
 
 ---
 
@@ -818,7 +818,7 @@ Anthropic 在 [tool use guide](https://docs.anthropic.com/en/docs/agents-and-too
 - **正在进行的对话保持旧 schema** 到对话结束（用 session-level 的 schema 版本绑定）
 - **breaking change 走灰度**：新 schema 只对新对话生效，老对话用老版本，监控旧版本流量自然下降到 0 再下线
 
-更广泛的 prompt cache 与版本影响见 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) 的 cache 章节。
+更广泛的 prompt cache 与版本影响见 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) 的 cache 章节。
 
 ---
 
@@ -900,7 +900,7 @@ print(json.dumps(client.tools, indent=2, ensure_ascii=False))
 区分**接口（schema）和实现**。后端逻辑修复不动 schema 的话，热更新无影响——schema 没变，模型行为不变，只是后端处理变正确了。**铁律**：紧急修复永远改实现，schema 改动慢慢走流程。如果实现修复必须配 schema 改动（比如要加一个新参数才能修），那就当 broken change 走灰度。
 
 **追问**：MCP 这种动态发现工具的协议下，schema 改了会怎样？
-MCP 客户端通常会在 session 开始时 list_tools 一次拿到当前 schema，session 内沿用。服务端中途改 schema 不会影响进行中的 session——下次连接才拿新版。这其实是更干净的隔离。但**注意**：MCP 服务端要避免在 session 内频繁改 schema（除非协议显式支持 schema change notification）——否则同一 session 内不同请求看到的工具集不一致，会让上层 Agent 出诡异 bug。详见 [MCP 协议](./chapters/04-工具与mcp/agent-camp-tools-mcp)。
+MCP 客户端通常会在 session 开始时 list_tools 一次拿到当前 schema，session 内沿用。服务端中途改 schema 不会影响进行中的 session——下次连接才拿新版。这其实是更干净的隔离。但**注意**：MCP 服务端要避免在 session 内频繁改 schema（除非协议显式支持 schema change notification）——否则同一 session 内不同请求看到的工具集不一致，会让上层 Agent 出诡异 bug。详见 [MCP 协议](/chapters/04-工具与mcp/agent-camp-tools-mcp)。
 
 #### Q: 给你 20 个工具的 schema，让模型选——怎么排序、怎么裁剪？
 
@@ -938,10 +938,10 @@ embedding + 检索通常 50-100ms。**对比收益**：如果不检索，30 个�
   MCP 协议层对 tool schema 的要求。本文是协议无关的设计原则，MCP 是其中一种具体协议——理解协议怎么定义"工具"对设计自己的工具有帮助。
 
 - **配套阅读**：
-  - [function calling 规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling) — schema 在调用协议里怎么被使用、tool_call / tool_result 流转
-  - [自定义工具实现](./chapters/10-项目实战/agent-camp-tools-custom-tools) — 从 schema 设计到代码实现到部署的端到端实战
-  - [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling) — 错误返回的具体结构和模型理解策略
-  - [MCP 协议](./chapters/04-工具与mcp/agent-camp-tools-mcp) — schema 在跨进程协议下的额外约束（如 JSON-RPC、动态发现）
-  - [Prompt 基础](./chapters/01-模型与提示/agent-camp-prompt-basics) — "清晰描述"原则在 system prompt 和 tool description 是相通的
-  - [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) — schema 改动对 prompt cache 的影响、版本控制策略
+  - [function calling 规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling) — schema 在调用协议里怎么被使用、tool_call / tool_result 流转
+  - [自定义工具实现](/chapters/10-项目实战/agent-camp-tools-custom-tools) — 从 schema 设计到代码实现到部署的端到端实战
+  - [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling) — 错误返回的具体结构和模型理解策略
+  - [MCP 协议](/chapters/04-工具与mcp/agent-camp-tools-mcp) — schema 在跨进程协议下的额外约束（如 JSON-RPC、动态发现）
+  - [Prompt 基础](/chapters/01-模型与提示/agent-camp-prompt-basics) — "清晰描述"原则在 system prompt 和 tool description 是相通的
+  - [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) — schema 改动对 prompt cache 的影响、版本控制策略
 

@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 LlamaIndex 的核心抽象和 Workflows 引擎。RAG 的通用原理见 [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)；混合检索见 [混合检索](./chapters/03-rag/agent-camp-rag-hybrid-search)；与 LangChain 的全面对比见 [选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison)。
+> **本文边界**：聚焦 LlamaIndex 的核心抽象和 Workflows 引擎。RAG 的通用原理见 [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)；混合检索见 [混合检索](/chapters/03-rag/agent-camp-rag-hybrid-search)；与 LangChain 的全面对比见 [选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison)。
 
 ### 面试官想考什么
 

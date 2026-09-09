@@ -44,9 +44,9 @@ Coding Agent 评测经常把最终通过率当成模型能力，但运行环境�
 
 ### 和本站章节的关系
 
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
-- [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
 
 ### 面试追问
 

@@ -30,9 +30,9 @@
 
 ### 和本站章节的关系
 
-- [语音 Agent](./chapters/07-ts产品工程/agent-camp-vertical-voice-agent)
-- [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)
-- [Agent 工程化 - 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [语音 Agent](/chapters/07-ts产品工程/agent-camp-vertical-voice-agent)
+- [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)
+- [Agent 工程化 - 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
 
 ### 面试追问
 

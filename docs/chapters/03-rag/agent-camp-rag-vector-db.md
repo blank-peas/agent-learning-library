@@ -196,7 +196,7 @@ Qdrant 文档强调 payload index 会帮助过滤和 query planning，而且 pay
 问答日志 / eval 集                         ->  质量回归依据
 ```
 
-如果你只把文档塞进向量库，没有保留 chunk 版本、source id、embedding model、chunker config，后面迁移模型时会很痛苦。前一篇 [嵌入模型选型](./chapters/03-rag/agent-camp-rag-embedding-models) 讲过：换 embedding 模型等于换向量空间。向量库必须按 schema 版本管理。
+如果你只把文档塞进向量库，没有保留 chunk 版本、source id、embedding model、chunker config，后面迁移模型时会很痛苦。前一篇 [嵌入模型选型](/chapters/03-rag/agent-camp-rag-embedding-models) 讲过：换 embedding 模型等于换向量空间。向量库必须按 schema 版本管理。
 
 #### 5. pgvector 的价值是"少一个系统"
 

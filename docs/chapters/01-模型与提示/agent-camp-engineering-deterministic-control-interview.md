@@ -22,7 +22,7 @@
 
 > 成熟 Agent 工程的关键不是让模型“更听话”，而是把模型输出放进确定性系统里裁决。
 
-> **本文边界**：工具 schema 文本怎么写见 [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)，工具错误返回和重试见 [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)，整体运行时控制见 [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness) 和 [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)，线上质量和 badcase 回流见 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。本文专讲真实面试里最常被追问的 **输出不稳定如何工程化收敛**。
+> **本文边界**：工具 schema 文本怎么写见 [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)，工具错误返回和重试见 [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)，整体运行时控制见 [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness) 和 [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)，线上质量和 badcase 回流见 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。本文专讲真实面试里最常被追问的 **输出不稳定如何工程化收敛**。
 
 > **脱敏说明**：本文只抽象面试问题和解决套路，所有例子都改成通用业务 Agent 场景，不包含任何可识别组织、真实项目、私有数据或业务规模。
 
@@ -417,7 +417,7 @@ verifier 不应该只有一个“通过/不通过”。它至少拆五类：
 
 真正有价值的是 `expected_checks`。它让这个 case 可以长期回归，不依赖某个人记得“上次漏的是 C 段”。
 
-和 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 里的思路一致：badcase 修完后要变成可执行回归，而不是写进复盘文档就结束。
+和 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 里的思路一致：badcase 修完后要变成可执行回归，而不是写进复盘文档就结束。
 
 ### 常见陷阱
 
@@ -473,11 +473,11 @@ verifier 不应该只有一个“通过/不通过”。它至少拆五类：
 
 | 文章 | 重点 | 本文不重复什么 |
 |---|---|---|
-| [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness) | 长任务执行环境、checkpoint、状态外置 | 不展开整体 harness 架构 |
-| [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) | 状态机、工具、权限、恢复 | 不重复六平面模型 |
-| [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) | 工具 name/description/参数怎么写 | 不讲工具文案细节 |
-| [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling) | tool_result、错误码、重试 | 不讲 provider/API 异常 |
-| [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | trace、judge、badcase 回归 | 不展开质量平台 |
+| [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness) | 长任务执行环境、checkpoint、状态外置 | 不展开整体 harness 架构 |
+| [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) | 状态机、工具、权限、恢复 | 不重复六平面模型 |
+| [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design) | 工具 name/description/参数怎么写 | 不讲工具文案细节 |
+| [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling) | tool_result、错误码、重试 | 不讲 provider/API 异常 |
+| [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | trace、judge、badcase 回归 | 不展开质量平台 |
 
 本文更像一套面试答题骨架：当面试官问“模型不稳定怎么办”，你要能把概率生成拆成确定性工程控制点。
 
@@ -566,6 +566,6 @@ few-shot 改的是模型分布，不是合法性。模型仍然可以在某些�
 - [Guardrails AI Quickstart](https://guardrailsai.com/guardrails/docs/getting_started/quickstart)  
   为什么读：理解 output validation 和 guardrails 在应用内怎么落地，适合扩展本文的 verifier 思路。
 
-- 配套阅读：[Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness)、[Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)、[Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。  
+- 配套阅读：[Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness)、[Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)、[Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。  
   为什么读：本文讲“单个坏输出怎么收敛”，这些文章讲它在完整 Agent 工程体系里的位置。
 

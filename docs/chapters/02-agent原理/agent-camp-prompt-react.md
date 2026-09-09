@@ -20,7 +20,7 @@
 
 
 
-> **注**：本文聚焦 ReAct 作为 **prompt 模式** 的设计。关于 ReAct 作为 **Agent 架构**的完整工程实现，见 [Agent - ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern)。
+> **注**：本文聚焦 ReAct 作为 **prompt 模式** 的设计。关于 ReAct 作为 **Agent 架构**的完整工程实现，见 [Agent - ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern)。
 
 ### 面试官想考什么
 
@@ -347,7 +347,7 @@ ReAct 是 Agent 时代最重要的 prompt 模式之一，**所有后续 Agent �
 **30 秒版本**：四类典型失效及对策：(1) **Thought-Action 不一致**——Thought 说要搜 A 实际调了 B，加 prompt 约束或换 function calling；(2) **死循环**——同样 Action 反复调，加重复检测 + 强制 max_steps；(3) **参数解析失败**——切到 function calling 彻底解决；(4) **Observation 太长爆 context**——加截断或先总结再回传。debug 的关键工具是把每一步的 Thought / Action / Observation 完整打印出来，肉眼看就能定位卡在哪一环。
 
 **追问**：那有没有自动化的 debug 工具？
-有，主流是 **observability** 工具：LangSmith（LangChain 系列）、LlamaIndex Observability、Phoenix（Arize），都能可视化整个 ReAct trace——每步的 Thought / Action / Observation / latency / cost 都有。生产 Agent 必备这种工具，详见 [Agent 工程化 - 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)。
+有，主流是 **observability** 工具：LangSmith（LangChain 系列）、LlamaIndex Observability、Phoenix（Arize），都能可视化整个 ReAct trace——每步的 Thought / Action / Observation / latency / cost 都有。生产 Agent 必备这种工具，详见 [Agent 工程化 - 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)。
 
 #### Q: 2024 后 function calling 这么强，ReAct 还有意义吗？
 
@@ -382,5 +382,5 @@ ReAct 是 Agent 时代最重要的 prompt 模式之一，**所有后续 Agent �
 - **代码：LangChain Agent Source** ([github.com/langchain-ai/langchain](https://github.com/langchain-ai/langchain))
   看 `langchain/agents/react/agent.py`——LangChain 早期的 ReAct 实现，最直白的工业级 ReAct 代码参考。
 
-- **配套深度文档**：[Agent - ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern) — 本文聚焦 prompt 模式，那一篇展开 Agent 架构的完整工程实现。
+- **配套深度文档**：[Agent - ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern) — 本文聚焦 prompt 模式，那一篇展开 Agent 架构的完整工程实现。
 

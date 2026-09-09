@@ -240,7 +240,7 @@ class AgentGuardrails:
 |------|------|---------|---------|------|
 | **Llama Guard 3** | Meta | 8B | 多类别安全分类（暴力、色情、仇恨、自伤等） | 可自定义安全策略，生态成熟 |
 | **ShieldGemma** | Google | 2B / 9B | 输入输出双向安全过滤 | 与 Gemma 生态集成，提供多档位 |
-| **Granite Guardian** | IBM | 3B | 安全分类 + RAG 幻觉检测 | 兼顾内容安全与事实性（呼应 [#082 — 幻觉检测](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-082-hallucination-detection)） |
+| **Granite Guardian** | IBM | 3B | 安全分类 + RAG 幻觉检测 | 兼顾内容安全与事实性（呼应 [#082 — 幻觉检测](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-082-hallucination-detection)） |
 | **Granite HAP** | IBM | 38M | Hate / Abuse / Profanity 检测 | 极轻量，毫秒级实时检测 |
 
 选型建议：需要多类别精细分类且可微调，选 Llama Guard 3；要兼顾幻觉检测，选 Granite Guardian；只做基础脏话/仇恨过滤且对延迟敏感，选 Granite HAP 这类轻量分类器。
@@ -282,7 +282,7 @@ class CascadingContentFilter:
     #           ~1% 才需 Layer 4（~500ms）
 ```
 
-这与前文"规则型做第一道门、模型型做第二道门"是同一思路的深化——把模型型再细分成**轻量分类器 → 安全大模型 → 通用 LLM** 三档，按需逐级升级。其中第 4 层的 LLM 上下文审核本质是 [LLM-as-Judge](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-071-llm-as-judge) 在安全场景的应用，能理解"医疗讨论中的'注射'不是暴力"这类上下文，但成本最高，只在高风险场景启用。
+这与前文"规则型做第一道门、模型型做第二道门"是同一思路的深化——把模型型再细分成**轻量分类器 → 安全大模型 → 通用 LLM** 三档，按需逐级升级。其中第 4 层的 LLM 上下文审核本质是 [LLM-as-Judge](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-071-llm-as-judge) 在安全场景的应用，能理解"医疗讨论中的'注射'不是暴力"这类上下文，但成本最高，只在高风险场景启用。
 
 ##### 反直觉实证：38M 小分类器的召回率优于通用 LLM
 

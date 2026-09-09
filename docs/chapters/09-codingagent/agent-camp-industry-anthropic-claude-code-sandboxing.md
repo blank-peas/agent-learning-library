@@ -44,10 +44,10 @@ Claude Code 要变得更自主，就不能每个命令都要求用户确认；�
 
 ### 和本站章节的关系
 
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
-- [Agent 工程化 - 安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)
-- [Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code)
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [Agent 工程化 - 安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)
+- [Claude Code 架构剖析](/chapters/09-codingagent/agent-camp-source-claude-code)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
 
 ### 面试追问
 

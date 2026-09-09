@@ -22,7 +22,7 @@
 
 > 工具调用死循环的表象是“模型重复调用”，根因往往是工具集过大、决策边界混乱、状态不可见、终止条件缺失。
 
-> **本文边界**：这篇是面试追问型文章，聚焦“为什么 Agent 在工具调用阶段反复绕圈，以及怎么从架构上切断”。函数调用协议见 [Function Calling](./chapters/04-工具与mcp/agent-camp-tools-function-calling)，schema 写法见 [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)，工具失败和重试见 [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)，长周期外层循环见 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，单 Agent 运行环境见 [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness)。
+> **本文边界**：这篇是面试追问型文章，聚焦“为什么 Agent 在工具调用阶段反复绕圈，以及怎么从架构上切断”。函数调用协议见 [Function Calling](/chapters/04-工具与mcp/agent-camp-tools-function-calling)，schema 写法见 [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)，工具失败和重试见 [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)，长周期外层循环见 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，单 Agent 运行环境见 [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness)。
 
 > **脱敏说明**：本文来自多场 Agent 工程面试里反复出现的工具调用追问。文中不出现公司名、产品名、用户规模、业务指标、内部系统名；案例统一改写成通用“业务工具型 Agent”。
 
@@ -393,7 +393,7 @@ if __name__ == "__main__":
 我会把死循环从一个主观现象变成指标：P95 工具轮数、重复 tool_call rate、guard stop_reason、completion pass rate。修完进入回归集，看老 case 有没有 pass->fail。
 ```
 
-这和 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 是同一条线：trace 负责复盘，eval 负责证明，badcase 负责沉淀。
+这和 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 是同一条线：trace 负责复盘，eval 负责证明，badcase 负责沉淀。
 
 ### 容易踩的坑
 
@@ -419,7 +419,7 @@ if __name__ == "__main__":
 
 **根因**：tool_result 没有错误类型、可重试标记、业务状态。模型只能从一句话里猜。
 
-**修法**：统一返回 `{ok, error_type, retryable, user_action, data}`。错误处理细节见 [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)。
+**修法**：统一返回 `{ok, error_type, retryable, user_action, data}`。错误处理细节见 [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)。
 
 #### 坑四：把 200 + 业务失败当成功
 
@@ -544,6 +544,6 @@ schema 能降低误用，error handling 能处理失败，loop guard 才负责�
 - [LangGraph: Graph API recursion limit](https://docs.langchain.com/oss/python/langgraph/graph-api#recursion-limit)  
   为什么读：官方说明 recursion limit 是 super-step 上限，生产里要用条件边和 END 来表达正常终止。
 
-- 配套阅读：[工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)、[错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)、[Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness)、[Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)  
+- 配套阅读：[工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)、[错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)、[Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness)、[Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)  
   为什么读：schema、error、harness、eval 是同一条链上的四个点，单看任何一个都解释不了完整的工具调用稳定性。
 

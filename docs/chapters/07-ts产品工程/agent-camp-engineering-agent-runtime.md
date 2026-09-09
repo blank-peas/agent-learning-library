@@ -22,7 +22,7 @@
 
 > Agent Runtime 的核心原则：LLM proposes, runtime disposes.
 
-> **本文来源**：这篇文章基于一份面经复盘资料《从业务 Agent 到 Agent Runtime：生产级 Agent 系统的工程化拆解》重新组织，保留它的业务 Agent 视角，但改写成更适合站内学习和面试复盘的系统设计文章。单个任务的运行环境见 [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)，驱动 Agent 反复运行的外层系统见 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，工具权限细节见 [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)，整体安全框架见 [Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)。
+> **本文来源**：这篇文章基于一份面经复盘资料《从业务 Agent 到 Agent Runtime：生产级 Agent 系统的工程化拆解》重新组织，保留它的业务 Agent 视角，但改写成更适合站内学习和面试复盘的系统设计文章。单个任务的运行环境见 [Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)，驱动 Agent 反复运行的外层系统见 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，工具权限细节见 [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)，整体安全框架见 [Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)。
 
 ### 面试官想考什么
 
@@ -187,12 +187,12 @@ Agentic Runtime 不是让模型自由跑，而是把一批业务 Agent 共同需
 
 | 平面 | 解决的问题 | 典型机制 | 站内延伸 |
 |---|---|---|---|
-| 控制面 | Agent 怎么跑、何时停、怎么恢复 | 状态机、max steps、timeout、fallback | [Agent Loop](./chapters/07-ts产品工程/agent-camp-agent-agent-loop) / [Harness](./chapters/09-codingagent/agent-camp-engineering-harness) |
-| 工具面 | Agent 能做哪些动作 | Tool registry、schema、权限、幂等、审计 | [Function Calling](./chapters/04-工具与mcp/agent-camp-tools-function-calling) / [Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) |
-| 记忆面 | Agent 记住什么、如何写入 | working memory、semantic memory、候选写入、TTL | [记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) |
+| 控制面 | Agent 怎么跑、何时停、怎么恢复 | 状态机、max steps、timeout、fallback | [Agent Loop](/chapters/07-ts产品工程/agent-camp-agent-agent-loop) / [Harness](/chapters/09-codingagent/agent-camp-engineering-harness) |
+| 工具面 | Agent 能做哪些动作 | Tool registry、schema、权限、幂等、审计 | [Function Calling](/chapters/04-工具与mcp/agent-camp-tools-function-calling) / [Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design) |
+| 记忆面 | Agent 记住什么、如何写入 | working memory、semantic memory、候选写入、TTL | [记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) |
 | 上下文面 | 每轮模型看到什么 | dynamic tools、RAG、summary、prefix cache | [上下文工程](https://github.com/yibo365/agent-camp) |
-| 安全面 | Agent 不能越过什么边界 | input / process / output guardrail、HITL | [整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security) |
-| 观测评估面 | 怎么知道错在哪里 | trace、span、eval dataset、case regression | [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) / [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) |
+| 安全面 | Agent 不能越过什么边界 | input / process / output guardrail、HITL | [整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security) |
+| 观测评估面 | 怎么知道错在哪里 | trace、span、eval dataset、case regression | [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) / [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) |
 
 面试里不要把这六个平面背成清单。更好的讲法是：**每个平面都对应一个生产事故类型**。没有控制面，会死循环和状态漂移；没有工具面，会越权执行；没有记忆面，会记错用户；没有上下文面，会把噪音塞给模型；没有安全面，会把注入和越权放进流程；没有观测评估面，出事后连根因都找不到。
 
@@ -695,12 +695,12 @@ print(json.dumps(runtime.run(state, "帮我看一下最近 7 天指标有没有�
 - Anthropic Engineering：[Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)  
   读它是为了区分 harness 和 runtime：harness 让单个任务可恢复，runtime 把这套能力平台化复用。
 
-- OpenAI Engineering：[Harness engineering](./chapters/09-codingagent/agent-camp-industry-openai-harness-engineering)  
+- OpenAI Engineering：[Harness engineering](/chapters/09-codingagent/agent-camp-industry-openai-harness-engineering)  
   读它是为了看 Codex 类产品如何把工具、状态、执行环境和 UI 事件组织成完整 harness，而不是一次性 API 调用。
 
 - OWASP：[Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)  
   读它是为了建立 Agent Runtime 的安全威胁模型，尤其是 Excessive Agency、Sensitive Information Disclosure、Unbounded Consumption。
 
-- 本站：[Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)、[Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)、[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)、[Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)  
+- 本站：[Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)、[Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)、[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)、[Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)  
   这几篇和本文组成一条工程化主线：单次任务怎么跑稳、外层循环怎么驱动、线上怎么观测、安全边界怎么守住。
 

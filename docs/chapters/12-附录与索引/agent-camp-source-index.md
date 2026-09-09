@@ -7,15 +7,15 @@
 
 ### 本章内容
 
-- [Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code) — Anthropic 官方 CLI Agent 的设计哲学
-- [Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli) — OpenAI 的开源 Coding Agent
-- [Cline / Roo Code](./chapters/07-ts产品工程/agent-camp-source-cline) — VSCode 生态最流行的开源 Coding Agent
-- [OpenHands (OpenDevin)](./chapters/09-codingagent/agent-camp-source-openhands) — 开源 Devin 复刻
-- [Aider 代码编辑策略](./chapters/07-ts产品工程/agent-camp-source-aider) — Diff / Edit Block / Whole File 三种编辑策略
-- [SWE-agent](./chapters/07-ts产品工程/agent-camp-source-swe-agent) — 学术界 SOTA Coding Agent
-- [GPT Engineer / GPT Pilot](./chapters/07-ts产品工程/agent-camp-source-gpt-engineer) — 从零生成项目的 Agent
-- [Pi (earendil-works/pi)](./chapters/07-ts产品工程/agent-camp-source-pi-mono) — 自我可扩展的 Agent harness，分层清晰
-- [Browser Use / Operator](./chapters/07-ts产品工程/agent-camp-source-browser-use) — 浏览器自动化 Agent
+- [Claude Code 架构剖析](/chapters/09-codingagent/agent-camp-source-claude-code) — Anthropic 官方 CLI Agent 的设计哲学
+- [Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli) — OpenAI 的开源 Coding Agent
+- [Cline / Roo Code](/chapters/07-ts产品工程/agent-camp-source-cline) — VSCode 生态最流行的开源 Coding Agent
+- [OpenHands (OpenDevin)](/chapters/09-codingagent/agent-camp-source-openhands) — 开源 Devin 复刻
+- [Aider 代码编辑策略](/chapters/07-ts产品工程/agent-camp-source-aider) — Diff / Edit Block / Whole File 三种编辑策略
+- [SWE-agent](/chapters/07-ts产品工程/agent-camp-source-swe-agent) — 学术界 SOTA Coding Agent
+- [GPT Engineer / GPT Pilot](/chapters/07-ts产品工程/agent-camp-source-gpt-engineer) — 从零生成项目的 Agent
+- [Pi (earendil-works/pi)](/chapters/07-ts产品工程/agent-camp-source-pi-mono) — 自我可扩展的 Agent harness，分层清晰
+- [Browser Use / Operator](/chapters/07-ts产品工程/agent-camp-source-browser-use) — 浏览器自动化 Agent
 
 ### 学习路径
 

@@ -209,7 +209,7 @@ NIAH 单点检索几乎全部 100%，已无区分度。看更严肃的评测：
 **Prompt Cache 让长上下文可用**：
 - Anthropic / Gemini / DeepSeek 都支持 prompt cache
 - 重复使用的长 context（如"分析同一份文档的不同问题"）只在第一次付全价，后续命中 cache 后输入 token 价格减 80-90%
-- 这是长上下文应用的核心成本优化（详见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)）
+- 这是长上下文应用的核心成本优化（详见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)）
 
 ---
 
@@ -261,7 +261,7 @@ NIAH 单点检索几乎全部 100%，已无区分度。看更严肃的评测：
 - 成本：第 1 次全价，后续每次输入只付 10-20%
 - 延迟：第 1 次正常 prefill，后续 prefill 速度大幅提升
 
-详见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)。
+详见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)。
 
 #### 注意点 2：分阶段处理
 
@@ -286,7 +286,7 @@ Step 3: 只把相关章节 + 问题塞回 LLM
 - 用 **KV Cache 量化**（INT8/FP8）压缩到一半
 - 用 **PagedAttention**（vLLM）减少碎片化
 
-详见 [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
+详见 [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
 
 #### 注意点 5：长上下文 + 推理模型的特殊性
 
@@ -321,7 +321,7 @@ NIAH 是"地板基准"——必要不充分。生产用 RULER 或 InfiniteBench 
 
 #### 陷阱 5：忽略长上下文的安全风险
 
-长上下文 + 间接注入 = 灾难。攻击者在 100K 上下文的某个角落塞 prompt injection，模型可能照执行。详见 [Prompt 注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)。
+长上下文 + 间接注入 = 灾难。攻击者在 100K 上下文的某个角落塞 prompt injection，模型可能照执行。详见 [Prompt 注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)。
 
 #### 陷阱 6：相信"长上下文模型不需要 system prompt 工程"
 
@@ -343,7 +343,7 @@ NIAH 是"地板基准"——必要不充分。生产用 RULER 或 InfiniteBench 
 **30 秒版本**：三层成本：(1) **input token 单价**——直接成本，按 token 数线性增加；(2) **prefill 延迟**——首字延迟随长度线性增加，100K 通常 5-15 秒、1M 30 秒-2 分钟；(3) **KV Cache 显存**——自部署场景下，1M token KV Cache 可能 500GB，需要多卡 + 量化。**关键工程优化是 prompt cache**——Anthropic / Gemini / DeepSeek 都支持，重复使用的长 context 第一次付全价、后续 80-90% 折扣。**长上下文应用没有 cache 几乎不可能 scale**——这是必须掌握的优化。
 
 **追问**：那 cache 命中率怎么算？
-看场景。"对同一份长文档问多个问题" 命中率几乎 100%（第一次后全命中）；"每个用户都用同样的 system prompt" 命中率高（user message 不命中但 system 部分命中）；"每个请求都不同" 命中率 0。设计上要**把"固定不变的长内容"放 prompt 开头**——cache 是 prefix matching，开头一致才能命中。详见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)。
+看场景。"对同一份长文档问多个问题" 命中率几乎 100%（第一次后全命中）；"每个用户都用同样的 system prompt" 命中率高（user message 不命中但 system 部分命中）；"每个请求都不同" 命中率 0。设计上要**把"固定不变的长内容"放 prompt 开头**——cache 是 prefix matching，开头一致才能命中。详见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)。
 
 #### Q: 长上下文 vs RAG，怎么选？
 
@@ -378,5 +378,5 @@ NIAH 是"地板基准"——必要不充分。生产用 RULER 或 InfiniteBench 
 - **博客：Anthropic — Contextual Retrieval** ([anthropic.com/news/contextual-retrieval](https://www.anthropic.com/news/contextual-retrieval))
   长上下文 + RAG 的混合架构。读它会理解为什么两者不是替代关系。
 
-- **配套阅读**：[上下文窗口与位置偏置](./chapters/06-上下文与记忆/agent-camp-context-window-bias) — 长上下文背后的 Lost in the Middle 问题。[上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching) — 长上下文应用的关键成本优化。
+- **配套阅读**：[上下文窗口与位置偏置](/chapters/06-上下文与记忆/agent-camp-context-window-bias) — 长上下文背后的 Lost in the Middle 问题。[上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching) — 长上下文应用的关键成本优化。
 

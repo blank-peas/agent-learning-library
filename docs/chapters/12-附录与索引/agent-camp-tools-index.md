@@ -7,15 +7,15 @@ Tool Use 是 LLM 走向 Agent 的关键一步。本章覆盖从协议规范到�
 
 ### 本章内容
 
-- [函数调用规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling) — OpenAI / Anthropic / 通用 JSON Schema
-- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) — 命名、描述、参数、返回值的最佳实践
-- [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel) — 并行触发与编排
-- [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling) — 失败模式、重试策略、降级
-- [工具调用死循环面试深挖](./chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview) — 工具选择空间、状态机、终止条件与确定性下沉
-- [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) — 模型上下文协议架构、Server 开发、生态
-- [MCP Server 生产化](./chapters/08-评测安全可观测/agent-camp-tools-mcp-production) — 认证、权限、版本、部署、观测和安全
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) — 隔离、最小权限、危险操作确认
-- [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools) — 从设计到落地的端到端实战
+- [函数调用规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling) — OpenAI / Anthropic / 通用 JSON Schema
+- [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design) — 命名、描述、参数、返回值的最佳实践
+- [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel) — 并行触发与编排
+- [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling) — 失败模式、重试策略、降级
+- [工具调用死循环面试深挖](/chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview) — 工具选择空间、状态机、终止条件与确定性下沉
+- [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) — 模型上下文协议架构、Server 开发、生态
+- [MCP Server 生产化](/chapters/08-评测安全可观测/agent-camp-tools-mcp-production) — 认证、权限、版本、部署、观测和安全
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox) — 隔离、最小权限、危险操作确认
+- [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools) — 从设计到落地的端到端实战
 
 ### 学习路径
 

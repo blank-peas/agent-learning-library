@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦数据分析 Agent 的核心范式（Code Interpreter）和企业落地。沙箱执行的安全见 [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)；编程 Agent 的通用模式见 [编程 Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)；RAG 检索见 [RAG 章节](https://github.com/yibo365/agent-camp)。
+> **本文边界**：聚焦数据分析 Agent 的核心范式（Code Interpreter）和企业落地。沙箱执行的安全见 [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)；编程 Agent 的通用模式见 [编程 Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)；RAG 检索见 [RAG 章节](https://github.com/yibo365/agent-camp)。
 
 ### 面试官想考什么
 
@@ -537,7 +537,7 @@ Example:
 - **Spider 2.0** [spider2-sql.github.io](https://spider2-sql.github.io/) — 企业级 Text-to-SQL benchmark，2024 年新出，分数比 Spider 暴跌反映真实难度
 - **Snowflake Cortex Analyst** [snowflake.com/cortex-analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst) — 企业级 Text-to-SQL 实战案例，看 Snowflake 怎么解决 schema 复杂问题
 - **dbt Semantic Layer** [docs.getdbt.com/docs/use-dbt-semantic-layer](https://docs.getdbt.com/docs/use-dbt-semantic-layer) — Semantic Layer 是 Text-to-SQL 可生产化的关键基础设施
-- **本站 [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)** — Code Interpreter 沙箱的安全设计前置
-- **本站 [编程 Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)** — Code Interpreter 本质是个特化的编程 Agent，通用模式可参考
-- **本站 [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)** — Semantic Layer 类似 RAG 的检索层，是数据分析 Agent 的知识源
+- **本站 [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)** — Code Interpreter 沙箱的安全设计前置
+- **本站 [编程 Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)** — Code Interpreter 本质是个特化的编程 Agent，通用模式可参考
+- **本站 [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)** — Semantic Layer 类似 RAG 的检索层，是数据分析 Agent 的知识源
 

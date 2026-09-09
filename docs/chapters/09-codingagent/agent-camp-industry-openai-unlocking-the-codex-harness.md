@@ -30,9 +30,9 @@ Codex 同时存在于 Web、CLI、IDE 扩展和 macOS app 等多个表面。如�
 
 ### 和本站章节的关系
 
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
-- [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)
-- [Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)
+- [Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli)
 - [流程编排 Workflow](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

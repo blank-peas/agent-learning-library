@@ -22,7 +22,7 @@
 
 > 流式输出的安全难点不是“能不能审核完整答案”，而是答案在变成完整答案之前，已经一点点进入了用户界面。
 
-> **本文边界**：[Agent 整体安全与纵深防御](./chapters/08-评测安全可观测/agent-camp-engineering-security) 讲 OWASP LLM Top 10、PII、红队和纵深防御；[工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) 讲工具执行隔离；[Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 讲 badcase、eval 和回归集；[Agent 高可用与容灾](./chapters/11-面试与求职/agent-camp-engineering-reliability-interview) 讲安全依赖不可用时的降级。本文只深挖一个面试高频点：**流式输出时，输出侧 guardrail 怎么做才站得住**。
+> **本文边界**：[Agent 整体安全与纵深防御](/chapters/08-评测安全可观测/agent-camp-engineering-security) 讲 OWASP LLM Top 10、PII、红队和纵深防御；[工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox) 讲工具执行隔离；[Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 讲 badcase、eval 和回归集；[Agent 高可用与容灾](/chapters/11-面试与求职/agent-camp-engineering-reliability-interview) 讲安全依赖不可用时的降级。本文只深挖一个面试高频点：**流式输出时，输出侧 guardrail 怎么做才站得住**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位里反复出现的输出安全追问。所有案例都抽象成通用高风险业务 Agent，不出现可识别组织、真实业务、真实数量、内部称呼或私有数据。
 
@@ -466,7 +466,7 @@ NVIDIA NeMo Guardrails 支持把 Llama Guard 接到 input/output rails 中做输
 | 高风险建议或写操作 | fail-closed / 转人工 / 暂停输出 | 错答或越权比不答更糟 |
 | 审计系统同时异常 | 降低能力或暂停高风险功能 | 没 trace 就无法复盘责任链 |
 
-这和 [Agent 高可用与容灾](./chapters/11-面试与求职/agent-camp-engineering-reliability-interview) 里的思路一致：安全依赖不可用时，不是所有链路都应该继续服务。一个高风险 Agent 在 guardrail 挂掉时继续自由流式输出，本质上是把安全设计退回 prompt。
+这和 [Agent 高可用与容灾](/chapters/11-面试与求职/agent-camp-engineering-reliability-interview) 里的思路一致：安全依赖不可用时，不是所有链路都应该继续服务。一个高风险 Agent 在 guardrail 挂掉时继续自由流式输出，本质上是把安全设计退回 prompt。
 
 ### 怎么评估流式输出安全
 
@@ -490,7 +490,7 @@ NVIDIA NeMo Guardrails 支持把 Llama Guard 接到 input/output rails 中做输
 - 流式样本：把同一答案切成 token、短句、长句，检查 chunk 级审查是否能在足够早的位置拦住。
 - 回归样本：线上每一次 `chunk_blocked`、`retract`、人工复核 disagreement 都要进回归池。
 
-这里可以和 [用模型评估模型](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 串起来：开放语义审查可以用 LLM judge，但 judge 要用人工标注校准，不能把它当成绝对真理。
+这里可以和 [用模型评估模型](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 串起来：开放语义审查可以用 LLM judge，但 judge 要用人工标注校准，不能把它当成绝对真理。
 
 ### 常见陷阱
 
@@ -546,11 +546,11 @@ NVIDIA NeMo Guardrails 支持把 Llama Guard 接到 input/output rails 中做输
 
 | 文章 | 解决的问题 | 本文不重复的边界 |
 |---|---|---|
-| [Agent 整体安全与纵深防御](./chapters/08-评测安全可观测/agent-camp-engineering-security) | 威胁模型、OWASP、PII、红队、安全架构 | 本文只讲流式输出链路 |
-| [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | trace、eval、badcase、回归集 | 本文只讲输出侧安全 gate 如何产生可评估事件 |
-| [Agent 高可用与容灾](./chapters/11-面试与求职/agent-camp-engineering-reliability-interview) | 依赖故障、RTO/RPO、降级模式 | 本文只讲 guardrail 失败时的安全降级 |
-| [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness) | 状态、工具、权限、验证和恢复 | 本文是 harness 里 response plane 的一个深挖 |
-| [提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) | 输入和检索内容如何操纵模型 | 本文关注模型已经生成后怎么出门 |
+| [Agent 整体安全与纵深防御](/chapters/08-评测安全可观测/agent-camp-engineering-security) | 威胁模型、OWASP、PII、红队、安全架构 | 本文只讲流式输出链路 |
+| [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | trace、eval、badcase、回归集 | 本文只讲输出侧安全 gate 如何产生可评估事件 |
+| [Agent 高可用与容灾](/chapters/11-面试与求职/agent-camp-engineering-reliability-interview) | 依赖故障、RTO/RPO、降级模式 | 本文只讲 guardrail 失败时的安全降级 |
+| [Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness) | 状态、工具、权限、验证和恢复 | 本文是 harness 里 response plane 的一个深挖 |
+| [提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) | 输入和检索内容如何操纵模型 | 本文关注模型已经生成后怎么出门 |
 
 ### 面试题深度解析
 
@@ -623,9 +623,9 @@ NVIDIA NeMo Guardrails 支持把 Llama Guard 接到 input/output rails 中做输
 
 配套阅读：
 
-- [Agent 整体安全与纵深防御](./chapters/08-评测安全可观测/agent-camp-engineering-security)：把本文放回完整安全架构里。
-- [Agent 线上质量治理面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：把 blocked / retract / disagreement 回流到 eval 与回归集。
-- [用模型评估模型 LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)：理解复杂语义审查为什么需要校准。
-- [Agent 高可用与容灾面试深挖](./chapters/11-面试与求职/agent-camp-engineering-reliability-interview)：设计 guardrail 故障时的降级策略。
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)：输出安全之外，工具执行也必须有独立边界。
+- [Agent 整体安全与纵深防御](/chapters/08-评测安全可观测/agent-camp-engineering-security)：把本文放回完整安全架构里。
+- [Agent 线上质量治理面试深挖](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：把 blocked / retract / disagreement 回流到 eval 与回归集。
+- [用模型评估模型 LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)：理解复杂语义审查为什么需要校准。
+- [Agent 高可用与容灾面试深挖](/chapters/11-面试与求职/agent-camp-engineering-reliability-interview)：设计 guardrail 故障时的降级策略。
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)：输出安全之外，工具执行也必须有独立边界。
 

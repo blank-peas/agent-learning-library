@@ -7,15 +7,15 @@
 
 ### 本章内容
 
-- [LangChain / LangGraph](./chapters/05-编排与多agent/agent-camp-frameworks-langchain) — 生态最大、组件最全的老牌框架
-- [LlamaIndex](./chapters/07-ts产品工程/agent-camp-frameworks-llamaindex) — RAG 起家，已扩展为完整 Agent 框架
-- [Claude Agent SDK](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) — Anthropic 官方 Agent SDK
-- [OpenAI Agents SDK / Swarm](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) — OpenAI 官方多 Agent 框架
-- [OpenClaw](./chapters/07-ts产品工程/agent-camp-frameworks-openclaw) — 本地优先、全平台个人 AI 助手网关
-- [Hermes Agent](./chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent) — Nous Research 出品，自我进化的自主 Agent
-- [Pi](./chapters/07-ts产品工程/agent-camp-frameworks-pi) — 极简内核、极致可扩展的终端编程 Agent
-- [框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison) — 业务场景 → 框架推荐矩阵
-- [Agent 框架选型面试深挖](./chapters/05-编排与多agent/agent-camp-frameworks-framework-selection-interview) — 自研薄封装 vs LangGraph / OpenAI Agents SDK 的工程取舍
+- [LangChain / LangGraph](/chapters/05-编排与多agent/agent-camp-frameworks-langchain) — 生态最大、组件最全的老牌框架
+- [LlamaIndex](/chapters/07-ts产品工程/agent-camp-frameworks-llamaindex) — RAG 起家，已扩展为完整 Agent 框架
+- [Claude Agent SDK](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) — Anthropic 官方 Agent SDK
+- [OpenAI Agents SDK / Swarm](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) — OpenAI 官方多 Agent 框架
+- [OpenClaw](/chapters/07-ts产品工程/agent-camp-frameworks-openclaw) — 本地优先、全平台个人 AI 助手网关
+- [Hermes Agent](/chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent) — Nous Research 出品，自我进化的自主 Agent
+- [Pi](/chapters/07-ts产品工程/agent-camp-frameworks-pi) — 极简内核、极致可扩展的终端编程 Agent
+- [框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison) — 业务场景 → 框架推荐矩阵
+- [Agent 框架选型面试深挖](/chapters/05-编排与多agent/agent-camp-frameworks-framework-selection-interview) — 自研薄封装 vs LangGraph / OpenAI Agents SDK 的工程取舍
 
 ### 学习路径
 

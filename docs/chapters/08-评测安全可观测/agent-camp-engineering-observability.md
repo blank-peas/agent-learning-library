@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦**在线运行时**的 observability——trace 怎么打、metrics 怎么定、告警怎么配、用户投诉怎么反查。**离线评估**（SWE-bench / GAIA / 回归测试集）见 [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)；**成本本身的优化策略**（缓存、模型切换、batch）见 [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)；observability 在本文里是"采集成本数据的手段"，怎么用这些数据降本是另一篇的事。
+> **本文边界**：聚焦**在线运行时**的 observability——trace 怎么打、metrics 怎么定、告警怎么配、用户投诉怎么反查。**离线评估**（SWE-bench / GAIA / 回归测试集）见 [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)；**成本本身的优化策略**（缓存、模型切换、batch）见 [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)；observability 在本文里是"采集成本数据的手段"，怎么用这些数据降本是另一篇的事。
 
 ### 面试官想考什么
 
@@ -161,7 +161,7 @@ LangSmith、Langfuse、Phoenix 都支持这套类型——名字略有差异（L
 
 - **tool 名称 + 输入参数 JSON**
 - **完整输出**（截断要明确标注 `...truncated`）
-- **是否成功**（status: ok / error）+ **错误信息**（见 [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)）
+- **是否成功**（status: ok / error）+ **错误信息**（见 [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)）
 - **duration**
 
 trace 级别：
@@ -386,11 +386,11 @@ trace 是给 debug 用的，但生产还要看**聚合指标**。常见的 Agent
 
 - **工具失败率**——按工具名分组。某个工具失败率突然涨说明上游服务出问题
 - **平均工具调用次数 per trace**
-- **死循环检测计数**——前面 [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling) 讲过的 `repeated_call_blocked` 触发次数
+- **死循环检测计数**——前面 [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling) 讲过的 `repeated_call_blocked` 触发次数
 
 #### 质量指标（需要离线评估配合）
 
-- **抽样 trace 跑 LLM-as-Judge 评分**——每天抽 1% trace 跑 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 打分
+- **抽样 trace 跑 LLM-as-Judge 评分**——每天抽 1% trace 跑 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 打分
 - **回归测试通过率**——固定测试集每次 prompt/model 变更后跑一遍
 
 **核心原则**：质量指标和性能指标要**分开看**。延迟好但答案错没意义，准确率高但每次 30 秒也不能上线。Agent 的健康需要两个维度都达标。
@@ -455,7 +455,7 @@ flowchart LR
 - 如果是 tool 返回错：tool span 的 output 里能看到原始返回。继续上钻——`tool span` 里通常有 backend 服务的 trace_id（如果你打了），用它去 Datadog / Skywalking 看后端日志。
 - 如果是 LLM 该调工具但没调：看那次 LLM call 的 prompt——tool schema 是不是描述模糊、system prompt 是不是没强调"必须用工具"、temperature 是不是太高。
 
-**Step 5：可重复复现 → bad case 入库**——把这个 trace 的输入加进回归测试集（[evaluation.md](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 里的 dataset）。修复后用这个 case 验证不再出错。这是把 observability 反哺评估的关键动作。
+**Step 5：可重复复现 → bad case 入库**——把这个 trace 的输入加进回归测试集（[evaluation.md](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 里的 dataset）。修复后用这个 case 验证不再出错。这是把 observability 反哺评估的关键动作。
 
 **真实案例**（Langfuse 自己的 blog 提过类似流程）：某团队的 RAG Agent 偶尔答非所问。从投诉 trace 看到，retrieval span 召回的 top-3 文档相关度都很低（score 0.4-0.5），但 LLM 仍然硬答了。根因是 retrieval 阈值没设——任何相关度都进 prompt。修复后召回 score < 0.6 直接告诉用户"没找到相关资料"，准确率从 78% 涨到 91%。**没有 retrieval span 的 score 字段记录，这个根因可能要查一周**。
 
@@ -566,11 +566,11 @@ LangSmith / Langfuse 都有内置功能支持这个闭环：
 | 概念 | 关注点 | 时机 |
 |---|---|---|
 | **Observability（本文）** | 运行时全过程记录 + 反查 | 在线，事中 + 事后 |
-| **[评估 Evaluation](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)** | 离线测试集 + 指标 | 离线，迭代时 |
-| **[成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)** | 减少 token / 缓存 / 模型切换 | 离线决策，在线生效 |
-| **[安全 Security](./chapters/08-评测安全可观测/agent-camp-engineering-security)** | 攻击防御 / 注入检测 | 全程 |
-| **[工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)** | 错误怎么传给模型 | 事中 |
-| **[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion)** | 失败后反思学习 | 事后 |
+| **[评估 Evaluation](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)** | 离线测试集 + 指标 | 离线，迭代时 |
+| **[成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)** | 减少 token / 缓存 / 模型切换 | 离线决策，在线生效 |
+| **[安全 Security](/chapters/08-评测安全可观测/agent-camp-engineering-security)** | 攻击防御 / 注入检测 | 全程 |
+| **[工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)** | 错误怎么传给模型 | 事中 |
+| **[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion)** | 失败后反思学习 | 事后 |
 
 关键辨析：
 
@@ -614,7 +614,7 @@ Datadog 在 2024 年推了 LLM Observability 功能，本质就是在自己的 A
 
 #### Q: 怎么把 observability 数据反哺到评估？
 
-**30 秒版本**：**抽样标注 → bad case 入 dataset → 回归测试**。具体闭环：(1) 每天从生产 trace 按比例抽样（比如 1%）；(2) 抽样数据跑 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 或人工标注，识别 bad case；(3) bad case 的 input 加进 [evaluation](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 的回归 dataset；(4) prompt / model 任何改动前用这个 dataset 跑一遍，看通过率有没有退步；(5) 上线后新 trace 继续抽样。LangSmith 和 Langfuse 都内置了 "trace → dataset" 的一键操作。**核心价值**：生产 trace 代表**真实用户分布**，远比合成 dataset 靠谱。Agent 的 long tail 失败几乎全在生产里——错别字、缩写、跨语种混用、奇葩意图，离线 dataset 补不齐的。
+**30 秒版本**：**抽样标注 → bad case 入 dataset → 回归测试**。具体闭环：(1) 每天从生产 trace 按比例抽样（比如 1%）；(2) 抽样数据跑 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 或人工标注，识别 bad case；(3) bad case 的 input 加进 [evaluation](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 的回归 dataset；(4) prompt / model 任何改动前用这个 dataset 跑一遍，看通过率有没有退步；(5) 上线后新 trace 继续抽样。LangSmith 和 Langfuse 都内置了 "trace → dataset" 的一键操作。**核心价值**：生产 trace 代表**真实用户分布**，远比合成 dataset 靠谱。Agent 的 long tail 失败几乎全在生产里——错别字、缩写、跨语种混用、奇葩意图，离线 dataset 补不齐的。
 
 **追问**：抽样 1% 够吗？怎么定？
 看绝对量。**日 trace 量 10K 以下**——错误 trace 100% 留 + 成功 trace 全留（成本可控）。**10K-1M**——错误 100% + 成功按业务关键度分层采样（核心场景 10%，长尾 1%）。**1M+**——错误 100% + 成功 0.1-1% + 头部高价值用户（VIP / 高 ARPU）专属留全。**重点：错误绝不采样**——错误 trace 的价值是绝对正向的，它最稀缺。
@@ -648,10 +648,10 @@ Datadog 在 2024 年推了 LLM Observability 功能，本质就是在自己的 A
   Anthropic 工程团队的 Agent 设计指南。observability 不是单独章节，但贯穿全文——任何 Agent 模式都讨论了"怎么观察它在做什么"。
 
 - **配套阅读**：
-  - [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — 离线评估和 observability 的闭环，生产 bad case 怎么变成 dataset
-  - [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) — observability 数据是降本决策的基础
-  - [安全 Security](./chapters/08-评测安全可观测/agent-camp-engineering-security) — observability 既是安全工具（攻击检测）也是安全风险（PII 留存）
-  - [工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling) — error 是 observability 数据的重要部分
-  - [Agent Loop](./chapters/07-ts产品工程/agent-camp-agent-agent-loop) — agent loop 的每一步都对应 trace 里的一个 span
-  - [Prompt 模板](./chapters/01-模型与提示/agent-camp-prompt-templates) — prompt 版本管理是 observability 的关键维度
+  - [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — 离线评估和 observability 的闭环，生产 bad case 怎么变成 dataset
+  - [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) — observability 数据是降本决策的基础
+  - [安全 Security](/chapters/08-评测安全可观测/agent-camp-engineering-security) — observability 既是安全工具（攻击检测）也是安全风险（PII 留存）
+  - [工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling) — error 是 observability 数据的重要部分
+  - [Agent Loop](/chapters/07-ts产品工程/agent-camp-agent-agent-loop) — agent loop 的每一步都对应 trace 里的一个 span
+  - [Prompt 模板](/chapters/01-模型与提示/agent-camp-prompt-templates) — prompt 版本管理是 observability 的关键维度
 

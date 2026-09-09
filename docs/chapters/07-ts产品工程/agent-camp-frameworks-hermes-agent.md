@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 Hermes Agent 的学习机制、记忆架构和部署弹性。通用的 Agent 记忆设计见 [Agent 记忆](./chapters/06-上下文与记忆/agent-camp-context-memory)；Skill 和 MCP 的关系见 [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)；同为本地 Agent 的 OpenClaw 见 [OpenClaw](./chapters/07-ts产品工程/agent-camp-frameworks-openclaw)。
+> **本文边界**：聚焦 Hermes Agent 的学习机制、记忆架构和部署弹性。通用的 Agent 记忆设计见 [Agent 记忆](/chapters/06-上下文与记忆/agent-camp-context-memory)；Skill 和 MCP 的关系见 [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)；同为本地 Agent 的 OpenClaw 见 [OpenClaw](/chapters/07-ts产品工程/agent-camp-frameworks-openclaw)。
 
 ### 面试官想考什么
 

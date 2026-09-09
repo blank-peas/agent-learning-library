@@ -6,7 +6,7 @@
 > 本库插图遵循的唯一标准:**图即代码(Mermaid)、一图一论点、面试可复现**。
 > 配图的目标不是"每篇都有图",而是"每个值得图的结构都有唯一一张好图"。
 >
-> 制定日期:2026-08-15 ｜ 背景:全库 104 篇中 82 篇含 ASCII 图,但 ASCII 画在代码块里,GitHub 永远不会渲染成图。本标准以 Mermaid 取代 ASCII:保留"图随文活、进 diff、可追溯"的优点,消灭"不渲染"的缺点。范例:[109 三层抽象](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)、[114 Deep Research 循环](./chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent)。
+> 制定日期:2026-08-15 ｜ 背景:全库 104 篇中 82 篇含 ASCII 图,但 ASCII 画在代码块里,GitHub 永远不会渲染成图。本标准以 Mermaid 取代 ASCII:保留"图随文活、进 diff、可追溯"的优点,消灭"不渲染"的缺点。范例:[109 三层抽象](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)、[114 Deep Research 循环](/chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent)。
 
 ### 一、配图三关
 
@@ -142,6 +142,6 @@ stateDiagram-v2
 
 | 文章 | 图 | 说明 |
 |------|-----|------|
-| [114 Deep Research](./chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent) | 核心循环 flowchart | 全库第一张 Mermaid,模板 A 雏形 |
-| [109 Agent Harness](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness) | 三层抽象堆叠 | 模板 B 范例,由 ASCII 字符墙改造而来 |
+| [114 Deep Research](/chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent) | 核心循环 flowchart | 全库第一张 Mermaid,模板 A 雏形 |
+| [109 Agent Harness](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness) | 三层抽象堆叠 | 模板 B 范例,由 ASCII 字符墙改造而来 |
 

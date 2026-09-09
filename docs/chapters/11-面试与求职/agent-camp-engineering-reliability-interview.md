@@ -22,7 +22,7 @@
 
 > 容灾不是“所有东西都做双活”，而是先定义哪些用户流程不能断、最多能断多久、最多能丢多少状态，再用成本匹配恢复目标。
 
-> **本文边界**：单次 LLM 调用的 token bucket、熔断、重试和 provider fallback 见 [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)；trace、告警和投诉定位见 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)；线上质量和 badcase 闭环见 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)；运行时状态机、权限和恢复点见 [Agent Runtime 面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-runtime-interview)。本文专讲面试里最容易卡住的 **系统级高可用与容灾决策**。
+> **本文边界**：单次 LLM 调用的 token bucket、熔断、重试和 provider fallback 见 [限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)；trace、告警和投诉定位见 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)；线上质量和 badcase 闭环见 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)；运行时状态机、权限和恢复点见 [Agent Runtime 面试深挖](/chapters/11-面试与求职/agent-camp-engineering-agent-runtime-interview)。本文专讲面试里最容易卡住的 **系统级高可用与容灾决策**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位里反复出现的容灾追问。所有案例都抽象成通用业务 Agent，不出现可识别组织、真实项目、规模数字、收入、系统称呼或私有数据。
 
@@ -205,7 +205,7 @@ Agent Runtime 不应该自己“随机尝试一切办法”。可靠性策略要
 
 ### 可运行代码：用 policy 决定降级模式
 
-下面这段代码不是 provider fallback 的完整实现，provider 熔断已经在 [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 里讲过。这里演示的是系统级可靠性决策：同样的故障，低风险查询可以用缓存，高风险写操作必须暂停。
+下面这段代码不是 provider fallback 的完整实现，provider 熔断已经在 [限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 里讲过。这里演示的是系统级可靠性决策：同样的故障，低风险查询可以用缓存，高风险写操作必须暂停。
 
 ```python
 from __future__ import annotations
@@ -381,7 +381,7 @@ state_changing_action manual_review | primary llm unavailable; no safe model pat
 
 ### 备用模型不是换 endpoint
 
-[限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 已经讲过 provider fallback 的四个坑：prompt 不兼容、结构化输出差异、成本差异、上下文窗口差异。容灾面试里还要再补三层：
+[限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 已经讲过 provider fallback 的四个坑：prompt 不兼容、结构化输出差异、成本差异、上下文窗口差异。容灾面试里还要再补三层：
 
 | 层 | 要同步验证什么 | 不做会怎样 |
 |---|---|---|
@@ -425,7 +425,7 @@ LLM 已经告诉用户“处理成功”，但状态库写失败 -> 用户看到
 | Checkpoint | 每个 Agent step 持久化状态 | 故障后从确定步骤恢复 |
 | 审计日志 | 记录谁在何时触发了什么动作 | 事故复盘能还原事实 |
 
-这和 [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) 的状态机是同一件事的可靠性版本：模型可以决定“想做什么”，但写操作的提交、幂等、补偿和回滚必须由确定性系统管理。
+这和 [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) 的状态机是同一件事的可靠性版本：模型可以决定“想做什么”，但写操作的提交、幂等、补偿和回滚必须由确定性系统管理。
 
 ### 容灾演练：没演练过的备用链路等于没有
 
@@ -526,11 +526,11 @@ Agent 的演练可以按月做小规模，不一定上来就全站 chaos：
 
 | 文章 | 重点 | 本文不重复什么 |
 |---|---|---|
-| [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) | 单次调用的限额、重试、熔断、fallback chain | 不展开 token bucket 代码 |
-| [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) | trace/span、日志、告警、调试工作流 | 不讲平台选型 |
-| [线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | 质量评估、badcase、回归集 | 不讲 judge 细节 |
-| [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) | 状态机、工具、权限、运行时平面 | 不重复 runtime 架构总览 |
-| [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | 缓存、路由、batch、降本 | 不把容灾简化成省钱 |
+| [限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) | 单次调用的限额、重试、熔断、fallback chain | 不展开 token bucket 代码 |
+| [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) | trace/span、日志、告警、调试工作流 | 不讲平台选型 |
+| [线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | 质量评估、badcase、回归集 | 不讲 judge 细节 |
+| [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) | 状态机、工具、权限、运行时平面 | 不重复 runtime 架构总览 |
+| [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | 缓存、路由、batch、降本 | 不把容灾简化成省钱 |
 
 这篇文章更像面试中的“硬工程追问”：你如何在有限成本下承诺可靠性，并且能证明承诺有效。
 
@@ -622,6 +622,6 @@ Agent 的演练可以按月做小规模，不一定上来就全站 chaos：
 - [Claude Status](https://status.claude.com/)  
   为什么读：Anthropic 按组件展示 uptime 和历史事件，适合理解“整体 operational”不等于你的具体模型和功能永远可用。
 
-- 配套阅读：[限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)、[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)、[Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。  
+- 配套阅读：[限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)、[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)、[Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。  
   为什么读：本文讲系统级可靠性，真正上线时必须把熔断、trace、runtime 状态和质量闭环接在一起。
 

@@ -222,7 +222,7 @@ MCP 的两种传输方式对应两种部署形态，生产环境的选择直接�
    典型平台：Cloudflare、Smithery 等已提供 MCP Server 托管
 ```
 
-生产环境推荐远程 Streamable HTTP 部署（参见上文「通信协议」中 2025-03-26 规范引入的传输方式）：Server 集中托管，通过 Gateway 统一管理。这避免了在每个用户机器上部署 Server 带来的版本碎片化和安全风险，也是 [Tool Gateway 模式](./chapters/07-ts产品工程/agent-interview-100-03-tool-use-024-tool-gateway-permissions)（`#024`）在 MCP 语境下的自然延伸。
+生产环境推荐远程 Streamable HTTP 部署（参见上文「通信协议」中 2025-03-26 规范引入的传输方式）：Server 集中托管，通过 Gateway 统一管理。这避免了在每个用户机器上部署 Server 带来的版本碎片化和安全风险，也是 [Tool Gateway 模式](/chapters/07-ts产品工程/agent-interview-100-03-tool-use-024-tool-gateway-permissions)（`#024`）在 MCP 语境下的自然延伸。
 
 ##### 认证授权：OAuth 2.1
 
@@ -274,7 +274,7 @@ MCP 的版本管理分三层，理解这三层是保障生产稳定性的前提�
 
 ##### 安全沙箱与治理
 
-MCP 的开放性——任何人都能发布 Server——使得 Server 治理成为生产化的核心议题。这与 [工具使用安全](./chapters/08-评测安全可观测/agent-interview-100-03-tool-use-030-tool-use-security)（`#030`）和 [权限最小化与沙箱执行](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi)（`#081`）讨论的原则一脉相承，MCP 场景下的具体风险与对策如下：
+MCP 的开放性——任何人都能发布 Server——使得 Server 治理成为生产化的核心议题。这与 [工具使用安全](/chapters/08-评测安全可观测/agent-interview-100-03-tool-use-030-tool-use-security)（`#030`）和 [权限最小化与沙箱执行](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi)（`#081`）讨论的原则一脉相承，MCP 场景下的具体风险与对策如下：
 
 **MCP Server 生产安全风险全景：**
 
@@ -285,7 +285,7 @@ MCP 的开放性——任何人都能发布 Server——使得 Server 治理成�
 | 凭证泄露（API Key 随 Server 分发流转） | OAuth 替代静态 API Key；Token 有 scope + 过期 + 可撤销 |
 | 数据外泄（Server 偷偷外传敏感数据） | 出口网络白名单 + 审计日志；每个 Server 只允许访问必要域名 |
 
-生产级部署应将每个 MCP Server 运行在独立沙箱中（容器或微 VM），限制其文件系统访问范围、网络出口和资源配额。沙箱选型可参考 [Agent Sandbox / Runtime 选型](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti)（`#112`）中的隔离强度对比。
+生产级部署应将每个 MCP Server 运行在独立沙箱中（容器或微 VM），限制其文件系统访问范围、网络出口和资源配额。沙箱选型可参考 [Agent Sandbox / Runtime 选型](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti)（`#112`）中的隔离强度对比。
 
 对于企业级治理，官方 Roadmap 中的 **MCP Registry** 将提供 Server 的可信发布与签名验证，类似 npm / PyPI 的包管理机制。在 Registry 成熟前，企业应维护内部 Server 白名单并定期审计其权限范围。
 

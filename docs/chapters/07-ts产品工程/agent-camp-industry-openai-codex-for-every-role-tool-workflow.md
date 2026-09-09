@@ -59,11 +59,11 @@
 
 ### 和本站章节的关系
 
-- [Agent Skills](./chapters/07-ts产品工程/agent-camp-agent-skills)：role plugin 可以看作 skills + tools + workflows 的产品化包。
-- [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools)：工具要服务于岗位任务，而不是为了暴露 API 而暴露。
-- [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：跨岗位插件需要统一权限、上下文、审计和评估。
+- [Agent Skills](/chapters/07-ts产品工程/agent-camp-agent-skills)：role plugin 可以看作 skills + tools + workflows 的产品化包。
+- [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools)：工具要服务于岗位任务，而不是为了暴露 API 而暴露。
+- [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：跨岗位插件需要统一权限、上下文、审计和评估。
 - [垂直领域 Agent](https://github.com/yibo365/agent-camp)：这篇是 vertical agent 产品化的直接参考。
-- [MCP Server 生产化](./chapters/08-评测安全可观测/agent-camp-tools-mcp-production)：插件里的工具生态需要认证、版本、权限和观测。
+- [MCP Server 生产化](/chapters/08-评测安全可观测/agent-camp-tools-mcp-production)：插件里的工具生态需要认证、版本、权限和观测。
 
 ### 面试追问
 

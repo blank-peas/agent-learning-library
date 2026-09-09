@@ -45,8 +45,8 @@
 ### 和本站章节的关系
 
 - [上下文工程](https://github.com/yibo365/agent-camp)
-- [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
 - [流程编排 Workflow](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

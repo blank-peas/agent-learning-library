@@ -15,25 +15,25 @@
 
 | 序号 | 模块 | 文件 | 核心内容 | 面试题数 |
 |------|------|------|----------|----------|
-| 01 | [基础概念](./chapters/11-面试与求职/ai-agent-interview-guide-docs-01-面试八股文-01-基础概念) | `01-基础概念.md` | Agent 定义、组成、分类、与 Chain/ChatBot 区别 | 27 题 |
-| 02 | [核心框架](./chapters/11-面试与求职/ai-agent-interview-guide-docs-01-面试八股文-02-核心框架) | `02-核心框架.md` | ReAct、Plan-and-Execute、Reflexion、LangGraph | 27 题 |
+| 01 | [基础概念](/chapters/11-面试与求职/ai-agent-interview-guide-docs-01-面试八股文-01-基础概念) | `01-基础概念.md` | Agent 定义、组成、分类、与 Chain/ChatBot 区别 | 27 题 |
+| 02 | [核心框架](/chapters/11-面试与求职/ai-agent-interview-guide-docs-01-面试八股文-02-核心框架) | `02-核心框架.md` | ReAct、Plan-and-Execute、Reflexion、LangGraph | 27 题 |
 
 #### 第二部分：核心技术
 
 | 序号 | 模块 | 文件 | 核心内容 | 面试题数 |
 |------|------|------|----------|----------|
-| 03 | [RAG 技术](./chapters/03-rag/ai-agent-interview-guide-docs-01-面试八股文-03-RAG技术) | `03-RAG技术.md` | 分块策略、向量数据库、混合检索、重排序、GraphRAG | 24+ 题 |
-| 04 | [工具调用](./chapters/04-工具与mcp/ai-agent-interview-guide-docs-01-面试八股文-04-工具调用) | `04-工具调用.md` | Function Calling、MCP 协议、工具路由、安全 | 17+ 题 |
-| 05 | [记忆系统](./chapters/06-上下文与记忆/ai-agent-interview-guide-docs-01-面试八股文-05-记忆系统) | `05-记忆系统.md` | 短期/长期记忆、摘要压缩、记忆检索策略 | 20 题 |
-| 06 | [多智能体](./chapters/05-编排与多agent/ai-agent-interview-guide-docs-01-面试八股文-06-多智能体) | `06-多智能体.md` | 协作模式、通信机制、冲突解决、主流框架 | 20 题 |
+| 03 | [RAG 技术](/chapters/03-rag/ai-agent-interview-guide-docs-01-面试八股文-03-RAG技术) | `03-RAG技术.md` | 分块策略、向量数据库、混合检索、重排序、GraphRAG | 24+ 题 |
+| 04 | [工具调用](/chapters/04-工具与mcp/ai-agent-interview-guide-docs-01-面试八股文-04-工具调用) | `04-工具调用.md` | Function Calling、MCP 协议、工具路由、安全 | 17+ 题 |
+| 05 | [记忆系统](/chapters/06-上下文与记忆/ai-agent-interview-guide-docs-01-面试八股文-05-记忆系统) | `05-记忆系统.md` | 短期/长期记忆、摘要压缩、记忆检索策略 | 20 题 |
+| 06 | [多智能体](/chapters/05-编排与多agent/ai-agent-interview-guide-docs-01-面试八股文-06-多智能体) | `06-多智能体.md` | 协作模式、通信机制、冲突解决、主流框架 | 20 题 |
 
 #### 第三部分：基础与工程
 
 | 序号 | 模块 | 文件 | 核心内容 | 面试题数 |
 |------|------|------|----------|----------|
-| 07 | [大模型基础](./chapters/01-模型与提示/ai-agent-interview-guide-docs-01-面试八股文-07-大模型基础) | `07-大模型基础.md` | Transformer、Attention、KV Cache、LoRA、RLHF/DPO | 28 题 |
-| 08 | [工程化实践](./chapters/10-项目实战/ai-agent-interview-guide-docs-01-面试八股文-08-工程化实践) | `08-工程化实践.md` | 模型路由、熔断器、Token 优化、可观测性、部署 | 29+ 题 |
-| 09 | [Prompt 工程](./chapters/01-模型与提示/ai-agent-interview-guide-docs-01-面试八股文-09-Prompt工程) | `09-Prompt工程.md` | CoT、Few-shot、ReAct 模板、Prompt 注入防御 | 28 题 |
+| 07 | [大模型基础](/chapters/01-模型与提示/ai-agent-interview-guide-docs-01-面试八股文-07-大模型基础) | `07-大模型基础.md` | Transformer、Attention、KV Cache、LoRA、RLHF/DPO | 28 题 |
+| 08 | [工程化实践](/chapters/10-项目实战/ai-agent-interview-guide-docs-01-面试八股文-08-工程化实践) | `08-工程化实践.md` | 模型路由、熔断器、Token 优化、可观测性、部署 | 29+ 题 |
+| 09 | [Prompt 工程](/chapters/01-模型与提示/ai-agent-interview-guide-docs-01-面试八股文-09-Prompt工程) | `09-Prompt工程.md` | CoT、Few-shot、ReAct 模板、Prompt 注入防御 | 28 题 |
 
 ---
 

@@ -348,8 +348,8 @@
 
 ### 附：关联文档
 
-- [Agent 框架全景](./chapters/07-ts产品工程/agent-interview-hub-通用知识-Agent框架全景)：LangChain、LangGraph、AutoGen、CrewAI 等框架横向概述
+- [Agent 框架全景](/chapters/07-ts产品工程/agent-interview-hub-通用知识-Agent框架全景)：LangChain、LangGraph、AutoGen、CrewAI 等框架横向概述
 - [Agentic Coding 与 AI 编程工具](https://github.com/Zchary1106/agent-interview-hub)：Claude Code / Cursor / Copilot 对比与 Hooks
-- [Agent 安全与评估体系](./chapters/08-评测安全可观测/agent-interview-hub-通用知识-Agent安全与评估体系)：Prompt 注入防御、幻觉检测、评估框架
-- [MCP 与工具生态](./chapters/04-工具与mcp/agent-interview-hub-通用知识-MCP与工具生态)：Model Context Protocol 架构与开发实战
+- [Agent 安全与评估体系](/chapters/08-评测安全可观测/agent-interview-hub-通用知识-Agent安全与评估体系)：Prompt 注入防御、幻觉检测、评估框架
+- [MCP 与工具生态](/chapters/04-工具与mcp/agent-interview-hub-通用知识-MCP与工具生态)：Model Context Protocol 架构与开发实战
 

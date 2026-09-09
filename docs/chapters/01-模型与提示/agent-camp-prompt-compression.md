@@ -89,7 +89,7 @@ RAG Agent 典型 prompt 构成:
 
 收益：
 - **成本**：input token 直接减 60-80%
-- **延迟**：prefill 阶段时间和 prompt 长度成正比，压缩后 prefill 快 3-5 倍（详见 [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)）
+- **延迟**：prefill 阶段时间和 prompt 长度成正比，压缩后 prefill 快 3-5 倍（详见 [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)）
 - **质量**：好的压缩算法效果几乎不掉，部分场景甚至因为减少噪声反而更好
 
 ---
@@ -110,7 +110,7 @@ Lost in the Middle ([Liu et al. 2024](https://arxiv.org/abs/2307.03172)) 发现�
 
 #### 3. 长上下文场景下 KV Cache 爆炸
 
-KV Cache 大小和序列长度成正比（详见 [Transformer](./chapters/01-模型与提示/agent-camp-llm-transformer)）。100K 上下文的 KV Cache 可能比模型权重还大。**压缩同时降低 KV Cache 占用**，让显存能跑更多并发。
+KV Cache 大小和序列长度成正比（详见 [Transformer](/chapters/01-模型与提示/agent-camp-llm-transformer)）。100K 上下文的 KV Cache 可能比模型权重还大。**压缩同时降低 KV Cache 占用**，让显存能跑更多并发。
 
 **结论**：长上下文是基础设施升级，prompt compression 是应用层优化——两者互补，不替代。
 
@@ -226,7 +226,7 @@ def compress_history(messages, llm):
 
 RAG 场景的"特殊压缩"——通过更精准的检索减少喂给 LLM 的 chunks：
 
-- 用 **reranker** 把 top-50 精排到 top-3-5（详见 [RAG - reranking](./chapters/03-rag/agent-camp-rag-reranking)）
+- 用 **reranker** 把 top-50 精排到 top-3-5（详见 [RAG - reranking](/chapters/03-rag/agent-camp-rag-reranking)）
 - 用 **MMR (Maximal Marginal Relevance)** 减少 chunk 之间冗余
 - 用 **chunk summarization** 把长 chunk 总结成精简版
 
@@ -246,7 +246,7 @@ llm = LLM(model="...", enable_prefix_caching=True)
 - 同一 few-shot 模板用于不同 user query
 - 多轮对话（前面历史的 KV 复用）
 
-**这不是真正的"压缩"**（token 数不变），但效果上等同——减少了重复计算的成本。详见 [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
+**这不是真正的"压缩"**（token 数不变），但效果上等同——减少了重复计算的成本。详见 [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
 
 #### 方法 5: Soft Prompt / Prompt Tuning（学习型压缩）
 
@@ -370,7 +370,7 @@ def eval_compression(eval_set, compress_rate):
 
 #### 陷阱 4：用压缩替代真正的优化
 
-如果 prompt 长是因为"塞了一堆无关 few-shot"或"没做 retrieval rerank"——根本问题是**设计差**，不是压缩能解决的。先把 prompt 设计做对（详见 [基础原则](./chapters/01-模型与提示/agent-camp-prompt-basics) 和 [Few-shot](./chapters/01-模型与提示/agent-camp-prompt-few-shot)），实在还是长再考虑压缩。
+如果 prompt 长是因为"塞了一堆无关 few-shot"或"没做 retrieval rerank"——根本问题是**设计差**，不是压缩能解决的。先把 prompt 设计做对（详见 [基础原则](/chapters/01-模型与提示/agent-camp-prompt-basics) 和 [Few-shot](/chapters/01-模型与提示/agent-camp-prompt-few-shot)），实在还是长再考虑压缩。
 
 #### 陷阱 5：压缩破坏 prefix cache
 
@@ -455,5 +455,5 @@ LLMLingua-2 压一次大约几十到几百毫秒（取决于长度）。**如果
 - **论文：Lost in the Middle** ([arxiv 2307.03172](https://arxiv.org/abs/2307.03172))
   Liu et al. 2024。读它是为了理解"长上下文不能等同于好上下文"——这是 prompt compression 在长上下文时代仍然重要的根本原因。
 
-- **配套阅读**：[推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization) — KV Cache 和 Prefix Caching 的工程细节。[RAG - reranking](./chapters/03-rag/agent-camp-rag-reranking) — RAG 场景下"减少喂给 LLM 的 chunk"的压缩思路。
+- **配套阅读**：[推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization) — KV Cache 和 Prefix Caching 的工程细节。[RAG - reranking](/chapters/03-rag/agent-camp-rag-reranking) — RAG 场景下"减少喂给 LLM 的 chunk"的压缩思路。
 

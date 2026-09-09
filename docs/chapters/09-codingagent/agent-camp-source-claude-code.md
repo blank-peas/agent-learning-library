@@ -1083,7 +1083,7 @@ CLI 不显示每次 API call 的 token 消耗，长任务跑下来才发现账�
   - [Cline 源码](https://github.com/cline/cline) — VSCode 插件版的编程 Agent，没有 Claude Code 的 CLAUDE.md/Permission/Hook 体系，看缺了这些会变成什么样
 
 - **相关解析**：
-  - 本站 [Claude Agent SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) — 偏使用者视角的 SDK 介绍，可以和本文对照
-  - 本站 [Pi 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-pi) — 极简内核哲学的对照案例
-  - 本站 [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) — 理解 Claude Code 的 MCP client 实现的前提
+  - 本站 [Claude Agent SDK 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) — 偏使用者视角的 SDK 介绍，可以和本文对照
+  - 本站 [Pi 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-pi) — 极简内核哲学的对照案例
+  - 本站 [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) — 理解 Claude Code 的 MCP client 实现的前提
 

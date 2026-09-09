@@ -249,7 +249,7 @@ print(ask("公司年假怎么算？"))
 
 **根因**：固定长度切分（Naive RAG 默认）完全不管文档的语义结构。它可能在一个表格的中间、一段代码的中间、一句话的中间切断。
 
-**进阶解法**：见 [文档切分策略](./chapters/03-rag/agent-camp-rag-chunking) 章节——语义切分、递归切分、延迟切分（late chunking）。
+**进阶解法**：见 [文档切分策略](/chapters/03-rag/agent-camp-rag-chunking) 章节——语义切分、递归切分、延迟切分（late chunking）。
 
 #### 瓶颈 3：top-K 的两难
 
@@ -349,7 +349,7 @@ HyDE 的精妙之处是它**只用假文档去检索，不直接拿假文档当�
 **30 秒版本**：分三步定位。先把 retrieval 单独跑一遍，肉眼确认 top-K 真的有答案。如果没有就是召回问题。如果有，把正确 chunk 强制放第一位再跑一次——答对了就是 Lost in the Middle 引起的，加重排序解决。还是错的话，问题在 prompt 模板或 LLM 本身，检查是否强制要求"严格基于文档"，必要时换更强的模型。
 
 **追问**：怎么自动化做这个 debug？
-搭一个 RAG 评估流水线：每条数据记录 (query, retrieved_chunks, generated_answer, ground_truth)。用 LLM-as-a-judge 自动打两个分：context_recall（召回是否覆盖答案）和 answer_faithfulness（生成是否忠于检索内容）。两个分都低就是召回问题，前者高后者低就是生成问题。这是 RAGAS 的核心评估范式，详见 [RAG 评估方法](./chapters/08-评测安全可观测/agent-camp-rag-evaluation) 章节。
+搭一个 RAG 评估流水线：每条数据记录 (query, retrieved_chunks, generated_answer, ground_truth)。用 LLM-as-a-judge 自动打两个分：context_recall（召回是否覆盖答案）和 answer_faithfulness（生成是否忠于检索内容）。两个分都低就是召回问题，前者高后者低就是生成问题。这是 RAGAS 的核心评估范式，详见 [RAG 评估方法](/chapters/08-评测安全可观测/agent-camp-rag-evaluation) 章节。
 
 #### Q: BM25 是 90 年代的算法，为什么生产 RAG 还在用？
 

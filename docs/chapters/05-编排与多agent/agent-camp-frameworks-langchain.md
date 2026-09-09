@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 LangChain 和 LangGraph 的架构演进与核心抽象。RAG 实战见 [RAG 章节](https://github.com/yibo365/agent-camp)；工具调用规范见 [Function Calling](./chapters/04-工具与mcp/agent-camp-tools-function-calling)；多 Agent 编排见 [LangGraph 多 Agent](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。
+> **本文边界**：聚焦 LangChain 和 LangGraph 的架构演进与核心抽象。RAG 实战见 [RAG 章节](https://github.com/yibo365/agent-camp)；工具调用规范见 [Function Calling](/chapters/04-工具与mcp/agent-camp-tools-function-calling)；多 Agent 编排见 [LangGraph 多 Agent](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。
 
 ### 面试官想考什么
 

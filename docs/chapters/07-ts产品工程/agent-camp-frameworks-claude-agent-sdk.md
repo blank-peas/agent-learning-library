@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 Claude Agent SDK 的内核架构、Hooks、subagents 和 permission flow。Anthropic API 本身的细节见 [函数调用规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)；Claude Code 客户端的源码解析见 [Claude Code 源码](./chapters/09-codingagent/agent-camp-source-claude-code)；MCP 的协议层见 [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)。
+> **本文边界**：聚焦 Claude Agent SDK 的内核架构、Hooks、subagents 和 permission flow。Anthropic API 本身的细节见 [函数调用规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling)；Claude Code 客户端的源码解析见 [Claude Code 源码](/chapters/09-codingagent/agent-camp-source-claude-code)；MCP 的协议层见 [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)。
 
 ### 面试官想考什么
 
@@ -440,8 +440,8 @@ anyio.run(migrate_codebase)
 ### 延伸阅读
 
 - **官方文档** [docs.claude.com/en/docs/claude-code/sdk](https://docs.claude.com/en/docs/claude-code/sdk) — 重点看 Hooks、Subagents、Permissions 三章。Anthropic 的文档质量极高
-- **Claude Code 内部架构** [Claude Code 源码](./chapters/09-codingagent/agent-camp-source-claude-code) — Agent SDK 本质是 Claude Code 内核的开源版，理解 Claude Code 就理解了 SDK
-- **MCP 协议** [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) — Agent SDK 内置 MCP client，能连接任何 MCP server。配合使用让工具生态指数级扩张
+- **Claude Code 内部架构** [Claude Code 源码](/chapters/09-codingagent/agent-camp-source-claude-code) — Agent SDK 本质是 Claude Code 内核的开源版，理解 Claude Code 就理解了 SDK
+- **MCP 协议** [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) — Agent SDK 内置 MCP client，能连接任何 MCP server。配合使用让工具生态指数级扩张
 - **Anthropic Cookbook** [github.com/anthropics/anthropic-cookbook](https://github.com/anthropics/anthropic-cookbook) — 官方示例库。`agents/` 目录下有用 Agent SDK 做各种场景的完整代码
 - **Building Effective Agents** Anthropic 2024 年 12 月发的博客 — 不是教程，是 Anthropic 团队对"什么是好的 Agent 设计"的思考。理解 SDK 的设计哲学必读
 

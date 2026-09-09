@@ -22,7 +22,7 @@
 
 > 框架选型的核心不是“谁功能更多”，而是“这个框架的默认抽象和你的业务控制边界是不是同向”。
 
-> **本文边界**：主流框架横向功能对比见 [框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison)，LangChain / LangGraph 的架构细节见 [LangChain / LangGraph 深度剖析](./chapters/05-编排与多agent/agent-camp-frameworks-langchain)，OpenAI Agents SDK 见 [OpenAI Agents SDK / Swarm](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)，运行时控制见 [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness) 和 [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)。本文专讲真实面试里“为什么自研 / 为什么不用某框架 / 以后怎么迁移”的追问链。
+> **本文边界**：主流框架横向功能对比见 [框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison)，LangChain / LangGraph 的架构细节见 [LangChain / LangGraph 深度剖析](/chapters/05-编排与多agent/agent-camp-frameworks-langchain)，OpenAI Agents SDK 见 [OpenAI Agents SDK / Swarm](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)，运行时控制见 [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness) 和 [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)。本文专讲真实面试里“为什么自研 / 为什么不用某框架 / 以后怎么迁移”的追问链。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位里反复出现的框架选型追问。例子统一改写成通用业务 Agent，不包含可识别组织、真实系统、私有数据或业务规模。
 
@@ -458,11 +458,11 @@ OpenAI 的 Agents SDK 文档把 handoffs、guardrails、human review、results/s
 
 | 文章 | 重点 | 本文不重复什么 |
 |---|---|---|
-| [框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison) | 多框架横向对比 | 不逐个介绍框架功能 |
-| [LangChain / LangGraph](./chapters/05-编排与多agent/agent-camp-frameworks-langchain) | LCEL、StateGraph、checkpoint 原理 | 不展开框架内部机制 |
-| [OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) | Agent、handoff、guardrails | 不写 SDK 教程 |
-| [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness) | 长任务运行环境 | 不讲完整 harness 架构 |
-| [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) | 生产级运行时平面 | 不讲平台化拆分 |
+| [框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison) | 多框架横向对比 | 不逐个介绍框架功能 |
+| [LangChain / LangGraph](/chapters/05-编排与多agent/agent-camp-frameworks-langchain) | LCEL、StateGraph、checkpoint 原理 | 不展开框架内部机制 |
+| [OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) | Agent、handoff、guardrails | 不写 SDK 教程 |
+| [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness) | 长任务运行环境 | 不讲完整 harness 架构 |
+| [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime) | 生产级运行时平面 | 不讲平台化拆分 |
 
 本文只解决一个面试问题：**为什么你的框架选型是工程判断，而不是没调研、不会用或盲目自研**。
 
@@ -551,6 +551,6 @@ guardrails 是重要能力，但要看它覆盖哪类调用。比如 handoff pip
 - [OpenAI Agents Guide](https://developers.openai.com/api/docs/guides/agents)  
   为什么读：官方说明 SDK 适合 server 自己掌控 orchestration、tool execution、state 和 approvals 的场景。
 
-- 配套阅读：[框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison)、[Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness)、[Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[Agent 确定性控制](./chapters/01-模型与提示/agent-camp-engineering-deterministic-control-interview)。  
+- 配套阅读：[框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison)、[Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness)、[Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[Agent 确定性控制](/chapters/01-模型与提示/agent-camp-engineering-deterministic-control-interview)。  
   为什么读：这篇讲面试选型，配套文章讲框架能力和运行时控制。
 

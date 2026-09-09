@@ -22,7 +22,7 @@
 
 > 离线评测不是“攒一堆问题问模型”，而是把真实任务封装成可重放、可判分、可比较的实验。
 
-> **本文边界**：整体 benchmark 和 SWE-bench / GAIA / τ-bench 的横向对比见 [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)；LLM-as-judge 的 position bias、verbosity bias 和校准细节见 [用模型评估模型](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)；线上 trace、feedback、告警见 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 和 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。本文只讲一件事：怎么构建一套业务自己的离线评测数据，并判断它有没有用。
+> **本文边界**：整体 benchmark 和 SWE-bench / GAIA / τ-bench 的横向对比见 [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)；LLM-as-judge 的 position bias、verbosity bias 和校准细节见 [用模型评估模型](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)；线上 trace、feedback、告警见 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 和 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)。本文只讲一件事：怎么构建一套业务自己的离线评测数据，并判断它有没有用。
 
 ### 面试官想考什么
 
@@ -561,5 +561,5 @@ Anthropic 提到 eval saturation：当一个 suite 被模型打满，它还能�
 - LangSmith Docs：[Evaluation](https://docs.langchain.com/langsmith/evaluation) — 看它怎么把 offline dataset、evaluator、experiment、online feedback loop 串成产品化流程。
 - Braintrust Docs：[Evaluate systematically](https://www.braintrust.dev/docs/evaluate) 与 [Datasets](https://www.braintrust.dev/docs/annotate/datasets) — 适合学习 data / task / scorer 的最小抽象，以及 dataset versioning 怎么支撑可比较实验。
 - OpenAI Docs：[Evaluation best practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices) — 重点看 pass/fail、pairwise、LLM-as-judge 校准、edge case 覆盖；截至 2026-07-07，OpenAI 的旧 Evals 平台文档已公告 2026-10-31 只读、2026-11-30 关闭，新项目更适合参考 Datasets 或自建 harness。
-- 本站：[LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) — 当 outcome 不能完全规则化时，judge 怎么写 rubric、怎么消除偏差、怎么和人工标签对齐。
+- 本站：[LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) — 当 outcome 不能完全规则化时，judge 怎么写 rubric、怎么消除偏差、怎么和人工标签对齐。
 

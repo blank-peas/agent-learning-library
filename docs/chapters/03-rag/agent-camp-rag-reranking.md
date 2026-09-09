@@ -190,7 +190,7 @@ RAG 里最稳的做法通常是按排名取 top-K，再结合 answer evaluator �
 "离职员工已归属期权..."
 ```
 
-这个 chunk 对"离职员工已归属期权的行权窗口"来说是答案，但离开上文后语义不完整。Reranker 可能给它低分。修法要回到 [文档切分策略](./chapters/03-rag/agent-camp-rag-chunking)：保留标题、parent chunk、相邻窗口和 source metadata。
+这个 chunk 对"离职员工已归属期权的行权窗口"来说是答案，但离开上文后语义不完整。Reranker 可能给它低分。修法要回到 [文档切分策略](/chapters/03-rag/agent-camp-rag-chunking)：保留标题、parent chunk、相邻窗口和 source metadata。
 
 ### 怎么用：标准库模拟粗召回 + rerank
 

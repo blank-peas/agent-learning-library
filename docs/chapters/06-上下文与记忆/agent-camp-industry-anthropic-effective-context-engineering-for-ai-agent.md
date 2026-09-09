@@ -45,9 +45,9 @@ Agent 失败常常不是因为模型能力不足，而是上下文组织混乱�
 ### 和本站章节的关系
 
 - [上下文工程](https://github.com/yibo365/agent-camp)
-- [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)
-- [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)
-- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)
+- [上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)
+- [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)
+- [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)
 
 ### 面试追问
 

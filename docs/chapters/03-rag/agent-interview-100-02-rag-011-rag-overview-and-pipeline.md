@@ -251,7 +251,7 @@ RAG 并非万能。它自身也存在问题：
 1. **单针检索（single-needle retrieval）基本已解决**：在超长上下文中找一条明确的事实陈述（"文档里提到的 CFO 叫什么名字？"），顶级模型的召回接近满分，经典的"大海捞针"（needle-in-a-haystack）不再是难题。
 2. **多跳推理（multi-hop reasoning）仍有显著差距**：当答案需要跨多个分散段落定位并串联推理（如"A 公司的 CFO 曾任职于哪家被 B 公司收购的企业？"），模型要先找再连，错误会逐跳放大。**超过约 256K token 后，多跳任务准确率出现明显滑坡**——上下文越长，中间关键信息越容易被忽略（Lost in the Middle 现象在超长窗口下依然存在）。
 
-这条分界线直接决定了选型：长上下文"消灭"了简单事实查找对 RAG 的依赖，但**复杂问答、跨文档推理仍是 RAG（尤其 Agentic RAG 的迭代检索）的主场**。Agentic RAG 如何用多轮检索攻克多跳问题，详见 [#018 — 什么是 Agentic RAG？它与传统 RAG 有何不同？](./chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag)。
+这条分界线直接决定了选型：长上下文"消灭"了简单事实查找对 RAG 的依赖，但**复杂问答、跨文档推理仍是 RAG（尤其 Agentic RAG 的迭代检索）的主场**。Agentic RAG 如何用多轮检索攻克多跳问题，详见 [#018 — 什么是 Agentic RAG？它与传统 RAG 有何不同？](/chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag)。
 
 ##### 决策框架：何时全塞上下文，何时仍需 RAG
 
@@ -288,13 +288,13 @@ flowchart TD
 2. **首 token 延迟（TTFT）显著上升**：Prefill 阶段需要处理全部输入 token，上下文越长等待越久；RAG 只 prefill 精选片段，首 token 更快，体感更"跟手"。
 3. **召回率反噬**：如前所述，超过约 256K token 后多跳任务的"有效召回"不升反降——塞得越多，模型越可能在中间段落"走神"。
 
-> **实践建议**：Prompt Caching 可缓解长上下文的重复 prefill 成本——把稳定的大段系统提示 / 参考文档缓存，仅增量部分计费，是长上下文方案的"中间路线"。详见 [#102 — 什么是 Context Engineering？](./chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering)。
+> **实践建议**：Prompt Caching 可缓解长上下文的重复 prefill 成本——把稳定的大段系统提示 / 参考文档缓存，仅增量部分计费，是长上下文方案的"中间路线"。详见 [#102 — 什么是 Context Engineering？](/chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering)。
 
 ##### 现实中的混合方案
 
 生产系统很少走极端，主流组合有二：
 
-- **RAG 为主 + 长上下文兜底**：先向量检索 Top-K 片段注入上下文；若用户追问或检索置信度不足，再触发二次检索或扩大注入范围。这正是 Agentic RAG 的典型循环（交叉引用 [#018](./chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag)）。
+- **RAG 为主 + 长上下文兜底**：先向量检索 Top-K 片段注入上下文；若用户追问或检索置信度不足，再触发二次检索或扩大注入范围。这正是 Agentic RAG 的典型循环（交叉引用 [#018](/chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag)）。
 - **长上下文为主 + RAG 定位辅助**：对单份大文档（如一份长合同、一个中型代码仓）直接全塞，省去检索；但跨多份文档时仍用 RAG 先定位再读取，规避多跳退化。
 
 一句话总结：**1M token 淘汰了"为了塞不下才检索"的 RAG，但没淘汰"为了找得准、花得省、推得对"的 RAG。**

@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 Computer Use / Browser Agent 这一类形态的设计思路。MCP 协议（Browser Use 可作为 MCP server）见 [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)；Deep Research 中如何用 Computer Use 探索动态页面见 [Deep Research](./chapters/07-ts产品工程/agent-camp-vertical-deep-research)；OpenAI Agents SDK 的 ComputerTool 见 [OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)。
+> **本文边界**：聚焦 Computer Use / Browser Agent 这一类形态的设计思路。MCP 协议（Browser Use 可作为 MCP server）见 [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)；Deep Research 中如何用 Computer Use 探索动态页面见 [Deep Research](/chapters/07-ts产品工程/agent-camp-vertical-deep-research)；OpenAI Agents SDK 的 ComputerTool 见 [OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)。
 
 ### 面试官想考什么
 
@@ -591,6 +591,6 @@ asyncio.run(order_food())
 - **Browser Use** [github.com/browser-use/browser-use](https://github.com/browser-use/browser-use) — 开源浏览器 Agent harness，Python，文档完整
 - **OSWorld 论文** *OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments* (Xie et al., 2024) — Computer Use 类系统最权威的 benchmark
 - **UI-TARS 论文** *UI-TARS: Pioneering Automated GUI Interaction with Native Agents* (字节 2025) — 开源 GUI Agent 模型，看怎么自训练 Computer Use 能力
-- **本站 [OpenAI Agents SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** — 看 ComputerTool 在 Agent 框架里怎么集成
-- **本站 [Deep Research](./chapters/07-ts产品工程/agent-camp-vertical-deep-research)** — Deep Research 用 Computer Use 处理动态网页是个重要应用场景
+- **本站 [OpenAI Agents SDK 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** — 看 ComputerTool 在 Agent 框架里怎么集成
+- **本站 [Deep Research](/chapters/07-ts产品工程/agent-camp-vertical-deep-research)** — Deep Research 用 Computer Use 处理动态网页是个重要应用场景
 

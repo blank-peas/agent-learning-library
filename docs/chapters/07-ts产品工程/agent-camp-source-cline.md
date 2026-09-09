@@ -861,10 +861,10 @@ XML 比 JSON 啰嗦，工具描述 + 调用占用 token 多。同等任务 Cline
   - `sdk/ARCHITECTURE.md` —— SDK 设计文档（仓库内）
 
 - **相关概念**：
-  - 本站 [编程 Agent 通用模式](./chapters/09-codingagent/agent-camp-vertical-coding-agent) —— 理解 Plan/Act 等通用模式
-  - 本站 [Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code) —— 对比 native function calling vs XML 两种协议
-  - 本站 [Aider 源码剖析](./chapters/07-ts产品工程/agent-camp-source-aider) —— Cline 借鉴了 Aider 的 reflexion 思路
-  - 本站 [OpenHands 源码剖析](./chapters/09-codingagent/agent-camp-source-openhands) —— 对比 LoopDetection 和 StuckDetector 两种实现
+  - 本站 [编程 Agent 通用模式](/chapters/09-codingagent/agent-camp-vertical-coding-agent) —— 理解 Plan/Act 等通用模式
+  - 本站 [Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code) —— 对比 native function calling vs XML 两种协议
+  - 本站 [Aider 源码剖析](/chapters/07-ts产品工程/agent-camp-source-aider) —— Cline 借鉴了 Aider 的 reflexion 思路
+  - 本站 [OpenHands 源码剖析](/chapters/09-codingagent/agent-camp-source-openhands) —— 对比 LoopDetection 和 StuckDetector 两种实现
 
 - **对比阅读**：
   - [Continue.dev](https://github.com/continuedev/continue) —— 另一个开源 VSCode Agent，对比"扩展 + 服务端"架构

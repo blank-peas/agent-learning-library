@@ -208,8 +208,8 @@ graph.add_conditional_edges("reason", lambda s: s["next_step"])
 
 ### 相关阅读
 
-- [007 — Workflow vs Agent](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-007-workflow-vs-agent)：Harness 是"光谱右端"的高自主性方案，需要工作流配合
-- [098 — 框架 vs 自研](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom)：Harness 是"自研 vs 框架"之外的**第三种选择**
-- [099 — OpenAI Agents SDK vs Claude Agent SDK](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk)：两家 SDK 是构建 Harness 的"砖块"层
-- [110 — Coding Agent Harness 横评](./chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)：Harness 的产品级横向对比（深入篇）
+- [007 — Workflow vs Agent](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-007-workflow-vs-agent)：Harness 是"光谱右端"的高自主性方案，需要工作流配合
+- [098 — 框架 vs 自研](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom)：Harness 是"自研 vs 框架"之外的**第三种选择**
+- [099 — OpenAI Agents SDK vs Claude Agent SDK](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk)：两家 SDK 是构建 Harness 的"砖块"层
+- [110 — Coding Agent Harness 横评](/chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)：Harness 的产品级横向对比（深入篇）
 

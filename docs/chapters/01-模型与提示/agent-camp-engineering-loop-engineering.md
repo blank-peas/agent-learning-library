@@ -22,7 +22,7 @@
 
 > Prompt 是你说的一句话，loop 是替你不停说话的那套系统。
 
-> **本文边界**：本文讲的是「驱动 Agent 的外层系统」这一层。单次循环内部的状态机见 [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)，单个 Agent 的运行环境见 [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)，多角色协作的通用模式见 [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。Loop engineering 站在 harness 的「上一层」：harness 管一个 Agent 跑一次任务，loop 管「什么时候、并行几个、跨多次运行怎么接力」。
+> **本文边界**：本文讲的是「驱动 Agent 的外层系统」这一层。单次循环内部的状态机见 [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)，单个 Agent 的运行环境见 [Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)，多角色协作的通用模式见 [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。Loop engineering 站在 harness 的「上一层」：harness 管一个 Agent 跑一次任务，loop 管「什么时候、并行几个、跨多次运行怎么接力」。
 
 ### 面试官想考什么
 
@@ -209,7 +209,7 @@ echo "hit max iterations without passing tests" >&2
 exit 1                                    # 失败出口：到顶了就退出，不无限跑
 ```
 
-生产里的 loop runner 会再加上调度、并行 worktree、maker/checker 和持久 backlog。下面这段用桩函数代替真实 Agent 调用（和站内 [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness)、[Agent Loop](./chapters/07-ts产品工程/agent-camp-agent-agent-loop) 的示例一致），方便你看清 loop **外壳**本身做了什么：
+生产里的 loop runner 会再加上调度、并行 worktree、maker/checker 和持久 backlog。下面这段用桩函数代替真实 Agent 调用（和站内 [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness)、[Agent Loop](/chapters/07-ts产品工程/agent-camp-agent-agent-loop) 的示例一致），方便你看清 loop **外壳**本身做了什么：
 
 ```python
 from dataclasses import dataclass, field
@@ -336,7 +336,7 @@ tokens_used = 200000
 
 两条容易混的辨析：
 
-- **Loop vs Multi-agent**：loop 里确实常用 sub-agent，但目的窄而明确——maker/checker 分离 + 并行隔离;通用 multi-agent 讨论的是更广的协作与通信（见 [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)）。Loop 是「为什么要多个、怎么调度它们」，multi-agent 是「多个之间怎么说话」。
+- **Loop vs Multi-agent**：loop 里确实常用 sub-agent，但目的窄而明确——maker/checker 分离 + 并行隔离;通用 multi-agent 讨论的是更广的协作与通信（见 [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)）。Loop 是「为什么要多个、怎么调度它们」，multi-agent 是「多个之间怎么说话」。
 - **Ralph Wiggum loop vs 工程化的 loop**：前者是裸 `while`，靠每轮 fresh context「忘掉上一次的坏思路」，适合可程序化验证、改坏了也不致命的活（依赖迁移、大规模重构）;后者加上调度、并行、持久状态和预算闸，能托管真实生产任务。Geoffrey Huntley 本人也提醒：Ralph 是个需要监督的技术，不是一个撒手不管的产品。
 
 ### 面试题深度解析
@@ -371,6 +371,6 @@ tokens_used = 200000
 - 仓库：[cobusgreyling/loop-engineering](https://github.com/cobusgreyling/loop-engineering) — 看 `loop-init` / `loop-audit` / `loop-cost` 三个 CLI 怎么把 loop 工程化，以及七种生产 pattern 的 cadence 和安全等级怎么定。
 - 技术与播客：[Inventing the Ralph Wiggum Loop](https://devinterrupted.substack.com/p/inventing-the-ralph-wiggum-loop-creator)（Geoffrey Huntley）— loop engineering 最朴素形态的来历，重点听他为什么强调「这是需要监督的技术，不是撒手产品」。
 - 文档：Anthropic [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — 理解 loop 下面那层 context engineering，loop 的每一轮都建立在它之上。
-- 本站：[Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness) — loop 的下一层，搞清楚单个 Agent 一次任务怎么跑稳，才谈得上把它放进 loop 反复跑。
-- 本站：[Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop) — 别和 loop engineering 混淆：那篇讲单次循环内部的状态机，本篇讲驱动多次运行的外层系统。
+- 本站：[Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness) — loop 的下一层，搞清楚单个 Agent 一次任务怎么跑稳，才谈得上把它放进 loop 反复跑。
+- 本站：[Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop) — 别和 loop engineering 混淆：那篇讲单次循环内部的状态机，本篇讲驱动多次运行的外层系统。
 

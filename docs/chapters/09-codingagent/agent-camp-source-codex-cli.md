@@ -507,5 +507,5 @@ Codex 内建了完整的子 Agent 管理，比 Claude Code 的 Subagent 更重�
 - **[OpenAI Responses API 文档](https://platform.openai.com/docs/api-reference/responses)** — 理解 item-based API 设计和 Chat Completions 的区别，这直接影响 Agent 循环的实现方式
 - **[Apple Seatbelt 文档](https://developer.apple.com/documentation/security/app-sandbox)** — Codex 在 macOS 上的沙箱基础。Seatbelt profile 的写法是理解 Codex 安全模型的前提
 - **[Landlock LSM](https://docs.kernel.org/userspace-api/landlock.html)** — Codex 在 Linux 上的沙箱基础。Landlock 是 Linux 5.13+ 引入的轻量级沙箱机制，比传统的 seccomp 更易用
-- **[Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code)** — 本站的 Claude Code 分析文章。两篇对照读效果最佳——同一组问题的两套工程解法
+- **[Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code)** — 本站的 Claude Code 分析文章。两篇对照读效果最佳——同一组问题的两套工程解法
 

@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦"编程 Agent"作为一类产品的通用模式与设计决策。具体产品的源码剖析见 [Claude Code 源码](./chapters/09-codingagent/agent-camp-source-claude-code)；编程 Agent 用的框架见 [Claude Agent SDK](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) 和 [Pi](./chapters/07-ts产品工程/agent-camp-frameworks-pi)；通用 Agent 模式见 [ReAct](./chapters/02-agent原理/agent-camp-agent-react-pattern) 和 [Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute)。
+> **本文边界**：聚焦"编程 Agent"作为一类产品的通用模式与设计决策。具体产品的源码剖析见 [Claude Code 源码](/chapters/09-codingagent/agent-camp-source-claude-code)；编程 Agent 用的框架见 [Claude Agent SDK](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk) 和 [Pi](/chapters/07-ts产品工程/agent-camp-frameworks-pi)；通用 Agent 模式见 [ReAct](/chapters/02-agent原理/agent-camp-agent-react-pattern) 和 [Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)。
 
 ### 面试官想考什么
 
@@ -592,7 +592,7 @@ Anthropic 在 Building Effective Agents 博客里直接给了判断："Most mult
 - 自主程度（人工审批 vs 端到端自主）
 - 生态集成（MCP、外部 API、CI/CD）
 
-如果你在做技术选型，[框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison) 给了详细对比。如果你想读特定产品的源码细节，[Claude Code 源码](./chapters/09-codingagent/agent-camp-source-claude-code) 已写完，其他产品的源码剖析在路上。
+如果你在做技术选型，[框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison) 给了详细对比。如果你想读特定产品的源码细节，[Claude Code 源码](/chapters/09-codingagent/agent-camp-source-claude-code) 已写完，其他产品的源码剖析在路上。
 
 ---
 
@@ -628,10 +628,10 @@ Anthropic 在 Building Effective Agents 博客里直接给了判断："Most mult
 
 - **Building Effective Agents (Anthropic 2024)** [anthropic.com/research/building-effective-agents](https://www.anthropic.com/engineering/building-effective-agents) — 不是教程，是 Anthropic 团队对"什么是好的 Agent 设计"的思考。编程 Agent 设计哲学的源头
 - **SWE-bench 论文** *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?* (Jimenez et al., 2023) — 理解 benchmark 设计的初衷，能更好地批判性看 SWE-bench 分数
-- **本站 [Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code)** — 把本文的通用模式落到具体产品的实现细节
-- **本站 [Claude Agent SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)** — 用 Claude Code 内核做自己的编程 Agent，工具集的使用 API
-- **本站 [Pi 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-pi)** — 对比"全功能内置" vs "最小内核"两种哲学
-- **本站 [框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison)** — 编程 Agent 选型不同产品的判断路径
+- **本站 [Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code)** — 把本文的通用模式落到具体产品的实现细节
+- **本站 [Claude Agent SDK 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)** — 用 Claude Code 内核做自己的编程 Agent，工具集的使用 API
+- **本站 [Pi 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-pi)** — 对比"全功能内置" vs "最小内核"两种哲学
+- **本站 [框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison)** — 编程 Agent 选型不同产品的判断路径
 - **OpenHands 论文** *OpenHands: An Open Platform for AI Software Developers as Generalist Agents* (Wang et al., 2024) — 学术派的端到端自主编程 Agent，理解"无人监管 Agent"的设计权衡
 - **Aider 的 git workflow** [aider.chat/docs](https://aider.chat/docs) — Aider 把"diff + commit + test"作为核心循环，是另一种编程 Agent 的设计哲学
 

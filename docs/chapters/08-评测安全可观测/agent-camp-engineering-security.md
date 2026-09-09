@@ -72,7 +72,7 @@
 
 ### 为什么单层防御必败
 
-[Prompt Injection 攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) 讲了模型层的注入攻防，[工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) 讲了工具层的隔离。这两篇都是"单层"的——攻击者一旦穿透这一层，下一层不补就裸奔。这篇要讲的是**整体安全工程**：Agent 这种"自然语言 + 自主决策 + 外部工具"的系统，从架构层面必须怎么设计。
+[Prompt Injection 攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) 讲了模型层的注入攻防，[工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox) 讲了工具层的隔离。这两篇都是"单层"的——攻击者一旦穿透这一层，下一层不补就裸奔。这篇要讲的是**整体安全工程**：Agent 这种"自然语言 + 自主决策 + 外部工具"的系统，从架构层面必须怎么设计。
 
 先看 2024 年的一个真实事件。Slack AI 在 2024 年 8 月被披露存在间接 prompt injection 漏洞 ([promptarmor.com/resources/blog/slack-ai-data-exfiltration-from-private-channels](https://promptarmor.com/resources/blog/slack-ai-data-exfiltration-from-private-channels))：攻击者在一个公开 channel 里发一条带"渲染指令"的消息，当受害者用 Slack AI 总结对话时，AI 会把受害者**私有 channel** 里的 API key 编码进一个 Markdown 图片 URL，受害者一渲染消息，图片请求把数据发到攻击者服务器。
 
@@ -169,7 +169,7 @@ flowchart TB
 
 **核心思想**：每层都假设上一层会被绕过。比如输入层不要假设"模式匹配能挡住所有注入"，要假设它只能挡 30%——剩下 70% 留给后面的层。
 
-下面逐层展开。Layer 1 和 Layer 2 在 [Prompt Injection 攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) 已详细讲过，本文重点是 Layer 3、4、5 和它们之间的协同。
+下面逐层展开。Layer 1 和 Layer 2 在 [Prompt Injection 攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) 已详细讲过，本文重点是 Layer 3、4、5 和它们之间的协同。
 
 ---
 
@@ -245,7 +245,7 @@ ChatGPT 在 2023 年的 Markdown 图片漏洞和 Slack AI 2024 年的事件**都
 
 ### Layer 4：工具层——最小权限与 Excessive Agency
 
-[工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) 详细讲了沙箱实现，本节聚焦 **LLM06 Excessive Agency** 这个 Agent 时代的核心新风险。
+[工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox) 详细讲了沙箱实现，本节聚焦 **LLM06 Excessive Agency** 这个 Agent 时代的核心新风险。
 
 #### Excessive Agency 是什么
 
@@ -275,7 +275,7 @@ OWASP 给的定义：**Agent 拥有超出"完成当前任务必要"的能力、�
 3. **撤销性**：操作不可逆吗？如果是，必须 human-in-the-loop
 4. **审计性**：调用了能不能追溯？如果不能，至少加日志
 
-[工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) 里的 Claude Code 四档权限模型（read / edit / execute / high-risk）就是这个判据的工程化产物。
+[工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox) 里的 Claude Code 四档权限模型（read / edit / execute / high-risk）就是这个判据的工程化产物。
 
 #### 真实案例：Replit AI Agent 删数据库事件
 
@@ -318,7 +318,7 @@ Agent 出了问题，事后要能复盘——必须 trace 到完整的：
 }
 ```
 
-[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 详细讲了 trace 设计。安全视角下额外强调：
+[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 详细讲了 trace 设计。安全视角下额外强调：
 
 - **PII 脱敏要在 trace 写入前完成**——否则日志本身成 PII 泄漏源
 - **system prompt 版本要记录**——出事后能精准复现当时的 prompt 状态
@@ -336,7 +336,7 @@ Agent 出了问题，事后要能复盘——必须 trace 到完整的：
 | 同一 PII 出现在不同租户的输出 | cross-tenant 泄漏 | 任何一次 |
 | Outbound 请求到非白名单域名 | 数据外泄企图 | 任何一次 |
 
-[Rate Limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 讲了具体限流实现。安全场景关键点：限流不只是为了成本，**也是防 PoC 测试和暴力越狱**——攻击者要尝试 1000 个变种 prompt 来找绕过，你限到 10/分钟他基本玩不动。
+[Rate Limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 讲了具体限流实现。安全场景关键点：限流不只是为了成本，**也是防 PoC 测试和暴力越狱**——攻击者要尝试 1000 个变种 prompt 来找绕过，你限到 10/分钟他基本玩不动。
 
 #### 事件响应：可回滚是底线
 
@@ -529,7 +529,7 @@ if __name__ == "__main__":
     ))  # → {"error": "REJECTED", ...}
 ```
 
-这个 50 行示例覆盖了 5 个防御点：模式匹配、输入 PII、输入毒性、输入隔离、输出 PII + schema。生产里再叠加 [Rate Limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)、moderation API、Llama Guard 二次审查、完整 [Observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability)，就是工业级配置。
+这个 50 行示例覆盖了 5 个防御点：模式匹配、输入 PII、输入毒性、输入隔离、输出 PII + schema。生产里再叠加 [Rate Limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)、moderation API、Llama Guard 二次审查、完整 [Observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability)，就是工业级配置。
 
 ---
 
@@ -757,12 +757,12 @@ def get_user_doc(user_id, doc_id):
 
 | 概念 | 范围 | 本文位置 |
 |---|---|---|
-| **Prompt Injection 防御** | 输入到模型的攻防 | [prompt/injection](./chapters/08-评测安全可观测/agent-camp-prompt-injection) |
-| **工具沙箱与权限** | 工具执行层隔离 | [tools/sandbox](./chapters/07-ts产品工程/agent-camp-tools-sandbox) |
-| **错误处理** | 工具失败的恢复 | [tools/error-handling](./chapters/04-工具与mcp/agent-camp-tools-error-handling) |
-| **上下文污染** | context 数据质量 | [context/pollution](./chapters/07-ts产品工程/agent-camp-context-pollution) |
-| **可观测性** | trace + 指标 | [engineering/observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability) |
-| **速率限制** | 流量控制 | [engineering/rate-limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) |
+| **Prompt Injection 防御** | 输入到模型的攻防 | [prompt/injection](/chapters/08-评测安全可观测/agent-camp-prompt-injection) |
+| **工具沙箱与权限** | 工具执行层隔离 | [tools/sandbox](/chapters/07-ts产品工程/agent-camp-tools-sandbox) |
+| **错误处理** | 工具失败的恢复 | [tools/error-handling](/chapters/04-工具与mcp/agent-camp-tools-error-handling) |
+| **上下文污染** | context 数据质量 | [context/pollution](/chapters/07-ts产品工程/agent-camp-context-pollution) |
+| **可观测性** | trace + 指标 | [engineering/observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability) |
+| **速率限制** | 流量控制 | [engineering/rate-limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) |
 | **Agent 整体安全** | 端到端威胁模型 + 五层架构 | 本文 |
 
 辨析要点：
@@ -853,5 +853,5 @@ def get_user_doc(user_id, doc_id):
 - **Anthropic Responsible Scaling Policy** ([anthropic.com/news/anthropics-responsible-scaling-policy](https://www.anthropic.com/news/anthropics-responsible-scaling-policy))
   Anthropic 自己怎么做 AI 安全治理。读它了解前沿实验室的内部红队和评估流程。
 
-- **配套阅读**：[Prompt Injection 攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)——本文 Layer 1+2 的深度展开；[工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)——本文 Layer 4 的深度展开；[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)——本文 Layer 5 的工程化基础；[速率限制](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)——LLM10 Unbounded Consumption 的具体防御；[上下文污染](./chapters/07-ts产品工程/agent-camp-context-pollution)——LLM02 信息泄漏的另一个角度；[工具错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)——工具层故障 + 安全异常的交集。
+- **配套阅读**：[Prompt Injection 攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)——本文 Layer 1+2 的深度展开；[工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)——本文 Layer 4 的深度展开；[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)——本文 Layer 5 的工程化基础；[速率限制](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)——LLM10 Unbounded Consumption 的具体防御；[上下文污染](/chapters/07-ts产品工程/agent-camp-context-pollution)——LLM02 信息泄漏的另一个角度；[工具错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)——工具层故障 + 安全异常的交集。
 

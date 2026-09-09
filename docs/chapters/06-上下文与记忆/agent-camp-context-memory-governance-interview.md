@@ -22,7 +22,7 @@
 
 > 长期记忆不是“把聊天记录存久一点”。它是一套治理系统：决定哪些信息有资格进入长期状态，哪些旧状态该失效，哪些记忆可以被当前任务看见。
 
-> **本文边界**：基础 memory taxonomy 看 [Agent 记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) 和 [记忆架构 Memory](./chapters/06-上下文与记忆/agent-camp-agent-memory-arch)，会话内 history 管理看 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)，上下文污染看 [上下文污染与清理](./chapters/07-ts产品工程/agent-camp-context-pollution)，RAG 选型看 [RAG 选型面试深挖](./chapters/03-rag/agent-camp-rag-rag-selection-interview)。本文只处理面试里最容易被追问的 **memory governance**。
+> **本文边界**：基础 memory taxonomy 看 [Agent 记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) 和 [记忆架构 Memory](/chapters/06-上下文与记忆/agent-camp-agent-memory-arch)，会话内 history 管理看 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)，上下文污染看 [上下文污染与清理](/chapters/07-ts产品工程/agent-camp-context-pollution)，RAG 选型看 [RAG 选型面试深挖](/chapters/03-rag/agent-camp-rag-rag-selection-interview)。本文只处理面试里最容易被追问的 **memory governance**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位中反复出现的长期记忆追问链。所有例子都改成通用业务 Agent 场景，不保留任何可识别的真实细节。
 
@@ -212,7 +212,7 @@ LangChain 的 long-term memory 文档也强调，长期记忆跨 thread 持久�
 | 敏感字段变化 | 二次确认 + 审计日志 |
 | RAG 资料与用户记忆冲突 | 按来源优先级和时效判断，必要时向用户澄清 |
 
-这里和 [上下文污染与清理](./chapters/07-ts产品工程/agent-camp-context-pollution) 是一组问题：污染讲的是坏信息进上下文后怎么清理；governance 讲的是坏信息不要被持久化，以及旧信息何时失效。
+这里和 [上下文污染与清理](/chapters/07-ts产品工程/agent-camp-context-pollution) 是一组问题：污染讲的是坏信息进上下文后怎么清理；governance 讲的是坏信息不要被持久化，以及旧信息何时失效。
 
 ### 召回策略：Memory 是工具，不是固定 prompt
 

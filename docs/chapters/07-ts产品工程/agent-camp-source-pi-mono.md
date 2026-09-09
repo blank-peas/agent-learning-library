@@ -669,7 +669,7 @@ Pi 最大的差异化是**会话树 + 干净分层 + 深度可扩展**。它不�
 - **[.pi/ 目录](https://github.com/earendil-works/pi/tree/main/.pi)** — pi 用自己开发自己的现场。`extensions/tps.ts` 是扩展的最小可用示例，`skills/add-llm-provider.md` 演示 skill 怎么写，对照官方文档读能快速上手自扩展
 - **[pi.dev](https://pi.dev)** — 项目官网与文档，有 demo。README 里说"你也可以直接让 agent 解释它自己"——这本身就体现 self-extensible 的理念
 - **[badlogicgames/pi-mono on Hugging Face](https://huggingface.co/datasets/badlogicgames/pi-mono)** — 作者公开的真实工作 session 数据集。想看一个 Agent 在真实任务里怎么用工具、怎么失败、怎么纠错、会话树长什么样，这是难得的真实数据
-- **[Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code)** — 扩展机制和 skill 渐进式披露的对照。Pi 的 extension/skill/prompt 三层和 Claude Code 的 Hooks/MCP/skill 解决同类问题，对比能理解"in-process 扩展"和"进程边界扩展"的取舍
-- **[Codex CLI 源码剖析](./chapters/09-codingagent/agent-camp-source-codex-cli)** — 工具并发和 provider 抽象的对照。Pi 的 `executionMode` 和 Codex 的 RwLock 是同一问题的两种解法；两者都用 OpenAI Responses API，pi-ai 的 provider 抽象层值得和 Codex 的 codex-api 对比
-- **[Aider 源码剖析](./chapters/07-ts产品工程/agent-camp-source-aider)** — 上下文管理的对照。Aider 用 RepoMap 压缩代码库上下文，Pi 用结构化摘要压缩对话上下文——两种"省 context"的思路，针对的是不同维度的信息
+- **[Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code)** — 扩展机制和 skill 渐进式披露的对照。Pi 的 extension/skill/prompt 三层和 Claude Code 的 Hooks/MCP/skill 解决同类问题，对比能理解"in-process 扩展"和"进程边界扩展"的取舍
+- **[Codex CLI 源码剖析](/chapters/09-codingagent/agent-camp-source-codex-cli)** — 工具并发和 provider 抽象的对照。Pi 的 `executionMode` 和 Codex 的 RwLock 是同一问题的两种解法；两者都用 OpenAI Responses API，pi-ai 的 provider 抽象层值得和 Codex 的 codex-api 对比
+- **[Aider 源码剖析](/chapters/07-ts产品工程/agent-camp-source-aider)** — 上下文管理的对照。Aider 用 RepoMap 压缩代码库上下文，Pi 用结构化摘要压缩对话上下文——两种"省 context"的思路，针对的是不同维度的信息
 

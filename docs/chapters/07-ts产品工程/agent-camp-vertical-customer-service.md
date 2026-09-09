@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦客服 Agent 的工程架构和落地模式。多 Agent 协作的通用原理见 [多 Agent 编排](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；OpenAI Agents SDK 的 Handoff 实现见 [OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)；客服场景的 RAG 设计见 [RAG 章节](https://github.com/yibo365/agent-camp)。
+> **本文边界**：聚焦客服 Agent 的工程架构和落地模式。多 Agent 协作的通用原理见 [多 Agent 编排](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；OpenAI Agents SDK 的 Handoff 实现见 [OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)；客服场景的 RAG 设计见 [RAG 章节](https://github.com/yibo365/agent-camp)。
 
 ### 面试官想考什么
 
@@ -560,8 +560,8 @@ asyncio.run(handle_customer("我的订单 ORD-123 都过了一周了还没到，
 - **Intercom Fin 工程博客** [intercom.com/blog/fin-ai-engineer-build](https://www.intercom.com/blog/) — Intercom 团队多篇关于 Fin 工程化的文章，特别是"deflection rate vs CSAT"的取舍讨论
 - **Decagon 案例研究** [decagon.ai](https://decagon.ai) — B2B 客服 Agent 代表，看他们的客户案例（Eventbrite、Substack、Notion）
 - **OpenAI Agents SDK Customer Service 示例** [github.com/openai/openai-agents-python](https://github.com/openai/openai-agents-python/tree/main/examples) — examples 目录里有完整的客服 multi-agent 实现
-- **本站 [OpenAI Agents SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** — Handoff 模型对客服场景为什么是最合适抽象
-- **本站 [多 Agent 编排模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)** — 分流/路由是经典的多 Agent 模式之一
-- **本站 [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)** — 客服 Agent 的知识库依赖 RAG，是必要前置
+- **本站 [OpenAI Agents SDK 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** — Handoff 模型对客服场景为什么是最合适抽象
+- **本站 [多 Agent 编排模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)** — 分流/路由是经典的多 Agent 模式之一
+- **本站 [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)** — 客服 Agent 的知识库依赖 RAG，是必要前置
 - **Building a chatbot that's a delight to talk to**（Intercom 工程博客）— 客服 Agent 的体验设计要点，比技术细节更重要的产品判断
 

@@ -44,10 +44,10 @@
 
 ### 和本站章节的关系
 
-- [函数调用规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)
-- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)
-- [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)
-- [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)
+- [函数调用规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling)
+- [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)
+- [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)
+- [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)
 
 ### 面试追问
 

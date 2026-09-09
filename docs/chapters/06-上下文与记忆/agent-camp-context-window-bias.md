@@ -207,7 +207,7 @@ def build_prompt(system_msg, critical_constraints, context_docs, user_query):
 
 如果检索回 20 个 chunks 都塞进 prompt，中间那十几个等于没塞——还浪费 token。**top-K = 3-5 + reranker** 通常比 top-K = 20 不 rerank 效果好。
 
-详见 [RAG - reranking](./chapters/03-rag/agent-camp-rag-reranking)。
+详见 [RAG - reranking](/chapters/03-rag/agent-camp-rag-reranking)。
 
 #### 对策 4：拆分长任务
 
@@ -215,7 +215,7 @@ def build_prompt(system_msg, critical_constraints, context_docs, user_query):
 1. 先让模型摘要每段（map 阶段）
 2. 再让模型综合所有摘要（reduce 阶段）
 
-牺牲一次调用的成本，换更高准确率。详见 [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)。
+牺牲一次调用的成本，换更高准确率。详见 [上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)。
 
 #### 对策 5：在 prompt 中显式标号
 
@@ -261,7 +261,7 @@ def position_robustness_test(query, key_info, distractors, llm):
 - 关键约束在每轮 user message 末尾隐式重申
 - 长对话定期"压缩 + 重置"——摘要旧对话，重启会话
 - 用 `system message` 的 instruction hierarchy 提高约束权重
-- 详见 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)
+- 详见 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)
 
 ---
 
@@ -296,7 +296,7 @@ NIAH 是"必要不充分"——通过它的模型未必好用，不过它的模�
 
 #### 陷阱 6：长上下文 + Lost in the Middle + 间接注入
 
-长上下文场景下，攻击者可以**把 prompt injection 藏在中段**——你以为模型会忽略中段所以塞了恶意网页内容，模型实际可能注意到攻击指令。详见 [Prompt 注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)。
+长上下文场景下，攻击者可以**把 prompt injection 藏在中段**——你以为模型会忽略中段所以塞了恶意网页内容，模型实际可能注意到攻击指令。详见 [Prompt 注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)。
 
 ---
 
@@ -325,7 +325,7 @@ NIAH 是"必要不充分"——通过它的模型未必好用，不过它的模�
 
 #### Q: 长对话怎么对抗位置偏置？
 
-**30 秒版本**：四个机制：(1) **关键约束在每轮 user prompt 末尾隐式重申**——利用 recency bias；(2) **定期摘要 + 会话重启**——长对话后把历史压缩成 200 字摘要，重启上下文；(3) **system message 利用 instruction hierarchy**——OpenAI 后续模型对 system message 有更高优先级权重；(4) **滑动窗口 + 锚点**——保留 system prompt + 最近 N 轮 + 关键里程碑（用户说过的偏好），中间冗余轮次摘要化。**核心思想**：不要让 prompt 无限累加，主动管理"什么留下、什么压缩、什么扔掉"——这就是 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) 的核心。
+**30 秒版本**：四个机制：(1) **关键约束在每轮 user prompt 末尾隐式重申**——利用 recency bias；(2) **定期摘要 + 会话重启**——长对话后把历史压缩成 200 字摘要，重启上下文；(3) **system message 利用 instruction hierarchy**——OpenAI 后续模型对 system message 有更高优先级权重；(4) **滑动窗口 + 锚点**——保留 system prompt + 最近 N 轮 + 关键里程碑（用户说过的偏好），中间冗余轮次摘要化。**核心思想**：不要让 prompt 无限累加，主动管理"什么留下、什么压缩、什么扔掉"——这就是 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) 的核心。
 
 **追问**：那 Claude 200K + 长对话能不能"不管"，让模型自己处理？
 短期内可以撑下去，但有三个问题：(1) **成本飙升**——多轮对话每次都付全量 token 费；(2) **延迟越来越长**——prefill 时间正比于 prompt 长度；(3) **质量缓慢退化**——长上下文越长，模型综合能力越差。**结论**：即使有 200K 上下文，生产 Agent 也应该主动管理对话历史，把上下文当成稀缺资源。"塞进去能 work"和"产品级体验"是两回事。
@@ -349,5 +349,5 @@ NIAH 是"必要不充分"——通过它的模型未必好用，不过它的模�
 - **博客：Greg Kamradt — Needle in a Haystack** ([github.com/gkamradt/LLMTest_NeedleInAHaystack](https://github.com/gkamradt/LLMTest_NeedleInAHaystack))
   NIAH 测试的原始实现。读它是为了亲手跑一遍，看清这个测试的局限。
 
-- **配套阅读**：[长上下文模型对比](./chapters/07-ts产品工程/agent-camp-context-long-context) — 各家长上下文模型的实测对比。[上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression) — 主动管理长上下文的工程对策。
+- **配套阅读**：[长上下文模型对比](/chapters/07-ts产品工程/agent-camp-context-long-context) — 各家长上下文模型的实测对比。[上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression) — 主动管理长上下文的工程对策。
 

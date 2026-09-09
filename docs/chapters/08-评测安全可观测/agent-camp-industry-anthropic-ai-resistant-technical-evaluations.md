@@ -44,8 +44,8 @@
 
 ### 和本站章节的关系
 
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
 - [面试知识体系首页](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

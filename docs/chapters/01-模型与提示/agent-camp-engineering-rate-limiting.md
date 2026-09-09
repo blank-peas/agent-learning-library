@@ -511,7 +511,7 @@ TIER_QUOTAS = {
 
 这套要和**计费系统打通**——免费 tier 触达后弹升级引导，付费 tier 触达后短信告警让用户加 quota。**这不只是工程问题，是产品策略问题**。
 
-详细的多租户成本治理见 [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 里的"per-user cost"那一节。
+详细的多租户成本治理见 [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 里的"per-user cost"那一节。
 
 ---
 
@@ -526,7 +526,7 @@ gpt-4o → gpt-4o-mini → gpt-3.5-turbo
 claude-opus-4 → claude-sonnet-4 → claude-haiku
 ```
 
-主模型限流时切到便宜小模型。**典型质量损失 5%-15%**，但能维持服务在线。这是最常用的降级——和 [model routing](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的核心机制一样，只不过这里是被动触发。
+主模型限流时切到便宜小模型。**典型质量损失 5%-15%**，但能维持服务在线。这是最常用的降级——和 [model routing](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的核心机制一样，只不过这里是被动触发。
 
 #### 层级 2：功能降级
 
@@ -781,7 +781,7 @@ class MultiKeyProvider:
 | **P99 latency** | 端到端 P99 延迟 | 超 SLA 立刻告警 |
 | **Per-tenant quota usage** | 每用户配额消耗率 | 单用户 > 50% 关注 |
 
-把这些推到 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 系统的 dashboard。**429 rate 突增 → 看是不是某个用户 abuse；fallback rate 突增 → 看主厂商是不是出问题；queue depth 增长 → 看是不是需要扩容**。
+把这些推到 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 系统的 dashboard。**429 rate 突增 → 看是不是某个用户 abuse；fallback rate 突增 → 看主厂商是不是出问题；queue depth 增长 → 看是不是需要扩容**。
 
 ---
 
@@ -839,7 +839,7 @@ flowchart TD
 
 **现象**：401（API key 无效）也重试 3 次，浪费时间最后还是失败。
 **根因**：把所有异常当成可重试。401/403/400 都是确定性错误，重试无意义。
-**修法**：参考 [tools/error-handling](./chapters/04-工具与mcp/agent-camp-tools-error-handling)，按错误类型分类。只重试 429/5xx/超时，4xx (除 429) 立刻 fallback 或报错。
+**修法**：参考 [tools/error-handling](/chapters/04-工具与mcp/agent-camp-tools-error-handling)，按错误类型分类。只重试 429/5xx/超时，4xx (除 429) 立刻 fallback 或报错。
 
 #### 陷阱 5：token bucket 没留 buffer 直接打满
 
@@ -866,18 +866,18 @@ flowchart TD
 | 概念 | 关注点 | 范围 |
 |---|---|---|
 | **Rate Limiting**（本文） | 流量控制 + 熔断降级 | 调用频次维度 |
-| **[Cost Optimization](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)** | 单次调用成本下降 | 单次维度 |
-| **[Error Handling](./chapters/04-工具与mcp/agent-camp-tools-error-handling)** | 工具调用失败的结构化处理 | 错误响应维度 |
-| **[Observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 监控告警 + 指标可视化 | 数据维度 |
-| **[Security](./chapters/08-评测安全可观测/agent-camp-engineering-security)** | abuse 检测 + 滥用防护 | 安全维度 |
-| **[Open vs Closed](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)** | 自部署解决限额 | 架构选型维度 |
+| **[Cost Optimization](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)** | 单次调用成本下降 | 单次维度 |
+| **[Error Handling](/chapters/04-工具与mcp/agent-camp-tools-error-handling)** | 工具调用失败的结构化处理 | 错误响应维度 |
+| **[Observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 监控告警 + 指标可视化 | 数据维度 |
+| **[Security](/chapters/08-评测安全可观测/agent-camp-engineering-security)** | abuse 检测 + 滥用防护 | 安全维度 |
+| **[Open vs Closed](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)** | 自部署解决限额 | 架构选型维度 |
 
 辨析要点：
 
 - **限流是事前保护**，错误处理是**事中应对**——撞墙之后才有错误处理
 - **限流防"打爆"**，成本优化防"算贵"——可以同时做但目标不同
-- **限流不是 abuse 检测**——限流挡正常用户的流量峰值，abuse 检测识别恶意行为（详见 [security](./chapters/08-评测安全可观测/agent-camp-engineering-security)）
-- 限额无法满足业务时，**走自部署**是终极解——见 [开源 vs 闭源](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)
+- **限流不是 abuse 检测**——限流挡正常用户的流量峰值，abuse 检测识别恶意行为（详见 [security](/chapters/08-评测安全可观测/agent-camp-engineering-security)）
+- 限额无法满足业务时，**走自部署**是终极解——见 [开源 vs 闭源](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)
 
 ---
 
@@ -905,7 +905,7 @@ Exponential 提供了"失败次数越多越温和"的自适应——前几次失
 
 #### Q: 一个用户 abuse 把整个公司的 OpenAI 配额烧光，怎么防？
 
-**30 秒版本**：双层配额——**per-user quota 防单用户烧光，global quota 防总流量打爆**。per-user 维度通常包括 RPM、daily token 上限、月度 cost 上限。global 维度对应 OpenAI 实际限额留 80% 给正常业务，20% 给突发。两层 AND 关系——任一打爆都拦截。还要配合 [security](./chapters/08-评测安全可观测/agent-camp-engineering-security) 章节的 abuse 检测：监控异常调用模式（高频短 query、token 用量突增、特定 IP 集中流量），触发后自动封禁。生产实战中 0.1% 的用户可能贡献 30%+ 的成本，**不做 per-user 限流上线一周必有事故**。
+**30 秒版本**：双层配额——**per-user quota 防单用户烧光，global quota 防总流量打爆**。per-user 维度通常包括 RPM、daily token 上限、月度 cost 上限。global 维度对应 OpenAI 实际限额留 80% 给正常业务，20% 给突发。两层 AND 关系——任一打爆都拦截。还要配合 [security](/chapters/08-评测安全可观测/agent-camp-engineering-security) 章节的 abuse 检测：监控异常调用模式（高频短 query、token 用量突增、特定 IP 集中流量），触发后自动封禁。生产实战中 0.1% 的用户可能贡献 30%+ 的成本，**不做 per-user 限流上线一周必有事故**。
 
 **追问 1**：免费用户和付费用户的限额比例怎么定？
 经典做法是按 **可承受的获客成本** 反推。比如 LLM 单次成本 $0.005，可承受获客成本 $0.5——免费用户日 quota 限 100 次调用左右。付费 Pro tier 通常 10x 免费 quota（约 $1/月成本上限），Team tier 100x。还要考虑 **abuse 风险衰减**：付费用户更不可能 abuse（信用卡可追溯），所以 quota 可以放宽。Anthropic、OpenAI 自家的 ChatGPT/Claude.ai 都是这套逻辑——免费 tier 严格、付费 tier 宽松。
@@ -954,5 +954,5 @@ Exponential 提供了"失败次数越多越温和"的自适应——前几次失
 - **博客: Cloudflare — Building a Rate Limiter** ([blog.cloudflare.com/counting-things-a-lot-of-different-things](https://blog.cloudflare.com/counting-things-a-lot-of-different-things/))
   Cloudflare 讲他们怎么实现分布式限流。重点看"sliding window log"和"sliding window counter"的对比——LLM 多 worker 共享 bucket 时的设计参考。
 
-- **配套阅读**：[Tools 错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)——错误分类和结构化反馈，本文限流是它的"事前防护"对应；[成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)——限流和成本治理强相关；[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)——限流指标的采集和告警；[Security](./chapters/08-评测安全可观测/agent-camp-engineering-security)——abuse 检测和滥用防护，限流之上的更深层防御；[开源 vs 闭源](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)——限额约束下自部署的决策。
+- **配套阅读**：[Tools 错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)——错误分类和结构化反馈，本文限流是它的"事前防护"对应；[成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)——限流和成本治理强相关；[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)——限流指标的采集和告警；[Security](/chapters/08-评测安全可观测/agent-camp-engineering-security)——abuse 检测和滥用防护，限流之上的更深层防御；[开源 vs 闭源](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)——限额约束下自部署的决策。
 

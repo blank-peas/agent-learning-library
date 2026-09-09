@@ -286,7 +286,7 @@ GPT Engineer 2023 年很火，但现在大家日常用的是 Aider、Cursor、Cl
 
 - **[gpt-engineer-org/gpt-engineer](https://github.com/gpt-engineer-org/gpt-engineer)** — 仓库本身。重点读 `gpt_engineer/preprompts/` 下的几个提示词文件（philosophy、generate、file_format），它们浓缩了"如何用 prompt 引导 LLM 写好代码"的早期经验
 - **[GPT Engineer 的 preprompts 目录](https://github.com/gpt-engineer-org/gpt-engineer/tree/main/gpt_engineer/preprompts)** — 单独拎出来读。这是 prompt engineering 的活教材，比看代码逻辑收获更大
-- **[Aider 源码剖析](./chapters/07-ts产品工程/agent-camp-source-aider)** — 迭代式 Agent 的对照。Aider 的作者 Paul Gauthier 和 GPT Engineer 的 README 互相推荐——GPT Engineer 说"要日常工具去用 aider"。两者代表了"生成"和"迭代"两条路线，对比读能看清范式迁移
-- **[SWE-agent 源码剖析](./chapters/07-ts产品工程/agent-camp-source-swe-agent)** — 反馈循环的对照。SWE-agent 强调"reproduce → fix → verify"循环，正是 GPT Engineer 缺失的部分。理解这个循环为什么重要，就理解了一次性生成的天花板
-- **[Cline 源码剖析](./chapters/07-ts产品工程/agent-camp-source-cline)** — 现代 IDE Agent 的对照。从 GPT Engineer 的 100 行 SimpleAgent 到 Cline 的 3764 行 Task 类，能直观看到"无循环生成"到"完整 Agent"的复杂度跃迁
+- **[Aider 源码剖析](/chapters/07-ts产品工程/agent-camp-source-aider)** — 迭代式 Agent 的对照。Aider 的作者 Paul Gauthier 和 GPT Engineer 的 README 互相推荐——GPT Engineer 说"要日常工具去用 aider"。两者代表了"生成"和"迭代"两条路线，对比读能看清范式迁移
+- **[SWE-agent 源码剖析](/chapters/07-ts产品工程/agent-camp-source-swe-agent)** — 反馈循环的对照。SWE-agent 强调"reproduce → fix → verify"循环，正是 GPT Engineer 缺失的部分。理解这个循环为什么重要，就理解了一次性生成的天花板
+- **[Cline 源码剖析](/chapters/07-ts产品工程/agent-camp-source-cline)** — 现代 IDE Agent 的对照。从 GPT Engineer 的 100 行 SimpleAgent 到 Cline 的 3764 行 Task 类，能直观看到"无循环生成"到"完整 Agent"的复杂度跃迁
 

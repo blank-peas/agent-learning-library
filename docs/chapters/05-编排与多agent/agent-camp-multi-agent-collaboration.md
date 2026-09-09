@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **"多个 Agent 之间怎么协作"这一层方法论**——debate / voting / role-play / reviewer 四种正交模式。整体架构分类（中心化 / 去中心化 / hierarchical）见 [Agent 协作模式总览](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；中心化的 Orchestrator-Worker 架构见 [Orchestrator 与 Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)；具体框架实现（MetaGPT、ChatDev）见 [MetaGPT 与 ChatDev](./chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)；单 Agent 自我反思见 [Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion) 和 [Self-Consistency 与 Self-Refine](./chapters/01-模型与提示/agent-camp-prompt-self-consistency)；judge 角色的方法论见 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)。
+> **本文边界**：聚焦 **"多个 Agent 之间怎么协作"这一层方法论**——debate / voting / role-play / reviewer 四种正交模式。整体架构分类（中心化 / 去中心化 / hierarchical）见 [Agent 协作模式总览](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；中心化的 Orchestrator-Worker 架构见 [Orchestrator 与 Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)；具体框架实现（MetaGPT、ChatDev）见 [MetaGPT 与 ChatDev](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)；单 Agent 自我反思见 [Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion) 和 [Self-Consistency 与 Self-Refine](/chapters/01-模型与提示/agent-camp-prompt-self-consistency)；judge 角色的方法论见 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)。
 
 ### 面试官想考什么
 
@@ -93,7 +93,7 @@ Agent (单次 CoT): 5 袋打 8 折 = 30 × 5 × 0.8 = 120 元。
 
 #### Self-Consistency 解决了一半
 
-Wang et al. 2022 *Self-Consistency* ([arxiv 2203.11171](https://arxiv.org/abs/2203.11171)) 用"多次采样 + 投票"把 GSM8K 从 56.9% 提到 74.4%——见 [Self-Consistency 与 Self-Refine](./chapters/01-模型与提示/agent-camp-prompt-self-consistency)。但 Self-Consistency 只是把同一个模型用同一个 prompt 多次采样，**它解决的是"单次推理方差"，没解决"系统性偏差"**。如果模型对某类题有共同盲区，10 次采样会 10 次都错。
+Wang et al. 2022 *Self-Consistency* ([arxiv 2203.11171](https://arxiv.org/abs/2203.11171)) 用"多次采样 + 投票"把 GSM8K 从 56.9% 提到 74.4%——见 [Self-Consistency 与 Self-Refine](/chapters/01-模型与提示/agent-camp-prompt-self-consistency)。但 Self-Consistency 只是把同一个模型用同一个 prompt 多次采样，**它解决的是"单次推理方差"，没解决"系统性偏差"**。如果模型对某类题有共同盲区，10 次采样会 10 次都错。
 
 #### 多 Agent debate 把"分歧"做成信号
 
@@ -342,7 +342,7 @@ if __name__ == "__main__":
 
 #### 它和 Self-Consistency 的关系
 
-**单模型多采样投票**就是 Self-Consistency——见 [Self-Consistency 与 Self-Refine](./chapters/01-模型与提示/agent-camp-prompt-self-consistency)。本节讲的"多 Agent voting"是它的扩展：N 个 Agent **可以用不同模型、不同 prompt**，让 ensemble diversity 不只来自采样随机性。
+**单模型多采样投票**就是 Self-Consistency——见 [Self-Consistency 与 Self-Refine](/chapters/01-模型与提示/agent-camp-prompt-self-consistency)。本节讲的"多 Agent voting"是它的扩展：N 个 Agent **可以用不同模型、不同 prompt**，让 ensemble diversity 不只来自采样随机性。
 
 ```mermaid
 flowchart LR
@@ -458,7 +458,7 @@ flowchart TB
 
 ##### MetaGPT（Hong et al. 2023）
 
-*MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework* ([arxiv 2308.00352](https://arxiv.org/abs/2308.00352))。把软件公司的 SOP（Standard Operating Procedure）编码进多 Agent 协作——PM → Architect → Engineer → QA → DevOps。每个角色按预定义 SOP 输出固定格式（SRS、API 设计、代码、测试报告）。HumanEval 上单 Agent baseline 80% → MetaGPT 85.9%，但更重要的是它能完成单 Agent 完全 hold 不住的任务（从需求到可运行系统）。详见 [MetaGPT 与 ChatDev](./chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)。
+*MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework* ([arxiv 2308.00352](https://arxiv.org/abs/2308.00352))。把软件公司的 SOP（Standard Operating Procedure）编码进多 Agent 协作——PM → Architect → Engineer → QA → DevOps。每个角色按预定义 SOP 输出固定格式（SRS、API 设计、代码、测试报告）。HumanEval 上单 Agent baseline 80% → MetaGPT 85.9%，但更重要的是它能完成单 Agent 完全 hold 不住的任务（从需求到可运行系统）。详见 [MetaGPT 与 ChatDev](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)。
 
 ##### ChatDev（Qian et al. 2023）
 
@@ -732,7 +732,7 @@ Reviewer 模式不只是 inference-time 技巧——它是当代 RLAIF（Reinfor
 - **AutoGen GroupChat** ([microsoft.github.io/autogen](https://microsoft.github.io/autogen/))：把多 Agent 放进一个 chat，由 GroupChatManager 调度发言顺序——天然适合 debate 和 role-play
 - **LangGraph multi-agent**：用 graph 显式表达 Agent 间状态流转，对 reviewer / 流程化 role-play 友好
 - **CrewAI**：偏 role-play 的高层抽象，预设了 process（sequential / hierarchical）
-- 详细对比和实现见 [Agent 协作模式总览](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 和 [Orchestrator 与 Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)
+- 详细对比和实现见 [Agent 协作模式总览](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 和 [Orchestrator 与 Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)
 
 ---
 
@@ -763,7 +763,7 @@ Reviewer 模式不只是 inference-time 技巧——它是当代 RLAIF（Reinfor
 **30 秒版本**：角色边界要从三层防御：(1) **prompt 硬约束**——`You MUST NOT write code` 这种否定式指令；(2) **产物结构化**——每角色输出固定 schema（PRD JSON / 代码文件 / 测试报告），格式不符不算完成，强制走回来；(3) **消息隔离**——下游 Agent 只收到上游的"最终产物"而非"思考过程"，防止上游的不确定性传染。穿帮的根因通常是 prompt 太软（"You are a PM" 没有 MUST NOT）、消息没隔离（夹带上游 chain-of-thought）、或框架本身没有 turn-taking 强约束（AutoGen GroupChat 默认让 manager 决定下一个发言者，可能选错角色）。MetaGPT 用 SOP 强制流程的做法相对最 robust，因为流程本身就是一个有限状态机。
 
 **追问 1**：那 Agent 数太多怎么协调？需要 orchestrator 吗？
-角色超过 3-4 个时，去中心化协作的 token 成本和复杂度都急剧上升——每个 Agent 都要看到所有人的消息。这时该上 orchestrator-worker 架构（见 [Orchestrator 与 Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)）：一个 orchestrator 负责调度（"现在该 Dev 工作"），worker Agents 只和 orchestrator 通信、不直接看到其他 worker。Anthropic Claude Code 的 Agent 设计就是这种 hub-spoke 结构。Role-Play 适合 2-4 角色的小团队，再多就该升级架构。
+角色超过 3-4 个时，去中心化协作的 token 成本和复杂度都急剧上升——每个 Agent 都要看到所有人的消息。这时该上 orchestrator-worker 架构（见 [Orchestrator 与 Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)）：一个 orchestrator 负责调度（"现在该 Dev 工作"），worker Agents 只和 orchestrator 通信、不直接看到其他 worker。Anthropic Claude Code 的 Agent 设计就是这种 hub-spoke 结构。Role-Play 适合 2-4 角色的小团队，再多就该升级架构。
 
 **追问 2**：每个角色用同模型还是不同模型？
 **重要决定**。同模型：成本省、风格统一、但所有角色共享同模型偏差，可能集体出错。不同模型：成本高、风格有割裂感、但能引入"跨模型审查"效应。生产里常见组合：(a) 关键角色（QA、Reviewer）用更强模型，执行角色（Developer 实现 boilerplate）用便宜模型；(b) 安全敏感角色（safety reviewer）用专门模型（Anthropic safety classifier）；(c) 多语言场景下 cross-lingual 角色用对应语种最强模型。这是 Role-Play 比单 Agent 灵活的关键——能按角色分别优化。
@@ -809,5 +809,5 @@ Reviewer 模式不只是 inference-time 技巧——它是当代 RLAIF（Reinfor
 - **代码：LangGraph multi-agent examples** ([langchain-ai.github.io/langgraph/tutorials/multi_agent](https://langchain-ai.github.io/langgraph/tutorials/multi_agent/multi-agent-collaboration/))
   LangGraph 官方 multi-agent 教程，包含 debate、supervisor、collaborative 几种范式的可运行代码。优先看 supervisor + workers 这一节——它是 orchestrator-worker 和 role-play 的混合实现。
 
-- **配套阅读**：[Agent 协作模式总览](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 看架构维度的分类；[Orchestrator 与 Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) 看中心化协调；[MetaGPT 与 ChatDev](./chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev) 看 role-play 工业落地；[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion) 和 [Self-Consistency 与 Self-Refine](./chapters/01-模型与提示/agent-camp-prompt-self-consistency) 对比单 Agent 自我改进；[LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 看 debate / voting / reviewer 里 judge 角色的方法论。
+- **配套阅读**：[Agent 协作模式总览](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 看架构维度的分类；[Orchestrator 与 Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) 看中心化协调；[MetaGPT 与 ChatDev](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev) 看 role-play 工业落地；[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion) 和 [Self-Consistency 与 Self-Refine](/chapters/01-模型与提示/agent-camp-prompt-self-consistency) 对比单 Agent 自我改进；[LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 看 debate / voting / reviewer 里 judge 角色的方法论。
 

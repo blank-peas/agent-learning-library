@@ -30,10 +30,10 @@ Tax AI 这种垂直领域 Agent 的难点，不只是“模型会不会回答税
 
 ### 和本站章节的关系
 
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [Agent 工程化 - 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Agent 工程化 - 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
 - [垂直领域 Agent](https://github.com/yibo365/agent-camp)
-- [Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli)
+- [Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli)
 
 ### 面试追问
 

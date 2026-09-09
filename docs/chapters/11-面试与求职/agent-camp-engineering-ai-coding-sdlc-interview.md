@@ -22,7 +22,7 @@
 
 > AI Coding 的分水岭不是“谁写代码”，而是“谁定义需求、谁控制边界、谁验证结果”。模型可以大量生成实现，人必须拥有验收标准和风险判断。
 
-> **本文边界**：编程 Agent 的产品架构看 [编程 Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)，单个 Agent 的运行环境看 [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)，长周期自动化看 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，工具权限与沙箱看 [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)。本文专注真实面试里的 **AI Coding 如何接入软件研发流程**。
+> **本文边界**：编程 Agent 的产品架构看 [编程 Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)，单个 Agent 的运行环境看 [Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)，长周期自动化看 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，工具权限与沙箱看 [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)。本文专注真实面试里的 **AI Coding 如何接入软件研发流程**。
 
 > **脱敏说明**：本文来自多场 Agent / AI Coding 岗位面试中反复出现的流程追问。所有例子都改成通用业务系统，不保留任何可识别的真实细节。
 
@@ -232,7 +232,7 @@ checker 用干净上下文重新读 PRD、技术方案和 diff，输出阻塞问
 但 merge 权限仍在人和 owner 手里，AI review 是输入，不是批准。
 ```
 
-这和 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering) 里的 maker/checker 拆分是一致的：写代码和验收代码不能由同一个上下文闭环自嗨。
+这和 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering) 里的 maker/checker 拆分是一致的：写代码和验收代码不能由同一个上下文闭环自嗨。
 
 ### 追问链五：怎么避免乱改代码
 
@@ -514,9 +514,9 @@ AI 很适合做故障排查里的机械环节：
 
 | 概念 | 重点 | 面试边界 |
 |---|---|---|
-| 编程 Agent | 能在代码库里定位、修改、测试 | 产品/技术架构，见 [编程 Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent) |
-| Agent Harness | 单个任务怎么稳定运行 | 状态、工具、权限、恢复，见 [Harness](./chapters/09-codingagent/agent-camp-engineering-harness) |
-| Loop Engineering | 多次运行、并行和无人值守 | 调度、worktree、maker/checker，见 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering) |
+| 编程 Agent | 能在代码库里定位、修改、测试 | 产品/技术架构，见 [编程 Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent) |
+| Agent Harness | 单个任务怎么稳定运行 | 状态、工具、权限、恢复，见 [Harness](/chapters/09-codingagent/agent-camp-engineering-harness) |
+| Loop Engineering | 多次运行、并行和无人值守 | 调度、worktree、maker/checker，见 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering) |
 | AI Coding SDLC | 如何接入研发流程 | 本文重点：PRD、设计、task、TDD、review、指标 |
 | Agent Skills | 把团队流程沉淀成可加载能力 | 适合承载 PRD 模板、review checklist、模块规范 |
 

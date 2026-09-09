@@ -22,7 +22,7 @@
 
 > 业务 Agent 的第一层面试是“你做过什么”，Agent Runtime 的第二层面试是“这套系统凭什么可控”。
 
-> **本文边界**：这篇是面试复盘型文章，不重复讲 Agent Runtime 的完整系统设计。完整模块拆解看 [从业务 Agent 到 Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)，单任务运行环境看 [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)，外层长周期循环看 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，工具权限细节看 [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)。
+> **本文边界**：这篇是面试复盘型文章，不重复讲 Agent Runtime 的完整系统设计。完整模块拆解看 [从业务 Agent 到 Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)，单任务运行环境看 [Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)，外层长周期循环看 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)，工具权限细节看 [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位面试中反复出现的追问链抽象。文中不出现公司名、项目名、业务指标、内部系统名，也不复述任何私有业务流程；所有例子都改写成通用的“高风险业务 Agent”场景。
 
@@ -554,5 +554,5 @@ Reflection 只能生成候选记忆或候选改进，不能直接修改长期状
   为什么读：面试里说可观测性时，trace 不只是日志，而是 LLM generation、tool call、handoff、guardrail 等 span 的结构化记录。
 - [OpenAI Agents SDK: Guardrails](https://openai.github.io/openai-agents-python/guardrails/)  
   为什么读：输入、工具、输出 guardrails 的边界很适合用来回答高风险业务安全问题。
-- 配套阅读：[从业务 Agent 到 Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)、[上下文工程](https://github.com/yibo365/agent-camp)、[工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)、[Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)。
+- 配套阅读：[从业务 Agent 到 Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)、[上下文工程](https://github.com/yibo365/agent-camp)、[工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)、[Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)。
 

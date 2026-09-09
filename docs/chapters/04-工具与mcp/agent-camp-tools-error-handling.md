@@ -707,7 +707,7 @@ search_papers("transformer attention") → ERROR: API key expired
 → 输出一篇看起来权威实则全是幻觉的报告
 ```
 
-这本质上是 [上下文污染](./chapters/07-ts产品工程/agent-camp-context-pollution) 的一种特殊形态——**错误作为"事实"进入下游 Agent 的 context，污染整条链路**。pollution 文章里讲的"Agent A 的错误结论写入共享 context，B/C/D 都基于此推理"，工具失败是这种污染最常见的源头。
+这本质上是 [上下文污染](/chapters/07-ts产品工程/agent-camp-context-pollution) 的一种特殊形态——**错误作为"事实"进入下游 Agent 的 context，污染整条链路**。pollution 文章里讲的"Agent A 的错误结论写入共享 context，B/C/D 都基于此推理"，工具失败是这种污染最常见的源头。
 
 两层防护：
 
@@ -769,10 +769,10 @@ Cursor 在 Agent 模式（Composer）里跑 build 后的处理：
 | 概念 | 关注点 | 范围 |
 |---|---|---|
 | **工具错误处理** | 工具调用本身的失败 | 本文 |
-| **[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion)** | 失败后的反思学习 | 跨任务、长期 |
-| **[Self-correction](./chapters/07-ts产品工程/agent-camp-agent-self-correction)** | 模型自己识别并修正错误 | 推理层 |
-| **[Observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 整体可观测性 | 系统级监控 |
-| **[Parallel error handling](./chapters/04-工具与mcp/agent-camp-tools-parallel)** | 并行调用的特殊处理 | 并发场景 |
+| **[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion)** | 失败后的反思学习 | 跨任务、长期 |
+| **[Self-correction](/chapters/07-ts产品工程/agent-camp-agent-self-correction)** | 模型自己识别并修正错误 | 推理层 |
+| **[Observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 整体可观测性 | 系统级监控 |
+| **[Parallel error handling](/chapters/04-工具与mcp/agent-camp-tools-parallel)** | 并行调用的特殊处理 | 并发场景 |
 
 辨析要点：
 - 工具错误处理是**事中**——失败发生那一刻怎么响应
@@ -948,5 +948,5 @@ OpenAI/Anthropic 是 token 级别限流，比 request 限流复杂。Retry-After
 - **博客: Hugging Face — How Open Models Handle Tool Failures** ([huggingface.co/blog](https://huggingface.co/blog))
   开源模型生态对 tool error 的处理通常比闭源弱。读它了解小模型在错误恢复上的能力边界，影响你选模型时的判断。
 
-- **配套阅读**：[Function Calling 规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)——错误处理的前提是工具定义；[并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)——并行场景的错误处理特殊性（partial failure）；[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion)——失败后的反思机制；[Self-correction](./chapters/07-ts产品工程/agent-camp-agent-self-correction)——模型自我纠错；[Observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability)——错误的长期监控；[上下文污染](./chapters/07-ts产品工程/agent-camp-context-pollution)——错误怎么进入并污染下游 context。
+- **配套阅读**：[Function Calling 规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling)——错误处理的前提是工具定义；[并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)——并行场景的错误处理特殊性（partial failure）；[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion)——失败后的反思机制；[Self-correction](/chapters/07-ts产品工程/agent-camp-agent-self-correction)——模型自我纠错；[Observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability)——错误的长期监控；[上下文污染](/chapters/07-ts产品工程/agent-camp-context-pollution)——错误怎么进入并污染下游 context。
 

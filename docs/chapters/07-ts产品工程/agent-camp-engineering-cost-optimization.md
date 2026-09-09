@@ -114,7 +114,7 @@ output 成本（结构化限长）：$67,500       ← 省 40%
        + 自部署 GPU/推理服务（如果走开源模型）
 ```
 
-每个 LLM 提供商都提供 usage 字段，把这些数字打到 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 系统才能做下一步决策。一个典型的成本拆解可能长这样：
+每个 LLM 提供商都提供 usage 字段，把这些数字打到 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 系统才能做下一步决策。一个典型的成本拆解可能长这样：
 
 | 成本项 | 占比 | 单次绝对值 |
 |---|---|---|
@@ -167,7 +167,7 @@ output 成本（结构化限长）：$67,500       ← 省 40%
 - Anthropic 写入贵 25%——cache 至少被命中 2 次以上才回本
 - 必须监控 `cache_read_input_tokens / total_input_tokens` 比率，低于预期立刻报警
 
-cache 的协议细节（四家 API 对比、breakpoint 布局、TTL、失效监控、Agent 多轮场景的分层 cache）整篇都在 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)，本文不重复。**这是七种手段里收益最高的一种，没读 caching 那篇就先去读**。
+cache 的协议细节（四家 API 对比、breakpoint 布局、TTL、失效监控、Agent 多轮场景的分层 cache）整篇都在 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)，本文不重复。**这是七种手段里收益最高的一种，没读 caching 那篇就先去读**。
 
 ---
 
@@ -262,7 +262,7 @@ def route_by_features(query: str, ctx: dict) -> str:
 
 #### 做法 C：Cascade（级联回退）
 
-先送小模型，结果不好再升级。难点是怎么判断"结果不好"——常见做法是让大模型做一次 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 评估，或者用 logprob / 自我评估。
+先送小模型，结果不好再升级。难点是怎么判断"结果不好"——常见做法是让大模型做一次 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 评估，或者用 logprob / 自我评估。
 
 ```
 小模型回答 → 评分 < 阈值 → 用大模型重新生成
@@ -347,7 +347,7 @@ semantic cache 的 hit rate 直接决定省多少钱。三个关键调参点：
 
 工业界主流方案是 **路由 + 蒸馏组合**：高频确定任务走蒸馏小模型，长尾 / 复杂请求路由到大模型。这样既享受蒸馏的极低成本，又用大模型兜住质量。
 
-自部署 vs API 的更详细决策框架见 [开源 vs 闭源模型](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)。
+自部署 vs API 的更详细决策框架见 [开源 vs 闭源模型](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)。
 
 ---
 
@@ -426,9 +426,9 @@ context = "\n\n".join(reranked)
 
 #### 思路 C：摘要式压缩
 
-对话历史超过 N 轮就摘要——把前 40 轮压成一个 summary，重新作为"伪历史"塞回去。这是长对话 Agent 的标配，详见 [上下文压缩](./chapters/01-模型与提示/agent-camp-prompt-compression)。
+对话历史超过 N 轮就摘要——把前 40 轮压成一个 summary，重新作为"伪历史"塞回去。这是长对话 Agent 的标配，详见 [上下文压缩](/chapters/01-模型与提示/agent-camp-prompt-compression)。
 
-**压缩的风险**：信息丢失。如果压缩掉的恰好是用户真正需要的细节，质量直接崩。生产里必须做**对照实验**：压缩前后的回答用 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 打分，确认质量损失 < 5% 才能上线。
+**压缩的风险**：信息丢失。如果压缩掉的恰好是用户真正需要的细节，质量直接崩。生产里必须做**对照实验**：压缩前后的回答用 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 打分，确认质量损失 < 5% 才能上线。
 
 ---
 
@@ -462,7 +462,7 @@ response = client.messages.create(
 
 #### 结构化输出强约束格式
 
-用 [structured output](./chapters/04-工具与mcp/agent-camp-tools-function-calling) 强制 JSON schema，比让模型生成自由文本省 30-50% token——因为没有解释性文字、没有 markdown 装饰。
+用 [structured output](/chapters/04-工具与mcp/agent-camp-tools-function-calling) 强制 JSON schema，比让模型生成自由文本省 30-50% token——因为没有解释性文字、没有 markdown 装饰。
 
 ```python
 ## 自由文本输出（典型 800 token）
@@ -550,9 +550,9 @@ flowchart TD
 | **Model distribution** | 各模型调用占比 | 大模型占比突增 |
 | **Monthly burn** | 月度累计 | 接近月预算 80% 报警 |
 
-把这些指标推到 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 系统的 dashboard。**单看月账单太晚——账单出来时钱已经花掉了**。要看分钟级别的实时趋势，异常 30 分钟内能发现。
+把这些指标推到 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 系统的 dashboard。**单看月账单太晚——账单出来时钱已经花掉了**。要看分钟级别的实时趋势，异常 30 分钟内能发现。
 
-**配套：[Rate limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 是成本失控的最后一道兜底**——任何一个用户/接口的 token 用量异常飙升，要能立刻挡住。
+**配套：[Rate limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 是成本失控的最后一道兜底**——任何一个用户/接口的 token 用量异常飙升，要能立刻挡住。
 
 ---
 
@@ -635,7 +635,7 @@ Perplexity 公开过他们的核心成本拆解：
 
 **现象**：上线时 cache 命中率 85%，几个月后变成 30%，账单悄悄涨 3 倍没人发现。
 **根因**：某次发版有人在 system prompt 里加了时间戳 / user_id / 改了换行，prefix 字节级变化。或者 TTL 短于请求间隔导致反复重写。
-**修法**：cache hit rate 必须上监控大盘，低于历史均值 20% 持续 1 小时报警。详见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching) 的陷阱小节。
+**修法**：cache hit rate 必须上监控大盘，低于历史均值 20% 持续 1 小时报警。详见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching) 的陷阱小节。
 
 #### 陷阱 3：Output token 失控
 
@@ -674,12 +674,12 @@ Perplexity 公开过他们的核心成本拆解：
 | 概念 | 关注点 | 范围 |
 |---|---|---|
 | **Cost optimization**（本文） | 降低单位请求成本 | 全栈 |
-| **[Rate limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)** | 防止异常流量打爆账单 | 兜底保护 |
-| **[Observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 成本数据采集 + 可视化 | 数据来源 |
-| **[Prompt caching](./chapters/07-ts产品工程/agent-camp-context-caching)** | input token 复用 | 单一手段（占 1/7） |
-| **[Prompt compression](./chapters/01-模型与提示/agent-camp-prompt-compression)** | 上下文压缩算法 | 单一手段 |
-| **[Open vs Closed](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)** | 自部署 vs API | 成本结构选型 |
-| **[Models](./chapters/01-模型与提示/agent-camp-llm-models)** | 各模型定价对比 | 选型基础 |
+| **[Rate limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)** | 防止异常流量打爆账单 | 兜底保护 |
+| **[Observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 成本数据采集 + 可视化 | 数据来源 |
+| **[Prompt caching](/chapters/07-ts产品工程/agent-camp-context-caching)** | input token 复用 | 单一手段（占 1/7） |
+| **[Prompt compression](/chapters/01-模型与提示/agent-camp-prompt-compression)** | 上下文压缩算法 | 单一手段 |
+| **[Open vs Closed](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)** | 自部署 vs API | 成本结构选型 |
+| **[Models](/chapters/01-模型与提示/agent-camp-llm-models)** | 各模型定价对比 | 选型基础 |
 
 辨析要点：
 - 成本优化是**目标**，cache / 压缩 / 路由是**手段**
@@ -695,10 +695,10 @@ Perplexity 公开过他们的核心成本拆解：
 **30 秒版本**：不拆账单的优化都是耍流氓。先用 observability 系统拆出 input / output / cache / 工具调用 / 自部署 GPU 各占多少，找最大头先动手。RAG 场景大概率是 input 占 60%-80%（每次拼 RAG 检索结果），第一刀切 prompt cache（省 50%-90% input），第二刀切检索压缩（rerank + Top-K 截断省 60%-80%），第三刀切 model routing（简单 query 走小模型省 70%-90%）。这三刀下去通常能把 50 万降到 5-10 万，再深度优化加 batch / 蒸馏 / semantic cache。**关键是不要先动 cache、再动模型——要先看账单**。
 
 **追问 1**：你说先拆账单——具体看哪些字段？
-看四组数：(1) input/output token 总量与单价；(2) cache_creation vs cache_read（如果用了 cache）；(3) 各模型调用次数与占比（如果路由了）；(4) 每用户/每 session 的成本分布——P50/P95/P99，重点看 P99 异常用户。比如发现 0.1% 的用户消耗了 30% 的成本（典型 abuse 场景），先做 [rate limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 而不是别的。Anthropic / OpenAI 的 usage API 都返回这些字段，落到自家数仓做切片分析。
+看四组数：(1) input/output token 总量与单价；(2) cache_creation vs cache_read（如果用了 cache）；(3) 各模型调用次数与占比（如果路由了）；(4) 每用户/每 session 的成本分布——P50/P95/P99，重点看 P99 异常用户。比如发现 0.1% 的用户消耗了 30% 的成本（典型 abuse 场景），先做 [rate limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 而不是别的。Anthropic / OpenAI 的 usage API 都返回这些字段，落到自家数仓做切片分析。
 
 **追问 2**：怎么验证优化不会损害质量？
-任何优化都必须 A/B test。准备一个固定的 eval set（200-500 条覆盖各场景的真实样本），每次优化前后跑一遍 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 或人工评估。生产灰度时 1% 流量先开优化版本，对比关键业务指标（满意度、复述率、转人工率）24-48 小时无显著退化才扩大。**没有 eval 基线的优化等于盲飞**，省了 80% 成本但把产品搞砸的故事每年都在重演。
+任何优化都必须 A/B test。准备一个固定的 eval set（200-500 条覆盖各场景的真实样本），每次优化前后跑一遍 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 或人工评估。生产灰度时 1% 流量先开优化版本，对比关键业务指标（满意度、复述率、转人工率）24-48 小时无显著退化才扩大。**没有 eval 基线的优化等于盲飞**，省了 80% 成本但把产品搞砸的故事每年都在重演。
 
 #### Q: Model routing 怎么判断"难度"？路由器本身的成本怎么 cover？
 
@@ -761,5 +761,5 @@ Batch 的 SLA 是 24h 但**不保证**——服务过载时可能超时。生产
 - **AWS Architecture Blog — Cost optimization for LLM workloads** ([aws.amazon.com/blogs/architecture](https://aws.amazon.com/blogs/architecture))
   AWS 视角的 LLM 成本优化，强调自部署 vs API 的盈亏平衡分析。读它建立"什么 QPS 之上自部署划算"的量化感觉。
 
-- **配套阅读**：[上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)——prompt cache 的全部细节，本文最强引用；[上下文压缩](./chapters/01-模型与提示/agent-camp-prompt-compression)——LLMLingua、摘要压缩算法；[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)——成本数据的采集与监控大盘；[Rate limiting](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)——成本失控的最后一道防线；[模型对比](./chapters/01-模型与提示/agent-camp-llm-models)——各模型定价表；[开源 vs 闭源](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)——自部署 vs API 的成本决策；[LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)——验证优化不损害质量的核心工具。
+- **配套阅读**：[上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)——prompt cache 的全部细节，本文最强引用；[上下文压缩](/chapters/01-模型与提示/agent-camp-prompt-compression)——LLMLingua、摘要压缩算法；[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)——成本数据的采集与监控大盘；[Rate limiting](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)——成本失控的最后一道防线；[模型对比](/chapters/01-模型与提示/agent-camp-llm-models)——各模型定价表；[开源 vs 闭源](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)——自部署 vs API 的成本决策；[LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)——验证优化不损害质量的核心工具。
 

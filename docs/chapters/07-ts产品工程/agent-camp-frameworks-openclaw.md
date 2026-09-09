@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 OpenClaw 的架构设计与工程决策——Gateway 模型、Session 隔离、Skill 系统、安全沙箱。通用的 Agent 模式见 [ReAct](./chapters/02-agent原理/agent-camp-agent-react-pattern)；多 Agent 协作见 [多 Agent 编排](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；MCP 协议见 [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)。
+> **本文边界**：聚焦 OpenClaw 的架构设计与工程决策——Gateway 模型、Session 隔离、Skill 系统、安全沙箱。通用的 Agent 模式见 [ReAct](/chapters/02-agent原理/agent-camp-agent-react-pattern)；多 Agent 协作见 [多 Agent 编排](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；MCP 协议见 [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)。
 
 ### 面试官想考什么
 
@@ -376,5 +376,5 @@ OpenClaw 的安全分三层：
 - **官方文档** [docs.openclaw.ai](https://docs.openclaw.ai) — 从安装到高级配置的完整指南。重点看 Sessions 和 Skills 两章，这是理解 OpenClaw 区别于其他框架的关键
 - **ClawHub 技能市场** [clawhub.ai](https://clawhub.ai) — 浏览社区贡献的 Skill，看看"Agent 自动生成的 Skill 长什么样"比读文档更直观
 - **GitHub 仓库** [github.com/openclaw/openclaw](https://github.com/openclaw/openclaw) — TypeScript 源码。入口看 `packages/gateway/` 目录，特别是路由和 Session 管理模块
-- **MCP 协议对比** [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) — 理解 OpenClaw Skill 和 MCP Server 的分层关系，面试常考
+- **MCP 协议对比** [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) — 理解 OpenClaw Skill 和 MCP Server 的分层关系，面试常考
 

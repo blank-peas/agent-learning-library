@@ -45,10 +45,10 @@ auto mode 解决的是一个很现实的问题：权限弹窗太多时，用户�
 
 ### 和本站章节的关系
 
-- [Agent 工程化 - 安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)
-- [工具调用错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)
-- [提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)
-- [Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code)
+- [Agent 工程化 - 安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)
+- [工具调用错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)
+- [提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)
+- [Claude Code 架构剖析](/chapters/09-codingagent/agent-camp-source-claude-code)
 
 ### 面试追问
 

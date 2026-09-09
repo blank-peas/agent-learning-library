@@ -44,10 +44,10 @@
 
 ### 和本站章节的关系
 
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
 - [上下文工程](https://github.com/yibo365/agent-camp)
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
 
 ### 面试追问
 

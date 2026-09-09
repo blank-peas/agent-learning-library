@@ -113,7 +113,7 @@ flowchart LR
     G --> H["LLM context"]
 ```
 
-这里最重要的一点：**Hybrid Search 偏召回，不是最终裁判。** 它的目标是让正确 chunk 进入候选池。候选池进来后，通常还要用 reranker 做精排，再喂给 LLM。下一篇 [重排序 Reranking](./chapters/03-rag/agent-camp-rag-reranking) 会专门讲这一步。
+这里最重要的一点：**Hybrid Search 偏召回，不是最终裁判。** 它的目标是让正确 chunk 进入候选池。候选池进来后，通常还要用 reranker 做精排，再喂给 LLM。下一篇 [重排序 Reranking](/chapters/03-rag/agent-camp-rag-reranking) 会专门讲这一步。
 
 ### 核心原理 / 关键设计
 

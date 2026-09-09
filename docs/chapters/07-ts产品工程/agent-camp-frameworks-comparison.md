@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：本文做横向决策对比，单个框架的深度剖析见各自的文章——[LangChain/LangGraph](./chapters/05-编排与多agent/agent-camp-frameworks-langchain)、[LlamaIndex](./chapters/07-ts产品工程/agent-camp-frameworks-llamaindex)、[Claude Agent SDK](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)、[OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)、[OpenClaw](./chapters/07-ts产品工程/agent-camp-frameworks-openclaw)、[Hermes Agent](./chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent)、[Pi](./chapters/07-ts产品工程/agent-camp-frameworks-pi)。
+> **本文边界**：本文做横向决策对比，单个框架的深度剖析见各自的文章——[LangChain/LangGraph](/chapters/05-编排与多agent/agent-camp-frameworks-langchain)、[LlamaIndex](/chapters/07-ts产品工程/agent-camp-frameworks-llamaindex)、[Claude Agent SDK](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)、[OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)、[OpenClaw](/chapters/07-ts产品工程/agent-camp-frameworks-openclaw)、[Hermes Agent](/chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent)、[Pi](/chapters/07-ts产品工程/agent-camp-frameworks-pi)。
 
 ### 面试官想考什么
 
@@ -361,7 +361,7 @@ support:
 
 ### 延伸阅读
 
-- **各框架自身的深度文章**：在跨框架对比之外，理解每个框架的内部设计才能做精准选型——[LangChain/LangGraph](./chapters/05-编排与多agent/agent-camp-frameworks-langchain)、[LlamaIndex](./chapters/07-ts产品工程/agent-camp-frameworks-llamaindex)、[Claude Agent SDK](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)、[OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)、[OpenClaw](./chapters/07-ts产品工程/agent-camp-frameworks-openclaw)、[Hermes Agent](./chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent)、[Pi](./chapters/07-ts产品工程/agent-camp-frameworks-pi)
+- **各框架自身的深度文章**：在跨框架对比之外，理解每个框架的内部设计才能做精准选型——[LangChain/LangGraph](/chapters/05-编排与多agent/agent-camp-frameworks-langchain)、[LlamaIndex](/chapters/07-ts产品工程/agent-camp-frameworks-llamaindex)、[Claude Agent SDK](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)、[OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)、[OpenClaw](/chapters/07-ts产品工程/agent-camp-frameworks-openclaw)、[Hermes Agent](/chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent)、[Pi](/chapters/07-ts产品工程/agent-camp-frameworks-pi)
 - **Building Effective Agents** Anthropic 2024 年的博客 — 不是教程，是关于"什么时候应该用 Agent、什么时候不该"的思考。选型前必读
 - **LangChain Decision Guide** [python.langchain.com/docs/concepts](https://python.langchain.com/docs/concepts/) — LangChain 自己的"什么时候用 LangChain vs LangGraph"指南
 - **Awesome AI Agents** [github.com/e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) — 持续更新的 Agent 生态列表，看新框架出现时的横向对照

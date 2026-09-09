@@ -44,9 +44,9 @@ Verified 子集的意义在于提高任务可靠性。真实 issue 里会有描�
 
 ### 和本站章节的关系
 
-- [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
-- [Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code)
+- [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [Claude Code 架构剖析](/chapters/09-codingagent/agent-camp-source-claude-code)
 
 ### 面试追问
 

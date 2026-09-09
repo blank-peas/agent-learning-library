@@ -45,9 +45,9 @@
 
 ### 和本站章节的关系
 
-- [Agent 工程化 - 安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
-- [提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)
+- [Agent 工程化 - 安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)
 - [多 Agent 协作](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

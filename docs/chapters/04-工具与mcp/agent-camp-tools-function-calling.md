@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **LLM API 层的 function calling 协议**——三家厂商的消息格式、tool_choice 语义、并行调用回传、错误反馈。schema 字段怎么写更不易踩坑见 [Tool Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)；跨进程标准化协议见 [MCP](./chapters/04-工具与mcp/agent-camp-tools-mcp)；并行 tool_calls 的编排细节见 [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)；prompt 层面的 ReAct 见 [ReAct Prompt 模式](./chapters/02-agent原理/agent-camp-prompt-react)。
+> **本文边界**：聚焦 **LLM API 层的 function calling 协议**——三家厂商的消息格式、tool_choice 语义、并行调用回传、错误反馈。schema 字段怎么写更不易踩坑见 [Tool Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)；跨进程标准化协议见 [MCP](/chapters/04-工具与mcp/agent-camp-tools-mcp)；并行 tool_calls 的编排细节见 [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)；prompt 层面的 ReAct 见 [ReAct Prompt 模式](/chapters/02-agent原理/agent-camp-prompt-react)。
 
 ### 面试官想考什么
 
@@ -74,7 +74,7 @@
 
 ### 为什么需要原生 function calling
 
-2023 年 6 月之前，让 LLM 调用工具基本只有一条路——把工具描述塞进 prompt，让模型按约定格式输出文本，再用正则把"工具名 + 参数"抠出来。这就是 [ReAct Prompt 模式](./chapters/02-agent原理/agent-camp-prompt-react) 走过的路。
+2023 年 6 月之前，让 LLM 调用工具基本只有一条路——把工具描述塞进 prompt，让模型按约定格式输出文本，再用正则把"工具名 + 参数"抠出来。这就是 [ReAct Prompt 模式](/chapters/02-agent原理/agent-camp-prompt-react) 走过的路。
 
 它能跑，但工业生产里有几个永远修不完的伤口：
 
@@ -123,7 +123,7 @@ sequenceDiagram
 4. **结果格式化**：包装成 `tool_result` 消息（带上 `tool_call_id` 配对）
 5. **第二次请求**：把 user message + assistant message（含 tool_calls）+ tool_result 一起发回去，模型基于结果继续生成
 
-这个循环可能走多轮——模型看了第一个工具结果后可能要求再调另一个工具，再回灌，再决策。**Agent 的本质就是这个循环跑到模型说"不需要再调工具了"为止**——详见 [Agent ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern)。
+这个循环可能走多轮——模型看了第一个工具结果后可能要求再调另一个工具，再回灌，再决策。**Agent 的本质就是这个循环跑到模型说"不需要再调工具了"为止**——详见 [Agent ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern)。
 
 ---
 
@@ -172,7 +172,7 @@ OpenAI 是 function calling 的发明者，**最早期叫 `function_call`（单�
 {"role": "tool", "tool_call_id": "call_def", "content": "18"}
 ```
 
-注意 `arguments` 是**字符串**而非对象——这是为了流式传输方便（边生成边发），用之前要 `json.loads`。OpenAI 2024 后推出的 **Strict Mode**（`"strict": true`）会用受限解码强制模型输出符合 schema 的 JSON，几乎杜绝参数格式错误（细节见 [Tool Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)）。
+注意 `arguments` 是**字符串**而非对象——这是为了流式传输方便（边生成边发），用之前要 `json.loads`。OpenAI 2024 后推出的 **Strict Mode**（`"strict": true`）会用受限解码强制模型输出符合 schema 的 JSON，几乎杜绝参数格式错误（细节见 [Tool Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)）。
 
 #### Anthropic（Messages API）
 
@@ -222,7 +222,7 @@ Claude 的 tool use 用 **content block** 结构——一条 assistant message �
 - **参数字段叫 `input`**，不是 `arguments`，而且是真正的 **JSON 对象**，不需要二次解析
 - **结果用 `user` role 包装**，不是独立的 `tool` role——这是 OpenAI 用户常踩的坑
 - **多个并行调用的结果合并在一条 user message 里**，不是分多条
-- Claude 经常会在 tool_use 之前先输出一段 text block 作为"自然语言思考"——这就是隐式的 [ReAct Thought](./chapters/02-agent原理/agent-camp-prompt-react)
+- Claude 经常会在 tool_use 之前先输出一段 text block 作为"自然语言思考"——这就是隐式的 [ReAct Thought](/chapters/02-agent原理/agent-camp-prompt-react)
 
 #### Google Gemini
 
@@ -457,7 +457,7 @@ if __name__ == "__main__":
 - **可机器校验**——业务代码可以用 `jsonschema` / `ajv` 在执行工具前再做一次校验，拦住模型偶发的 schema 偏离
 - **生态成熟**——Pydantic、Zod、TypeBox 都能从类型反推 schema，工程链路天然衔接
 
-但要意识到：**模型生成 JSON 本质仍是 token-by-token 预测**，不是先有 AST 再序列化。即使有完美的 schema，模型仍然可能写出 `"city": "Beijing"` 时漏掉引号、把 `enum` 之外的值塞进来。OpenAI 的 **Strict Mode** 和 Anthropic 的 Claude 3.5 **训练专项**都是工程化的缓解，但都不是 100%。这就是为什么生产代码里**调工具前必须 schema 校验 + 异常分支** —— 详见 [Tool Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)。
+但要意识到：**模型生成 JSON 本质仍是 token-by-token 预测**，不是先有 AST 再序列化。即使有完美的 schema，模型仍然可能写出 `"city": "Beijing"` 时漏掉引号、把 `enum` 之外的值塞进来。OpenAI 的 **Strict Mode** 和 Anthropic 的 Claude 3.5 **训练专项**都是工程化的缓解，但都不是 100%。这就是为什么生产代码里**调工具前必须 schema 校验 + 异常分支** —— 详见 [Tool Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)。
 
 ---
 
@@ -554,7 +554,7 @@ result = agent.run_sync("北京温度？")
 - 用 `enum` 列举合法值：`{"type": "string", "enum": ["北京","上海","广州",...]}`——这是最强的约束
 - 用 `description` 明确告诉模型可接受的格式：`"description": "城市的中文标准名，如 '北京' '上海'"`
 - 业务代码在执行前做二次校验，失败时**通过 tool_result 反馈给模型**而不是抛异常
-- 更系统的 schema 规范见 [Tool Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)
+- 更系统的 schema 规范见 [Tool Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)
 
 #### 坑 5：并发 tool_calls 把同一个 ID 用了两次
 
@@ -565,7 +565,7 @@ result = agent.run_sync("北京温度？")
 **修法**：
 - 永远从模型响应里取 id 透传回去，不要自己造
 - 不同对话/线程的状态严格隔离
-- 详细的并行调用编排见 [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)
+- 详细的并行调用编排见 [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)
 
 #### 坑 6：流式响应里 arguments 边解析边崩
 
@@ -592,7 +592,7 @@ result = agent.run_sync("北京温度？")
 | **Code Interpreter** | 一种特殊的 function call：工具就是 Python 沙箱，参数就是代码字符串 |
 | **Agent 主循环** | 把 function calling 循环跑到收敛的**编排层**——可加 plan / reflect / memory |
 
-**function calling vs MCP**：function calling 是 LLM API 字段；MCP 是工具服务跨进程协议。一个 MCP server 可以同时被 OpenAI 和 Claude 的 function calling 消费——MCP 是工具侧的标准化，function calling 是模型侧的标准化。详见 [MCP 跨进程协议](./chapters/04-工具与mcp/agent-camp-tools-mcp)。
+**function calling vs MCP**：function calling 是 LLM API 字段；MCP 是工具服务跨进程协议。一个 MCP server 可以同时被 OpenAI 和 Claude 的 function calling 消费——MCP 是工具侧的标准化，function calling 是模型侧的标准化。详见 [MCP 跨进程协议](/chapters/04-工具与mcp/agent-camp-tools-mcp)。
 
 **function calling vs Structured Output**：两者都依赖 JSON Schema，但 Structured Output 只用于**最终输出**（如抽取实体），不触发循环；function calling 用于**动作**，触发"执行 → 回灌 → 继续"循环。OpenAI 的 `response_format: {type: "json_schema"}` 是前者，`tools` + `tool_choice` 是后者。
 
@@ -646,11 +646,11 @@ result = agent.run_sync("北京温度？")
 OpenAI 的 Strict Mode 是**受限解码**——在每一步 token 生成时，根据当前 JSON 状态用 FSM 限制下一个合法 token 集合，模型必须从这个子集采样。代价是 schema 准备阶段要花十几秒做"编译"，所以新 schema 第一次调用会慢；同一个 schema 的后续调用走 cache 不慢。Anthropic 没公开同样的机制，靠的是大量 tool use 训练 + 微调让模型"自然"按 schema 输出。两者都不是 100%——Strict Mode 仍可能在 enum 之外的角落出错，但比默认模式好一两个数量级。
 
 **追问 2**：那如何在不开 Strict Mode 时降低错误率？
-四招：(1) **schema 写得严**——多用 enum、format、pattern；(2) **description 给清楚**——告诉模型每个字段什么时候用、不要写什么；(3) **少嵌套**——一层 object 比多层嵌套错误率低；(4) **few-shot 在 prompt 里给一两个正确调用示例**——模型对样本极敏感。详细的 schema 设计法见 [Tool Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)。
+四招：(1) **schema 写得严**——多用 enum、format、pattern；(2) **description 给清楚**——告诉模型每个字段什么时候用、不要写什么；(3) **少嵌套**——一层 object 比多层嵌套错误率低；(4) **few-shot 在 prompt 里给一两个正确调用示例**——模型对样本极敏感。详细的 schema 设计法见 [Tool Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)。
 
 #### Q: 并行 tool_calls 怎么处理结果回传？
 
-**30 秒版本**：核心规则——**每个 tool_call_id 必须有对应 tool_result，必须紧跟在产生它的 assistant message 之后**。OpenAI 是每个结果一条 `tool` role 消息，Anthropic 是所有结果合并到一条 `user` role message 里多个 tool_result block。**实战要点**：(1) 业务代码并行执行后**必须等所有结果都拿到**再一次性回传，不能边拿边发；(2) 失败也要返回 tool_result，content 写错误信息，让模型决定怎么办；(3) 顺序按模型返回的 tool_calls 数组顺序——多数 SDK 不强制但保持一致更稳妥。详细编排见 [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)。
+**30 秒版本**：核心规则——**每个 tool_call_id 必须有对应 tool_result，必须紧跟在产生它的 assistant message 之后**。OpenAI 是每个结果一条 `tool` role 消息，Anthropic 是所有结果合并到一条 `user` role message 里多个 tool_result block。**实战要点**：(1) 业务代码并行执行后**必须等所有结果都拿到**再一次性回传，不能边拿边发；(2) 失败也要返回 tool_result，content 写错误信息，让模型决定怎么办；(3) 顺序按模型返回的 tool_calls 数组顺序——多数 SDK 不强制但保持一致更稳妥。详细编排见 [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)。
 
 **追问 1**：那能不能流式回传——拿到一个工具结果就先发，剩下的等？
 不能。两家协议都要求**一次请求里 tool_calls 和 tool_results 必须一一对应、批量回传**。如果想流式给前端展示中间状态，可以在业务层把多个工具的中间结果先 stream 出去，但发给 LLM 的下一次请求**仍然必须等齐**。这是协议约束。
@@ -693,5 +693,5 @@ OpenAI 的 Strict Mode 是**受限解码**——在每一步 token 生成时，�
 - **LangChain 文档：Tool calling** ([python.langchain.com/docs/concepts/tool_calling](https://python.langchain.com/docs/concepts/tool_calling))
   **为什么读**：看 multi-provider 抽象层怎么做——`bind_tools` 背后的 adapter 模式是工业级 LLM SDK 设计的范本，自己造轮子前先看它。
 
-- **配套阅读**：[ReAct Prompt 模式](./chapters/02-agent原理/agent-camp-prompt-react)（前身）｜ [Tool Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)（参数描述最佳实践）｜ [MCP 跨进程协议](./chapters/04-工具与mcp/agent-camp-tools-mcp)（工具侧的标准化）｜ [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)（多 tool_calls 编排）｜ [Tool 错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)（失败的恢复策略）｜ [Agent ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern)（Agent 主循环编排层）。
+- **配套阅读**：[ReAct Prompt 模式](/chapters/02-agent原理/agent-camp-prompt-react)（前身）｜ [Tool Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)（参数描述最佳实践）｜ [MCP 跨进程协议](/chapters/04-工具与mcp/agent-camp-tools-mcp)（工具侧的标准化）｜ [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)（多 tool_calls 编排）｜ [Tool 错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)（失败的恢复策略）｜ [Agent ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern)（Agent 主循环编排层）。
 

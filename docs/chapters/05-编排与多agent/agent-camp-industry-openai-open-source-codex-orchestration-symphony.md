@@ -32,8 +32,8 @@
 
 - [多 Agent 协作](https://github.com/yibo365/agent-camp)
 - [流程编排 Workflow](https://github.com/yibo365/agent-camp)
-- [Agent 工程化 - 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
-- [Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli)
+- [Agent 工程化 - 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli)
 
 ### 面试追问
 

@@ -30,8 +30,8 @@
 
 ### 和本站章节的关系
 
-- [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)
-- [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)
+- [限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)
+- [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)
 - [Agent 工程化](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

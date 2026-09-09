@@ -44,9 +44,9 @@ MCP server 能扩展 Claude Desktop 的能力，但手动安装、配置和授�
 
 ### 和本站章节的关系
 
-- [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)
-- [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools)
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)
+- [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
 
 ### 面试追问
 

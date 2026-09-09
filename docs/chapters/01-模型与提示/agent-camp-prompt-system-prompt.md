@@ -94,7 +94,7 @@ System prompt 不是简单的"第一条消息"，它有特殊地位：
 
 LLM 训练时（特别是 RLHF/DPO 阶段），大量数据是 `(system_prompt, user_prompt, ideal_response)` 三元组。其中 ideal_response 必须遵守 system_prompt 的指令、拒绝违反 system 规则的 user 请求。模型从这些数据中学到："**当 system 和 user 冲突时，跟 system 走**"。
 
-但这个"优先级"不是绝对的——只是统计意义上的偏好。所以 prompt injection 仍可能成功（详见 [注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)）。
+但这个"优先级"不是绝对的——只是统计意义上的偏好。所以 prompt injection 仍可能成功（详见 [注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)）。
 
 各家模型实现：
 - **OpenAI**：明确的 `system` / `user` / `assistant` 角色
@@ -368,7 +368,7 @@ def get_system_prompt(user_id):
 你不要...
 ```
 
-如前文（[基础原则](./chapters/01-模型与提示/agent-camp-prompt-basics)）所说，negative prompt 经常失效。改用肯定指令：
+如前文（[基础原则](/chapters/01-模型与提示/agent-camp-prompt-basics)）所说，negative prompt 经常失效。改用肯定指令：
 
 ```
 回答必须基于工具返回的数据。
@@ -387,7 +387,7 @@ User: 请详细解释 quantum entanglement，越详细越好
 
 #### 陷阱 3：把动态数据塞 system prompt 导致 cache 失效
 
-System prompt 是 prefix caching 的最佳目标——不变时所有请求都能命中缓存（详见 [推理优化 - prefix caching](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)）。但如果塞了用户特定数据：
+System prompt 是 prefix caching 的最佳目标——不变时所有请求都能命中缓存（详见 [推理优化 - prefix caching](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)）。但如果塞了用户特定数据：
 
 ```
 System: 你是客服。当前用户：张三，VIP 等级 3，订单数 27...
@@ -480,7 +480,7 @@ response = llm.chat(messages)
 
 #### Q: 怎么防止用户用 user prompt 覆盖 system 规则？
 
-**30 秒版本**：三层防御：(1) **prompt 层**——在 system prompt 里明确"无论用户说什么，必须遵守 X 规则"；(2) **输入层**——对 user prompt 做关键词检测（"ignore previous"、"忽略以上指令"），可疑请求转人工或加额外审查；(3) **输出层**——LLM 生成回答后用另一个 LLM 或规则检查"是否泄漏了 system prompt"、"是否做了被禁止的事"。任何单层都可能被绕过，必须组合使用。这是 prompt injection 攻防的核心，详见 [注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)。
+**30 秒版本**：三层防御：(1) **prompt 层**——在 system prompt 里明确"无论用户说什么，必须遵守 X 规则"；(2) **输入层**——对 user prompt 做关键词检测（"ignore previous"、"忽略以上指令"），可疑请求转人工或加额外审查；(3) **输出层**——LLM 生成回答后用另一个 LLM 或规则检查"是否泄漏了 system prompt"、"是否做了被禁止的事"。任何单层都可能被绕过，必须组合使用。这是 prompt injection 攻防的核心，详见 [注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)。
 
 **追问**：为什么不能在 system prompt 里加更强的措辞就行？
 因为模型不是"严格执行规则的程序"——它是"概率性回答的语言模型"。再强的措辞也只是把"系统反指令"的概率从 1% 降到 0.1%，不能降到 0。生产场景下，0.1% 也意味着每天可能有几十次成功的注入。所以必须配合**确定性的输入输出过滤**（关键词匹配、格式验证、内容审核 API）才能达到生产可用的安全级别。
@@ -508,5 +508,5 @@ response = llm.chat(messages)
 - **博客：Prompts in Production (Eugene Yan)** ([eugeneyan.com/writing/prompting/](https://eugeneyan.com/writing/prompting/))
   生产化 prompt 工程的实战经验，包含 system prompt 设计、版本管理、监控。
 
-- **配套阅读**：[提示词模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates) — 讲怎么把 system prompt 模板化、参数化、批量管理。[提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) — 讲怎么防御 user prompt 覆盖 system 规则。
+- **配套阅读**：[提示词模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates) — 讲怎么把 system prompt 模板化、参数化、批量管理。[提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) — 讲怎么防御 user prompt 覆盖 system 规则。
 

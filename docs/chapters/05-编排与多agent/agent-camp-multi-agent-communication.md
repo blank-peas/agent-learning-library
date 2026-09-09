@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **Agent 之间的通信协议**——MCP 那一层（Agent ↔ Tool）见 [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)；多 Agent 的架构选择见 [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；调度者-工作者的实现见 [调度者-工作者模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)；Agent 间通信的安全风险延伸自 [Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)。
+> **本文边界**：聚焦 **Agent 之间的通信协议**——MCP 那一层（Agent ↔ Tool）见 [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)；多 Agent 的架构选择见 [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；调度者-工作者的实现见 [调度者-工作者模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)；Agent 间通信的安全风险延伸自 [Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)。
 
 ### 面试官想考什么
 
@@ -594,7 +594,7 @@ python weather_agent_client.py
 - **AgentCard 来源做白名单**——别让 LLM 自由"在网上找 Agent"
 - **鉴权强制 mTLS / OAuth**——别用 API Key 单凭证
 - **跨 Agent 调用做 outbound 防护**——任何对外的 HTTP 请求按 SSRF 防护处理（禁内网、禁 metadata endpoint）
-- 详见 [Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security) 的 Layer 4 工具层防御——同样适用于"调用其它 Agent"
+- 详见 [Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security) 的 Layer 4 工具层防御——同样适用于"调用其它 Agent"
 
 #### 坑 4：消息 schema 不兼容，跨厂商接通后第一时间就崩
 
@@ -626,7 +626,7 @@ python weather_agent_client.py
 
 | 概念 | 边界 |
 |---|---|
-| **MCP** | Agent ↔ Tool 协议——本文反复强调的对照点。详见 [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) |
+| **MCP** | Agent ↔ Tool 协议——本文反复强调的对照点。详见 [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) |
 | **A2A** | Agent ↔ Agent 协议——本文核心，目前事实标准 |
 | **IBM ACP** | 已并入 A2A（2025-08）——存档价值，新项目不选 |
 | **AGNTCY** | Internet of Agents 全栈——包含协议 + directory + identity + observability |
@@ -672,7 +672,7 @@ python weather_agent_client.py
 
 #### Q: Agent-to-Agent 通信的安全风险有哪些？比单 Agent 多了什么？
 
-**30 秒版本**：单 Agent 的安全模型是"Agent 自己 + 工具"——你只需要信任自己和工具供应商。A2A 引入了"信任另一个独立 Agent"，**风险面至少多三类**：(1) **AgentCard 仿冒 / Shadowing**——恶意 Agent 注册一个仿冒 card，AgentCard 签名是可选的，没签名就被 spoof；Trustwave SpiderLabs 2025 公开过这种攻击。(2) **Agent-in-the-Middle**——恶意 Agent 在 AgentCard 描述里写"更吸引人"的能力描述，让上游 LLM 优先选它，从而插入到合法 Agent 之间。(3) **跨 Agent 信任链中断**——A 信 B、B 信 C，但 A 不直接知道 C 是谁。C 拿到的最终数据来源链谁负责？OWASP Agentic AI Top 10 把这条列为 **ASI07 Insecure Inter-Agent Communication**。**最少必备的防御**：强制 AgentCard 签名验证、强制 mTLS、AgentCard 来源做白名单、跨 Agent 调用按 SSRF 防护（详见 [Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)）。
+**30 秒版本**：单 Agent 的安全模型是"Agent 自己 + 工具"——你只需要信任自己和工具供应商。A2A 引入了"信任另一个独立 Agent"，**风险面至少多三类**：(1) **AgentCard 仿冒 / Shadowing**——恶意 Agent 注册一个仿冒 card，AgentCard 签名是可选的，没签名就被 spoof；Trustwave SpiderLabs 2025 公开过这种攻击。(2) **Agent-in-the-Middle**——恶意 Agent 在 AgentCard 描述里写"更吸引人"的能力描述，让上游 LLM 优先选它，从而插入到合法 Agent 之间。(3) **跨 Agent 信任链中断**——A 信 B、B 信 C，但 A 不直接知道 C 是谁。C 拿到的最终数据来源链谁负责？OWASP Agentic AI Top 10 把这条列为 **ASI07 Insecure Inter-Agent Communication**。**最少必备的防御**：强制 AgentCard 签名验证、强制 mTLS、AgentCard 来源做白名单、跨 Agent 调用按 SSRF 防护（详见 [Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)）。
 
 **追问**：那 OAuth + mTLS 能解决这些问题吗？
 能解决"对方是不是真的那家 Agent"的问题，但**解决不了"那家 Agent 是不是恶意的"**——身份验证 ≠ 行为可信。即使 OAuth 验证对方真的是 ACME 公司的 Agent，ACME 的 Agent 自己可能被 prompt injection 攻陷，把你发过去的数据再 exfiltrate 出去。所以信任链要追到**对方 Agent 的内部安全实践**——但这是组织信任问题，不是协议能解决的。
@@ -714,5 +714,5 @@ python weather_agent_client.py
 - **arxiv 2511.03841：Security Analysis of Agentic AI Communication Protocols（[arxiv.org/abs/2511.03841](https://arxiv.org/pdf/2511.03841)）**
   2025 学术论文，横向比较 A2A、ACP、MCP 等协议的安全模型。读它能拿到一手的协议对比数据。
 
-- **配套阅读**：[MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)——本文反复对照的另一层协议；[多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)——决定要不要走跨 Agent 协议；[调度者-工作者模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)——多 Agent 的最常见落地形态；[OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)——OpenAI 自家的 Agent 编排，对照 A2A 看 SDK vs 协议两条路；[Agent 整体安全与纵深防御](./chapters/08-评测安全可观测/agent-camp-engineering-security)——跨 Agent 调用的安全风险延伸自这里的 Layer 4 / Layer 5。
+- **配套阅读**：[MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)——本文反复对照的另一层协议；[多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)——决定要不要走跨 Agent 协议；[调度者-工作者模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)——多 Agent 的最常见落地形态；[OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)——OpenAI 自家的 Agent 编排，对照 A2A 看 SDK vs 协议两条路；[Agent 整体安全与纵深防御](/chapters/08-评测安全可观测/agent-camp-engineering-security)——跨 Agent 调用的安全风险延伸自这里的 Layer 4 / Layer 5。
 

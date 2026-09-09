@@ -22,7 +22,7 @@
 
 > MCP Server 的生产化重点不是多暴露几个工具，而是让每次工具调用都可授权、可回滚、可观测、可升级。
 
-> **本文边界**：本文不重复讲 MCP 的 Host / Client / Server、Tool / Resource / Prompt、JSON-RPC 消息格式。这些基础见 [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)。本文聚焦把 MCP Server 放到真实团队里会遇到的部署、安全、版本和运维问题。
+> **本文边界**：本文不重复讲 MCP 的 Host / Client / Server、Tool / Resource / Prompt、JSON-RPC 消息格式。这些基础见 [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)。本文聚焦把 MCP Server 放到真实团队里会遇到的部署、安全、版本和运维问题。
 
 ### 面试官想考什么
 
@@ -407,6 +407,6 @@ print(json.dumps(gateway.audit, ensure_ascii=False, indent=2))
 - 官方规范：[MCP Base Protocol](https://modelcontextprotocol.io/specification/2025-06-18/basic/index) — 重点看 HTTP authorization 与 stdio credential 处理差异。
 - OpenAI 工程博客：[Unlocking the Codex harness](https://openai.com/index/unlocking-the-codex-harness/) — 理解为什么完整 Agent runtime 不一定适合直接暴露成 MCP。
 - Anthropic 工程博客：[Code execution with MCP](https://www.anthropic.com/engineering/code-execution-with-mcp) — 看 MCP 如何把确定性计算从模型上下文里移到执行环境。
-- 本站：[工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox) — MCP server 本地运行时的文件、网络、命令权限边界。
-- 本站：[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — MCP 工具调用 trace 应该接入整体 Agent trace。
+- 本站：[工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox) — MCP server 本地运行时的文件、网络、命令权限边界。
+- 本站：[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) — MCP 工具调用 trace 应该接入整体 Agent trace。
 

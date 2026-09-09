@@ -294,7 +294,7 @@ flowchart TB
 
 Reflexion 在 HumanEval (Python 编程) 上把 GPT-4 准确率从 80% 提到 91%——前提是有单元测试作为外部信号。
 
-详细展开见 [Agent - Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion)。本文只点到它和 Self-Refine 的差异：**外部信号是关键**。
+详细展开见 [Agent - Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion)。本文只点到它和 Self-Refine 的差异：**外部信号是关键**。
 
 ---
 

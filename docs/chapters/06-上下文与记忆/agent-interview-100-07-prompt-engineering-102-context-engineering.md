@@ -301,8 +301,8 @@ flowchart TD
 
 三个关键认知升级：
 
-1. **上下文窗口 ≠ 记忆**。窗口是 Agent 的"工作台"（scratchpad），用完即清；长期信息必须**外化**到窗口之外的文件、数据库、知识图谱。这与 [041 — 上下文窗口管理与压缩](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-041-context-window-management) 讨论的压缩策略一脉相承。
-2. **Agentic Memory**：Agent 定期把学到的经验写成笔记（如 `.md` 文件），持久化到上下文窗口外，下次会话开始时读回。这把"记忆"从一次性 token 变成可累积的资产（详见 [043 — 持久化记忆](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-043-persistent-memory)）。
+1. **上下文窗口 ≠ 记忆**。窗口是 Agent 的"工作台"（scratchpad），用完即清；长期信息必须**外化**到窗口之外的文件、数据库、知识图谱。这与 [041 — 上下文窗口管理与压缩](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-041-context-window-management) 讨论的压缩策略一脉相承。
+2. **Agentic Memory**：Agent 定期把学到的经验写成笔记（如 `.md` 文件），持久化到上下文窗口外，下次会话开始时读回。这把"记忆"从一次性 token 变成可累积的资产（详见 [043 — 持久化记忆](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-043-persistent-memory)）。
 3. **信息衰减是常态**。长程 Agent 运行中，早期轮次的工具结果、已完成子任务的细节会从"有用"变成"噪声"。Context Engineering 要求主动清理（context editing / compaction），而非被动等待窗口溢出。
 
 > **参考资料**：[Effective Context Engineering for AI Agents (Anthropic 官方工程指南)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)

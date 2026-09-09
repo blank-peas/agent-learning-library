@@ -44,9 +44,9 @@ AI 产品上线后会遇到传统软件问题，也会遇到模型行为、promp
 
 ### 和本站章节的关系
 
-- [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)
+- [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)
 
 ### 面试追问
 

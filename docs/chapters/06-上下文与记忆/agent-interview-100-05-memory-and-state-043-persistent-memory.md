@@ -242,7 +242,7 @@ class PreferenceAwareMemory:
         return False
 ```
 
-PAMU 的"渐变 + 突变"双检测比单纯的时间衰减更精细——衰减只回答"要不要遗忘"（见 [#048 记忆的遗忘与更新机制](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-048-memory-forgetting-updating)），PAMU 还要回答"偏好是不是变了、要不要主动适配"。
+PAMU 的"渐变 + 突变"双检测比单纯的时间衰减更精细——衰减只回答"要不要遗忘"（见 [#048 记忆的遗忘与更新机制](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-048-memory-forgetting-updating)），PAMU 还要回答"偏好是不是变了、要不要主动适配"。
 
 ##### 动态用户画像构建
 
@@ -291,7 +291,7 @@ class DynamicUserProfile:
 
 其中 `NOOP` 尤为关键——它避免 Agent 对无信息量的对话强行写入噪声，是记忆库质量的"守门员"。Memory-R1 把 Memory Manager（学上述 4 个动作）和 Answer Agent（学检索与推理）联合训练，**仅用 152 条训练样本**即在多个长期记忆基准上超越 Mem0 等强基线。
 
-这印证了一个趋势：记忆管理的下一站不是更复杂的启发式规则，而是像 [#103 Agentic-RL 与 GRPO](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo) 那样用 RL 让 Agent 自己学会"记什么、改什么、忘什么"。偏好学习场景尤其受益——隐式偏好的归纳、进化偏好的漂移检测，本质上都是难以手写规则、适合 RL 优化的决策问题。
+这印证了一个趋势：记忆管理的下一站不是更复杂的启发式规则，而是像 [#103 Agentic-RL 与 GRPO](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo) 那样用 RL 让 Agent 自己学会"记什么、改什么、忘什么"。偏好学习场景尤其受益——隐式偏好的归纳、进化偏好的漂移检测，本质上都是难以手写规则、适合 RL 优化的决策问题。
 
 #### 记忆检索优化策略
 

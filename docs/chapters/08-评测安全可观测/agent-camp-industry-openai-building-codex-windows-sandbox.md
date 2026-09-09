@@ -30,10 +30,10 @@
 
 ### 和本站章节的关系
 
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
-- [Agent 工程化 - 安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)
-- [提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)
-- [Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [Agent 工程化 - 安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)
+- [提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)
+- [Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli)
 
 ### 面试追问
 

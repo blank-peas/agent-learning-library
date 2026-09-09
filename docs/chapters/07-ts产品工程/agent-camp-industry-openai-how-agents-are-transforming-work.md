@@ -59,13 +59,13 @@ OpenAI 的数据说明，Codex 已经从开发者工具变成更广义的“可�
 | parallelism | 用户是否同时委派多个 Agent 工作 |
 | cost per completed task | 不是每 token 成本，而是每个完成任务的总成本 |
 
-这也解释了为什么 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)、[Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 会越来越重要。单次模型调用越来越像底层原语，真正的产品能力在“任务能否被稳定完成”。
+这也解释了为什么 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)、[Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)、[评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 会越来越重要。单次模型调用越来越像底层原语，真正的产品能力在“任务能否被稳定完成”。
 
 ### 和本站章节的关系
 
-- [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：OpenAI 的数据说明 Agent 已经成为组织里的执行系统。
-- [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)：长周期任务需要跨运行的调度、验证和接力。
-- [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)：任务价值要按 completed task 计算，而不是只看 token。
+- [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：OpenAI 的数据说明 Agent 已经成为组织里的执行系统。
+- [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)：长周期任务需要跨运行的调度、验证和接力。
+- [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)：任务价值要按 completed task 计算，而不是只看 token。
 - [垂直领域 Agent](https://github.com/yibo365/agent-camp)：非开发者采用意味着 Agent 会进入金融、法律、招聘、运营等具体流程。
 
 ### 面试追问

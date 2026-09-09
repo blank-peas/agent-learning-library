@@ -44,9 +44,9 @@
 
 ### 和本站章节的关系
 
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [用模型评估模型](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)
-- [Deep Research Agent](./chapters/07-ts产品工程/agent-camp-vertical-deep-research)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [用模型评估模型](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)
+- [Deep Research Agent](/chapters/07-ts产品工程/agent-camp-vertical-deep-research)
 
 ### 面试追问
 

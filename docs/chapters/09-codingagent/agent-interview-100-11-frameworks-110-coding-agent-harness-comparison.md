@@ -357,9 +357,9 @@ process.exit(0);  // allow
 
 ### 相关阅读
 
-- [027 — MCP（Model Context Protocol）](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-027-model-context-protocol)：本题 Tool 维度依赖的协议标准
-- [096 — Framework Overview（LangChain / LlamaIndex / Haystack）](./chapters/05-编排与多agent/agent-interview-100-11-frameworks-096-framework-overview)：Framework 层横评，与本题 Harness 横评形成对照
-- [098 — 框架 vs 自研](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom)：自研动机与本题"为什么大厂不用 LangGraph"互为补充
-- [099 — OpenAI Agents SDK vs Claude Agent SDK](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk)：SDK 层对比，本题更上一层（产品级 harness）
-- [109 — 什么是 Agent Harness](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)：Harness 概念入门，本题的"基础篇"
+- [027 — MCP（Model Context Protocol）](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-027-model-context-protocol)：本题 Tool 维度依赖的协议标准
+- [096 — Framework Overview（LangChain / LlamaIndex / Haystack）](/chapters/05-编排与多agent/agent-interview-100-11-frameworks-096-framework-overview)：Framework 层横评，与本题 Harness 横评形成对照
+- [098 — 框架 vs 自研](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom)：自研动机与本题"为什么大厂不用 LangGraph"互为补充
+- [099 — OpenAI Agents SDK vs Claude Agent SDK](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk)：SDK 层对比，本题更上一层（产品级 harness）
+- [109 — 什么是 Agent Harness](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)：Harness 概念入门，本题的"基础篇"
 

@@ -7,15 +7,15 @@
 
 ### 本章内容
 
-- [Transformer 架构](./chapters/01-模型与提示/agent-camp-llm-transformer) — Attention 机制、位置编码、Decoder-only vs Encoder-Decoder
-- [Tokenization](./chapters/01-模型与提示/agent-camp-llm-tokenization) — BPE、SentencePiece、Tiktoken 与中文分词
-- [Embedding](./chapters/01-模型与提示/agent-camp-llm-embedding) — 词向量、句向量、主流 Embedding 模型
-- [预训练 / SFT / RLHF / DPO](./chapters/01-模型与提示/agent-camp-llm-training) — 大模型四阶段训练范式
-- [推理参数详解](./chapters/01-模型与提示/agent-camp-llm-inference-params) — temperature、top_p、top_k、penalty 调优
-- [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization) — KV Cache、量化、FlashAttention、Speculative Decoding
-- [主流模型对比](./chapters/01-模型与提示/agent-camp-llm-models) — GPT、Claude、Gemini、Llama、Qwen、DeepSeek 横向评测
-- [模型选型与持续重评面试深挖](./chapters/01-模型与提示/agent-camp-llm-model-selection-interview) — 业务 eval、分阶段指标、成本延迟、合规边界和退出条件
-- [开源 vs 闭源选型](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed) — 业务场景下的选型矩阵
+- [Transformer 架构](/chapters/01-模型与提示/agent-camp-llm-transformer) — Attention 机制、位置编码、Decoder-only vs Encoder-Decoder
+- [Tokenization](/chapters/01-模型与提示/agent-camp-llm-tokenization) — BPE、SentencePiece、Tiktoken 与中文分词
+- [Embedding](/chapters/01-模型与提示/agent-camp-llm-embedding) — 词向量、句向量、主流 Embedding 模型
+- [预训练 / SFT / RLHF / DPO](/chapters/01-模型与提示/agent-camp-llm-training) — 大模型四阶段训练范式
+- [推理参数详解](/chapters/01-模型与提示/agent-camp-llm-inference-params) — temperature、top_p、top_k、penalty 调优
+- [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization) — KV Cache、量化、FlashAttention、Speculative Decoding
+- [主流模型对比](/chapters/01-模型与提示/agent-camp-llm-models) — GPT、Claude、Gemini、Llama、Qwen、DeepSeek 横向评测
+- [模型选型与持续重评面试深挖](/chapters/01-模型与提示/agent-camp-llm-model-selection-interview) — 业务 eval、分阶段指标、成本延迟、合规边界和退出条件
+- [开源 vs 闭源选型](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed) — 业务场景下的选型矩阵
 
 ### 学习路径
 

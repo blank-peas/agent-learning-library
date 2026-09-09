@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 Pi 的架构哲学和扩展机制。编程 Agent 的通用模式见 [编程 Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)；Claude Code 的源码解析见 [Claude Code 源码](./chapters/09-codingagent/agent-camp-source-claude-code)；终端工具的选型见 [框架选型决策树](./chapters/07-ts产品工程/agent-camp-frameworks-comparison)。
+> **本文边界**：聚焦 Pi 的架构哲学和扩展机制。编程 Agent 的通用模式见 [编程 Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)；Claude Code 的源码解析见 [Claude Code 源码](/chapters/09-codingagent/agent-camp-source-claude-code)；终端工具的选型见 [框架选型决策树](/chapters/07-ts产品工程/agent-camp-frameworks-comparison)。
 
 ### 面试官想考什么
 
@@ -464,6 +464,6 @@ Pi 的数据飞轮：
 - **官方文档** [pi.dev](https://pi.dev) — Getting Started 和 Extensions 两章是理解 Pi 架构的关键。文档写得很简洁，和 Pi 本身的极简风格一致
 - **GitHub 仓库** [github.com/earendil-works/pi](https://github.com/earendil-works/pi) — TypeScript 源码。入口看 `packages/pi-agent-core/` 目录下的 agent loop 和 tool dispatch。`packages/pi-ai/` 是统一的多 provider LLM 接口
 - **Session Sharing 数据集** Hugging Face 上的公开 Session 集。如果你想了解"真实的编程 Agent 工作轨迹长什么样"，这比读任何文档都直观
-- **Claude Code 源码解析** [Claude Code 源码](./chapters/09-codingagent/agent-camp-source-claude-code) — 和 Pi 做对比阅读，理解"全功能内置"和"最小内核"两种哲学的工程实现差异
+- **Claude Code 源码解析** [Claude Code 源码](/chapters/09-codingagent/agent-camp-source-claude-code) — 和 Pi 做对比阅读，理解"全功能内置"和"最小内核"两种哲学的工程实现差异
 - **npm 供应链安全** Socket.dev 的博客 — 理解为什么 Pi 在安全上做得这么重，需要了解 npm 生态的攻击面。event-stream 事件（2018）和 ua-parser-js 事件（2021）是两个必读案例
 

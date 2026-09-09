@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦三个低代码平台的**能力对比与选型**。代码方案的 Workflow 编排见 [LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) 和 [LlamaIndex Workflows](./chapters/07-ts产品工程/agent-camp-workflow-llamaindex-workflows)；编排模式的通用理论见 [编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns)；RAG 的底层原理见 [RAG 基础](https://github.com/yibo365/agent-camp)。
+> **本文边界**：聚焦三个低代码平台的**能力对比与选型**。代码方案的 Workflow 编排见 [LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) 和 [LlamaIndex Workflows](/chapters/07-ts产品工程/agent-camp-workflow-llamaindex-workflows)；编排模式的通用理论见 [编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns)；RAG 的底层原理见 [RAG 基础](https://github.com/yibo365/agent-camp)。
 
 ### 面试官想考什么
 
@@ -317,5 +317,5 @@ FastGPT 的检索质量更高（混合检索 + reranking 开箱即用），但�
 - **Jimmy Song：Open Source AI Agent Platform Comparison** ([jimmysong.io/blog/open-source-ai-agent-workflow-comparison](https://jimmysong.io/blog/open-source-ai-agent-workflow-comparison/))
   2026 年的横向对比，覆盖 Dify / Coze / n8n / FastGPT / RAGFlow / LangGraph。选型时参考。
 
-- **配套阅读**：[LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 代码方案的对照；[编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns) — 底层编排模式的理论；[RAG 基础](https://github.com/yibo365/agent-camp) — 低代码平台内置 RAG 的底层原理。
+- **配套阅读**：[LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 代码方案的对照；[编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns) — 底层编排模式的理论；[RAG 基础](https://github.com/yibo365/agent-camp) — 低代码平台内置 RAG 的底层原理。
 

@@ -51,18 +51,18 @@ Agent 系统的核心设计理念，从基本概念到生产级架构设计。
 
 | # | 文章 |
 |---|------|
-| 001 | [什么是 LLM Agent？与传统 LLM 应用有何区别？](./chapters/01-模型与提示/agent-interview-100-01-agent-architecture-001-what-is-llm-agent) |
-| 002 | [解释 Agent 的核心组件：感知、推理、行动、记忆](./chapters/06-上下文与记忆/agent-interview-100-01-agent-architecture-002-agent-core-components) |
-| 003 | [Agent 架构模式详解：ReAct、Plan-and-Execute、LATS、Proactive](./chapters/05-编排与多agent/agent-interview-100-01-agent-architecture-003-agent-architecture-pattern) |
-| 005 | [如何设计一个分层 Agent 架构（Orchestrator / Worker 模式）？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-005-layered-agent-architecture) |
-| 006 | [Agent Loop 设计：循环控制、终止条件与错误恢复](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-006-agent-loop-and-error-recov) |
-| 007 | [Workflow vs Agent：什么时候用确定性工作流，什么时候用自主 Agent？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-007-workflow-vs-agent) |
-| 009 | [如何实现 Agent 的自我反思（Self-Reflection）和自我纠正？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-009-self-reflection-correction) |
-| 010 | [生产级 Agent 系统设计（含智能客服实战案例）](./chapters/10-项目实战/agent-interview-100-01-agent-architecture-010-production-agent-system-de) |
-| 108 | [面试追问链：从「什么是 Agent」到系统设计的 10 层递进追问](./chapters/11-面试与求职/agent-interview-100-01-agent-architecture-108-interview-deep-dive-chain) |
-| 109 | [🆕 什么是 Agent Harness？与 Framework / Runtime 三层抽象有何区别？](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness) |
-| 113 | [🆕 什么是 Computer Use / Browser Use Agent？它与 API Agent 有何区别？](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-113-computer-use-agent) |
-| 114 | [🆕 什么是 Deep Research / Agentic Search Agent？它和 Agentic RAG 有何区别？](./chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent) |
+| 001 | [什么是 LLM Agent？与传统 LLM 应用有何区别？](/chapters/01-模型与提示/agent-interview-100-01-agent-architecture-001-what-is-llm-agent) |
+| 002 | [解释 Agent 的核心组件：感知、推理、行动、记忆](/chapters/06-上下文与记忆/agent-interview-100-01-agent-architecture-002-agent-core-components) |
+| 003 | [Agent 架构模式详解：ReAct、Plan-and-Execute、LATS、Proactive](/chapters/05-编排与多agent/agent-interview-100-01-agent-architecture-003-agent-architecture-pattern) |
+| 005 | [如何设计一个分层 Agent 架构（Orchestrator / Worker 模式）？](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-005-layered-agent-architecture) |
+| 006 | [Agent Loop 设计：循环控制、终止条件与错误恢复](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-006-agent-loop-and-error-recov) |
+| 007 | [Workflow vs Agent：什么时候用确定性工作流，什么时候用自主 Agent？](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-007-workflow-vs-agent) |
+| 009 | [如何实现 Agent 的自我反思（Self-Reflection）和自我纠正？](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-009-self-reflection-correction) |
+| 010 | [生产级 Agent 系统设计（含智能客服实战案例）](/chapters/10-项目实战/agent-interview-100-01-agent-architecture-010-production-agent-system-de) |
+| 108 | [面试追问链：从「什么是 Agent」到系统设计的 10 层递进追问](/chapters/11-面试与求职/agent-interview-100-01-agent-architecture-108-interview-deep-dive-chain) |
+| 109 | [🆕 什么是 Agent Harness？与 Framework / Runtime 三层抽象有何区别？](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness) |
+| 113 | [🆕 什么是 Computer Use / Browser Use Agent？它与 API Agent 有何区别？](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-113-computer-use-agent) |
+| 114 | [🆕 什么是 Deep Research / Agentic Search Agent？它和 Agentic RAG 有何区别？](/chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent) |
 
 #### 二、🔍 RAG (`02-rag/`) — 9 题
 
@@ -70,15 +70,15 @@ Agent 系统的核心设计理念，从基本概念到生产级架构设计。
 
 | # | 文章 |
 |---|------|
-| 011 | [RAG 概念、Pipeline 与组件总览](./chapters/03-rag/agent-interview-100-02-rag-011-rag-overview-and-pipeline) |
-| 013 | [文档分块（Chunking）策略有哪些？各有什么优缺点？](./chapters/03-rag/agent-interview-100-02-rag-013-chunking-strategies) |
-| 014 | [向量数据库选型：Pinecone vs Weaviate vs Chroma vs Milvus](./chapters/03-rag/agent-interview-100-02-rag-014-vector-database-comparison) |
-| 015 | [Embedding 模型选择与微调策略](./chapters/03-rag/agent-interview-100-02-rag-015-embedding-model-selection) |
-| 016 | [混合检索：如何结合语义检索和关键词检索？](./chapters/08-评测安全可观测/agent-interview-100-02-rag-016-hybrid-retrieval) |
-| 017 | [Re-ranking 的原理与实现：Cross-Encoder vs Bi-Encoder](./chapters/03-rag/agent-interview-100-02-rag-017-reranking-strategies) |
-| 018 | [什么是 Agentic RAG？它与传统 RAG 有何不同？](./chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag) |
-| 019 | [高级 RAG 变体：Corrective RAG、Self-RAG、Adaptive RAG](./chapters/03-rag/agent-interview-100-02-rag-019-advanced-rag-variants) |
-| 020 | [RAG 评估指标体系：原理、计算与实战](./chapters/08-评测安全可观测/agent-interview-100-02-rag-020-rag-evaluation-metrics) |
+| 011 | [RAG 概念、Pipeline 与组件总览](/chapters/03-rag/agent-interview-100-02-rag-011-rag-overview-and-pipeline) |
+| 013 | [文档分块（Chunking）策略有哪些？各有什么优缺点？](/chapters/03-rag/agent-interview-100-02-rag-013-chunking-strategies) |
+| 014 | [向量数据库选型：Pinecone vs Weaviate vs Chroma vs Milvus](/chapters/03-rag/agent-interview-100-02-rag-014-vector-database-comparison) |
+| 015 | [Embedding 模型选择与微调策略](/chapters/03-rag/agent-interview-100-02-rag-015-embedding-model-selection) |
+| 016 | [混合检索：如何结合语义检索和关键词检索？](/chapters/08-评测安全可观测/agent-interview-100-02-rag-016-hybrid-retrieval) |
+| 017 | [Re-ranking 的原理与实现：Cross-Encoder vs Bi-Encoder](/chapters/03-rag/agent-interview-100-02-rag-017-reranking-strategies) |
+| 018 | [什么是 Agentic RAG？它与传统 RAG 有何不同？](/chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag) |
+| 019 | [高级 RAG 变体：Corrective RAG、Self-RAG、Adaptive RAG](/chapters/03-rag/agent-interview-100-02-rag-019-advanced-rag-variants) |
+| 020 | [RAG 评估指标体系：原理、计算与实战](/chapters/08-评测安全可观测/agent-interview-100-02-rag-020-rag-evaluation-metrics) |
 
 #### 三、🔧 工具使用 (`03-tool-use/`) — 10 题
 
@@ -86,16 +86,16 @@ LLM 与外部工具的交互，从 Function Calling 到安全管控。
 
 | # | 文章 |
 |---|------|
-| 021 | [什么是 Function Calling？它是如何工作的？](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-021-function-calling-basics) |
-| 022 | [如何为 LLM 定义和描述工具（Tool Schema）？](./chapters/01-模型与提示/agent-interview-100-03-tool-use-022-tool-schema-design) |
-| 023 | [Tool Use 的常见模式：API 调用、数据库查询、代码执行](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-023-common-tool-patterns) |
-| 024 | [如何设计 Tool Gateway 和工具权限管理？](./chapters/07-ts产品工程/agent-interview-100-03-tool-use-024-tool-gateway-permissions) |
-| 025 | [工具选择策略：LLM 如何决定使用哪个工具？](./chapters/01-模型与提示/agent-interview-100-03-tool-use-025-tool-selection-strategy) |
-| 026 | [如何处理工具调用失败和超时？](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-026-tool-failure-handling) |
-| 027 | [MCP（Model Context Protocol）是什么？它如何标准化工具集成？](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-027-model-context-protocol) |
-| 028 | [并行工具调用 vs 顺序工具调用的设计考量](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-028-parallel-vs-sequential-tools) |
-| 029 | [如何实现动态工具发现和注册？](./chapters/07-ts产品工程/agent-interview-100-03-tool-use-029-dynamic-tool-discovery) |
-| 030 | [工具使用的安全性：防止注入攻击和越权操作](./chapters/08-评测安全可观测/agent-interview-100-03-tool-use-030-tool-use-security) |
+| 021 | [什么是 Function Calling？它是如何工作的？](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-021-function-calling-basics) |
+| 022 | [如何为 LLM 定义和描述工具（Tool Schema）？](/chapters/01-模型与提示/agent-interview-100-03-tool-use-022-tool-schema-design) |
+| 023 | [Tool Use 的常见模式：API 调用、数据库查询、代码执行](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-023-common-tool-patterns) |
+| 024 | [如何设计 Tool Gateway 和工具权限管理？](/chapters/07-ts产品工程/agent-interview-100-03-tool-use-024-tool-gateway-permissions) |
+| 025 | [工具选择策略：LLM 如何决定使用哪个工具？](/chapters/01-模型与提示/agent-interview-100-03-tool-use-025-tool-selection-strategy) |
+| 026 | [如何处理工具调用失败和超时？](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-026-tool-failure-handling) |
+| 027 | [MCP（Model Context Protocol）是什么？它如何标准化工具集成？](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-027-model-context-protocol) |
+| 028 | [并行工具调用 vs 顺序工具调用的设计考量](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-028-parallel-vs-sequential-tools) |
+| 029 | [如何实现动态工具发现和注册？](/chapters/07-ts产品工程/agent-interview-100-03-tool-use-029-dynamic-tool-discovery) |
+| 030 | [工具使用的安全性：防止注入攻击和越权操作](/chapters/08-评测安全可观测/agent-interview-100-03-tool-use-030-tool-use-security) |
 
 #### 四、🤝 多 Agent (`04-multi-agent/`) — 10 题
 
@@ -103,16 +103,16 @@ LLM 与外部工具的交互，从 Function Calling 到安全管控。
 
 | # | 文章 |
 |---|------|
-| 031 | [什么是多 Agent 系统？与单 Agent 相比有何优势？](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-031-what-is-multi-agent) |
-| 032 | [多 Agent 通信模式：消息传递、共享状态、黑板模式](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-032-communication-patterns) |
-| 033 | [Agent 编排模式：Hub-Spoke、Pipeline、Hierarchical](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-033-orchestration-patterns) |
-| 034 | [如何设计 Agent 间的任务分配与协调？](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-034-task-allocation-coordination) |
-| 035 | [多 Agent 系统中的冲突解决机制](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-035-conflict-resolution) |
-| 036 | [比较主流多 Agent 框架：CrewAI、AutoGen、LangGraph](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-036-multi-agent-frameworks) |
-| 037 | [如何实现 Agent 间的 Handoff（任务交接）？](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-037-agent-handoff) |
-| 038 | [多 Agent 系统中的涌现行为与可控性](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-038-emergent-behavior) |
-| 039 | [如何调试和监控多 Agent 系统？](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-039-debugging-monitoring-multi-agent) |
-| 101 | [🆕 A2A（Agent-to-Agent）协议是什么？它与 MCP 有何区别？](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-101-a2a-protocol) |
+| 031 | [什么是多 Agent 系统？与单 Agent 相比有何优势？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-031-what-is-multi-agent) |
+| 032 | [多 Agent 通信模式：消息传递、共享状态、黑板模式](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-032-communication-patterns) |
+| 033 | [Agent 编排模式：Hub-Spoke、Pipeline、Hierarchical](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-033-orchestration-patterns) |
+| 034 | [如何设计 Agent 间的任务分配与协调？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-034-task-allocation-coordination) |
+| 035 | [多 Agent 系统中的冲突解决机制](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-035-conflict-resolution) |
+| 036 | [比较主流多 Agent 框架：CrewAI、AutoGen、LangGraph](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-036-multi-agent-frameworks) |
+| 037 | [如何实现 Agent 间的 Handoff（任务交接）？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-037-agent-handoff) |
+| 038 | [多 Agent 系统中的涌现行为与可控性](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-038-emergent-behavior) |
+| 039 | [如何调试和监控多 Agent 系统？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-039-debugging-monitoring-multi-agent) |
+| 101 | [🆕 A2A（Agent-to-Agent）协议是什么？它与 MCP 有何区别？](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-101-a2a-protocol) |
 
 #### 五、🧠 记忆与状态 (`05-memory-and-state/`) — 6 题
 
@@ -120,12 +120,12 @@ Agent 的记忆管理，从上下文窗口到知识图谱。
 
 | # | 文章 |
 |---|------|
-| 040 | [Agent 记忆的类型：短期记忆、长期记忆、工作记忆](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-040-memory-types) |
-| 041 | [对话上下文窗口管理与压缩策略](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-041-context-window-management) |
-| 043 | [如何实现 Agent 的持久化记忆（Persistent Memory）？](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-043-persistent-memory) |
-| 044 | [状态管理在 Agent 系统中的设计模式](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-044-state-management-patterns) |
-| 046 | [长期记忆存储介质选型（向量/结构化/图谱）](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-046-long-term-memory-storage) |
-| 048 | [记忆的遗忘与更新机制：如何处理过时信息？](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-048-memory-forgetting-updating) |
+| 040 | [Agent 记忆的类型：短期记忆、长期记忆、工作记忆](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-040-memory-types) |
+| 041 | [对话上下文窗口管理与压缩策略](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-041-context-window-management) |
+| 043 | [如何实现 Agent 的持久化记忆（Persistent Memory）？](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-043-persistent-memory) |
+| 044 | [状态管理在 Agent 系统中的设计模式](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-044-state-management-patterns) |
+| 046 | [长期记忆存储介质选型（向量/结构化/图谱）](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-046-long-term-memory-storage) |
+| 048 | [记忆的遗忘与更新机制：如何处理过时信息？](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-048-memory-forgetting-updating) |
 
 #### 六、🧩 规划与推理 (`06-planning-and-reasoning/`) — 7 题
 
@@ -133,13 +133,13 @@ LLM 的推理能力增强与任务规划策略。
 
 | # | 文章 |
 |---|------|
-| 049 | [推理策略详解：Chain-of-Thought 与 Tree-of-Thought](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-049-cot-and-tot) |
-| 050 | [任务分解（Task Decomposition）的基本方法](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-050-task-decomposition) |
-| 052 | [Plan-and-Solve 与动态重规划](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-052-plan-and-solve-replann) |
-| 053 | [LLM 作为规划器的局限性与缓解方案](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-053-llm-planning-limitatio) |
-| 055 | [🆕 2026 推理/Agent 模型版图：Claude / GPT / Gemini 三家旗舰对比与选型](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-055-reasoning-models) |
-| 056 | [Monte Carlo Tree Search 在 Agent 规划中的应用](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-056-mcts-in-agent-planning) |
-| 103 | [Agentic-RL 是什么？如何用 GRPO 训练 Agent 的决策能力？](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo) |
+| 049 | [推理策略详解：Chain-of-Thought 与 Tree-of-Thought](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-049-cot-and-tot) |
+| 050 | [任务分解（Task Decomposition）的基本方法](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-050-task-decomposition) |
+| 052 | [Plan-and-Solve 与动态重规划](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-052-plan-and-solve-replann) |
+| 053 | [LLM 作为规划器的局限性与缓解方案](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-053-llm-planning-limitatio) |
+| 055 | [🆕 2026 推理/Agent 模型版图：Claude / GPT / Gemini 三家旗舰对比与选型](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-055-reasoning-models) |
+| 056 | [Monte Carlo Tree Search 在 Agent 规划中的应用](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-056-mcts-in-agent-planning) |
+| 103 | [Agentic-RL 是什么？如何用 GRPO 训练 Agent 的决策能力？](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo) |
 
 #### 七、✍️ 提示工程 (`07-prompt-engineering/`) — 10 题
 
@@ -147,16 +147,16 @@ Prompt 设计、优化与管理的最佳实践。
 
 | # | 文章 |
 |---|------|
-| 059 | [System Prompt 设计的核心原则](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-059-system-prompt-principles) |
-| 060 | [Few-Shot vs Zero-Shot Prompting：如何选择？](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-060-few-shot-vs-zero-shot) |
-| 061 | [结构化输出（Structured Output）：如何让 LLM 返回 JSON/XML？](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-061-structured-output) |
-| 062 | [Agentic Prompting：如何编写让 LLM 自主执行任务的 Prompt？](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-062-agentic-prompting) |
-| 063 | [Prompt Chaining：多步骤 Prompt 的设计与编排](./chapters/05-编排与多agent/agent-interview-100-07-prompt-engineering-063-prompt-chaining) |
-| 064 | [如何防止 Prompt Injection 攻击？](./chapters/08-评测安全可观测/agent-interview-100-07-prompt-engineering-064-prompt-injection-defense) |
-| 065 | [自动化 Prompt 优化：DSPy / APE / OPRO / PromptBreeder 全景](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-065-programmatic-prompt-optimi) |
-| 066 | [Prompt 版本管理与 A/B 测试](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-066-prompt-versioning-ab-testi) |
-| 068 | [跨模型 Prompt 迁移：如何编写模型无关的 Prompt？](./chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-068-cross-model-prompt-portabi) |
-| 102 | [🆕 什么是 Context Engineering？它与 Prompt Engineering 有何本质区别？](./chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering) |
+| 059 | [System Prompt 设计的核心原则](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-059-system-prompt-principles) |
+| 060 | [Few-Shot vs Zero-Shot Prompting：如何选择？](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-060-few-shot-vs-zero-shot) |
+| 061 | [结构化输出（Structured Output）：如何让 LLM 返回 JSON/XML？](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-061-structured-output) |
+| 062 | [Agentic Prompting：如何编写让 LLM 自主执行任务的 Prompt？](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-062-agentic-prompting) |
+| 063 | [Prompt Chaining：多步骤 Prompt 的设计与编排](/chapters/05-编排与多agent/agent-interview-100-07-prompt-engineering-063-prompt-chaining) |
+| 064 | [如何防止 Prompt Injection 攻击？](/chapters/08-评测安全可观测/agent-interview-100-07-prompt-engineering-064-prompt-injection-defense) |
+| 065 | [自动化 Prompt 优化：DSPy / APE / OPRO / PromptBreeder 全景](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-065-programmatic-prompt-optimi) |
+| 066 | [Prompt 版本管理与 A/B 测试](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-066-prompt-versioning-ab-testi) |
+| 068 | [跨模型 Prompt 迁移：如何编写模型无关的 Prompt？](/chapters/01-模型与提示/agent-interview-100-07-prompt-engineering-068-cross-model-prompt-portabi) |
+| 102 | [🆕 什么是 Context Engineering？它与 Prompt Engineering 有何本质区别？](/chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering) |
 
 #### 八、📊 评估 (`08-evaluation/`) — 9 题
 
@@ -164,15 +164,15 @@ Agent 系统的评估方法、基准测试与可观测性。
 
 | # | 文章 |
 |---|------|
-| 069 | [评估方法论：从 LLM 评估到 Agent 评估](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology) |
-| 071 | [LLM-as-Judge：使用 LLM 评估 LLM 输出](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-071-llm-as-judge) |
-| 072 | [Agent Benchmark：如何设计端到端的 Agent 测试？](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-072-agent-benchmarks) |
-| 073 | [回归测试：如何检测 Agent 性能退化？](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-073-regression-testing) |
-| 074 | [Trace 和 Span：Agent 执行的可观测性](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-074-traces-and-spans) |
-| 075 | [评估工具对比：Ragas、LangSmith、Braintrust](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-075-evaluation-tools-comparison) |
-| 076 | [静态 Benchmark 的陷阱：为什么 95% 准确率在生产中会失效？](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap) |
-| 077 | [如何构建持续评估（Continuous Evaluation）流水线？](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-077-continuous-evaluation-pipeline) |
-| 111 | [🆕 Eval Harness 设计与生态选型：lm-evaluation-harness / Inspect AI / HELM / METR](./chapters/09-codingagent/agent-interview-100-08-evaluation-111-eval-harness-design) |
+| 069 | [评估方法论：从 LLM 评估到 Agent 评估](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology) |
+| 071 | [LLM-as-Judge：使用 LLM 评估 LLM 输出](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-071-llm-as-judge) |
+| 072 | [Agent Benchmark：如何设计端到端的 Agent 测试？](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-072-agent-benchmarks) |
+| 073 | [回归测试：如何检测 Agent 性能退化？](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-073-regression-testing) |
+| 074 | [Trace 和 Span：Agent 执行的可观测性](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-074-traces-and-spans) |
+| 075 | [评估工具对比：Ragas、LangSmith、Braintrust](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-075-evaluation-tools-comparison) |
+| 076 | [静态 Benchmark 的陷阱：为什么 95% 准确率在生产中会失效？](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap) |
+| 077 | [如何构建持续评估（Continuous Evaluation）流水线？](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-077-continuous-evaluation-pipeline) |
+| 111 | [🆕 Eval Harness 设计与生态选型：lm-evaluation-harness / Inspect AI / HELM / METR](/chapters/09-codingagent/agent-interview-100-08-evaluation-111-eval-harness-design) |
 
 #### 九、🛡️ 安全与对齐 (`09-safety-and-alignment/`) — 8 题
 
@@ -180,14 +180,14 @@ Agent 系统的安全风险防控与对齐策略。
 
 | # | 文章 |
 |---|------|
-| 078 | [LLM Agent 的主要安全风险有哪些？](./chapters/08-评测安全可观测/agent-interview-100-09-safety-and-alignment-078-agent-safety-risks) |
-| 079 | [什么是 Guardrails？如何为 Agent 设置安全护栏？](./chapters/08-评测安全可观测/agent-interview-100-09-safety-and-alignment-079-guardrails-basics) |
-| 080 | [Human-in-the-Loop：何时以及如何引入人工审核？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-080-human-in-the-loop) |
-| 081 | [Agent 的权限最小化原则与沙箱执行](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi) |
-| 082 | [如何检测和缓解 Agent 的幻觉（Hallucination）？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-082-hallucination-detection) |
-| 084 | [Agent 对齐问题：如何确保 Agent 行为符合人类意图？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-084-agent-alignment) |
-| 085 | [Red Teaming：如何对 Agent 系统进行对抗测试？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-085-red-teaming-agents) |
-| 115 | [🆕 Agent 产品如何做合规设计？EU AI Act 对 Agent 有何影响？](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-115-agent-compliance-eu-ai-a) |
+| 078 | [LLM Agent 的主要安全风险有哪些？](/chapters/08-评测安全可观测/agent-interview-100-09-safety-and-alignment-078-agent-safety-risks) |
+| 079 | [什么是 Guardrails？如何为 Agent 设置安全护栏？](/chapters/08-评测安全可观测/agent-interview-100-09-safety-and-alignment-079-guardrails-basics) |
+| 080 | [Human-in-the-Loop：何时以及如何引入人工审核？](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-080-human-in-the-loop) |
+| 081 | [Agent 的权限最小化原则与沙箱执行](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi) |
+| 082 | [如何检测和缓解 Agent 的幻觉（Hallucination）？](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-082-hallucination-detection) |
+| 084 | [Agent 对齐问题：如何确保 Agent 行为符合人类意图？](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-084-agent-alignment) |
+| 085 | [Red Teaming：如何对 Agent 系统进行对抗测试？](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-085-red-teaming-agents) |
+| 115 | [🆕 Agent 产品如何做合规设计？EU AI Act 对 Agent 有何影响？](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-115-agent-compliance-eu-ai-a) |
 
 #### 十、🚀 生产部署 (`10-production-and-deployment/`) — 13 题
 
@@ -195,19 +195,19 @@ Agent 系统的安全风险防控与对齐策略。
 
 | # | 文章 |
 |---|------|
-| 086 | [LLMOps 与 Agent 部署架构](./chapters/08-评测安全可观测/agent-interview-100-10-production-and-deployment-086-llmops-and-deployme) |
-| 088 | [LLM API 的成本优化策略](./chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-088-cost-optimization) |
-| 089 | [模型路由（Model Routing）：如何根据任务复杂度选择模型？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing) |
-| 090 | [Agent 系统的延迟优化：Streaming、缓存、批处理](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio) |
-| 091 | [Prompt Drift 管理：如何避免 Prompt 退化？](./chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-091-prompt-drift-manage) |
-| 092 | [Agent 系统的日志、监控与告警设计](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-092-logging-monitoring-) |
-| 093 | [如何实现 Agent 的灰度发布和 A/B 测试？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-093-canary-ab-testing) |
-| 094 | [高并发场景下的 Agent 系统扩展策略](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-094-scaling-strategies) |
-| 095 | [Agent 系统的灾难恢复与高可用设计](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-095-disaster-recovery-h) |
-| 104 | [🆕 场景题：你的 Agent 在生产环境出了故障，如何系统性排查和修复？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) |
-| 107 | [🆕 代码 Review 题：找出这段 Agent 代码中的设计问题并修复](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-107-agent-code-review) |
-| 112 | [🆕 Agent Sandbox / Runtime 选型：E2B / Daytona / Modal / Cloudflare Sandbox 隔离强度 + cold start + egress](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti) |
-| 116 | [🆕 什么是 12-Factor Agents？如何用它评审生产级 Agent？](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-116-12-factor-agents) |
+| 086 | [LLMOps 与 Agent 部署架构](/chapters/08-评测安全可观测/agent-interview-100-10-production-and-deployment-086-llmops-and-deployme) |
+| 088 | [LLM API 的成本优化策略](/chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-088-cost-optimization) |
+| 089 | [模型路由（Model Routing）：如何根据任务复杂度选择模型？](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing) |
+| 090 | [Agent 系统的延迟优化：Streaming、缓存、批处理](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio) |
+| 091 | [Prompt Drift 管理：如何避免 Prompt 退化？](/chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-091-prompt-drift-manage) |
+| 092 | [Agent 系统的日志、监控与告警设计](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-092-logging-monitoring-) |
+| 093 | [如何实现 Agent 的灰度发布和 A/B 测试？](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-093-canary-ab-testing) |
+| 094 | [高并发场景下的 Agent 系统扩展策略](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-094-scaling-strategies) |
+| 095 | [Agent 系统的灾难恢复与高可用设计](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-095-disaster-recovery-h) |
+| 104 | [🆕 场景题：你的 Agent 在生产环境出了故障，如何系统性排查和修复？](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) |
+| 107 | [🆕 代码 Review 题：找出这段 Agent 代码中的设计问题并修复](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-107-agent-code-review) |
+| 112 | [🆕 Agent Sandbox / Runtime 选型：E2B / Daytona / Modal / Cloudflare Sandbox 隔离强度 + cold start + egress](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti) |
+| 116 | [🆕 什么是 12-Factor Agents？如何用它评审生产级 Agent？](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-116-12-factor-agents) |
 
 #### 十一、🧰 框架选型 (`11-frameworks/`) — 6 题
 
@@ -215,12 +215,12 @@ Agent 系统的安全风险防控与对齐策略。
 
 | # | 文章 |
 |---|------|
-| 096 | [主流 Agent 框架概览：LangChain、LlamaIndex、Haystack](./chapters/05-编排与多agent/agent-interview-100-11-frameworks-096-framework-overview) |
-| 097 | [LangGraph 的核心概念：节点、边、状态](./chapters/05-编排与多agent/agent-interview-100-11-frameworks-097-langgraph-concepts) |
-| 098 | [框架 vs 自研：什么时候应该自己构建 Agent 框架？](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom) |
-| 099 | [OpenAI Responses API / Agents SDK vs Anthropic Claude Agent SDK 对比](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk) |
-| 100 | [如何设计可测试、可扩展的 Agent 框架抽象层？](./chapters/07-ts产品工程/agent-interview-100-11-frameworks-100-testable-extensible-framework) |
-| 110 | [🆕 主流 Coding Agent Harness 横评：Claude Code / Cursor / Aider / Cline / Codex CLI 在 Context / Tool / Permission / Sandbox 四维对比](./chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison) |
+| 096 | [主流 Agent 框架概览：LangChain、LlamaIndex、Haystack](/chapters/05-编排与多agent/agent-interview-100-11-frameworks-096-framework-overview) |
+| 097 | [LangGraph 的核心概念：节点、边、状态](/chapters/05-编排与多agent/agent-interview-100-11-frameworks-097-langgraph-concepts) |
+| 098 | [框架 vs 自研：什么时候应该自己构建 Agent 框架？](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-098-framework-vs-custom) |
+| 099 | [OpenAI Responses API / Agents SDK vs Anthropic Claude Agent SDK 对比](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-099-assistants-api-vs-claude-sdk) |
+| 100 | [如何设计可测试、可扩展的 Agent 框架抽象层？](/chapters/07-ts产品工程/agent-interview-100-11-frameworks-100-testable-extensible-framework) |
+| 110 | [🆕 主流 Coding Agent Harness 横评：Claude Code / Cursor / Aider / Cline / Codex CLI 在 Context / Tool / Permission / Sandbox 四维对比](/chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison) |
 
 ---
 
@@ -264,13 +264,13 @@ Agent 系统的安全风险防控与对齐策略。
 
 | 题型 | 代表题目 | 学习价值 |
 |------|---------|---------|
-| 🔥 **场景故障排查** | [#104](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) | 通过真实故障场景，学习系统性排查思维和工程经验 |
-| 📐 **量化计算** | [#020](./chapters/08-评测安全可观测/agent-interview-100-02-rag-020-rag-evaluation-metrics) | 手算 Precision@K、MRR、NDCG 等指标，真正理解评估体系而非死记公式 |
-| 🏗️ **系统设计** | [#010](./chapters/10-项目实战/agent-interview-100-01-agent-architecture-010-production-agent-system-de) | 从原则到实战案例，完整体验 Agent 系统设计全过程 |
-| 🔍 **代码 Review** | [#107](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-107-agent-code-review) | 审查真实 Agent 代码中的问题，培养代码质量意识和最佳实践 |
-| 🔗 **递进追问链** | [#108](./chapters/11-面试与求职/agent-interview-100-01-agent-architecture-108-interview-deep-dive-chain) | 10 层递进追问，从基础概念一步步深入到系统设计，串联知识体系 |
-| 🛠️ **Harness 主题** | [#109](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)、[#110](./chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)、[#111](./chapters/09-codingagent/agent-interview-100-08-evaluation-111-eval-harness-design)、[#112](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti) | 2025-2026 Coding Agent 工程实践焦点：三层抽象（Harness/Framework/Runtime）+ Coding Harness 横评 + Eval Harness 设计 + Sandbox/Runtime 选型 |
-| 🌐 **前沿形态（2026）** | [#113](./chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-113-computer-use-agent)、[#114](./chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent)、[#115](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-115-agent-compliance-eu-ai-a)、[#116](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-116-12-factor-agents) | 2026 前沿热点：Computer Use / Browser Use Agent、Deep Research、Agent 合规（EU AI Act）、12-Factor Agents |
+| 🔥 **场景故障排查** | [#104](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) | 通过真实故障场景，学习系统性排查思维和工程经验 |
+| 📐 **量化计算** | [#020](/chapters/08-评测安全可观测/agent-interview-100-02-rag-020-rag-evaluation-metrics) | 手算 Precision@K、MRR、NDCG 等指标，真正理解评估体系而非死记公式 |
+| 🏗️ **系统设计** | [#010](/chapters/10-项目实战/agent-interview-100-01-agent-architecture-010-production-agent-system-de) | 从原则到实战案例，完整体验 Agent 系统设计全过程 |
+| 🔍 **代码 Review** | [#107](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-107-agent-code-review) | 审查真实 Agent 代码中的问题，培养代码质量意识和最佳实践 |
+| 🔗 **递进追问链** | [#108](/chapters/11-面试与求职/agent-interview-100-01-agent-architecture-108-interview-deep-dive-chain) | 10 层递进追问，从基础概念一步步深入到系统设计，串联知识体系 |
+| 🛠️ **Harness 主题** | [#109](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)、[#110](/chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)、[#111](/chapters/09-codingagent/agent-interview-100-08-evaluation-111-eval-harness-design)、[#112](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-112-agent-sandbox-runti) | 2025-2026 Coding Agent 工程实践焦点：三层抽象（Harness/Framework/Runtime）+ Coding Harness 横评 + Eval Harness 设计 + Sandbox/Runtime 选型 |
+| 🌐 **前沿形态（2026）** | [#113](/chapters/07-ts产品工程/agent-interview-100-01-agent-architecture-113-computer-use-agent)、[#114](/chapters/03-rag/agent-interview-100-01-agent-architecture-114-deep-research-agent)、[#115](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-115-agent-compliance-eu-ai-a)、[#116](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-116-12-factor-agents) | 2026 前沿热点：Computer Use / Browser Use Agent、Deep Research、Agent 合规（EU AI Act）、12-Factor Agents |
 
 ---
 

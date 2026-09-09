@@ -415,7 +415,7 @@ LangMem：可插拔 Store，检索策略由开发者定（语义/关键词/元�
 Letta：  core memory 常驻 → 需要时 Agent 主动调 archival_memory_search 拉取
 ```
 
-> 💡 **最重要的范式差异**：Mem0 / Zep / LangMem 都是**系统在用户无感的情况下自动管理记忆**（更像数据库）；而 Letta 走 **Agent 自主管理（self-editing memory）** 路线——记忆操作本身是 Agent 可调用的工具，Agent 像人一样"决定记什么、忘什么"（更像大脑）。关于记忆的遗忘与更新机制，详见 [#048 — 记忆的遗忘与更新机制](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-048-memory-forgetting-updating)。
+> 💡 **最重要的范式差异**：Mem0 / Zep / LangMem 都是**系统在用户无感的情况下自动管理记忆**（更像数据库）；而 Letta 走 **Agent 自主管理（self-editing memory）** 路线——记忆操作本身是 Agent 可调用的工具，Agent 像人一样"决定记什么、忘什么"（更像大脑）。关于记忆的遗忘与更新机制，详见 [#048 — 记忆的遗忘与更新机制](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-048-memory-forgetting-updating)。
 
 ##### 自研 vs 框架：取舍清单
 
@@ -431,7 +431,7 @@ Letta：  core memory 常驻 → 需要时 Agent 主动调 archival_memory_searc
 - **MVP / 中小流量** → 直接上框架（Mem0 最快，Zep 最强推理，LangMem 最贴合 LangGraph 栈，Letta 适合需要 Agent 自治的场景）
 - **大流量 / 强数据主权 / 特殊记忆结构** → 自研，借鉴框架的设计（双时间线、三分类、self-edit）；框架可用来做原型验证
 
-> 这一取舍逻辑与框架选型的通用判断一致，参见 [#043 — 持久化记忆](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-043-persistent-memory) 中"何时该上专用记忆层"的讨论。
+> 这一取舍逻辑与框架选型的通用判断一致，参见 [#043 — 持久化记忆](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-043-persistent-memory) 中"何时该上专用记忆层"的讨论。
 
 ##### 对接生产级记忆系统的选型建议
 
@@ -451,7 +451,7 @@ flowchart TD
 
 *记忆框架按需求五路选型：召回选 Mem0，关系/时间推理选 Zep，Agent 自治选 Letta，共享选 Zep，严苛生产自研。*
 
-> 🔗 **与本文存储介质选型的关系**：本节的框架，本质是把上文"向量 + 结构化 + 图谱"的混合架构**产品化封装**——Mem0 = 向量 + 图；Zep = 图谱 + 混合检索；LangMem = 可插拔后端；Letta = 块存储 + 向量。选框架 = 选一套预先组装好的存储介质组合 + 抽取/检索策略。理解了上文的介质取舍（参见 [记忆类型总览 #040](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-040-memory-types)），框架选型就是"买现成组装车还是自己攒"的问题。
+> 🔗 **与本文存储介质选型的关系**：本节的框架，本质是把上文"向量 + 结构化 + 图谱"的混合架构**产品化封装**——Mem0 = 向量 + 图；Zep = 图谱 + 混合检索；LangMem = 可插拔后端；Letta = 块存储 + 向量。选框架 = 选一套预先组装好的存储介质组合 + 抽取/检索策略。理解了上文的介质取舍（参见 [记忆类型总览 #040](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-040-memory-types)），框架选型就是"买现成组装车还是自己攒"的问题。
 
 #### A-MEM：Zettelkasten 方法的记忆系统
 

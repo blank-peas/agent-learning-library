@@ -7,11 +7,11 @@
 
 ### 本章内容
 
-- [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 层级、网络、监督者、蜂群四种模式
-- [Agent 通信协议](./chapters/05-编排与多agent/agent-camp-multi-agent-communication) — A2A（Google）、ACP、AGNTCY 三大协议对比
-- [调度者-工作者模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) — 业界最常用的多 Agent 模式
-- [Agent 协作策略](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 辩论、投票、角色扮演、评审者
-- [MetaGPT / ChatDev 案例](./chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev) — 软件公司模拟器的代表作
+- [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 层级、网络、监督者、蜂群四种模式
+- [Agent 通信协议](/chapters/05-编排与多agent/agent-camp-multi-agent-communication) — A2A（Google）、ACP、AGNTCY 三大协议对比
+- [调度者-工作者模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) — 业界最常用的多 Agent 模式
+- [Agent 协作策略](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 辩论、投票、角色扮演、评审者
+- [MetaGPT / ChatDev 案例](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev) — 软件公司模拟器的代表作
 
 ### 学习路径
 

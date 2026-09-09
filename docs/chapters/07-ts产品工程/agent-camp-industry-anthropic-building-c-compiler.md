@@ -45,8 +45,8 @@
 ### 和本站章节的关系
 
 - [多 Agent 协作](https://github.com/yibo365/agent-camp)
-- [调度者-工作者](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [调度者-工作者](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
 
 ### 面试追问
 

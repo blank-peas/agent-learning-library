@@ -22,7 +22,7 @@
 
 > Skill 把"怎么做一类任务"从聊天记录里抽出来，变成可版本化、可复用、可测试的能力包。
 
-> **本文边界**：本文讲 Skill 作为 Agent 能力组织方式。工具执行细节看 [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools)，MCP 协议层看 [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)，长期状态看 [记忆架构](./chapters/06-上下文与记忆/agent-camp-agent-memory-arch)，Claude 官方文章导读看 [Agent Skills](./chapters/07-ts产品工程/agent-camp-industry-anthropic-equipping-agents-for-the-real-world-with-a)。
+> **本文边界**：本文讲 Skill 作为 Agent 能力组织方式。工具执行细节看 [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools)，MCP 协议层看 [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)，长期状态看 [记忆架构](/chapters/06-上下文与记忆/agent-camp-agent-memory-arch)，Claude 官方文章导读看 [Agent Skills](/chapters/07-ts产品工程/agent-camp-industry-anthropic-equipping-agents-for-the-real-world-with-a)。
 
 ### 面试官想考什么
 
@@ -377,6 +377,6 @@ if __name__ == "__main__":
 - 官方文档：[Claude Code Skills](https://docs.claude.com/en/docs/claude-code/skills) — 重点看 frontmatter、supporting files、invocation control 和上下文加载规则。
 - 官方说明：[What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills) — 适合理解 progressive disclosure 为什么能减少上下文负担。
 - 工程博客：[Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — 从产品和组织经验角度理解 Skills 的价值。
-- 本站：[Hermes Agent](./chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent) — 看 Skill 自生成和自改进的另一种设计，重点关注自动改进带来的回归风险。
-- 本站：[工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) — description 写法与 Skill 触发描述高度相似，建议对照读。
+- 本站：[Hermes Agent](/chapters/07-ts产品工程/agent-camp-frameworks-hermes-agent) — 看 Skill 自生成和自改进的另一种设计，重点关注自动改进带来的回归风险。
+- 本站：[工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design) — description 写法与 Skill 触发描述高度相似，建议对照读。
 

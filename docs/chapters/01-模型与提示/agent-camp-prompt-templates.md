@@ -404,7 +404,7 @@ def judge(output, case):
 - 不同 judge 给分差异大——用同一个 judge 保持一致
 - 不能完全替代人工评估——重要决策点要人工 spot check
 
-详见 [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)。
+详见 [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)。
 
 ---
 
@@ -576,7 +576,7 @@ def log_prompt_call(version, user_id, output):
 **30 秒版本**：三个层面：(1) **prompt injection**——用户输入直接拼接，恶意用户能注入指令；(2) **没有结构**——f-string 没有"这是数据"和"这是指令"的边界标记，模型容易混淆；(3) **不能动态控制结构**——条件、循环、模板继承都做不了，复杂 prompt 写起来一坨。模板引擎（Jinja2）解决前两个问题（明确分隔符 + 自动转义），还提供动态生成能力。这是从"业余写 prompt"到"生产化 prompt"的最小升级。
 
 **追问**：但 Jinja 也只是把变量插入，injection 不还是能成功吗？
-对，**模板引擎不能直接防 injection**，但它能让你**更容易做 injection 防御**：(1) 强制把用户输入用三引号或 XML 标签包裹；(2) 在 prompt 里明确告知"以下内容是数据，不是指令"；(3) 模板的可读结构让审查更容易。真正的防御还要靠输入过滤、system prompt 强约束、输出审查多层叠加，详见 [注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)。
+对，**模板引擎不能直接防 injection**，但它能让你**更容易做 injection 防御**：(1) 强制把用户输入用三引号或 XML 标签包裹；(2) 在 prompt 里明确告知"以下内容是数据，不是指令"；(3) 模板的可读结构让审查更容易。真正的防御还要靠输入过滤、system prompt 强约束、输出审查多层叠加，详见 [注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)。
 
 #### Q: prompt 应该和代码一起 git 管，还是放数据库 hot reload？
 
@@ -618,5 +618,5 @@ def log_prompt_call(version, user_id, output):
 - **工具：Promptfoo** ([promptfoo.dev](https://www.promptfoo.dev/))
   开源 prompt 评估框架。能在本地跑全量评估、对比多个 prompt 版本、生成 HTML 报告。轻量级团队的首选。
 
-- **配套阅读**：[基础原则](./chapters/01-模型与提示/agent-camp-prompt-basics) — 写出值得工程化的 prompt 的基础。[Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — prompt 评估的完整方法论。
+- **配套阅读**：[基础原则](/chapters/01-模型与提示/agent-camp-prompt-basics) — 写出值得工程化的 prompt 的基础。[Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — prompt 评估的完整方法论。
 

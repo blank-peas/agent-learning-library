@@ -24,7 +24,7 @@
 
 ### 为什么读 OpenHands 源码
 
-读完 [Aider 源码剖析](./chapters/07-ts产品工程/agent-camp-source-aider) 和 [Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code) 之后，可能会觉得"编程 Agent 大概就那样"——主循环 + 工具集 + Reflexion。OpenHands 颠覆这个直觉的方式是：**它的 Agent 几乎不"运行"**。
+读完 [Aider 源码剖析](/chapters/07-ts产品工程/agent-camp-source-aider) 和 [Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code) 之后，可能会觉得"编程 Agent 大概就那样"——主循环 + 工具集 + Reflexion。OpenHands 颠覆这个直觉的方式是：**它的 Agent 几乎不"运行"**。
 
 ```
 Aider/Claude Code：
@@ -971,10 +971,10 @@ Agent 核心在 software-agent-sdk，UI 在 OpenHands 主仓库。修一个端�
   - [OpenHands SDK docs](https://docs.openhands.dev/sdk) —— SDK 专门文档，看 Architecture 和 Event 章节
 
 - **相关概念**：
-  - 本站 [编程 Agent 通用模式](./chapters/09-codingagent/agent-camp-vertical-coding-agent) —— OpenHands 是"自主 Agent"路线的代表
-  - 本站 [Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code) —— 对比"命令式 + AsyncGenerator" vs "事件驱动 + step()"两种范式
-  - 本站 [Aider 源码剖析](./chapters/07-ts产品工程/agent-camp-source-aider) —— 对比"文本协议（SEARCH/REPLACE）" vs "工具协议（tool_use）"两种交互模式
-  - 本站 [Agent 记忆架构](./chapters/06-上下文与记忆/agent-camp-agent-memory-arch) —— event sourcing 是 Agent 长期记忆的天然实现
+  - 本站 [编程 Agent 通用模式](/chapters/09-codingagent/agent-camp-vertical-coding-agent) —— OpenHands 是"自主 Agent"路线的代表
+  - 本站 [Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code) —— 对比"命令式 + AsyncGenerator" vs "事件驱动 + step()"两种范式
+  - 本站 [Aider 源码剖析](/chapters/07-ts产品工程/agent-camp-source-aider) —— 对比"文本协议（SEARCH/REPLACE）" vs "工具协议（tool_use）"两种交互模式
+  - 本站 [Agent 记忆架构](/chapters/06-上下文与记忆/agent-camp-agent-memory-arch) —— event sourcing 是 Agent 长期记忆的天然实现
 
 - **对比阅读**：
   - [SWE-Agent](https://github.com/SWE-agent/SWE-agent)（普林斯顿）—— 学术派编程 Agent，看怎么针对 SWE-bench 做端到端优化

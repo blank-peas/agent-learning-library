@@ -30,10 +30,10 @@
 
 ### 和本站章节的关系
 
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
-- [Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli)
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [提示词模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [提示词模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates)
 
 ### 面试追问
 

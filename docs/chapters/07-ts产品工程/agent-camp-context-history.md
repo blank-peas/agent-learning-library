@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **同一 session 内 chat history 的工程管理**——messages 数组怎么布局、怎么截断、怎么压。**跨 session 的持久化记忆**见 [Agent 记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory)；**通用上下文压缩算法**（Map-Reduce / Refine / Stuff）见 [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)；**长 history 触发的位置失明**见 [上下文窗口与位置偏置](./chapters/06-上下文与记忆/agent-camp-context-window-bias)。
+> **本文边界**：聚焦 **同一 session 内 chat history 的工程管理**——messages 数组怎么布局、怎么截断、怎么压。**跨 session 的持久化记忆**见 [Agent 记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory)；**通用上下文压缩算法**（Map-Reduce / Refine / Stuff）见 [上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)；**长 history 触发的位置失明**见 [上下文窗口与位置偏置](/chapters/06-上下文与记忆/agent-camp-context-window-bias)。
 
 ### 面试官想考什么
 
@@ -100,7 +100,7 @@ reply_2 = llm.chat(messages)
 
 1. **成本爆炸**——按 input token 计费，每轮都要付"全量历史"的钱。100 轮对话的总 token 成本是 O(N²)，不是 O(N)
 2. **延迟飙升**——LLM 的 prefill 阶段时间正比于 prompt 长度，长 history 让首字延迟从几百毫秒涨到几秒
-3. **质量下降**——长 history 触发 [Lost in the Middle](./chapters/06-上下文与记忆/agent-camp-context-window-bias)，早期 system prompt 的约束在 50 轮后基本被忽略
+3. **质量下降**——长 history 触发 [Lost in the Middle](/chapters/06-上下文与记忆/agent-camp-context-window-bias)，早期 system prompt 的约束在 50 轮后基本被忽略
 
 ```python
 ## 不做任何管理的极端反例：成本曲线
@@ -117,7 +117,7 @@ reply_2 = llm.chat(messages)
 
 **会话历史管理的核心命题就是**：在每轮请求里，决定 messages 数组里塞什么、不塞什么、怎么塞，才能既保留对话连贯性、又不让 prompt 无限膨胀。
 
-这件事和[跨 session 的长期记忆](./chapters/06-上下文与记忆/agent-camp-context-memory) 不是一回事——那个是"上周说过的事这周还记得"，本文是"这一通对话讲了 50 句之后还知道开头说了什么"。前者是持久化存储问题，后者是 in-prompt 的工程问题。
+这件事和[跨 session 的长期记忆](/chapters/06-上下文与记忆/agent-camp-context-memory) 不是一回事——那个是"上周说过的事这周还记得"，本文是"这一通对话讲了 50 句之后还知道开头说了什么"。前者是持久化存储问题，后者是 in-prompt 的工程问题。
 
 ---
 
@@ -311,7 +311,7 @@ class RetrievalHistory:
         return msgs
 ```
 
-这本质上是把 [RAG](./chapters/03-rag/agent-camp-rag-basics) 用到自己的 history 上。
+这本质上是把 [RAG](/chapters/03-rag/agent-camp-rag-basics) 用到自己的 history 上。
 
 **什么时候这么做有用**：
 - 长 session（几百轮），且不同话题穿插（用户问 A，过 50 轮又回来问 A 相关）
@@ -472,7 +472,7 @@ class TieredHistory:
 
 ### 配合 Prefix Cache：history 布局的禁忌
 
-[Prefix Cache](./chapters/07-ts产品工程/agent-camp-context-caching) 让 LLM 服务端缓存"prompt 前缀"的 KV cache，下次相同前缀直接复用——能省 80%+ prefill 成本，是长 prompt 的关键优化。但**它对 prompt 的布局极其敏感**：
+[Prefix Cache](/chapters/07-ts产品工程/agent-camp-context-caching) 让 LLM 服务端缓存"prompt 前缀"的 KV cache，下次相同前缀直接复用——能省 80%+ prefill 成本，是长 prompt 的关键优化。但**它对 prompt 的布局极其敏感**：
 
 ```
 缓存命中规则：从头开始，第一个不一样的 token 之后全部失效
@@ -530,7 +530,7 @@ def _compact(self):
 
 **摘要频率越低，cache 命中率越高**。8-10 轮压一次比每轮都压在成本上能省 5 倍以上。
 
-详细的 cache 机制和优化技巧见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)。
+详细的 cache 机制和优化技巧见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)。
 
 ---
 
@@ -559,7 +559,7 @@ Cursor 的 chat 模式里，文件内容不会持续保留在 context。第一�
 
 ChatGPT 的 Chat 是 **完整 buffer + 软上限**——单次对话内基本全保留，超过模型上限才截断（用户能看到"Conversation is getting too long"提示）。但它另有一套独立的 **Memory** 系统（左侧"管理记忆"那个），跨 session 持久化用户偏好。
 
-这种设计的逻辑：单 session 内的对话连贯性 > 成本，跨 session 的关键事实独立管理（这部分是 [Agent 记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) 的范畴）。
+这种设计的逻辑：单 session 内的对话连贯性 > 成本，跨 session 的关键事实独立管理（这部分是 [Agent 记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) 的范畴）。
 
 #### LangChain 三件套对比
 
@@ -619,7 +619,7 @@ class History:
 - 摘要内容尽量稳定——已经存在的部分不要动，只追加新内容
 - 把"最近 k 轮原文"放最后，让"system + summary"前缀保持稳定
 
-详见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)。
+详见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)。
 
 #### 陷阱 4：滑动窗口切断了 tool_call / tool_result 的配对
 
@@ -655,7 +655,7 @@ def safe_slide(messages, k_turns):
 **修法**：即使有 200K context，也要主动管 history：
 - 当作 32K context 来用，主动压缩
 - 监控每轮 token 用量和成本，设置告警
-- 详见 [上下文窗口与位置偏置](./chapters/06-上下文与记忆/agent-camp-context-window-bias)
+- 详见 [上下文窗口与位置偏置](/chapters/06-上下文与记忆/agent-camp-context-window-bias)
 
 #### 陷阱 6：用户敏感信息留在 history 但忘了删
 
@@ -681,7 +681,7 @@ def safe_slide(messages, k_turns):
 | **关注点** | 成本 / cache / 截断策略 | 召回质量 / 去重 / 隔离 |
 | **代表实现** | 滑动窗口 / 摘要 / 分层 | mem0 / Letta / Zep |
 
-**简单说**：本文管的是"这一通对话怎么发给 LLM"，[Agent 记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) 管的是"上一通对话结束后留下什么"。
+**简单说**：本文管的是"这一通对话怎么发给 LLM"，[Agent 记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) 管的是"上一通对话结束后留下什么"。
 
 实际生产 Agent 会**两者都做**——in-session 用本文的分层策略管 messages，session 结束时把对话提炼成 long-term memory 写入持久化存储，下次该用户再来对话时从 memory 检索相关事实注入到新 session 的 system prompt。两层架构互补，缺一不可。
 
@@ -743,7 +743,7 @@ def safe_slide(messages, k_turns):
   ConversationBufferMemory / ConversationBufferWindowMemory / ConversationSummaryBufferMemory 三件套源码。读它是为了搞清楚三种基础策略的工程细节，以及为什么 0.3+ 把它们标为 legacy——主流转向 LangGraph 的 checkpoint 模式。
 
 - **LangGraph 文档：Memory** ([langchain-ai.github.io/langgraph](https://langchain-ai.github.io/langgraph/concepts/memory/))
-  LangGraph 把 short-term（checkpoint）和 long-term（store）正式区分开。读它是为了理解新一代框架怎么把 history 管理和 memory 系统解耦——本文讲的是前者，[Agent 记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) 讲的是后者。
+  LangGraph 把 short-term（checkpoint）和 long-term（store）正式区分开。读它是为了理解新一代框架怎么把 history 管理和 memory 系统解耦——本文讲的是前者，[Agent 记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) 讲的是后者。
 
 - **Anthropic 文档：Prompt Caching** ([docs.anthropic.com](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching))
   Cache 的具体行为、TTL、计费模型。读它是为了知道 history 布局的真实约束——脱离 cache 谈 history 管理就是空中楼阁。
@@ -755,9 +755,9 @@ def safe_slide(messages, k_turns):
   虽然主要讲跨 session 记忆，但 main context（本质就是 in-session history）的 self-managed 思路对本文也适用——让 LLM 自己决定什么留、什么换页到外部。
 
 - **配套阅读**：
-  - [上下文窗口与位置偏置](./chapters/06-上下文与记忆/agent-camp-context-window-bias) — 为什么 history 不能无限堆，理解 Lost in the Middle 才能理解为什么要压缩
-  - [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression) — Map-Reduce / Refine 等通用压缩算法，本文的摘要环节用的就是这些
-  - [Agent 记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) — 跨 session 的持久化记忆，和本文 short-term 的 history 管理互补
-  - [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching) — prefix cache 的工作原理和优化技巧，决定 history 布局的关键约束
-  - [Prompt 注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) — history 里的内容如果包含外部数据，要警惕间接注入
+  - [上下文窗口与位置偏置](/chapters/06-上下文与记忆/agent-camp-context-window-bias) — 为什么 history 不能无限堆，理解 Lost in the Middle 才能理解为什么要压缩
+  - [上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression) — Map-Reduce / Refine 等通用压缩算法，本文的摘要环节用的就是这些
+  - [Agent 记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) — 跨 session 的持久化记忆，和本文 short-term 的 history 管理互补
+  - [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching) — prefix cache 的工作原理和优化技巧，决定 history 布局的关键约束
+  - [Prompt 注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) — history 里的内容如果包含外部数据，要警惕间接注入
 

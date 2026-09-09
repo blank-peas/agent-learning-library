@@ -112,7 +112,7 @@ Google 在 2026 年把 Gemini 从聊天机器人重新定位为「操作系统�
 | **长任务自主性** | 强（Anthropic 同期发布长时科学计算 Agent） | 强（端到端工作流） | 强（Agent Mode 自主部署） |
 | **harness 耦合** | 与 Claude Code 深度协同，权重倾向 Claude Code 工具签名 | Codex 系模型权重绑 `apply_patch` 签名 | 与 Google ADK / Agent Engine 深度绑定 |
 
-**关键判断**：第 4 维（harness 耦合度）是 2026 新增的选型维度。研究表明，模型在 post-training 阶段会把对特定工具签名（如 `apply_patch`、某套 MCP 工具）的"偏好"冻进权重——脱离配套 harness 性能会掉。这意味着**选模型其实在选"模型 + harness"的组合**，详见 [#109 — Agent Harness 三层抽象](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)。
+**关键判断**：第 4 维（harness 耦合度）是 2026 新增的选型维度。研究表明，模型在 post-training 阶段会把对特定工具签名（如 `apply_patch`、某套 MCP 工具）的"偏好"冻进权重——脱离配套 harness 性能会掉。这意味着**选模型其实在选"模型 + harness"的组合**，详见 [#109 — Agent Harness 三层抽象](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)。
 
 #### 四、推理模型 vs 通用模型选型决策（2026 版）
 
@@ -165,7 +165,7 @@ flowchart TD
 ```
 *生产 Agent 按任务路由档位：关键判断开 thinking，常规执行关，格式化走中端，实时走轻量。*
 
-Model Routing 已是生产 Agent 的核心组件，详见 [#089 — 模型路由](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing)。
+Model Routing 已是生产 Agent 的核心组件，详见 [#089 — 模型路由](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing)。
 
 #### 五、Test-Time Compute Scaling：底层范式仍然成立
 
@@ -188,7 +188,7 @@ scaling_paradigms = {
 }
 ```
 
-RL 训练信号方面，可验证奖励（数学/代码可自动判对错）已成共识，偏好/Judge 奖励作补充；thinking 与工具调用交错（interleaved）三家都已支持。详见 [#103 — Agentic-RL 与 GRPO](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)。
+RL 训练信号方面，可验证奖励（数学/代码可自动判对错）已成共识，偏好/Judge 奖励作补充；thinking 与工具调用交错（interleaved）三家都已支持。详见 [#103 — Agentic-RL 与 GRPO](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)。
 
 #### 六、成本与延迟（2026 口径）
 
@@ -210,13 +210,13 @@ RL 训练信号方面，可验证奖励（数学/代码可自动判对错）已�
 - 一道复杂数学/agent 规划题可能产生 5k-20k 思考 token
 - 延迟：thinking off → 1-5s；thinking on → 10-120s（随复杂度）
 
-成本控制实战见 [#088 — 成本优化](./chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-088-cost-optimization)，延迟优化（streaming/缓存/批处理）见 [#090 — 延迟优化](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio)
+成本控制实战见 [#088 — 成本优化](/chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-088-cost-optimization)，延迟优化（streaming/缓存/批处理）见 [#090 — 延迟优化](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio)
 
 #### 七、高分≠可信：SWE-bench 信任危机
 
 2026 选型还有一个必须知道的坑：**SWE-bench Verified 顶部分数已达 87-94%（Claude 系列领先），但同时出现「benchmark 可被 gaming」的信任危机**。研究揭示 harness 配置、retry 策略、reasoning effort 都会显著影响分数；同一模型换个 harness 排名能差出几十位。新基准 SWE-EVO 转向长周期软件演化任务，弥补 SWE-bench 只测单点 bug 修复的局限。
 
-**对选型的含义**：选 Agent 模型不能只看 SWE-bench / 推理分，要看你自己的 harness + 你的真实任务分布。详见 [#076 — 静态 Benchmark 陷阱](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap) 与 [#069 — 评估方法论](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology)。
+**对选型的含义**：选 Agent 模型不能只看 SWE-bench / 推理分，要看你自己的 harness + 你的真实任务分布。详见 [#076 — 静态 Benchmark 陷阱](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap) 与 [#069 — 评估方法论](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology)。
 
 #### 八、历史脉络：从 o1 / o3 / DeepSeek-R1 说起（仍有效的概念）
 
@@ -257,23 +257,23 @@ still_valid_concepts = [
 ]
 ```
 
-DeepSeek-R1 的训练流程（GRPO + Cold Start SFT + Rejection Sampling + 二次 RL）和 R1-Zero 的涌现行为，依然是面试高频考点，详见 [#103 — Agentic-RL 与 GRPO](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)。
+DeepSeek-R1 的训练流程（GRPO + Cold Start SFT + Rejection Sampling + 二次 RL）和 R1-Zero 的涌现行为，依然是面试高频考点，详见 [#103 — Agentic-RL 与 GRPO](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)。
 
 ### 常见误区 / 面试追问
 
 1. **误区：「2026 年还该不该选专用推理模型？」** — 这个问题本身已经过时。推理能力已合流进通用旗舰，成为可开关的 thinking 模式。正确的问法是：**这个任务该不该开 thinking、开多大 budget**。o1/o3 那种"独立推理品类"的边界已经模糊，纯专用推理模型的份额在收缩。
 
-2. **误区：「Agent 选型看 SWE-bench / 推理分就够了」** — SWE-bench Verified 顶部已达 87-94%，但出现 gaming 信任危机——harness 配置、retry 策略都能显著刷分。选型要看「agentic 能力 × 成本 × harness 耦合度」三维，并在自己的真实任务上验证。详见 [#076](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap)。
+2. **误区：「Agent 选型看 SWE-bench / 推理分就够了」** — SWE-bench Verified 顶部已达 87-94%，但出现 gaming 信任危机——harness 配置、retry 策略都能显著刷分。选型要看「agentic 能力 × 成本 × harness 耦合度」三维，并在自己的真实任务上验证。详见 [#076](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap)。
 
 3. **追问：「Sonnet 5 为什么敢叫『最 agentic 的 Sonnet』？」** — 三条依据：(1) drop-in 替换 Sonnet 4.6，API 兼容；(2) 主提升集中在 agentic coding 与自主任务执行；(3) 定价 $2/$10 per MTok，把 agentic 能力做到中端价位，让原本要跑顶级旗舰的 agent 工作流可以下放。
 
-4. **追问：「post-training coupling 对选型意味着什么？」** — 模型在 post-training 阶段会把对特定工具签名（`apply_patch`、某套 MCP 工具）的偏好冻进权重。脱离配套 harness 性能会掉。所以**选模型其实在选"模型 + harness"组合**：Claude↔Claude Code、Codex↔`apply_patch`、Gemini↔ADK。详见 [#109 — Agent Harness 三层抽象](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)、[#110 — Coding Agent Harness 横评](./chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)。
+4. **追问：「post-training coupling 对选型意味着什么？」** — 模型在 post-training 阶段会把对特定工具签名（`apply_patch`、某套 MCP 工具）的偏好冻进权重。脱离配套 harness 性能会掉。所以**选模型其实在选"模型 + harness"组合**：Claude↔Claude Code、Codex↔`apply_patch`、Gemini↔ADK。详见 [#109 — Agent Harness 三层抽象](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)、[#110 — Coding Agent Harness 横评](/chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)。
 
 5. **追问：「Gemini 的 Thought Signatures 和 Claude 的 extended thinking 有什么区别？」** — 两者都是把"推理"做成可见/可控的一等公民，但侧重不同：Claude 的 extended thinking 是**可配预算的思考链**（`budget_tokens` 控制深度，interleaved 与工具交错）；Gemini 的 Thought Signatures 强调 **agent 对自身推理过程的追踪与可观测**，配合 Agent Mode 让 agent 能主动写脚本改环境。
 
-6. **追问：「1M 上下文了，Agent 还需要 RAG 吗？」** — 单针检索（single-needle retrieval）在 1M token 下对顶级模型已基本解决，但多跳推理（multi-hop reasoning）超过 256K 后性能显著下降。所以长任务、大知识库仍需 RAG，1M 上下文解决的是"短期工作记忆"，不是"长期知识"。这条决策详见 [#102 — Context Engineering](./chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering) 的上下文工程体系。
+6. **追问：「1M 上下文了，Agent 还需要 RAG 吗？」** — 单针检索（single-needle retrieval）在 1M token 下对顶级模型已基本解决，但多跳推理（multi-hop reasoning）超过 256K 后性能显著下降。所以长任务、大知识库仍需 RAG，1M 上下文解决的是"短期工作记忆"，不是"长期知识"。这条决策详见 [#102 — Context Engineering](/chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering) 的上下文工程体系。
 
-7. **追问：「未来 Agent 会全面开 thinking 吗？」** — 更可能是**混合架构 + 模型路由**：规划/关键判断开 thinking，常规执行关 thinking。Thinking token 单独计费且显著拉高成本与延迟，无脑全开不划算。详见 [#089 — 模型路由](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing)。
+7. **追问：「未来 Agent 会全面开 thinking 吗？」** — 更可能是**混合架构 + 模型路由**：规划/关键判断开 thinking，常规执行关 thinking。Thinking token 单独计费且显著拉高成本与延迟，无脑全开不划算。详见 [#089 — 模型路由](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing)。
 
 ### 参考资料
 
@@ -293,16 +293,16 @@ DeepSeek-R1 的训练流程（GRPO + Cold Start SFT + Rejection Sampling + 二�
 
 ### 相关阅读
 
-- [049 — 推理策略：Chain-of-Thought 与 Tree-of-Thought](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-049-cot-and-tot)：thinking 模式背后的 CoT 思想源头
-- [052 — Plan-and-Solve 与动态重规划](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-052-plan-and-solve-replann)：thinking 开启后规划能力的落地
-- [056 — MCTS 在 Agent 规划中的应用](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-056-mcts-in-agent-planning)：搜索式推理与 test-time compute 的另一条路径
-- [103 — Agentic-RL 与 GRPO](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)：DeepSeek-R1 的训练算法详解（历史脉络的深入篇）
-- [069 — 评估方法论](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology)：如何科学评估 thinking on/off 的收益
-- [076 — 静态 Benchmark 陷阱](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap)：SWE-bench 信任危机详解
-- [088 — 成本优化](./chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-088-cost-optimization)：thinking token 计费与预算控制
-- [089 — 模型路由](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing)：按任务复杂度路由 thinking on/off
-- [090 — 延迟优化](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio)：开 thinking 后的延迟治理
-- [102 — Context Engineering](./chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering)：1M 上下文与 thinking 的协同
-- [109 — Agent Harness 三层抽象](./chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)：post-training coupling 与模型+harness 组合选型
-- [110 — Coding Agent Harness 横评](./chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)：Claude Code / Cursor / Cline 等如何与模型耦合
+- [049 — 推理策略：Chain-of-Thought 与 Tree-of-Thought](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-049-cot-and-tot)：thinking 模式背后的 CoT 思想源头
+- [052 — Plan-and-Solve 与动态重规划](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-052-plan-and-solve-replann)：thinking 开启后规划能力的落地
+- [056 — MCTS 在 Agent 规划中的应用](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-056-mcts-in-agent-planning)：搜索式推理与 test-time compute 的另一条路径
+- [103 — Agentic-RL 与 GRPO](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)：DeepSeek-R1 的训练算法详解（历史脉络的深入篇）
+- [069 — 评估方法论](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology)：如何科学评估 thinking on/off 的收益
+- [076 — 静态 Benchmark 陷阱](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap)：SWE-bench 信任危机详解
+- [088 — 成本优化](/chapters/01-模型与提示/agent-interview-100-10-production-and-deployment-088-cost-optimization)：thinking token 计费与预算控制
+- [089 — 模型路由](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-089-model-routing)：按任务复杂度路由 thinking on/off
+- [090 — 延迟优化](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-090-latency-optimizatio)：开 thinking 后的延迟治理
+- [102 — Context Engineering](/chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering)：1M 上下文与 thinking 的协同
+- [109 — Agent Harness 三层抽象](/chapters/09-codingagent/agent-interview-100-01-agent-architecture-109-what-is-agent-harness)：post-training coupling 与模型+harness 组合选型
+- [110 — Coding Agent Harness 横评](/chapters/09-codingagent/agent-interview-100-11-frameworks-110-coding-agent-harness-comparison)：Claude Code / Cursor / Cline 等如何与模型耦合
 

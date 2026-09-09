@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 Deep Research 作为一类 Agent 形态的设计模式。RAG 的基础见 [RAG 章节](https://github.com/yibo365/agent-camp)；多 Agent 协作机制见 [多 Agent 编排](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；reasoning model 的能力边界见 [推理参数](./chapters/01-模型与提示/agent-camp-llm-inference-params)。
+> **本文边界**：聚焦 Deep Research 作为一类 Agent 形态的设计模式。RAG 的基础见 [RAG 章节](https://github.com/yibo365/agent-camp)；多 Agent 协作机制见 [多 Agent 编排](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)；reasoning model 的能力边界见 [推理参数](/chapters/01-模型与提示/agent-camp-llm-inference-params)。
 
 ### 面试官想考什么
 
@@ -599,8 +599,8 @@ Deep Research 是这条路的第一步。OpenAI 把它和 Operator（Computer Us
 - **Anthropic Research 介绍** [anthropic.com/news/research](https://www.anthropic.com/news/research) — Anthropic 对自家 Research 产品的设计哲学阐述
 - **Perplexity 工程博客** [perplexity.ai/hub](https://www.perplexity.ai/hub) — Perplexity 关于搜索 Agent 工程化的多篇文章，特别是引用机制的实现
 - **GPT Researcher 开源项目** [github.com/assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher) — 流行的开源 Deep Research 实现，代码可读性高、是学习架构的好入口
-- **本站 [Agentic RAG](./chapters/03-rag/agent-camp-rag-agentic-rag)** — 理解 Deep Research 的 RAG 前身
-- **本站 [多 Agent 编排模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)** — Planner-Researcher-Writer 三角是经典的 orchestrator-workers 模式
-- **本站 [Claude Agent SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)** — 自建 Deep Research 时最快的工程路径
-- **本站 [推理参数详解](./chapters/01-模型与提示/agent-camp-llm-inference-params)** — 理解 reasoning model 的"思考时间"机制是理解 Deep Research 的前置
+- **本站 [Agentic RAG](/chapters/03-rag/agent-camp-rag-agentic-rag)** — 理解 Deep Research 的 RAG 前身
+- **本站 [多 Agent 编排模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)** — Planner-Researcher-Writer 三角是经典的 orchestrator-workers 模式
+- **本站 [Claude Agent SDK 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)** — 自建 Deep Research 时最快的工程路径
+- **本站 [推理参数详解](/chapters/01-模型与提示/agent-camp-llm-inference-params)** — 理解 reasoning model 的"思考时间"机制是理解 Deep Research 的前置
 

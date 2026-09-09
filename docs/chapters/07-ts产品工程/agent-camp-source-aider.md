@@ -1026,9 +1026,9 @@ Aider 是终端工具。你在 IDE 里写代码、Aider 改完文件、IDE 检�
   - [Aider Leaderboards](https://aider.chat/docs/leaderboards) —— 各模型在 Polyglot Benchmark 和 Edit Format 上的真实分数，是模型选型的客观依据
 
 - **相关概念**：
-  - 本站 [编程 Agent 通用模式](./chapters/09-codingagent/agent-camp-vertical-coding-agent) —— Aider 体现的设计理念
-  - 本站 [Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code) —— 工具型 vs 文本协议型的两种范式对比阅读
-  - 本站 [Reflexion 模式](./chapters/07-ts产品工程/agent-camp-agent-reflexion) —— Aider 的 reflected_message 是 Reflexion 在编程 Agent 上的具体落地
+  - 本站 [编程 Agent 通用模式](/chapters/09-codingagent/agent-camp-vertical-coding-agent) —— Aider 体现的设计理念
+  - 本站 [Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code) —— 工具型 vs 文本协议型的两种范式对比阅读
+  - 本站 [Reflexion 模式](/chapters/07-ts产品工程/agent-camp-agent-reflexion) —— Aider 的 reflected_message 是 Reflexion 在编程 Agent 上的具体落地
 
 - **对比阅读**：
   - [Cline 仓库](https://github.com/cline/cline) —— VS Code 插件版的编程 Agent，借鉴了 Aider 的 SEARCH/REPLACE 但加了 tool calling

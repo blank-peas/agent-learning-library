@@ -7,11 +7,11 @@
 
 ### 本章内容
 
-- [LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 图节点、状态、边三件套与生产实战
-- [LlamaIndex Workflows](./chapters/07-ts产品工程/agent-camp-workflow-llamaindex-workflows) — 事件驱动的编排范式
-- [Dify / Coze / FastGPT](./chapters/07-ts产品工程/agent-camp-workflow-dify) — 低代码可视化编排平台对比
-- [编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns) — 顺序 / 并行 / 条件 / 循环 / 人工介入
-- [工作流与 Agent 的边界](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) — 何时该用工作流，何时该升级 Agent
+- [LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 图节点、状态、边三件套与生产实战
+- [LlamaIndex Workflows](/chapters/07-ts产品工程/agent-camp-workflow-llamaindex-workflows) — 事件驱动的编排范式
+- [Dify / Coze / FastGPT](/chapters/07-ts产品工程/agent-camp-workflow-dify) — 低代码可视化编排平台对比
+- [编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns) — 顺序 / 并行 / 条件 / 循环 / 人工介入
+- [工作流与 Agent 的边界](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) — 何时该用工作流，何时该升级 Agent
 
 ### 学习路径
 

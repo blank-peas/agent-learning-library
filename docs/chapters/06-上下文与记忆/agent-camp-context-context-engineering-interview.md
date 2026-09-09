@@ -22,7 +22,7 @@
 
 > Context engineering 的核心不是把 prompt 写长，而是让模型在每一轮只看到对当前决策最有用、最可信、最省成本的上下文。
 
-> **本文边界**：这篇是面试追问型文章。上下文压缩算法看 [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)，会话内 history 管理看 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)，长期记忆治理看 [记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory)，prefix / prompt cache 看 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)，位置偏置看 [Lost in the Middle](./chapters/06-上下文与记忆/agent-camp-context-window-bias)。
+> **本文边界**：这篇是面试追问型文章。上下文压缩算法看 [上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)，会话内 history 管理看 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)，长期记忆治理看 [记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory)，prefix / prompt cache 看 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)，位置偏置看 [Lost in the Middle](/chapters/06-上下文与记忆/agent-camp-context-window-bias)。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位面试中反复出现的上下文追问链。文中不出现公司、项目、用户规模、业务指标和内部系统名，所有例子都改成通用业务 Agent 场景。
 
@@ -542,5 +542,5 @@ RAG 是参考资料，不是用户指令。召回后要去重、rerank、带 doc
   为什么读：工程上怎么裁剪 chat history，LangChain 给了很直接的 message trimming 思路。
 - [LangGraph: Memory concepts](https://langchain-ai.github.io/langgraph/concepts/memory/)  
   为什么读：短期 thread state 和长期 memory 的边界很清楚，适合准备 history vs memory 的追问。
-- 配套阅读：[上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)、[会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)、[记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory)、[上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)、[上下文污染与清理](./chapters/07-ts产品工程/agent-camp-context-pollution)。
+- 配套阅读：[上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)、[会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)、[记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory)、[上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)、[上下文污染与清理](/chapters/07-ts产品工程/agent-camp-context-pollution)。
 

@@ -218,8 +218,8 @@ class DeepResearchAgent:
 
 #### 延伸思考 / 交叉引用
 
-- **与 Agentic RAG 的对照**：本题是 [#018 Agentic RAG](./chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag) 的"产品化上层"，建议两题连读——#018 讲检索自主化的模式，#114 讲其在报告生成场景的产品化。RAG 基础概念见 [#011 RAG 概览](./chapters/03-rag/agent-interview-100-02-rag-011-rag-overview-and-pipeline)。
-- **检索作为工具**：Deep Research 的检索层本质是把 Web 搜索当作工具反复调用，工具调用机制见 [#021 Function Calling](./chapters/04-工具与mcp/agent-interview-100-03-tool-use-021-function-calling-basics)、动态工具发现见 [#029 动态工具发现](./chapters/07-ts产品工程/agent-interview-100-03-tool-use-029-dynamic-tool-discovery)。
-- **长报告与上下文管理**：综合长报告需要管理大量抽取片段的上下文，与 [#041 上下文窗口管理](./chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-041-context-window-management)、[#102 Context Engineering](./chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering) 直接相关——如何在 token 预算内保留高信噪比的证据，是 Deep Research 综合阶段的工程核心。
-- **质量评估**：报告质量评估方法可参考 [#069 评估方法论](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology)、静态基准的陷阱见 [#076 静态 Benchmark 陷阱](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap)。
+- **与 Agentic RAG 的对照**：本题是 [#018 Agentic RAG](/chapters/03-rag/agent-interview-100-02-rag-018-agentic-rag) 的"产品化上层"，建议两题连读——#018 讲检索自主化的模式，#114 讲其在报告生成场景的产品化。RAG 基础概念见 [#011 RAG 概览](/chapters/03-rag/agent-interview-100-02-rag-011-rag-overview-and-pipeline)。
+- **检索作为工具**：Deep Research 的检索层本质是把 Web 搜索当作工具反复调用，工具调用机制见 [#021 Function Calling](/chapters/04-工具与mcp/agent-interview-100-03-tool-use-021-function-calling-basics)、动态工具发现见 [#029 动态工具发现](/chapters/07-ts产品工程/agent-interview-100-03-tool-use-029-dynamic-tool-discovery)。
+- **长报告与上下文管理**：综合长报告需要管理大量抽取片段的上下文，与 [#041 上下文窗口管理](/chapters/06-上下文与记忆/agent-interview-100-05-memory-and-state-041-context-window-management)、[#102 Context Engineering](/chapters/06-上下文与记忆/agent-interview-100-07-prompt-engineering-102-context-engineering) 直接相关——如何在 token 预算内保留高信噪比的证据，是 Deep Research 综合阶段的工程核心。
+- **质量评估**：报告质量评估方法可参考 [#069 评估方法论](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-069-evaluation-methodology)、静态基准的陷阱见 [#076 静态 Benchmark 陷阱](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap)。
 

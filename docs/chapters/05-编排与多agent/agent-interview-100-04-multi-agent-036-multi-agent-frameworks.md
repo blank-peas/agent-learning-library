@@ -214,7 +214,7 @@ framework_guide = {
 Agent 框架赛道在 2026 年持续升温，除三大开源框架外，云厂商相继推出自有框架，进一步碎片化但也验证了赛道价值：
 
 - **Microsoft Agent Framework (MAF) 1.0 GA（2026.4）**：微软继 AutoGen 0.4 后的新主推方向，1.0 GA 标志其进入生产可用阶段。深度集成 Azure AI Foundry 与 Semantic Kernel，定位企业级 Agent 平台。微软体系内 AutoGen 0.4 已进入维护模式，新项目官方推荐迁移到 MAF。
-- **Google ADK（Agent Development Kit）**：Google 开源的 Agent 开发套件，内置 SequentialAgent、ParallelAgent、LoopAgent 三种编排原语，**原生集成 A2A（Agent-to-Agent）协议**，可一键部署到 Vertex AI Agent Engine 托管运行。ADK 是 Google「Agent 平台化」战略的核心开发工具，与 A2A 协议深度绑定（多 Agent 通信协议详见 [#101 A2A 协议](./chapters/05-编排与多agent/agent-interview-100-04-multi-agent-101-a2a-protocol)）。
+- **Google ADK（Agent Development Kit）**：Google 开源的 Agent 开发套件，内置 SequentialAgent、ParallelAgent、LoopAgent 三种编排原语，**原生集成 A2A（Agent-to-Agent）协议**，可一键部署到 Vertex AI Agent Engine 托管运行。ADK 是 Google「Agent 平台化」战略的核心开发工具，与 A2A 协议深度绑定（多 Agent 通信协议详见 [#101 A2A 协议](/chapters/05-编排与多agent/agent-interview-100-04-multi-agent-101-a2a-protocol)）。
 - **OpenAI Agents SDK**：轻量级 Handoff 机制，代码优先编排，与 OpenAI Responses API 紧密集成。
 - **AWS Agent Squad**：Agent-as-Tools 架构，Lead Agent 协调团队。
 

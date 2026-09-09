@@ -263,7 +263,7 @@ def is_success(trajectory) -> bool:
     return llm_judge_says_acceptable(trajectory)
 ```
 
-严格定义靠规则（测试通过 / 数据库状态匹配），适合有明确终态的任务（SWE-bench、τ-bench）。宽松定义用 LLM judge，适合开放任务（写报告、做研究），但要警惕 judge 偏差——详见 [LLM-as-judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)。
+严格定义靠规则（测试通过 / 数据库状态匹配），适合有明确终态的任务（SWE-bench、τ-bench）。宽松定义用 LLM judge，适合开放任务（写报告、做研究），但要警惕 judge 偏差——详见 [LLM-as-judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)。
 
 #### Pass@K
 
@@ -331,7 +331,7 @@ std_dev = np.std([r.success for r in runs])  # 越低越稳
 - **Hallucination Rate**：不该调工具时硬调的比例
 - **Invalid Call Rate**：违反 schema 的调用比例
 
-详见 [function calling](./chapters/04-工具与mcp/agent-camp-tools-function-calling) 和 [custom tools](./chapters/10-项目实战/agent-camp-tools-custom-tools)。
+详见 [function calling](/chapters/04-工具与mcp/agent-camp-tools-function-calling) 和 [custom tools](/chapters/10-项目实战/agent-camp-tools-custom-tools)。
 
 ---
 
@@ -571,7 +571,7 @@ if __name__ == "__main__":
 - **同模型偏差**：用 GPT-4 评 GPT-4 的输出，分数比评 Claude 高
 - **格式偏差**：带 bullet 的答案分数高于纯文本，即使内容一样
 
-**修法**：(1) 用更强的 judge 模型（GPT-5 judge Sonnet 4）；(2) swap 位置跑两遍取平均；(3) 关键指标用规则而不是 judge；(4) 用多 judge 投票。详见 [LLM-as-judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)。
+**修法**：(1) 用更强的 judge 模型（GPT-5 judge Sonnet 4）；(2) swap 位置跑两遍取平均；(3) 关键指标用规则而不是 judge；(4) 用多 judge 投票。详见 [LLM-as-judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)。
 
 #### 陷阱 3：评估集与真实分布偏离
 
@@ -609,7 +609,7 @@ if __name__ == "__main__":
 
 ### 评估 vs Observability 的关系
 
-评估和 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 是互为输入输出的双胞胎。
+评估和 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 是互为输入输出的双胞胎。
 
 | 维度 | 评估 (Evaluation) | 可观测性 (Observability) |
 |---|---|---|
@@ -636,9 +636,9 @@ observability 监控 → 发现新问题 → 抽样标注 → 回流评估集
 | 概念 | 关注点 | 范围 |
 |---|---|---|
 | **评估 (Evaluation)** | 整体能力测量 | 本文 |
-| **[LLM-as-judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)** | 用 LLM 做评估的方法论 | 评估的一种实现 |
-| **[Observability](./chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 线上监控 | 评估的运行时镜像 |
-| **[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion)** | Agent 自评 + 学习 | Agent 内部，单次任务级 |
+| **[LLM-as-judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)** | 用 LLM 做评估的方法论 | 评估的一种实现 |
+| **[Observability](/chapters/08-评测安全可观测/agent-camp-engineering-observability)** | 线上监控 | 评估的运行时镜像 |
+| **[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion)** | Agent 自评 + 学习 | Agent 内部，单次任务级 |
 | **A/B Test** | 上线后对比两个版本 | 评估的生产形态 |
 | **Red Teaming** | 对抗性测试 | 评估的安全子集 |
 
@@ -725,5 +725,5 @@ Pass@K 的核心用途是"理解模型能力上限"。K 通常选 5 或 10——
 - **GitHub：promptfoo** ([github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo))
   YAML + CLI 风格的评估工具。和 deepeval 互补——前者代码化，后者声明式。
 
-- **配套阅读**：[LLM-as-judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)——评估的关键实现方法；[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)——评估的运行时镜像；[Reflexion](./chapters/07-ts产品工程/agent-camp-agent-reflexion)——Agent 自评；[Prompt 模板](./chapters/01-模型与提示/agent-camp-prompt-templates)——评估 prompt 的设计；[Custom Tools](./chapters/10-项目实战/agent-camp-tools-custom-tools)——工具评估的前置知识；[Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)——SWE-bench 类评估的落地场景。
+- **配套阅读**：[LLM-as-judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)——评估的关键实现方法；[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)——评估的运行时镜像；[Reflexion](/chapters/07-ts产品工程/agent-camp-agent-reflexion)——Agent 自评；[Prompt 模板](/chapters/01-模型与提示/agent-camp-prompt-templates)——评估 prompt 的设计；[Custom Tools](/chapters/10-项目实战/agent-camp-tools-custom-tools)——工具评估的前置知识；[Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)——SWE-bench 类评估的落地场景。
 

@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **跨 session 的长期记忆架构**——什么时候写、写到哪里、怎么读回来。同一 session 内的滑动窗口、摘要轮转见 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)；token 级压缩见 [上下文压缩](./chapters/07-ts产品工程/agent-camp-context-compression)；底层向量检索原理见 [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)。
+> **本文边界**：聚焦 **跨 session 的长期记忆架构**——什么时候写、写到哪里、怎么读回来。同一 session 内的滑动窗口、摘要轮转见 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)；token 级压缩见 [上下文压缩](/chapters/07-ts产品工程/agent-camp-context-compression)；底层向量检索原理见 [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)。
 
 ### 面试官想考什么
 
@@ -128,7 +128,7 @@ Agent 推荐了三明治。对话结束。
 | 访问代价 | 0（已经在 prompt 里） | 一次检索 + 一次拼接 |
 | 写入决策 | 自动（每轮对话都进） | 主动（要决定哪些值得存） |
 
-**short-term 的实现就是 chat history 管理**——滑动窗口、摘要轮转、向量回召等都在 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) 里展开。本文从 long-term 开始。
+**short-term 的实现就是 chat history 管理**——滑动窗口、摘要轮转、向量回召等都在 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) 里展开。本文从 long-term 开始。
 
 ---
 
@@ -145,7 +145,7 @@ Agent 推荐了三明治。对话结束。
 查：embedding(当前问题) → top-K 相似事件
 ```
 
-主流选择：Pinecone、Weaviate、Qdrant、Chroma。本质就是 RAG，详见 [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)。
+主流选择：Pinecone、Weaviate、Qdrant、Chroma。本质就是 RAG，详见 [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)。
 
 **坑**：vector store 检索不擅长精确事实（"用户的电话号码是多少"），相似度高的不等于"对的那条"。
 
@@ -163,7 +163,7 @@ SELECT * FROM user_facts WHERE user_id = ? AND fact_type = 'preference';
 
 适合："谁认识谁""A 公司收购了 B 公司""项目 X 依赖项目 Y"。
 
-Zep（Graphiti）和 [Microsoft GraphRAG](./chapters/03-rag/agent-camp-rag-graphrag) 走这条路。优势是能回答多跳问题（"小张的老板的助理叫什么"）；代价是 KG 抽取本身容易出错，schema 设计是大工程。
+Zep（Graphiti）和 [Microsoft GraphRAG](/chapters/03-rag/agent-camp-rag-graphrag) 走这条路。优势是能回答多跳问题（"小张的老板的助理叫什么"）；代价是 KG 抽取本身容易出错，schema 设计是大工程。
 
 > **实战经验**：80% 的 Agent 应用，semantic 用 KV（用户档案）+ episodic 用向量库就够了。KG 只在关系推理是核心 use case 时引入——不是默认选项。
 
@@ -423,7 +423,7 @@ importance 在写入时由 LLM 评分。recency 让"最近发生的"加权。rel
 - "用户的过敏 / 忌口"
 - "用户最近吃过什么"
 
-每个查询独立检索，结果合并去重。这是 [Advanced RAG](./chapters/03-rag/agent-camp-rag-advanced) 在 memory 场景的复用。
+每个查询独立检索，结果合并去重。这是 [Advanced RAG](/chapters/03-rag/agent-camp-rag-advanced) 在 memory 场景的复用。
 
 #### 注入位置：system prompt 还是 user message
 
@@ -431,7 +431,7 @@ importance 在写入时由 LLM 评分。recency 让"最近发生的"加权。rel
 
 1. **instruction hierarchy**——OpenAI 后续模型对 system message 有更高优先级权重
 2. **避免角色污染**——放进 user message 模型会把它当作"用户在说"，可能复述给用户："您之前告诉我您对花生过敏..." 听起来很怪
-3. **位置偏置**——system prompt 在开头，开头位置注意力强（参考 [上下文窗口与位置偏置](./chapters/06-上下文与记忆/agent-camp-context-window-bias)）
+3. **位置偏置**——system prompt 在开头，开头位置注意力强（参考 [上下文窗口与位置偏置](/chapters/06-上下文与记忆/agent-camp-context-window-bias)）
 
 塞 prompt 的格式要明确标签化：
 
@@ -443,7 +443,7 @@ importance 在写入时由 LLM 评分。recency 让"最近发生的"加权。rel
 
 不要把记忆和当前对话混在一起。
 
-详细的 prompt 注入技巧见 [System Prompt 实战](./chapters/01-模型与提示/agent-camp-prompt-system-prompt)。
+详细的 prompt 注入技巧见 [System Prompt 实战](/chapters/01-模型与提示/agent-camp-prompt-system-prompt)。
 
 ---
 
@@ -461,7 +461,7 @@ importance 在写入时由 LLM 评分。recency 让"最近发生的"加权。rel
 - 召回时按 confidence 过滤，低分的不进 system prompt（最多进 "candidate facts" 段）
 - 对敏感字段（"以后都/记住"等指令性 pattern）加单独审计层
 
-详细的 prompt 注入风险见 [Prompt 注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)。
+详细的 prompt 注入风险见 [Prompt 注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)。
 
 #### 坑 2：忘了去重，库越长越烂
 
@@ -535,7 +535,7 @@ importance 在写入时由 LLM 评分。recency 让"最近发生的"加权。rel
 有，但很微妙。Chat history 是数据本身，short-term memory 是"当前 task 正在用的工作集"——可能包含 chat history 的最近几轮，也可能包含从 long-term 刚检索回来的事实、当前 task 的中间结果（如 ReAct 的 scratchpad）。**短期记忆 = working memory，不只是 history**。Letta 的 core memory 就明确把"用户档案摘要""Agent 自我描述""最近事件"分开管理，不是简单的 message 列表。
 
 **追问**：那"摘要旧对话"算 memory 还是 history？
-处于边界。它本质是把 history 压缩成更紧凑的形式——内容还是"raw 对话的浓缩"，没有提炼到"事实"层面。所以它仍然属于 history 管理范畴（见 [会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) 和 [上下文压缩](./chapters/07-ts产品工程/agent-camp-context-compression)），不是 long-term memory。**判断标准**：内容是不是从对话中**抽离**出了"关于用户/世界的稳定断言"。如果只是把 10 轮对话压成 1 段总结，那是压缩；如果从中提取出 `user.allergy = "peanut"`，那是 memory。
+处于边界。它本质是把 history 压缩成更紧凑的形式——内容还是"raw 对话的浓缩"，没有提炼到"事实"层面。所以它仍然属于 history 管理范畴（见 [会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) 和 [上下文压缩](/chapters/07-ts产品工程/agent-camp-context-compression)），不是 long-term memory。**判断标准**：内容是不是从对话中**抽离**出了"关于用户/世界的稳定断言"。如果只是把 10 轮对话压成 1 段总结，那是压缩；如果从中提取出 `user.allergy = "peanut"`，那是 memory。
 
 #### Q: 什么时候应该把一条信息 commit 到长期记忆？
 
@@ -589,5 +589,5 @@ importance 在写入时由 LLM 评分。recency 让"最近发生的"加权。rel
 - **博客：Anthropic — Building Effective Agents** ([anthropic.com](https://www.anthropic.com/research/building-effective-agents))
   虽然不是专门讲 memory，但里面对"Agent 状态管理"的论述值得读——Anthropic 推崇的是"显式状态 + 简单 store"而非"复杂的 memory 框架"。
 
-- **配套阅读**：[会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) — short-term memory 的具体实现；[上下文压缩](./chapters/07-ts产品工程/agent-camp-context-compression) — 写入 memory 前的素材压缩；[RAG 基础](./chapters/03-rag/agent-camp-rag-basics) — 长期记忆检索的底层就是 RAG；[System Prompt 实战](./chapters/01-模型与提示/agent-camp-prompt-system-prompt) — 记忆怎么注入 system prompt 才有效；[Prompt 注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection) — memory poisoning 的防御视角。
+- **配套阅读**：[会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) — short-term memory 的具体实现；[上下文压缩](/chapters/07-ts产品工程/agent-camp-context-compression) — 写入 memory 前的素材压缩；[RAG 基础](/chapters/03-rag/agent-camp-rag-basics) — 长期记忆检索的底层就是 RAG；[System Prompt 实战](/chapters/01-模型与提示/agent-camp-prompt-system-prompt) — 记忆怎么注入 system prompt 才有效；[Prompt 注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection) — memory poisoning 的防御视角。
 

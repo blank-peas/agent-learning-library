@@ -397,8 +397,8 @@ v2: harness / sandbox 解耦
 
 ### 相关阅读
 
-- [030 工具使用的安全性](./chapters/08-评测安全可观测/agent-interview-100-03-tool-use-030-tool-use-security) — Schema 与权限控制，与 sandbox 互补
-- [081 最小权限沙箱（09-safety-and-alignment）](./chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi) — 沙箱安全原则与 OWASP 视角
-- [086 LLMOps 与 Agent 部署架构](./chapters/08-评测安全可观测/agent-interview-100-10-production-and-deployment-086-llmops-and-deployme) — 五层架构全景，本题是其中"运行时隔离"层的深入
-- [104 Agent 生产问题排查](./chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) — sandbox 类故障的诊断
+- [030 工具使用的安全性](/chapters/08-评测安全可观测/agent-interview-100-03-tool-use-030-tool-use-security) — Schema 与权限控制，与 sandbox 互补
+- [081 最小权限沙箱（09-safety-and-alignment）](/chapters/07-ts产品工程/agent-interview-100-09-safety-and-alignment-081-least-privilege-sandboxi) — 沙箱安全原则与 OWASP 视角
+- [086 LLMOps 与 Agent 部署架构](/chapters/08-评测安全可观测/agent-interview-100-10-production-and-deployment-086-llmops-and-deployme) — 五层架构全景，本题是其中"运行时隔离"层的深入
+- [104 Agent 生产问题排查](/chapters/07-ts产品工程/agent-interview-100-10-production-and-deployment-104-agent-production-tr) — sandbox 类故障的诊断
 

@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 OpenAI Agents SDK 的核心抽象和与 Swarm 的演进关系。OpenAI Function Calling 协议见 [函数调用规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)；和 Claude Agent SDK 的对比见 [Claude Agent SDK](./chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)；多 Agent 模式见 [多 Agent 编排](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。
+> **本文边界**：聚焦 OpenAI Agents SDK 的核心抽象和与 Swarm 的演进关系。OpenAI Function Calling 协议见 [函数调用规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling)；和 Claude Agent SDK 的对比见 [Claude Agent SDK](/chapters/07-ts产品工程/agent-camp-frameworks-claude-agent-sdk)；多 Agent 模式见 [多 Agent 编排](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。
 
 ### 面试官想考什么
 

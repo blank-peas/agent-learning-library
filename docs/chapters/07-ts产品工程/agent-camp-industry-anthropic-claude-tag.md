@@ -36,7 +36,7 @@ Claude Tag 最值得关注的不是“Slack 集成”，而是 **Agent identity*
 
 第一，**memory 不再只是个人偏好**。频道里积累的是团队 tacit knowledge：项目背景、决策历史、未解决 thread、谁负责什么、哪些工具常用。这样的记忆如果做对了，价值比个人助手更高；做错了，泄漏和污染也更麻烦。
 
-第二，**异步任务变成默认交互模式**。Claude Tag 可以在 thread 中工作，用户不用盯着单个对话框等结果。这和 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering) 的思想是一致的：人不再一轮轮喂 prompt，而是把任务交给一个能跨时间推进的系统。
+第二，**异步任务变成默认交互模式**。Claude Tag 可以在 thread 中工作，用户不用盯着单个对话框等结果。这和 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering) 的思想是一致的：人不再一轮轮喂 prompt，而是把任务交给一个能跨时间推进的系统。
 
 第三，**权限和审计变成产品核心功能**。原文明确提到管理员可以配置工具和信息访问范围、token spend limit、以及查看 Claude 做过什么。团队 Agent 如果没有这些控制面，很快会变成“会干活但没人敢开权限”的尴尬产品。
 
@@ -64,11 +64,11 @@ Claude Tag 可以看作一个“协作空间里的 Agent Runtime”：
 
 ### 和本站章节的关系
 
-- [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：Claude Tag 是团队协作场景里的 runtime 化产品。
-- [记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory)：channel-scoped memory 是长期记忆治理的真实产品形态。
-- [上下文污染与清理](./chapters/07-ts产品工程/agent-camp-context-pollution)：团队频道里的错误信息会变成持久污染源。
-- [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)：同时委派多个 Claude 做任务，已经接近 team-level agent orchestration。
-- [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)：组织级和频道级 token spend limit 是生产化必备。
+- [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：Claude Tag 是团队协作场景里的 runtime 化产品。
+- [记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory)：channel-scoped memory 是长期记忆治理的真实产品形态。
+- [上下文污染与清理](/chapters/07-ts产品工程/agent-camp-context-pollution)：团队频道里的错误信息会变成持久污染源。
+- [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)：同时委派多个 Claude 做任务，已经接近 team-level agent orchestration。
+- [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)：组织级和频道级 token spend limit 是生产化必备。
 
 ### 面试追问
 

@@ -22,7 +22,7 @@
 
 > Harness 不是更长的 prompt，而是包住 Agent 的执行系统。
 
-> **本文边界**：本文讲 Agent harness 的通用设计。Agent loop 的最小状态机见 [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)，工具权限见 [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)，观测链路见 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)，OpenAI / Anthropic 的工程文章导读见 [Harness 工程](./chapters/09-codingagent/agent-camp-industry-openai-harness-engineering) 和 [长周期 Agent Harness](./chapters/09-codingagent/agent-camp-industry-anthropic-effective-harnesses-for-long-running-agent)。
+> **本文边界**：本文讲 Agent harness 的通用设计。Agent loop 的最小状态机见 [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)，工具权限见 [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)，观测链路见 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)，OpenAI / Anthropic 的工程文章导读见 [Harness 工程](/chapters/09-codingagent/agent-camp-industry-openai-harness-engineering) 和 [长周期 Agent Harness](/chapters/09-codingagent/agent-camp-industry-anthropic-effective-harnesses-for-long-running-agent)。
 
 ### 面试官想考什么
 
@@ -376,7 +376,7 @@ with tempfile.TemporaryDirectory() as tmp:
 - Anthropic 工程博客：[Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — 重点看为什么跨多个上下文窗口仍然会失稳。
 - Anthropic 工程博客：[Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps) — 适合理解应用开发任务里 harness 和 prompt engineering 的天花板。
 - OpenAI 工程博客：[Unlocking the Codex harness](https://openai.com/index/unlocking-the-codex-harness/) — 看 Codex 如何把同一套 harness 暴露给 Web、CLI、IDE 和 macOS app。
-- 本站：[Codex CLI 源码](./chapters/09-codingagent/agent-camp-source-codex-cli) — 从源码角度看工具、沙箱、审批和 MCP 如何组成 coding harness。
-- 本站：[Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code) — 看 AsyncGenerator、工具系统、Hook、Permission、MCP、Session 如何共同构成 Agent runtime。
-- 本站：[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — harness 要想可调试，必须把 trace、span、工具调用和验证结果接入观测系统。
+- 本站：[Codex CLI 源码](/chapters/09-codingagent/agent-camp-source-codex-cli) — 从源码角度看工具、沙箱、审批和 MCP 如何组成 coding harness。
+- 本站：[Claude Code 架构剖析](/chapters/09-codingagent/agent-camp-source-claude-code) — 看 AsyncGenerator、工具系统、Hook、Permission、MCP、Session 如何共同构成 Agent runtime。
+- 本站：[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) — harness 要想可调试，必须把 trace、span、工具调用和验证结果接入观测系统。
 

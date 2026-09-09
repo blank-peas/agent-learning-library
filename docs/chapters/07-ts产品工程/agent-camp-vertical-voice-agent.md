@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦语音 Agent 的架构演进和工程挑战。客服场景的落地见 [客服 Agent](./chapters/07-ts产品工程/agent-camp-vertical-customer-service)；OpenAI Realtime API 见 [OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)；多模态模型的能力边界见 [LLM 章节](./chapters/01-模型与提示/agent-camp-llm-models)。
+> **本文边界**：聚焦语音 Agent 的架构演进和工程挑战。客服场景的落地见 [客服 Agent](/chapters/07-ts产品工程/agent-camp-vertical-customer-service)；OpenAI Realtime API 见 [OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)；多模态模型的能力边界见 [LLM 章节](/chapters/01-模型与提示/agent-camp-llm-models)。
 
 ### 面试官想考什么
 
@@ -532,7 +532,7 @@ asyncio.run(voice_agent())
 - **Moshi 论文（full-duplex 研究）** [arxiv.org/abs/2410.00037](https://arxiv.org/abs/2410.00037) — Kyutai 实验室的 full-duplex 语音模型，前沿但效果还不稳
 - **Deepgram 语音 Agent Stack** [deepgram.com/learn/voice-agent](https://deepgram.com/learn/voice-agent-architecture) — cascading 架构的工程化教程，理解每个环节的工程细节
 - **Vapi 文档** [docs.vapi.ai](https://docs.vapi.ai) — 电话语音 Agent 平台层，看完整电话 Agent 怎么落地（含 CRM、telephony provider 集成）
-- **本站 [客服 Agent](./chapters/07-ts产品工程/agent-camp-vertical-customer-service)** — 语音 Agent 在客服场景的应用，两文搭配阅读
-- **本站 [OpenAI Agents SDK 深度剖析](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** — Realtime API 在 Agents SDK 里的集成方式
-- **本站 [LLM 主流模型对比](./chapters/01-模型与提示/agent-camp-llm-models)** — GPT-4o、Gemini 等多模态模型的能力对比
+- **本站 [客服 Agent](/chapters/07-ts产品工程/agent-camp-vertical-customer-service)** — 语音 Agent 在客服场景的应用，两文搭配阅读
+- **本站 [OpenAI Agents SDK 深度剖析](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** — Realtime API 在 Agents SDK 里的集成方式
+- **本站 [LLM 主流模型对比](/chapters/01-模型与提示/agent-camp-llm-models)** — GPT-4o、Gemini 等多模态模型的能力对比
 

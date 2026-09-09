@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦四种拓扑模式的**辨析与选型**——什么时候选哪个、各自的状态怎么管。Supervisor 模式的深度展开（路由器细节、worker 设计）见 [Orchestrator-Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)；Agent 间的通信协议（A2A / ACP）见 [Agent 间通信](./chapters/05-编排与多agent/agent-camp-multi-agent-communication)；辩论 / 投票 / 评审者等协作策略见 [协作模式](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)；具体框架案例（MetaGPT / ChatDev）见 [MetaGPT / ChatDev 案例](./chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)。
+> **本文边界**：聚焦四种拓扑模式的**辨析与选型**——什么时候选哪个、各自的状态怎么管。Supervisor 模式的深度展开（路由器细节、worker 设计）见 [Orchestrator-Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)；Agent 间的通信协议（A2A / ACP）见 [Agent 间通信](/chapters/05-编排与多agent/agent-camp-multi-agent-communication)；辩论 / 投票 / 评审者等协作策略见 [协作模式](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)；具体框架案例（MetaGPT / ChatDev）见 [MetaGPT / ChatDev 案例](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev)。
 
 ### 面试官想考什么
 
@@ -206,7 +206,7 @@ def worker_researcher(state):
 - supervisor 本身分不清该路由给谁（任务过于模糊）→ supervisor 变成瓶颈
 - worker 间需要频繁互相调用 → 中心化 supervisor 反而成阻塞
 
-**Supervisor 模式的深度展开（路由器实现、worker 设计、handoff back 细节）独立成篇在 [Orchestrator-Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)。本文只给骨架，下面"实战代码"小节会有完整 LangGraph 实现。**
+**Supervisor 模式的深度展开（路由器实现、worker 设计、handoff back 细节）独立成篇在 [Orchestrator-Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)。本文只给骨架，下面"实战代码"小节会有完整 LangGraph 实现。**
 
 ---
 
@@ -344,7 +344,7 @@ def transfer_to_refund_agent():
 
 #### 工业案例
 
-- **OpenAI Swarm**（实验性框架，后被 [OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) 取代为生产版本）
+- **OpenAI Swarm**（实验性框架，后被 [OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) 取代为生产版本）
 - **OpenAI Agents SDK** 的 handoffs 是 Swarm 思想的工业化封装
 - 很多客服系统的"转接专员"流程本质就是 Swarm——一通电话从前台到技术支持到经理，每次转接都是 handoff
 
@@ -542,7 +542,7 @@ class GlobalState(TypedDict):
 
 researcher 编造了一个不存在的论文标题，coder 基于这个标题去找代码、当然找不到，重试 5 次还不放弃。
 
-**修法**：在 Agent 之间加 **verifier**——把上游输出过一遍事实校验（搜索 API 验证论文是否存在、code linter 验证语法合法）才传给下游。详见 [协作模式](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) 中的"评审者"模式。
+**修法**：在 Agent 之间加 **verifier**——把上游输出过一遍事实校验（搜索 API 验证论文是否存在、code linter 验证语法合法）才传给下游。详见 [协作模式](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) 中的"评审者"模式。
 
 #### 模式 3：错误在 supervisor 处放大
 
@@ -604,7 +604,7 @@ supervisor 看不到某个 worker 失败的根因，反复路由给同一个 wor
 
 **根因**：把"模块"误当成"Agent"。Retriever / reranker 本质是确定性函数，没有"决策"和"工具选择"——根本不需要 LLM 驱动。
 
-**修法**：Agent = "需要 LLM 做决策的执行单元"。确定性步骤用函数 / chain 实现，不要包装成 Agent。详见 [Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) 的辨析。
+**修法**：Agent = "需要 LLM 做决策的执行单元"。确定性步骤用函数 / chain 实现，不要包装成 Agent。详见 [Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) 的辨析。
 
 #### 坑 2：shared state 没有 reducer，并发写入丢消息
 
@@ -631,7 +631,7 @@ supervisor 看不到某个 worker 失败的根因，反复路由给同一个 wor
 **修法**：
 - supervisor 用便宜模型（GPT-4o-mini / Haiku），决策不需要旗舰
 - supervisor 看 condensed view（每个 worker 输出的一行 summary），不看完整 message
-- 配套 [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的 prompt cache 把稳定的 system prompt 缓存
+- 配套 [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的 prompt cache 把稳定的 system prompt 缓存
 
 #### 坑 5：Network 模式死循环
 
@@ -651,17 +651,17 @@ supervisor 看不到某个 worker 失败的根因，反复路由给同一个 wor
 | 概念 | 边界 |
 |---|---|
 | **本文（多 Agent 拓扑）** | 多 Agent 之间的控制流和状态共享拓扑 |
-| **[Orchestrator-Worker](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)** | Supervisor 模式的深度展开，是本文模式 1 的子集 |
-| **[Agent 间通信](./chapters/05-编排与多agent/agent-camp-multi-agent-communication)** | A2A / ACP 等通信协议——拓扑之上的"传输层" |
-| **[协作模式](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)** | 辩论 / 投票 / 评审者等"协作策略"——拓扑之内的具体行为模式 |
-| **[ReAct](./chapters/02-agent原理/agent-camp-agent-react-pattern)** | 单 Agent 的内部决策循环——多 Agent 拓扑里每个 Agent 内部通常就是 ReAct |
-| **[Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute)** | 单 Agent 的"先规划后执行"——和 Hierarchical 表面相似但拓扑不同（前者是单 Agent 内的两阶段） |
-| **[Workflow](./chapters/05-编排与多agent/agent-camp-workflow-langgraph)** | 静态图编排——多 Agent 是 workflow 的特殊形式（节点是 LLM Agent） |
-| **[OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** | Swarm 模式的工业级实现，是本文模式 4 的具体框架 |
+| **[Orchestrator-Worker](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)** | Supervisor 模式的深度展开，是本文模式 1 的子集 |
+| **[Agent 间通信](/chapters/05-编排与多agent/agent-camp-multi-agent-communication)** | A2A / ACP 等通信协议——拓扑之上的"传输层" |
+| **[协作模式](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)** | 辩论 / 投票 / 评审者等"协作策略"——拓扑之内的具体行为模式 |
+| **[ReAct](/chapters/02-agent原理/agent-camp-agent-react-pattern)** | 单 Agent 的内部决策循环——多 Agent 拓扑里每个 Agent 内部通常就是 ReAct |
+| **[Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)** | 单 Agent 的"先规划后执行"——和 Hierarchical 表面相似但拓扑不同（前者是单 Agent 内的两阶段） |
+| **[Workflow](/chapters/05-编排与多agent/agent-camp-workflow-langgraph)** | 静态图编排——多 Agent 是 workflow 的特殊形式（节点是 LLM Agent） |
+| **[OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk)** | Swarm 模式的工业级实现，是本文模式 4 的具体框架 |
 
 **关键辨析**：
 
-- **多 Agent vs 多步 Workflow**：多 Agent 强调"每个节点都是有自主决策的 LLM"；workflow 节点可以是任何函数。区分见 [Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)
+- **多 Agent vs 多步 Workflow**：多 Agent 强调"每个节点都是有自主决策的 LLM"；workflow 节点可以是任何函数。区分见 [Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)
 - **Plan-and-Execute vs Hierarchical**：前者是**单 Agent 内**先生成 plan 再执行；后者是**多 Agent 间**的层级调度。容易混淆是因为都有"上层规划 + 下层执行"的形态
 - **Supervisor 路由 vs Swarm handoff**：路由是"借调"（worker 跑完回 supervisor），handoff 是"移交"（控制权转走）
 
@@ -687,7 +687,7 @@ supervisor 看不到某个 worker 失败的根因，反复路由给同一个 wor
 本质区别在**控制权归属**。Supervisor 模式下控制权**始终在 supervisor 手里**——worker 是"被调用的函数"，跑完结果回 supervisor 由它决定下一步。Swarm 模式下控制权**随 handoff 转移**——当前活跃的 Agent 自己决定是否 handoff、handoff 给谁，移交后**它就退出了**，不会自动收回控制权。类比：Supervisor 像出租车公司的中央调度（调度员始终在），Swarm 像同事间传工单（工单到谁手里就归谁管）。所以 Swarm 通常需要显式定义 `transfer_back_to_X`，Supervisor 不需要（自然回到 supervisor）。
 
 **追问 2**：Hierarchical 和 Plan-and-Execute 有什么区别？两者都是"先规划后执行"。
-关键区别在**单 Agent 内 vs 多 Agent 间**。Plan-and-Execute 是**单 Agent** 的两阶段——同一个 LLM 先用一次调用生成 plan，再循环执行每步，整个过程都是一个 Agent。Hierarchical 是**多 Agent** 的层级调度——CEO Agent 把任务分给 Manager Agent，Manager 再分给 Worker Agent，每层是独立 Agent 实例、独立 prompt、可能用不同模型。表面相似（都有"上层规划下层执行"），但工程实现完全不同：Plan-and-Execute 看 [Plan-and-Execute 模式](./chapters/05-编排与多agent/agent-camp-agent-plan-execute)；Hierarchical 看本文。
+关键区别在**单 Agent 内 vs 多 Agent 间**。Plan-and-Execute 是**单 Agent** 的两阶段——同一个 LLM 先用一次调用生成 plan，再循环执行每步，整个过程都是一个 Agent。Hierarchical 是**多 Agent** 的层级调度——CEO Agent 把任务分给 Manager Agent，Manager 再分给 Worker Agent，每层是独立 Agent 实例、独立 prompt、可能用不同模型。表面相似（都有"上层规划下层执行"），但工程实现完全不同：Plan-and-Execute 看 [Plan-and-Execute 模式](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)；Hierarchical 看本文。
 
 #### Q: Cognition 反对多 Agent 的核心观点是什么？怎么反驳？
 
@@ -698,7 +698,7 @@ supervisor 看不到某个 worker 失败的根因，反复路由给同一个 wor
 
 #### Q: 多 Agent 比单 Agent 慢，怎么优化？
 
-**30 秒版本**：四个手段按性价比排序。(1) **并行化 subagent**——独立子任务并行而非串行，Anthropic Research System 的关键设计，延迟从 N 倍降到 1 倍；(2) **模型分级**——supervisor 用 Haiku/mini（决策不需要旗舰），worker 按任务复杂度选模型，详见 [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的 routing；(3) **prompt cache**——supervisor 的 system prompt 和工具列表是稳定的，开 cache 命中率 90%+；(4) **condensed state**——supervisor 不需要看每个 worker 的完整 token 输出，只看 summary，state 体积降 80%。这四个手段叠加通常能把多 Agent 延迟压到接近单 Agent 的 1.5-2 倍（而不是 5-10 倍）。
+**30 秒版本**：四个手段按性价比排序。(1) **并行化 subagent**——独立子任务并行而非串行，Anthropic Research System 的关键设计，延迟从 N 倍降到 1 倍；(2) **模型分级**——supervisor 用 Haiku/mini（决策不需要旗舰），worker 按任务复杂度选模型，详见 [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的 routing；(3) **prompt cache**——supervisor 的 system prompt 和工具列表是稳定的，开 cache 命中率 90%+；(4) **condensed state**——supervisor 不需要看每个 worker 的完整 token 输出，只看 summary，state 体积降 80%。这四个手段叠加通常能把多 Agent 延迟压到接近单 Agent 的 1.5-2 倍（而不是 5-10 倍）。
 
 **追问**：并行化 subagent 具体怎么实现？需要注意什么？
 LangGraph 用 `Send` API 触发并行节点，AutoGen 用 `asyncio.gather`，OpenAI Agents SDK 原生支持 parallel tool calls。关键注意三点：(1) **state reducer 必须正确**——并行写入要 append 或 merge，不能 last-write-wins，否则结果互相覆盖；(2) **错误隔离**——一个并行分支挂掉不能拖垮其他分支，用 try/except 或 asyncio 的 `return_exceptions=True`；(3) **超时控制**——并行的 subagent 必须设独立 timeout，否则最慢的拖累整体。Anthropic 的博客里特别强调：他们花了大量工程时间在 subagent 的并行错误处理上——这才是 multi-agent system 难做对的地方。
@@ -720,7 +720,7 @@ LangGraph 用 `Send` API 触发并行节点，AutoGen 用 `asyncio.gather`，Ope
   Anthropic 关于 Agent 设计的总纲，里面有"单 Agent vs 多 Agent"决策的简洁论述。"先单 Agent 撑到不能再撑再拆"的工程立场，多次被 Anthropic 工程师在演讲中重复。
 
 - **官方仓库：OpenAI Swarm** ([github.com/openai/swarm](https://github.com/openai/swarm))
-  OpenAI 2024 年发的实验性 Swarm 框架，handoff 范式的源头。虽然现在被 [OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) 取代为生产版本，但读它的源码（不到 1000 行）能最快理解 handoff 的本质——`return another_agent` 这么简单。
+  OpenAI 2024 年发的实验性 Swarm 框架，handoff 范式的源头。虽然现在被 [OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) 取代为生产版本，但读它的源码（不到 1000 行）能最快理解 handoff 的本质——`return another_agent` 这么简单。
 
 - **官方文档：OpenAI Agents SDK — Handoffs** ([openai.github.io/openai-agents-python/handoffs](https://openai.github.io/openai-agents-python/handoffs/))
   Swarm 思想的工业化实现。读它理解 handoff 在生产中的细节——input filter、handoff back、shared context 怎么管理。
@@ -734,5 +734,5 @@ LangGraph 用 `Send` API 触发并行节点，AutoGen 用 `asyncio.gather`，Ope
 - **仓库：ChatDev** ([github.com/OpenBMB/ChatDev](https://github.com/OpenBMB/ChatDev))
   清华开源的虚拟软件公司，Network 模式的研究案例。重点看不同角色之间的对话设计——是 Network 模式能 work 的少数生产场景之一。
 
-- **配套阅读**：[Orchestrator-Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) — Supervisor 模式的深度展开；[Agent 间通信](./chapters/05-编排与多agent/agent-camp-multi-agent-communication) — A2A / ACP 协议；[协作模式](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 辩论 / 投票 / 评审者；[MetaGPT / ChatDev 案例](./chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev) — 工业案例剖析；[ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern) — 多 Agent 内每个 Agent 的内部循环；[Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute) — 单 Agent 的"规划-执行"对比；[OpenAI Agents SDK](./chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) — Swarm 思想的工业实现；[LangGraph 编排](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 实现多 Agent 拓扑的主流框架；[成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) — 多 Agent token 15 倍开销的应对策略。
+- **配套阅读**：[Orchestrator-Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) — Supervisor 模式的深度展开；[Agent 间通信](/chapters/05-编排与多agent/agent-camp-multi-agent-communication) — A2A / ACP 协议；[协作模式](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 辩论 / 投票 / 评审者；[MetaGPT / ChatDev 案例](/chapters/05-编排与多agent/agent-camp-multi-agent-metagpt-chatdev) — 工业案例剖析；[ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern) — 多 Agent 内每个 Agent 的内部循环；[Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute) — 单 Agent 的"规划-执行"对比；[OpenAI Agents SDK](/chapters/07-ts产品工程/agent-camp-frameworks-openai-agents-sdk) — Swarm 思想的工业实现；[LangGraph 编排](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 实现多 Agent 拓扑的主流框架；[成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) — 多 Agent token 15 倍开销的应对策略。
 

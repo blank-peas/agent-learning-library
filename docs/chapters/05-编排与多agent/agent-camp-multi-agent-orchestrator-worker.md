@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：本文是 [multi-agent/patterns](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 综述里 supervisor / orchestrator 模式的深度展开。Plan-and-Execute 是 orchestrator-worker 的一个更窄子集——单 planner + 顺序 executor，见 [agent/plan-execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute)。**平等 Agent 之间的协作**（debate、协商、角色对话）不在这里，见 [collaboration](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)。**跨 Agent 的通信协议**（A2A、ACP）见 [communication](./chapters/05-编排与多agent/agent-camp-multi-agent-communication)。
+> **本文边界**：本文是 [multi-agent/patterns](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 综述里 supervisor / orchestrator 模式的深度展开。Plan-and-Execute 是 orchestrator-worker 的一个更窄子集——单 planner + 顺序 executor，见 [agent/plan-execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)。**平等 Agent 之间的协作**（debate、协商、角色对话）不在这里，见 [collaboration](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration)。**跨 Agent 的通信协议**（A2A、ACP）见 [communication](/chapters/05-编排与多agent/agent-camp-multi-agent-communication)。
 
 ### 面试官想考什么
 
@@ -252,7 +252,7 @@ Orchestrator-worker 是一个模式族，不是单一架构。生产里至少有
 
 #### 变种 1：Static Workflow（预定义流程）
 
-Orchestrator 不是 LLM 决策，而是**写死的流程**——比如 "永远按 research → analyze → write 顺序跑三个 worker"。这其实是 [LangGraph](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) 文档里说的 "workflow" 模式。
+Orchestrator 不是 LLM 决策，而是**写死的流程**——比如 "永远按 research → analyze → write 顺序跑三个 worker"。这其实是 [LangGraph](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) 文档里说的 "workflow" 模式。
 
 ```python
 ## 极简版 static workflow
@@ -285,7 +285,7 @@ while not state.get("finish"):
 
 #### 变种 3：Plan-and-Execute（先 plan 后 execute）
 
-Orchestrator 在最开始一次性生成完整 plan，后面 worker 按 plan 顺序执行，**通常不再调度**（除非 replan）。这是 orchestrator-worker 的一个**特例**——orchestrator 调用一次就退场。详见 [agent/plan-execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute)。
+Orchestrator 在最开始一次性生成完整 plan，后面 worker 按 plan 顺序执行，**通常不再调度**（除非 replan）。这是 orchestrator-worker 的一个**特例**——orchestrator 调用一次就退场。详见 [agent/plan-execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)。
 
 **与 dynamic supervisor 的区别**：plan 一次决策 vs 每步决策。**适用场景**：任务结构能在开头预估的长任务（典型：调研报告、代码生成项目）。
 
@@ -530,7 +530,7 @@ Worker 失败分四种，处理策略不同：
 2. **状态污染**：worker A 把信息塞给 worker B，B 又转给 C——orchestrator 失去对全局状态的掌控
 3. **难调试**：trace 里看到的不再是清晰的"orchestrator → worker"层级，而是网状
 
-例外是**显式建模的协作场景**——比如 [collaboration](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) 里讲的 debate / 评审场景，worker 之间互相批评是设计意图。这种场景下要用专门的协作模式，不是 orchestrator-worker。
+例外是**显式建模的协作场景**——比如 [collaboration](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) 里讲的 debate / 评审场景，worker 之间互相批评是设计意图。这种场景下要用专门的协作模式，不是 orchestrator-worker。
 
 Cognition Labs 的 [Don't Build Multi-Agents](https://cognition.ai/blog/dont-build-multi-agents) 反对的就是这种**对等 multi-agent**——多个平等 agent 互通互相影响导致结果不可控。他们推荐"显式 orchestrator + worker 严格分层"，反而是 orchestrator-worker 模式的强烈背书。
 
@@ -601,7 +601,7 @@ OpenAI 的 Operator（浏览器 agent）虽然主体是单 agent + 视觉工具�
 **修法**：
 - Worker 返回 summary 而不是全文（前面"决策 1"展开过）
 - Orchestrator 的 history 设上限，超过就压缩（保留前 3 轮 + 最近 5 轮 + 中间用摘要替代）
-- 关键事实存进 [memory 系统](./chapters/06-上下文与记忆/agent-camp-agent-memory-arch)（或者 vector store），orchestrator 用工具按需查
+- 关键事实存进 [memory 系统](/chapters/06-上下文与记忆/agent-camp-agent-memory-arch)（或者 vector store），orchestrator 用工具按需查
 
 #### 陷阱 3：聚合时 information loss
 
@@ -725,12 +725,12 @@ Orchestrator 的决策质量决定**整体上限**——它选错子问题或者
   Anthropic 内部 dogfooding 文章。多处提到 sub-agent 用法（spawn 独立 agent 做子任务），是 orchestrator-worker 在 IDE/coding 场景的具体形态。
 
 - **配套阅读**：
-  - [多 Agent 架构模式综述](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 本文是其中 supervisor 的深度展开
-  - [Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute) — orchestrator-worker 的"plan once + sequential"特例
-  - [Agent 协作策略](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 平等 agent 间的 debate/协商（与本文层级架构互补）
-  - [Agent 通信协议](./chapters/05-编排与多agent/agent-camp-multi-agent-communication) — 跨进程跨厂商 agent 通信（A2A / ACP），本文是单进程内的架构
-  - [ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern) — orchestrator 和 worker 内部都可以是 ReAct
-  - [Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — orchestrator-worker 的 trace 天然层级化，是 observability 的最佳搭档
-  - [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel) — worker 并行的工具层基础
-  - [LangGraph 编排](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 实现 orchestrator-worker 的事实标准框架
+  - [多 Agent 架构模式综述](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 本文是其中 supervisor 的深度展开
+  - [Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute) — orchestrator-worker 的"plan once + sequential"特例
+  - [Agent 协作策略](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 平等 agent 间的 debate/协商（与本文层级架构互补）
+  - [Agent 通信协议](/chapters/05-编排与多agent/agent-camp-multi-agent-communication) — 跨进程跨厂商 agent 通信（A2A / ACP），本文是单进程内的架构
+  - [ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern) — orchestrator 和 worker 内部都可以是 ReAct
+  - [Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) — orchestrator-worker 的 trace 天然层级化，是 observability 的最佳搭档
+  - [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel) — worker 并行的工具层基础
+  - [LangGraph 编排](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 实现 orchestrator-worker 的事实标准框架
 

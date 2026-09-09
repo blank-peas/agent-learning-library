@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 LangGraph 框架本身的核心概念和使用方法。编排模式的通用理论见 [编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns)；Workflow vs Agent 的边界见 [Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)；LangChain 生态全貌见 [LangChain 框架](./chapters/05-编排与多agent/agent-camp-frameworks-langchain)；多 Agent 用 LangGraph 实现的案例见 [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。
+> **本文边界**：聚焦 LangGraph 框架本身的核心概念和使用方法。编排模式的通用理论见 [编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns)；Workflow vs Agent 的边界见 [Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)；LangChain 生态全貌见 [LangChain 框架](/chapters/05-编排与多agent/agent-camp-frameworks-langchain)；多 Agent 用 LangGraph 实现的案例见 [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)。
 
 ### 面试官想考什么
 
@@ -498,5 +498,5 @@ LangGraph。理由：(1) 它是最底层的——理解了图编排，CrewAI 和
 - **DataCamp：CrewAI vs LangGraph vs AutoGen** ([datacamp.com/tutorial/crewai-vs-langgraph-vs-autogen](https://www.datacamp.com/tutorial/crewai-vs-langgraph-vs-autogen))
   三大框架的横向对比，有代码示例和性能评测。选型时参考。
 
-- **配套阅读**：[编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns) — LangGraph 实现的四种基础模式；[Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) — 什么时候该用 graph 编排 vs 让模型自主决定；[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — LangSmith + LangGraph 的 trace 集成；[多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 用 LangGraph 实现 supervisor / hierarchical 拓扑。
+- **配套阅读**：[编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns) — LangGraph 实现的四种基础模式；[Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) — 什么时候该用 graph 编排 vs 让模型自主决定；[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) — LangSmith + LangGraph 的 trace 集成；[多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 用 LangGraph 实现 supervisor / hierarchical 拓扑。
 

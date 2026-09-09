@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 Workflow 和 Agent 的**分类与选型**。Agent 的内部循环（ReAct / Plan-and-Execute）见 [Agent 核心理论](https://github.com/yibo365/agent-camp)；Workflow 的四种编排模式（顺序 / 并行 / 条件 / 循环）见 [编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns)；LangGraph 框架实现见 [LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph)；Anthropic 原文引用的五种 Workflow 模式与 Agent 的更完整定义见 [Agent 定义与认知架构](./chapters/07-ts产品工程/agent-camp-agent-definition)。
+> **本文边界**：聚焦 Workflow 和 Agent 的**分类与选型**。Agent 的内部循环（ReAct / Plan-and-Execute）见 [Agent 核心理论](https://github.com/yibo365/agent-camp)；Workflow 的四种编排模式（顺序 / 并行 / 条件 / 循环）见 [编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns)；LangGraph 框架实现见 [LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph)；Anthropic 原文引用的五种 Workflow 模式与 Agent 的更完整定义见 [Agent 定义与认知架构](/chapters/07-ts产品工程/agent-camp-agent-definition)。
 
 ### 面试官想考什么
 
@@ -260,7 +260,7 @@ Redis 工程博客提出了一个实用标准：
 
 **2. Context Overflow。** Agent 跑了太多步后，上下文窗口被历史对话填满，模型开始忘记原始指令。典型症状：前 5 步正常，第 10 步开始答非所问。
 
-**3. Tool Confusion。** 工具太多或描述重叠时，模型频繁选错。跟单 Agent 塞 30 个工具崩溃是同一个问题——见 [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 的分析。
+**3. Tool Confusion。** 工具太多或描述重叠时，模型频繁选错。跟单 Agent 塞 30 个工具崩溃是同一个问题——见 [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) 的分析。
 
 **4. Unbounded Cost。** 没设 max_turns 和 cost cap，Agent 在一个死胡同里循环调用，Token 账单飙升。
 
@@ -455,7 +455,7 @@ flowchart TD
 
 **Agent vs Autonomous Agent**：Agent 有自主性，但不意味着完全自主。生产 Agent 通常有人工确认节点、权限边界、最大步数限制。Autonomous Agent（如 AutoGPT）是自主性最大化的极端——很少用于生产。
 
-**Orchestrator-Workers vs Agent**：这是最容易混的。区别在"worker 有没有自主决策权"。如果 worker 只是执行一个固定 prompt，那整体是 Workflow（Orchestrator-Workers 模式）。如果每个 worker 自己决定调什么工具、跑几步，那是多 Agent 系统。详见 [Orchestrator-Worker 模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)。
+**Orchestrator-Workers vs Agent**：这是最容易混的。区别在"worker 有没有自主决策权"。如果 worker 只是执行一个固定 prompt，那整体是 Workflow（Orchestrator-Workers 模式）。如果每个 worker 自己决定调什么工具、跑几步，那是多 Agent 系统。详见 [Orchestrator-Worker 模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)。
 
 ---
 
@@ -508,5 +508,5 @@ flowchart TD
 - **LangGraph Docs：Workflows and Agents** ([docs.langchain.com](https://docs.langchain.com/oss/python/langgraph/workflows-agents))
   LangGraph 官方对 Workflow vs Agent 的阐述，有代码示例。读它看框架层怎么实现混合架构。
 
-- **配套阅读**：[Agent 定义与认知架构](./chapters/07-ts产品工程/agent-camp-agent-definition) — Agent 的内部组件和循环；[编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns) — 四种编排模式的深度展开；[LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 框架实现；[多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 从 Workflow 升级到多 Agent 时的架构选择。
+- **配套阅读**：[Agent 定义与认知架构](/chapters/07-ts产品工程/agent-camp-agent-definition) — Agent 的内部组件和循环；[编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns) — 四种编排模式的深度展开；[LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 框架实现；[多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns) — 从 Workflow 升级到多 Agent 时的架构选择。
 

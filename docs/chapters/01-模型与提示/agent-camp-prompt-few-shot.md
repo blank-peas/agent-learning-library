@@ -359,7 +359,7 @@ PROMPT = """把技术性描述改写成给非技术用户看的通俗版本。
 
 动态选示例 → prompt 每次都不一样 → KV Cache 无法复用 → 延迟和成本上升。
 
-折中方案：**前面固定 3 个静态示例（命中 prefix cache）+ 后面动态加 2 个个性化示例**。详见 [推理优化 - prefix caching](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
+折中方案：**前面固定 3 个静态示例（命中 prefix cache）+ 后面动态加 2 个个性化示例**。详见 [推理优化 - prefix caching](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
 
 #### 陷阱 5：用 few-shot 替代 fine-tune
 

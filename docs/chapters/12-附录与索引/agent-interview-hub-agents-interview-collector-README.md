@@ -144,9 +144,9 @@ python3 scripts/build_site.py
 
 ### 相关文件
 
-- Canonical prompt: [`AGENT.md`](./chapters/01-模型与提示/agent-interview-hub-agents-interview-collector-AGENT)
-- Copilot template: [`templates/copilot/interview-collector.instructions.md`](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-copilot-intervi)
-- Claude template: [`templates/claude/SKILL.md`](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-claude-SKILL)
+- Canonical prompt: [`AGENT.md`](/chapters/01-模型与提示/agent-interview-hub-agents-interview-collector-AGENT)
+- Copilot template: [`templates/copilot/interview-collector.instructions.md`](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-copilot-intervi)
+- Claude template: [`templates/claude/SKILL.md`](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-claude-SKILL)
 - Cursor template: [`templates/cursor/interview-collector.mdc`](https://github.com/Zchary1106/agent-interview-hub)
-- Generic template: [`templates/generic/AGENT.md`](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-generic-AGENT)
+- Generic template: [`templates/generic/AGENT.md`](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-generic-AGENT)
 

@@ -374,7 +374,7 @@ CoT 提升的是"推理能力"，不是"知识储备"。模型不知道的事实
 #### 陷阱 6：用 CoT 时不验证答案
 
 CoT 让推理过程长，错误也更容易隐藏在中间步骤。生产里建议：
-- 加自一致性检查（多次采样取多数投票，详见 [自一致性](./chapters/01-模型与提示/agent-camp-prompt-self-consistency)）
+- 加自一致性检查（多次采样取多数投票，详见 [自一致性](/chapters/01-模型与提示/agent-camp-prompt-self-consistency)）
 - 或者让另一个 LLM 校验推理逻辑
 
 ---
@@ -400,7 +400,7 @@ CoT 让推理过程长，错误也更容易隐藏在中间步骤。生产里建�
 **30 秒版本**：CoT 是单条线性推理，走错就翻车；ToT 在每一步生成多个候选思路，用 LLM 评估每个候选的"潜力"，保留 top-K 继续展开——本质是把搜索算法应用到推理。适合**状态空间大、需要回溯、答案可验证**的任务，如 24 点游戏、解谜、复杂规划。ToT 论文在 24 点上把准确率从 4%（CoT）提到 74%。
 
 **追问**：那 ToT 为什么生产里少见？
-两个原因：(1) **计算成本**——一次 ToT 可能要几十次 LLM 调用，成本和延迟都打不住；(2) **工程复杂度高**——要设计 state、actions、value function、search strategy，远复杂于纯 prompt。生产里更常用的折中是 **self-consistency**——多次采样独立的 CoT 推理，对最终答案投票，复杂度低很多但能拿到 70% 的 ToT 收益。详见 [自一致性与自我反思](./chapters/01-模型与提示/agent-camp-prompt-self-consistency)。
+两个原因：(1) **计算成本**——一次 ToT 可能要几十次 LLM 调用，成本和延迟都打不住；(2) **工程复杂度高**——要设计 state、actions、value function、search strategy，远复杂于纯 prompt。生产里更常用的折中是 **self-consistency**——多次采样独立的 CoT 推理，对最终答案投票，复杂度低很多但能拿到 70% 的 ToT 收益。详见 [自一致性与自我反思](/chapters/01-模型与提示/agent-camp-prompt-self-consistency)。
 
 #### Q: 推理模型出现后，CoT prompt 还有价值吗？
 

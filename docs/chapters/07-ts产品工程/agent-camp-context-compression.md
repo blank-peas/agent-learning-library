@@ -20,7 +20,7 @@
 
 
 
-> **注**：本文聚焦"上下文级别"的压缩——摘要、抽取、滚动等架构层手段。LLMLingua、token-level 压缩等技术细节见 [Prompt 压缩](./chapters/01-模型与提示/agent-camp-prompt-compression)。
+> **注**：本文聚焦"上下文级别"的压缩——摘要、抽取、滚动等架构层手段。LLMLingua、token-level 压缩等技术细节见 [Prompt 压缩](/chapters/01-模型与提示/agent-camp-prompt-compression)。
 
 ### 面试官想考什么
 
@@ -445,7 +445,7 @@ class ContextManager:
 - 摘要触发频率不要太高（每 5-10 轮才更新一次）
 - 用 cache key 设计让"未压缩部分"仍能命中
 
-详见 [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)。
+详见 [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)。
 
 #### 陷阱 4：不区分"事实"和"过程"
 
@@ -521,5 +521,5 @@ state = {
 - **论文：RAPTOR** ([arxiv 2401.18059](https://arxiv.org/abs/2401.18059))
   Sarthi et al. 2024。分层摘要的检索增强思路——把长文档递归摘要成树，按需检索不同层级。是分层压缩的代表方法。
 
-- **配套阅读**：[Prompt 压缩](./chapters/01-模型与提示/agent-camp-prompt-compression) — token 级压缩算法（LLMLingua）。[记忆系统](./chapters/06-上下文与记忆/agent-camp-context-memory) — 上下文的"外存"，长期记忆设计。[会话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) — 多轮对话的实操细节。
+- **配套阅读**：[Prompt 压缩](/chapters/01-模型与提示/agent-camp-prompt-compression) — token 级压缩算法（LLMLingua）。[记忆系统](/chapters/06-上下文与记忆/agent-camp-context-memory) — 上下文的"外存"，长期记忆设计。[会话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) — 多轮对话的实操细节。
 

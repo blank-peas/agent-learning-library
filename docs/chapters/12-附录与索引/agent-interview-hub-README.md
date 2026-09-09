@@ -69,7 +69,7 @@ AI Agent 工程师知识体系
 
 > 16 周从基础到 Offer，每周有明确目标和推荐资料
 
-➡️ [**Agent工程师学习路线图.md**](./chapters/07-ts产品工程/agent-interview-hub-Agent工程师学习路线图)
+➡️ [**Agent工程师学习路线图.md**](/chapters/07-ts产品工程/agent-interview-hub-Agent工程师学习路线图)
 
 ---
 
@@ -79,17 +79,17 @@ AI Agent 工程师知识体系
 
 | # | 文档 | 简介 |
 |---|------|------|
-| 1 | [12 周 Agent 工程师进阶路线](./chapters/07-ts产品工程/agent-interview-hub-通用知识-12周Agent工程师进阶路线) | 以周为单位交付 RAG、Agent、MCP、生产化作品集 |
-| 2 | [Agent 核心概念与设计模式](./chapters/02-agent原理/agent-interview-hub-通用知识-Agent核心概念与设计模式) | ReAct、Plan-and-Execute、Multi-Agent 等核心范式 |
-| 3 | [Agent 框架全景](./chapters/07-ts产品工程/agent-interview-hub-通用知识-Agent框架全景) | LangChain、AutoGen、CrewAI 等主流框架横评 |
-| 4 | [LangChain 与 LangGraph 深度解析](./chapters/05-编排与多agent/agent-interview-hub-通用知识-LangChain与LangGraph深度解析) | 链式调用到图编排的演进与实战 |
-| 5 | [RAG 核心知识与面试题](./chapters/03-rag/agent-interview-hub-通用知识-RAG核心知识与面试题) | 检索增强生成全链路：分块、检索、重排、生成 |
+| 1 | [12 周 Agent 工程师进阶路线](/chapters/07-ts产品工程/agent-interview-hub-通用知识-12周Agent工程师进阶路线) | 以周为单位交付 RAG、Agent、MCP、生产化作品集 |
+| 2 | [Agent 核心概念与设计模式](/chapters/02-agent原理/agent-interview-hub-通用知识-Agent核心概念与设计模式) | ReAct、Plan-and-Execute、Multi-Agent 等核心范式 |
+| 3 | [Agent 框架全景](/chapters/07-ts产品工程/agent-interview-hub-通用知识-Agent框架全景) | LangChain、AutoGen、CrewAI 等主流框架横评 |
+| 4 | [LangChain 与 LangGraph 深度解析](/chapters/05-编排与多agent/agent-interview-hub-通用知识-LangChain与LangGraph深度解析) | 链式调用到图编排的演进与实战 |
+| 5 | [RAG 核心知识与面试题](/chapters/03-rag/agent-interview-hub-通用知识-RAG核心知识与面试题) | 检索增强生成全链路：分块、检索、重排、生成 |
 | 6 | [Agentic RAG 与 GraphRAG 深度解析](https://github.com/Zchary1106/agent-interview-hub) | 从朴素 RAG 到 Agent 驱动的智能检索 |
 | 7 | [Context Engineering 上下文工程](https://github.com/Zchary1106/agent-interview-hub) | 上下文窗口管理、压缩与优化策略（含 Anthropic 最新实践）🔄 |
-| 8 | [Agent 安全与评估体系](./chapters/08-评测安全可观测/agent-interview-hub-通用知识-Agent安全与评估体系) | Prompt 注入防御、幻觉检测、评估框架 |
-| 9 | [大模型推理优化与部署](./chapters/08-评测安全可观测/agent-interview-hub-通用知识-大模型推理优化与部署) | 量化、蒸馏、KV Cache、vLLM 等推理加速 |
+| 8 | [Agent 安全与评估体系](/chapters/08-评测安全可观测/agent-interview-hub-通用知识-Agent安全与评估体系) | Prompt 注入防御、幻觉检测、评估框架 |
+| 9 | [大模型推理优化与部署](/chapters/08-评测安全可观测/agent-interview-hub-通用知识-大模型推理优化与部署) | 量化、蒸馏、KV Cache、vLLM 等推理加速 |
 | 10 | [Function Calling 与 Tool Use 专题](https://github.com/Zchary1106/agent-interview-hub) | 三大厂商实现对比、调用模式、安全防御 🆕 |
-| 11 | [MCP 与工具生态](./chapters/04-工具与mcp/agent-interview-hub-通用知识-MCP与工具生态) | Model Context Protocol 架构、开发实战、企业应用 🆕 |
+| 11 | [MCP 与工具生态](/chapters/04-工具与mcp/agent-interview-hub-通用知识-MCP与工具生态) | Model Context Protocol 架构、开发实战、企业应用 🆕 |
 | 12 | [Agentic Coding 与 AI 编程工具](https://github.com/Zchary1106/agent-interview-hub) | Claude Code / Cursor / Copilot 对比、Hooks、人机协作 🆕 |
 | 13 | [Agent Harness 与编码代理测评](https://github.com/Zchary1106/agent-interview-hub) | Codex CLI / Claude Code / OpenHands 等 Harness 深度测评与源码入口 🆕 |
 
@@ -97,21 +97,21 @@ AI Agent 工程师知识体系
 
 | # | 文档 | 简介 |
 |---|------|------|
-| 14 | [最新 AI Agent 面经索引（2026）](./chapters/01-模型与提示/agent-interview-hub-通用知识-最新AI-Agent面经索引) | 牛客、小红书、知乎、CSDN、GitHub 等公开来源的最新面经入口 |
-| 15 | [核心概念详解与参考答案](./chapters/11-面试与求职/agent-interview-hub-通用知识-核心概念详解与参考答案) | 高频概念题精讲与标准答案 |
-| 16 | [八股文完整答案集](./chapters/11-面试与求职/agent-interview-hub-通用知识-八股文完整答案集) | 69 道八股题，全部附详细解答 |
-| 17 | [八股文题库 - DataWhale 开源](./chapters/11-面试与求职/agent-interview-hub-通用知识-八股文题库-DataWhale开源) | DataWhale 社区精选题库 |
-| 18 | [高频拷打题 - 牛客热帖](./chapters/11-面试与求职/agent-interview-hub-通用知识-高频拷打题-牛客热帖) | 牛客论坛高赞面试拷打合集 |
-| 19 | [技术知识点汇总](./chapters/07-ts产品工程/agent-interview-hub-通用知识-技术知识点汇总) | 速查手册：关键知识点一网打尽 |
-| 20 | [其他公司面经 - 快手携程等](./chapters/11-面试与求职/agent-interview-hub-通用知识-其他公司面经-快手携程等) | 快手、携程等公司面经补充 |
+| 14 | [最新 AI Agent 面经索引（2026）](/chapters/01-模型与提示/agent-interview-hub-通用知识-最新AI-Agent面经索引) | 牛客、小红书、知乎、CSDN、GitHub 等公开来源的最新面经入口 |
+| 15 | [核心概念详解与参考答案](/chapters/11-面试与求职/agent-interview-hub-通用知识-核心概念详解与参考答案) | 高频概念题精讲与标准答案 |
+| 16 | [八股文完整答案集](/chapters/11-面试与求职/agent-interview-hub-通用知识-八股文完整答案集) | 69 道八股题，全部附详细解答 |
+| 17 | [八股文题库 - DataWhale 开源](/chapters/11-面试与求职/agent-interview-hub-通用知识-八股文题库-DataWhale开源) | DataWhale 社区精选题库 |
+| 18 | [高频拷打题 - 牛客热帖](/chapters/11-面试与求职/agent-interview-hub-通用知识-高频拷打题-牛客热帖) | 牛客论坛高赞面试拷打合集 |
+| 19 | [技术知识点汇总](/chapters/07-ts产品工程/agent-interview-hub-通用知识-技术知识点汇总) | 速查手册：关键知识点一网打尽 |
+| 20 | [其他公司面经 - 快手携程等](/chapters/11-面试与求职/agent-interview-hub-通用知识-其他公司面经-快手携程等) | 快手、携程等公司面经补充 |
 
 #### 🌐 进阶面试题
 
 | # | 文档 | 简介 |
 |---|------|------|
-| 21 | [Agent 核心概念面试题 - 进阶篇](./chapters/02-agent原理/agent-interview-hub-通用知识-Agent核心概念面试题-进阶篇) | 核心概念高频问答进阶版 |
-| 22 | [系统设计面试题 - 进阶篇](./chapters/11-面试与求职/agent-interview-hub-通用知识-系统设计面试题-进阶篇) | 系统设计题与参考答案进阶版 |
-| 23 | [AI 协作与工程化面试题 - 进阶篇](./chapters/11-面试与求职/agent-interview-hub-通用知识-AI协作与工程化面试题-进阶篇) | AI 协作工程化问答进阶版 |
+| 21 | [Agent 核心概念面试题 - 进阶篇](/chapters/02-agent原理/agent-interview-hub-通用知识-Agent核心概念面试题-进阶篇) | 核心概念高频问答进阶版 |
+| 22 | [系统设计面试题 - 进阶篇](/chapters/11-面试与求职/agent-interview-hub-通用知识-系统设计面试题-进阶篇) | 系统设计题与参考答案进阶版 |
+| 23 | [AI 协作与工程化面试题 - 进阶篇](/chapters/11-面试与求职/agent-interview-hub-通用知识-AI协作与工程化面试题-进阶篇) | AI 协作工程化问答进阶版 |
 | 24 | [交互式面试算法题图谱](https://zchary1106.github.io/agent-interview-hub/%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98/) | 近期公开 Agent / 大模型面经算法题，附可折叠 Java 解法 |
 
 ---
@@ -124,12 +124,12 @@ AI Agent 工程师知识体系
 
 | # | 题目 | 难度 | 限时 |
 |---|------|:----:|:----:|
-| 1 | [智能文档问答 Agent](./chapters/10-项目实战/agent-interview-hub-项目实战-实操考题-01-智能文档问答Agent) | ⭐⭐ | 4-6h |
-| 2 | [多 Agent 团队协作](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-02-多Agent团队协作) | ⭐⭐ | 4-6h |
-| 3 | [ReAct 模式 Agent](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-03-ReAct模式Agent) | ⭐⭐ | 3-5h |
-| 4 | [AI 限时全栈开发](./chapters/10-项目实战/agent-interview-hub-项目实战-实操考题-04-AI限时全栈开发) | ⭐⭐ | 2-3h |
-| 5 | [AI 调试挑战](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-05-AI调试挑战) | ⭐⭐⭐ | 1-2h |
-| 6 | [AI Code Review Agent](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-06-AI-CodeReview-Agent) | ⭐⭐⭐ | 4-6h |
+| 1 | [智能文档问答 Agent](/chapters/10-项目实战/agent-interview-hub-项目实战-实操考题-01-智能文档问答Agent) | ⭐⭐ | 4-6h |
+| 2 | [多 Agent 团队协作](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-02-多Agent团队协作) | ⭐⭐ | 4-6h |
+| 3 | [ReAct 模式 Agent](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-03-ReAct模式Agent) | ⭐⭐ | 3-5h |
+| 4 | [AI 限时全栈开发](/chapters/10-项目实战/agent-interview-hub-项目实战-实操考题-04-AI限时全栈开发) | ⭐⭐ | 2-3h |
+| 5 | [AI 调试挑战](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-05-AI调试挑战) | ⭐⭐⭐ | 1-2h |
+| 6 | [AI Code Review Agent](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-06-AI-CodeReview-Agent) | ⭐⭐⭐ | 4-6h |
 
 ---
 
@@ -157,7 +157,7 @@ AI Agent 工程师知识体系
 | [微软 (Microsoft)](https://github.com/Zchary1106/agent-interview-hub) | ✅ | ✅ | — |
 | [初创公司](https://github.com/Zchary1106/agent-interview-hub) | ✅ | ✅ | — |
 
-> 📖 海外公司综合攻略：[海外顶级AI公司面试攻略-2026](./chapters/11-面试与求职/agent-interview-hub-通用知识-海外顶级AI公司面试攻略-2026) 🆕
+> 📖 海外公司综合攻略：[海外顶级AI公司面试攻略-2026](/chapters/11-面试与求职/agent-interview-hub-通用知识-海外顶级AI公司面试攻略-2026) 🆕
 
 ---
 
@@ -207,7 +207,7 @@ bash agents/interview-collector/install.sh --targets copilot,claude,cursor,gener
 | Cursor | `.cursor/rules/interview-collector.mdc` |
 | 通用/国内 Agent | `~/.agent-interview-hub/interview-collector/AGENT.md` |
 
-详见 [Interview Collector Agent 说明](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-README)。
+详见 [Interview Collector Agent 说明](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-README)。
 
 完整采集流程也可以用脚本跑：
 
@@ -241,13 +241,13 @@ python3 scripts/collect_interviews.py search \
 
 #### 推荐阅读顺序
 
-1. 📖 先看 [学习路线图](./chapters/07-ts产品工程/agent-interview-hub-Agent工程师学习路线图)，了解全局
-2. 🧱 通读 [Agent 核心概念与设计模式](./chapters/02-agent原理/agent-interview-hub-通用知识-Agent核心概念与设计模式)
-3. 🔧 深入 [RAG](./chapters/03-rag/agent-interview-hub-通用知识-RAG核心知识与面试题) 和 [LangChain/LangGraph](./chapters/05-编排与多agent/agent-interview-hub-通用知识-LangChain与LangGraph深度解析)
-4. 🆕 掌握 [Function Calling](https://github.com/Zchary1106/agent-interview-hub) 和 [MCP](./chapters/04-工具与mcp/agent-interview-hub-通用知识-MCP与工具生态)（2025 高频新考点）
-5. 📝 刷 [八股文完整答案集](./chapters/11-面试与求职/agent-interview-hub-通用知识-八股文完整答案集)（69 题）
+1. 📖 先看 [学习路线图](/chapters/07-ts产品工程/agent-interview-hub-Agent工程师学习路线图)，了解全局
+2. 🧱 通读 [Agent 核心概念与设计模式](/chapters/02-agent原理/agent-interview-hub-通用知识-Agent核心概念与设计模式)
+3. 🔧 深入 [RAG](/chapters/03-rag/agent-interview-hub-通用知识-RAG核心知识与面试题) 和 [LangChain/LangGraph](/chapters/05-编排与多agent/agent-interview-hub-通用知识-LangChain与LangGraph深度解析)
+4. 🆕 掌握 [Function Calling](https://github.com/Zchary1106/agent-interview-hub) 和 [MCP](/chapters/04-工具与mcp/agent-interview-hub-通用知识-MCP与工具生态)（2025 高频新考点）
+5. 📝 刷 [八股文完整答案集](/chapters/11-面试与求职/agent-interview-hub-通用知识-八股文完整答案集)（69 题）
 6. 🏢 针对目标公司看对应面经
-7. 🔥 最后用 [高频拷打题](./chapters/11-面试与求职/agent-interview-hub-通用知识-高频拷打题-牛客热帖) 查漏补缺
+7. 🔥 最后用 [高频拷打题](/chapters/11-面试与求职/agent-interview-hub-通用知识-高频拷打题-牛客热帖) 查漏补缺
 
 ---
 

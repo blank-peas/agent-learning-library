@@ -44,10 +44,10 @@ MCP 的价值在于标准化连接方式。没有 MCP 时，每个客户端和�
 
 ### 和本站章节的关系
 
-- [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)
-- [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools)
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
-- [上下文压缩与摘要](./chapters/07-ts产品工程/agent-camp-context-compression)
+- [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)
+- [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [上下文压缩与摘要](/chapters/07-ts产品工程/agent-camp-context-compression)
 
 ### 面试追问
 

@@ -22,7 +22,7 @@
 
 > 用户点了 dislike，只能说明“他不满意”。线上质量治理要回答的是：哪一层错了、怎么自动发现、怎么修完不回归。
 
-> **本文边界**：这篇是面试追问型文章，不重复讲 benchmark 体系。主流 benchmark、自建 eval 集见 [Agent 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)，trace/span 采集见 [Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)，LLM-as-Judge 的偏差与校准见 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)，高风险安全护栏见 [Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)。
+> **本文边界**：这篇是面试追问型文章，不重复讲 benchmark 体系。主流 benchmark、自建 eval 集见 [Agent 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)，trace/span 采集见 [Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)，LLM-as-Judge 的偏差与校准见 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)，高风险安全护栏见 [Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位面试中反复出现的线上质量追问。文中不出现公司名、项目名、用户规模、业务指标、内部系统名；所有 case 都改写成通用“业务工具型 Agent”场景。
 
@@ -558,5 +558,5 @@ Judge 不是最终真理。结构化任务优先规则判；Judge 只用于开�
   为什么读：它展示了 eval 作为工程资产的基本形态：私有 eval、registry、grader、repeatable experiment。
 - [OpenTelemetry GenAI Semantic Conventions](https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/)  
   为什么读：Agent 质量治理最终要落到标准化 telemetry，模型、token、latency、request 参数都应该有统一字段。
-- 配套阅读：[Agent 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)、[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)、[LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)、[Agent 整体安全](./chapters/08-评测安全可观测/agent-camp-engineering-security)。
+- 配套阅读：[Agent 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)、[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)、[LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)、[Agent 整体安全](/chapters/08-评测安全可观测/agent-camp-engineering-security)。
 

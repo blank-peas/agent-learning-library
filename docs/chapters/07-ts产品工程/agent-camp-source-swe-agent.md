@@ -317,5 +317,5 @@ SWE-agent 的价值不在于"能直接用"，而在于它**用受控实验证明
 - **[SWE-bench 论文 (arxiv 2310.06770)](https://arxiv.org/abs/2310.06770)** — 配套的评测基准。理解 FAIL_TO_PASS / PASS_TO_PASS 评测逻辑，这是现在所有编程 Agent 都在刷的榜
 - **[SWE-agent/SWE-agent](https://github.com/SWE-agent/SWE-agent)** — 仓库本身。重点读 `tools/windowed/lib/windowed_file.py`（窗口化实现）和 `tools/windowed_edit_replace/bin/edit`（edit + lint），这是 ACI 思想最集中的两个文件
 - **[mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent)** — 团队的新方向。用更少的代码达到同等性能，体现了"Agent 应该简单"的理念演进。和原版对比读，能看到这个领域两年间对"什么是必要复杂度"的认知变化
-- **[Cline 源码剖析](./chapters/07-ts产品工程/agent-camp-source-cline)** — search/replace 编辑的对照。SWE-agent 的 edit 和 Cline 的 SEARCH/REPLACE 都用搜索替换，但 SWE-agent 多了窗口约束和 lint 反馈，对比能看出学术与产品的设计侧重差异
+- **[Cline 源码剖析](/chapters/07-ts产品工程/agent-camp-source-cline)** — search/replace 编辑的对照。SWE-agent 的 edit 和 Cline 的 SEARCH/REPLACE 都用搜索替换，但 SWE-agent 多了窗口约束和 lint 反馈，对比能看出学术与产品的设计侧重差异
 

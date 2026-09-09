@@ -24,21 +24,21 @@
 
 | 目录 | 内容 | 说明 |
 |------|------|------|
-| [00-学习路线图](./chapters/12-附录与索引/ai-agent-interview-guide-docs-00-学习路线图-README) | 从零开始的学习路线 | 6 个阶段，约 7-9 个月完整路径 |
-| [01-面试八股文](./chapters/12-附录与索引/ai-agent-interview-guide-docs-01-面试八股文-README) | 9 大模块分类面试题 | 概念、原理、Q&A、代码示例 |
-| [02-企业招聘分析](./chapters/12-附录与索引/ai-agent-interview-guide-docs-02-企业招聘分析-README) | 大厂岗位需求汇总 | 腾讯/小红书/字节等岗位分析 |
-| [03-开源项目学习笔记](./chapters/12-附录与索引/ai-agent-interview-guide-docs-03-开源项目学习笔记-README) | 优秀开源项目剖析 | Claude Code、ragent 等 |
-| [04-简历模板](./chapters/12-附录与索引/ai-agent-interview-guide-docs-04-简历模板-README) | AI Agent 简历写法 | STAR 法则模板，可直接复制 |
-| [05-STAR 面试稿](./chapters/12-附录与索引/ai-agent-interview-guide-docs-05-STAR面试稿-README) | 面试话术准备 | 可朗读练习的完整面试稿 |
-| [06-面试问答集](./chapters/12-附录与索引/ai-agent-interview-guide-docs-06-面试问答集-README) | 项目面试问答 | 100+ 道项目面试题及 STAR 回答 |
+| [00-学习路线图](/chapters/12-附录与索引/ai-agent-interview-guide-docs-00-学习路线图-README) | 从零开始的学习路线 | 6 个阶段，约 7-9 个月完整路径 |
+| [01-面试八股文](/chapters/12-附录与索引/ai-agent-interview-guide-docs-01-面试八股文-README) | 9 大模块分类面试题 | 概念、原理、Q&A、代码示例 |
+| [02-企业招聘分析](/chapters/12-附录与索引/ai-agent-interview-guide-docs-02-企业招聘分析-README) | 大厂岗位需求汇总 | 腾讯/小红书/字节等岗位分析 |
+| [03-开源项目学习笔记](/chapters/12-附录与索引/ai-agent-interview-guide-docs-03-开源项目学习笔记-README) | 优秀开源项目剖析 | Claude Code、ragent 等 |
+| [04-简历模板](/chapters/12-附录与索引/ai-agent-interview-guide-docs-04-简历模板-README) | AI Agent 简历写法 | STAR 法则模板，可直接复制 |
+| [05-STAR 面试稿](/chapters/12-附录与索引/ai-agent-interview-guide-docs-05-STAR面试稿-README) | 面试话术准备 | 可朗读练习的完整面试稿 |
+| [06-面试问答集](/chapters/12-附录与索引/ai-agent-interview-guide-docs-06-面试问答集-README) | 项目面试问答 | 100+ 道项目面试题及 STAR 回答 |
 
 #### 实战项目
 
 | 版本 | 技术栈 | 目标人群 |
 |------|--------|----------|
-| [Python 版](./chapters/12-附录与索引/ai-agent-interview-guide-project-python-README) | FastAPI + LangChain + Milvus + Redis | AI/算法岗、Python 后端 |
-| [Java 版](./chapters/12-附录与索引/ai-agent-interview-guide-project-java-README) | Spring Boot 3 + Spring AI + MyBatis Plus + Milvus | Java 后端开发 |
-| [Go 版](./chapters/12-附录与索引/ai-agent-interview-guide-project-go-README) | Gin + 自研框架 + Milvus + Redis | Go 后端、云原生岗 |
+| [Python 版](/chapters/12-附录与索引/ai-agent-interview-guide-project-python-README) | FastAPI + LangChain + Milvus + Redis | AI/算法岗、Python 后端 |
+| [Java 版](/chapters/12-附录与索引/ai-agent-interview-guide-project-java-README) | Spring Boot 3 + Spring AI + MyBatis Plus + Milvus | Java 后端开发 |
+| [Go 版](/chapters/12-附录与索引/ai-agent-interview-guide-project-go-README) | Gin + 自研框架 + Milvus + Redis | Go 后端、云原生岗 |
 
 #### 漫画图解
 
@@ -89,12 +89,12 @@ ai-agent-interview-guide/
 
 如果你是完全的小白，建议按以下顺序学习：
 
-1. 阅读 [学习路线图](./chapters/12-附录与索引/ai-agent-interview-guide-docs-00-学习路线图-README)，了解整体学习计划
-2. 学习 [面试八股文](./chapters/12-附录与索引/ai-agent-interview-guide-docs-01-面试八股文-README)，从基础概念开始
-3. 查看 [企业招聘分析](./chapters/12-附录与索引/ai-agent-interview-guide-docs-02-企业招聘分析-README)，了解市场需求
+1. 阅读 [学习路线图](/chapters/12-附录与索引/ai-agent-interview-guide-docs-00-学习路线图-README)，了解整体学习计划
+2. 学习 [面试八股文](/chapters/12-附录与索引/ai-agent-interview-guide-docs-01-面试八股文-README)，从基础概念开始
+3. 查看 [企业招聘分析](/chapters/12-附录与索引/ai-agent-interview-guide-docs-02-企业招聘分析-README)，了解市场需求
 4. 选择一个语言版本的项目进行实战
-5. 准备 [简历](./chapters/12-附录与索引/ai-agent-interview-guide-docs-04-简历模板-README) 和 [面试稿](./chapters/12-附录与索引/ai-agent-interview-guide-docs-05-STAR面试稿-README)
-6. 用 [面试问答集](./chapters/12-附录与索引/ai-agent-interview-guide-docs-06-面试问答集-README) 模拟面试
+5. 准备 [简历](/chapters/12-附录与索引/ai-agent-interview-guide-docs-04-简历模板-README) 和 [面试稿](/chapters/12-附录与索引/ai-agent-interview-guide-docs-05-STAR面试稿-README)
+6. 用 [面试问答集](/chapters/12-附录与索引/ai-agent-interview-guide-docs-06-面试问答集-README) 模拟面试
 
 #### 2. 运行实战项目
 

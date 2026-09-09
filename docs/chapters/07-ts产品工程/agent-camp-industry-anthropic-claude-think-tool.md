@@ -44,10 +44,10 @@ think tool 和普通 CoT prompt 的区别在于系统可见性。普通“step b
 
 ### 和本站章节的关系
 
-- [思维链 CoT](./chapters/01-模型与提示/agent-camp-prompt-cot)
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
-- [工具调用错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)
-- [自我反思](./chapters/07-ts产品工程/agent-camp-agent-reflexion)
+- [思维链 CoT](/chapters/01-模型与提示/agent-camp-prompt-cot)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [工具调用错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)
+- [自我反思](/chapters/07-ts产品工程/agent-camp-agent-reflexion)
 
 ### 面试追问
 

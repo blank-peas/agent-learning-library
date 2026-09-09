@@ -132,7 +132,7 @@ LLM 推理分两个阶段，性能特征完全不同：
 
 #### 1. KV Cache：避免重复计算
 
-详见 [Transformer 架构](./chapters/01-模型与提示/agent-camp-llm-transformer) 的 KV Cache 章节。本质：**decode 时第 t 步的 attention 需要前 t-1 步的 K 和 V，而这些值已经算过且不会变——缓存它们**。
+详见 [Transformer 架构](/chapters/01-模型与提示/agent-camp-llm-transformer) 的 KV Cache 章节。本质：**decode 时第 t 步的 attention 需要前 t-1 步的 K 和 V，而这些值已经算过且不会变——缓存它们**。
 
 不用 KV Cache，生成 1000 token 要做 1000² 次 attention 计算。用了以后是 1000 次 attention 计算 + 1000 次 KV Cache 查找。
 
@@ -187,7 +187,7 @@ LLM 权重有强冗余——每个权重的贡献分布不均，多数权重对�
 
 #### 4. FlashAttention：把 attention 算得更快
 
-详见 [Transformer 架构](./chapters/01-模型与提示/agent-camp-llm-transformer) 提到的核心 idea。这里展开。
+详见 [Transformer 架构](/chapters/01-模型与提示/agent-camp-llm-transformer) 提到的核心 idea。这里展开。
 
 **标准 attention 的真正瓶颈**：
 

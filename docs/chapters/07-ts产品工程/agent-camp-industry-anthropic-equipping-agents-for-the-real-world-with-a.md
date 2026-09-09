@@ -45,9 +45,9 @@ Skills 和工具不同。工具是可以执行的能力，比如读文件、查�
 ### 和本站章节的关系
 
 - [上下文工程](https://github.com/yibo365/agent-camp)
-- [提示词模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates)
-- [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools)
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [提示词模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates)
+- [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
 
 ### 面试追问
 

@@ -44,10 +44,10 @@ Anthropic 的思路是在入库前，用模型基于原文档给每个 chunk 生
 
 ### 和本站章节的关系
 
-- [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)
-- [文档切分策略](./chapters/03-rag/agent-camp-rag-chunking)
-- [混合检索](./chapters/03-rag/agent-camp-rag-hybrid-search)
-- [高级 RAG](./chapters/03-rag/agent-camp-rag-advanced)
+- [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)
+- [文档切分策略](/chapters/03-rag/agent-camp-rag-chunking)
+- [混合检索](/chapters/03-rag/agent-camp-rag-hybrid-search)
+- [高级 RAG](/chapters/03-rag/agent-camp-rag-advanced)
 
 ### 面试追问
 

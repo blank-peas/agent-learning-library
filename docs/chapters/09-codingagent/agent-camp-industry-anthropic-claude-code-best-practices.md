@@ -44,10 +44,10 @@ Claude Code 不是普通代码补全工具，而是能读仓库、改文件、�
 
 ### 和本站章节的关系
 
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
-- [Claude Code 架构剖析](./chapters/09-codingagent/agent-camp-source-claude-code)
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
-- [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [Claude Code 架构剖析](/chapters/09-codingagent/agent-camp-source-claude-code)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
 
 ### 面试追问
 

@@ -45,9 +45,9 @@ reasoning effort 的变化尤其典型。对普通聊天来说，少一点思考
 ### 和本站章节的关系
 
 - [上下文工程](https://github.com/yibo365/agent-camp)
-- [系统提示词设计](./chapters/01-模型与提示/agent-camp-prompt-system-prompt)
-- [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
-- [Coding Agent](./chapters/09-codingagent/agent-camp-vertical-coding-agent)
+- [系统提示词设计](/chapters/01-模型与提示/agent-camp-prompt-system-prompt)
+- [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)
+- [Coding Agent](/chapters/09-codingagent/agent-camp-vertical-coding-agent)
 
 ### 面试追问
 

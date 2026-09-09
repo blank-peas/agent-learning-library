@@ -44,8 +44,8 @@
 
 ### 和本站章节的关系
 
-- [工作流与 Agent 的边界](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)
-- [流程编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns)
+- [工作流与 Agent 的边界](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)
+- [流程编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns)
 - [Agent 核心理论](https://github.com/yibo365/agent-camp)
 - [多 Agent 协作](https://github.com/yibo365/agent-camp)
 

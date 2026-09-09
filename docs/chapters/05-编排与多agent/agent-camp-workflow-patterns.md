@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦四种**控制流模式本身**。Workflow 和 Agent 的边界划分见 [Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)；用 LangGraph 实现这些模式见 [LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph)；Anthropic 定义的五种 Workflow 模式（prompt chaining / routing / parallelization / orchestrator-workers / evaluator-optimizer）是本文四种基础模式的组合应用，详见 [Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)。
+> **本文边界**：聚焦四种**控制流模式本身**。Workflow 和 Agent 的边界划分见 [Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)；用 LangGraph 实现这些模式见 [LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph)；Anthropic 定义的五种 Workflow 模式（prompt chaining / routing / parallelization / orchestrator-workers / evaluator-optimizer）是本文四种基础模式的组合应用，详见 [Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)。
 
 ### 面试官想考什么
 
@@ -545,7 +545,7 @@ async def limited_call(prompt):
 
 ### 与 Anthropic 五种 Workflow 模式的映射
 
-Anthropic 的五种 Workflow 模式（见 [Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)）都是四种基础模式的组合：
+Anthropic 的五种 Workflow 模式（见 [Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent)）都是四种基础模式的组合：
 
 | Anthropic 模式 | 基础模式组合 |
 |---------------|-------------|
@@ -595,5 +595,5 @@ Anthropic 的五种 Workflow 模式（见 [Workflow vs Agent](./chapters/07-ts�
 - **论文：From Agent Loops to Structured Graphs** ([arxiv 2604.11378](https://arxiv.org/abs/2604.11378))
   2025 论文，用调度理论框架分析 Agent 执行模式。学术视角理解四种控制流模式的形式化定义。
 
-- **配套阅读**：[Workflow vs Agent](./chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) — 五种 Workflow 模式 + 何时升级到 Agent；[LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 用 LangGraph 实现这些模式；[Agent 协作策略](./chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 循环模式在 debate / voting 中的应用；[并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel) — 并行模式在工具层的实现。
+- **配套阅读**：[Workflow vs Agent](/chapters/07-ts产品工程/agent-camp-workflow-workflow-vs-agent) — 五种 Workflow 模式 + 何时升级到 Agent；[LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 用 LangGraph 实现这些模式；[Agent 协作策略](/chapters/05-编排与多agent/agent-camp-multi-agent-collaboration) — 循环模式在 debate / voting 中的应用；[并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel) — 并行模式在工具层的实现。
 

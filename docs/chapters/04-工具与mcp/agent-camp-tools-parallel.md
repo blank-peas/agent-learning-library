@@ -101,7 +101,7 @@ turn 2: 模型生成 Answer
 
 延迟之外还有一个不那么明显的收益：**减少 LLM 推理次数**。串行 3 个工具需要 4 次完整推理（每次都要把全部历史和 tool result 喂回模型），并行只需 2 次。在 GPT-4 级别的模型上，每次推理 input 部分 5-10K token，4 次 → 2 次省的 token 不是小数。
 
-> 串行的本质问题在 [ReAct 模式](./chapters/02-agent原理/agent-camp-prompt-react)里已经讲清楚——三段式约定了"单步只能一个 Action"。并行 function calling 是 ReAct 的现代扩展：把"一步一个动作"放宽成"一步多个独立动作"，但保留"动作之间有依赖时仍然串行"的语义。
+> 串行的本质问题在 [ReAct 模式](/chapters/02-agent原理/agent-camp-prompt-react)里已经讲清楚——三段式约定了"单步只能一个 Action"。并行 function calling 是 ReAct 的现代扩展：把"一步一个动作"放宽成"一步多个独立动作"，但保留"动作之间有依赖时仍然串行"的语义。
 
 ---
 
@@ -485,7 +485,7 @@ async def execute_one_with_retry(tool_call) -> dict:
                     "content": f"ERROR: {e}"}
 ```
 
-具体的重试策略、超时、熔断设计见 [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)。本文只强调一个点：**并行场景下重试要小心放大效应**——如果三个调用都失败重试 3 次，实际上你打了 9 次后端请求，下游 API 可能直接被你限流。
+具体的重试策略、超时、熔断设计见 [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)。本文只强调一个点：**并行场景下重试要小心放大效应**——如果三个调用都失败重试 3 次，实际上你打了 9 次后端请求，下游 API 可能直接被你限流。
 
 #### asyncio.gather 的陷阱
 
@@ -614,7 +614,7 @@ result = await asyncio.to_thread(sync_function, *args)
 | 模型并行准确率不高（小模型、未对齐模型） | 串行 | 减少模型判断负担 |
 | 下游 API 限流紧张 | 串行 + 全局限流 | 控制并发度 |
 
-更高维度的工具调用错误处理策略（重试、降级、熔断）见 [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)。工具协议层的基础参考 [Function Calling 规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling)，跨服务工具调用的标准化见 [MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp)。Agent 架构层面如何把并行工具纳入主循环见 [Agent ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern)。
+更高维度的工具调用错误处理策略（重试、降级、熔断）见 [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)。工具协议层的基础参考 [Function Calling 规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling)，跨服务工具调用的标准化见 [MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp)。Agent 架构层面如何把并行工具纳入主循环见 [Agent ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern)。
 
 ---
 
@@ -686,5 +686,5 @@ async with asyncio.TaskGroup() as tg:
 - **博客：Anthropic — How to use tools with Claude** ([anthropic.com/news/tool-use-ga](https://www.anthropic.com/news/tool-use-ga))
   Anthropic tool use GA 公告，含 Claude 在并行决策上的训练经验讨论。
 
-- **配套阅读**：[Function Calling 规范](./chapters/04-工具与mcp/agent-camp-tools-function-calling) — 单工具协议的基础；[错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling) — 重试/降级/熔断通用策略；[MCP 协议详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) — 跨服务工具调用标准；[ReAct Prompt 模式](./chapters/02-agent原理/agent-camp-prompt-react) — "单步一个 Action"的串行起点；[Agent ReAct 模式](./chapters/02-agent原理/agent-camp-agent-react-pattern) — Agent 主循环如何整合并行工具。
+- **配套阅读**：[Function Calling 规范](/chapters/04-工具与mcp/agent-camp-tools-function-calling) — 单工具协议的基础；[错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling) — 重试/降级/熔断通用策略；[MCP 协议详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) — 跨服务工具调用标准；[ReAct Prompt 模式](/chapters/02-agent原理/agent-camp-prompt-react) — "单步一个 Action"的串行起点；[Agent ReAct 模式](/chapters/02-agent原理/agent-camp-agent-react-pattern) — Agent 主循环如何整合并行工具。
 

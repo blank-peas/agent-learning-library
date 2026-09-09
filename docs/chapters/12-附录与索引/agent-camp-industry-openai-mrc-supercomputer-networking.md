@@ -30,9 +30,9 @@
 
 ### 和本站章节的关系
 
-- [LLM 训练](./chapters/01-模型与提示/agent-camp-llm-training)
-- [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)
-- [Agent 工程化 - 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [LLM 训练](/chapters/01-模型与提示/agent-camp-llm-training)
+- [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)
+- [Agent 工程化 - 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
 
 ### 面试追问
 

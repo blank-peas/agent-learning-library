@@ -241,7 +241,7 @@ Transformer 的 scaling law（Kaplan et al. 2020, Hoffmann et al. 2022 Chinchill
 
 #### 陷阱 2：以为 attention 是 O(n²) 就一定慢
 
-朴素实现确实 O(n²) 时间 + O(n²) 显存。**但实际瓶颈是显存带宽，不是计算量**。FlashAttention (Dao 2022) 通过 tile + 重算技巧把显存读写减少 10 倍，速度反而比传统实现快 2-4 倍。详见 [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
+朴素实现确实 O(n²) 时间 + O(n²) 显存。**但实际瓶颈是显存带宽，不是计算量**。FlashAttention (Dao 2022) 通过 tile + 重算技巧把显存读写减少 10 倍，速度反而比传统实现快 2-4 倍。详见 [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)。
 
 #### 陷阱 3：误以为 LayerNorm 位置不重要
 

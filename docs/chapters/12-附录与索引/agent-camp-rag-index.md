@@ -7,17 +7,17 @@ RAG 是大模型落地企业知识库、私有数据问答的标准范式。本�
 
 ### 本章内容
 
-- [Naive RAG 与瓶颈](./chapters/03-rag/agent-camp-rag-basics) — 索引、检索、生成三段式与已知问题
-- [RAG 选型面试深挖](./chapters/03-rag/agent-camp-rag-rag-selection-interview) — 托管知识库、自建向量库、评估指标与退出条件
-- [文档切分策略](./chapters/03-rag/agent-camp-rag-chunking) — 固定 / 语义 / 递归 / 延迟切分
-- [嵌入模型选型](./chapters/03-rag/agent-camp-rag-embedding-models) — BGE、E5、OpenAI、Voyage、Cohere 实测
-- [向量数据库对比](./chapters/03-rag/agent-camp-rag-vector-db) — Pinecone、Weaviate、Qdrant、Milvus、Chroma、pgvector
-- [混合检索](./chapters/03-rag/agent-camp-rag-hybrid-search) — BM25 + 向量融合方案与 RRF
-- [重排序](./chapters/03-rag/agent-camp-rag-reranking) — 交叉编码器、Cohere Rerank、BGE-Reranker
-- [高级 RAG](./chapters/03-rag/agent-camp-rag-advanced) — HyDE、Step-back、Self-RAG、Corrective RAG
-- [GraphRAG 图增强检索](./chapters/03-rag/agent-camp-rag-graphrag) — Microsoft 图增强检索方案深度剖析
-- [Agentic RAG](./chapters/03-rag/agent-camp-rag-agentic-rag) — 把检索当工具的 Agent 模式
-- [RAG 评估方法](./chapters/08-评测安全可观测/agent-camp-rag-evaluation) — RAGAS、TruLens、DeepEval 实战
+- [Naive RAG 与瓶颈](/chapters/03-rag/agent-camp-rag-basics) — 索引、检索、生成三段式与已知问题
+- [RAG 选型面试深挖](/chapters/03-rag/agent-camp-rag-rag-selection-interview) — 托管知识库、自建向量库、评估指标与退出条件
+- [文档切分策略](/chapters/03-rag/agent-camp-rag-chunking) — 固定 / 语义 / 递归 / 延迟切分
+- [嵌入模型选型](/chapters/03-rag/agent-camp-rag-embedding-models) — BGE、E5、OpenAI、Voyage、Cohere 实测
+- [向量数据库对比](/chapters/03-rag/agent-camp-rag-vector-db) — Pinecone、Weaviate、Qdrant、Milvus、Chroma、pgvector
+- [混合检索](/chapters/03-rag/agent-camp-rag-hybrid-search) — BM25 + 向量融合方案与 RRF
+- [重排序](/chapters/03-rag/agent-camp-rag-reranking) — 交叉编码器、Cohere Rerank、BGE-Reranker
+- [高级 RAG](/chapters/03-rag/agent-camp-rag-advanced) — HyDE、Step-back、Self-RAG、Corrective RAG
+- [GraphRAG 图增强检索](/chapters/03-rag/agent-camp-rag-graphrag) — Microsoft 图增强检索方案深度剖析
+- [Agentic RAG](/chapters/03-rag/agent-camp-rag-agentic-rag) — 把检索当工具的 Agent 模式
+- [RAG 评估方法](/chapters/08-评测安全可观测/agent-camp-rag-evaluation) — RAGAS、TruLens、DeepEval 实战
 
 ### 学习路径
 

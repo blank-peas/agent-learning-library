@@ -22,7 +22,7 @@
 
 > 模型选型不是“选一个最强模型”，而是在你的任务、数据、成本、延迟、合规和团队能力约束下，选一个可证明、可替换、可持续重评的方案。
 
-> **本文边界**：模型家族横向能力看 [主流模型对比](./chapters/01-模型与提示/agent-camp-llm-models)，开源 / 闭源 / 自部署的 TCO 看 [开源 vs 闭源选型](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed)，线上质量和 badcase 闭环看 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)，LLM-as-Judge 的偏差看 [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)。本文只讲真实面试里最容易被追问的 **模型选型决策链**。
+> **本文边界**：模型家族横向能力看 [主流模型对比](/chapters/01-模型与提示/agent-camp-llm-models)，开源 / 闭源 / 自部署的 TCO 看 [开源 vs 闭源选型](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed)，线上质量和 badcase 闭环看 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)，LLM-as-Judge 的偏差看 [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)。本文只讲真实面试里最容易被追问的 **模型选型决策链**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位中反复出现的模型选型追问。所有例子都改成通用业务 Agent 场景，不保留任何可识别的真实细节。
 
@@ -183,7 +183,7 @@ HELM 的核心价值是“多指标”，不只看准确率，也看校准、鲁
 关键是每段都有评估和 fallback，而不是为了省钱盲目路由。
 ```
 
-这和 [Agent 成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的 model routing 逻辑一致，但这里强调的是选型证据，而不只是省钱。
+这和 [Agent 成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 的 model routing 逻辑一致，但这里强调的是选型证据，而不只是省钱。
 
 ### API vs 自部署：先问硬约束，再算 TCO
 
@@ -449,11 +449,11 @@ if __name__ == "__main__":
 
 | 文章 | 重点 | 本文不重复什么 |
 |---|---|---|
-| [主流模型对比](./chapters/01-模型与提示/agent-camp-llm-models) | 模型家族能力和技术路线 | 不做榜单介绍 |
-| [开源 vs 闭源选型](./chapters/01-模型与提示/agent-camp-llm-open-vs-closed) | 部署形态和 TCO | 不展开 GPU / API 成本测算 |
-| [Agent 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) | benchmark 和 eval 方法论 | 只取模型选型需要的那部分 |
-| [Agent 成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | 降本手段和 model routing | 不以省钱为唯一目标 |
-| [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) | 用模型做裁判的偏差 | 不展开 judge 校准细节 |
+| [主流模型对比](/chapters/01-模型与提示/agent-camp-llm-models) | 模型家族能力和技术路线 | 不做榜单介绍 |
+| [开源 vs 闭源选型](/chapters/01-模型与提示/agent-camp-llm-open-vs-closed) | 部署形态和 TCO | 不展开 GPU / API 成本测算 |
+| [Agent 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) | benchmark 和 eval 方法论 | 只取模型选型需要的那部分 |
+| [Agent 成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | 降本手段和 model routing | 不以省钱为唯一目标 |
+| [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) | 用模型做裁判的偏差 | 不展开 judge 校准细节 |
 
 ### 面试题深度解析
 

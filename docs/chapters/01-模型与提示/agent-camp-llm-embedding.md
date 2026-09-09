@@ -266,7 +266,7 @@ A 模型编码 query、B 模型编码 doc，算余弦相似度——**无意义*
 
 #### 陷阱 5：用 sentence embedding 做精确匹配
 
-"openssl CVE-2024-3094" 这种含具体编号的 query，embedding 经常召回不准——因为 embedding 是"语义压缩"，不擅长精确字符匹配。这就是为什么生产 RAG 要混合 BM25（详见 [混合检索](./chapters/03-rag/agent-camp-rag-hybrid-search)）。
+"openssl CVE-2024-3094" 这种含具体编号的 query，embedding 经常召回不准——因为 embedding 是"语义压缩"，不擅长精确字符匹配。这就是为什么生产 RAG 要混合 BM25（详见 [混合检索](/chapters/03-rag/agent-camp-rag-hybrid-search)）。
 
 ---
 

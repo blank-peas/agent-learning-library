@@ -22,7 +22,7 @@
 
 > 首 token 慢，不一定是模型慢；P95 慢，也不一定是平均链路慢。Agent 性能优化的第一步，是把一次请求拆成能被证据解释的 spans。
 
-> **本文边界**：[限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 讲 429、熔断、重试、provider fallback；[成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 讲账单、模型路由、Batch 和 token 成本；[并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel) 讲 tool_calls 协议；[上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching) 讲 prompt cache 细节。本文只回答面试里最容易被追的性能题：**首 token、总耗时、P95 尾延迟到底怎么拆、怎么优化、怎么证明**。
+> **本文边界**：[限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) 讲 429、熔断、重试、provider fallback；[成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) 讲账单、模型路由、Batch 和 token 成本；[并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel) 讲 tool_calls 协议；[上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching) 讲 prompt cache 细节。本文只回答面试里最容易被追的性能题：**首 token、总耗时、P95 尾延迟到底怎么拆、怎么优化、怎么证明**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位里反复出现的性能追问。所有案例都抽象成通用业务 Agent，不出现可识别组织、具体案例、真实数量、内部称呼或私有数据。
 
@@ -253,7 +253,7 @@ Agent 里最常见的性能浪费，不是模型本身，而是工具调用被�
 查用户配置 -> 查知识库 -> 查业务工具 -> 再进模型
 ```
 
-如果这些步骤互不依赖，就应该并行。注意边界：并行的是**工具执行**，不是让模型乱并发做推理。具体 tool_calls 协议和部分失败处理放在 [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)，本文只强调性能判断：
+如果这些步骤互不依赖，就应该并行。注意边界：并行的是**工具执行**，不是让模型乱并发做推理。具体 tool_calls 协议和部分失败处理放在 [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)，本文只强调性能判断：
 
 ```text
 串行耗时 = A + B + C
@@ -324,13 +324,13 @@ OpenAI latency guide 里有个很实用的经验：生成 token 几乎总是高�
 复杂规划 / 多文档综合 / 高风险判断 -> 强模型 + 更严格 guardrail
 ```
 
-路由要配 eval。否则把复杂请求错送小模型，省下的延迟会被重试、人工兜底和投诉吃掉。具体模型选择和持续重评见 [模型选型与持续重评面试深挖](./chapters/01-模型与提示/agent-camp-llm-model-selection-interview)。
+路由要配 eval。否则把复杂请求错送小模型，省下的延迟会被重试、人工兜底和投诉吃掉。具体模型选择和持续重评见 [模型选型与持续重评面试深挖](/chapters/01-模型与提示/agent-camp-llm-model-selection-interview)。
 
 #### 7. 流式输出和进度事件，降低用户体感等待
 
 Streaming 不一定减少总计算时间，但能降低用户“空等”的时间。OpenAI latency guide 把 streaming 称为最有效的“让用户少等”的方式之一；同时建议在工具多步骤场景里展示真实进度。Anthropic 文档也说明 streaming 能让用户实时看到输出，提升响应感。
 
-但 streaming 不是万能。结合 [Agent 流式输出安全面试深挖](./chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview)，高风险输出可能需要 buffer 审查甚至完整生成后审查。此时更合理的指标不是原始 TTFT，而是：
+但 streaming 不是万能。结合 [Agent 流式输出安全面试深挖](/chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview)，高风险输出可能需要 buffer 审查甚至完整生成后审查。此时更合理的指标不是原始 TTFT，而是：
 
 ```text
 time_to_first_safe_token
@@ -428,11 +428,11 @@ time_to_first_safe_token
 
 | 文章 | 解决的问题 | 本文的边界 |
 |---|---|---|
-| [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting) | 429、token bucket、熔断、provider fallback | 本文只讲请求已经进入系统后的延迟关键路径 |
-| [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | input/output 账单、模型路由、Batch、语义缓存 | 本文从性能角度解释这些手段如何影响 TTFT/P95 |
-| [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel) | OpenAI / Anthropic / Gemini 的并行 tool 协议 | 本文只关心并行是否缩短 critical path |
-| [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching) | prompt cache、prefix layout、TTL、命中率 | 本文只讲 cache 对 TTFT 的影响和面试表达 |
-| [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | eval、badcase、trace、回归集 | 本文把性能优化纳入质量回归 |
+| [限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting) | 429、token bucket、熔断、provider fallback | 本文只讲请求已经进入系统后的延迟关键路径 |
+| [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | input/output 账单、模型路由、Batch、语义缓存 | 本文从性能角度解释这些手段如何影响 TTFT/P95 |
+| [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel) | OpenAI / Anthropic / Gemini 的并行 tool 协议 | 本文只关心并行是否缩短 critical path |
+| [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching) | prompt cache、prefix layout、TTL、命中率 | 本文只讲 cache 对 TTFT 的影响和面试表达 |
+| [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | eval、badcase、trace、回归集 | 本文把性能优化纳入质量回归 |
 
 ### 面试题深度解析
 
@@ -503,9 +503,9 @@ time_to_first_safe_token
 
 配套阅读：
 
-- [并行工具调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)：把独立工具从串行改成并行。
-- [上下文缓存](./chapters/07-ts产品工程/agent-camp-context-caching)：深入 prompt cache / prefix cache 的布局和监控。
-- [Agent 流式输出安全面试深挖](./chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview)：把 TTFT 改成 time-to-first-safe-token。
-- [限流与降级](./chapters/01-模型与提示/agent-camp-engineering-rate-limiting)：避免并行和重试把上游打爆。
-- [Agent 线上质量治理面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：性能优化后用 eval 防质量回退。
+- [并行工具调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)：把独立工具从串行改成并行。
+- [上下文缓存](/chapters/07-ts产品工程/agent-camp-context-caching)：深入 prompt cache / prefix cache 的布局和监控。
+- [Agent 流式输出安全面试深挖](/chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview)：把 TTFT 改成 time-to-first-safe-token。
+- [限流与降级](/chapters/01-模型与提示/agent-camp-engineering-rate-limiting)：避免并行和重试把上游打爆。
+- [Agent 线上质量治理面试深挖](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：性能优化后用 eval 防质量回退。
 

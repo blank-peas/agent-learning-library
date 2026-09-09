@@ -31,8 +31,8 @@
 ### 和本站章节的关系
 
 - [工具调用](https://github.com/yibo365/agent-camp)
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
 - [上下文工程](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

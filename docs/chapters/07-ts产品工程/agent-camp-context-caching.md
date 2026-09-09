@@ -90,7 +90,7 @@
 
 **省的不只是钱，是产品形态**。没有 prompt cache，"和一份长文档对话"这种产品根本做不下去——延迟和成本都不可接受。
 
-底层的 KV Cache 和推理引擎的 prefix caching 详见 [推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization)。本文讲的是各家 API 暴露给应用层的那一层——**用户可控、计费可见、有 TTL 的 cache 产品**。
+底层的 KV Cache 和推理引擎的 prefix caching 详见 [推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization)。本文讲的是各家 API 暴露给应用层的那一层——**用户可控、计费可见、有 TTL 的 cache 产品**。
 
 ---
 
@@ -98,7 +98,7 @@
 
 一句话：**复用已经算好的 KV Cache，跳过 prefill**。
 
-回忆 [Transformer 架构](./chapters/01-模型与提示/agent-camp-llm-transformer)：模型处理 prompt 时，每一层每个 token 都会算出对应的 Key 和 Value 张量，存进 KV Cache。这部分计算（prefill）的成本与 prompt 长度成正比——100K token 通常要 5-15 秒。
+回忆 [Transformer 架构](/chapters/01-模型与提示/agent-camp-llm-transformer)：模型处理 prompt 时，每一层每个 token 都会算出对应的 Key 和 Value 张量，存进 KV Cache。这部分计算（prefill）的成本与 prompt 长度成正比——100K token 通常要 5-15 秒。
 
 prompt cache 做的事情：
 
@@ -443,7 +443,7 @@ messages = [
 
 这样每追加一轮，**所有前面的 turn 都从 cache 读**，只有最新一个 turn 是新算。
 
-更详细的对话历史布局策略见 [对话历史管理](./chapters/07-ts产品工程/agent-camp-context-history)。
+更详细的对话历史布局策略见 [对话历史管理](/chapters/07-ts产品工程/agent-camp-context-history)。
 
 ---
 
@@ -515,7 +515,7 @@ messages = [
 **30 秒版本**：分层放置——最稳定的在最前、最易变的在最后。典型顺序：(1) 角色 + 行为规则（永远不变）；(2) 工具定义（发版才变）；(3) Few-shot 示例（稳定）；(4) RAG 检索结果（session 内稳定）；(5) 历史 turn（追加不破坏 prefix）；(6) 当前 user 输入（必变，不 cache）。在 (1)+(2) 末尾标第 1 个 breakpoint，(3)+(4) 末尾标第 2 个，最近一轮历史末尾标第 3 个，剩 1 个 breakpoint 给可能的灵活场景。这样每轮新对话，cache_read 几乎是整段历史的长度，cache_write 只是新增的 user + assistant 两个 turn。
 
 **追问**：那对话越长，cache 不就一直累积到上限了吗？
-对，这就是为什么需要配合 [对话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) 的压缩策略。当对话超过某个长度（比如 50 轮）就触发摘要：把前 40 轮压成一个 summary text，重新作为"伪历史"的一部分。摘要后整个 prefix 变了——这次会 cache miss 一次（付一次写入溢价），之后又开始累积命中。所以真实生产里，cache 不是无限增长，而是"在压缩点之间反复积累 + 命中"的循环。
+对，这就是为什么需要配合 [对话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) 的压缩策略。当对话超过某个长度（比如 50 轮）就触发摘要：把前 40 轮压成一个 summary text，重新作为"伪历史"的一部分。摘要后整个 prefix 变了——这次会 cache miss 一次（付一次写入溢价），之后又开始累积命中。所以真实生产里，cache 不是无限增长，而是"在压缩点之间反复积累 + 命中"的循环。
 
 ---
 
@@ -542,5 +542,5 @@ messages = [
 - **博客：Anthropic — Prompt Caching with Claude** ([anthropic.com/news/prompt-caching](https://www.anthropic.com/news/prompt-caching))
   Anthropic 发布 cache 时的官方博客，含具体场景的 benchmark（书籍问答 90% 成本下降、Agent 多轮 80% 成本下降）。读它建立"cache 在哪些场景真值"的直觉。
 
-- **配套阅读**：[长上下文模型对比](./chapters/07-ts产品工程/agent-camp-context-long-context) — 长上下文 + cache 的组合是当前长文档产品的标配。[推理优化](./chapters/01-模型与提示/agent-camp-llm-inference-optimization) — KV Cache、PagedAttention 等底层基础设施。[对话历史管理](./chapters/07-ts产品工程/agent-camp-context-history) — 多轮场景下 cache 失效与重建的策略。[系统提示词](./chapters/01-模型与提示/agent-camp-prompt-system-prompt) — system prompt 稳定性直接决定 cache 命中率。
+- **配套阅读**：[长上下文模型对比](/chapters/07-ts产品工程/agent-camp-context-long-context) — 长上下文 + cache 的组合是当前长文档产品的标配。[推理优化](/chapters/01-模型与提示/agent-camp-llm-inference-optimization) — KV Cache、PagedAttention 等底层基础设施。[对话历史管理](/chapters/07-ts产品工程/agent-camp-context-history) — 多轮场景下 cache 失效与重建的策略。[系统提示词](/chapters/01-模型与提示/agent-camp-prompt-system-prompt) — system prompt 稳定性直接决定 cache 命中率。
 

@@ -328,8 +328,8 @@ Sandbox 同时承担两个职责：(1) **安全**——隔离 Agent 可能产生
 
 ### 相关阅读
 
-- [072 Agent Benchmark：端到端测试设计](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-072-agent-benchmarks) — Benchmark 数据集层面（SWE-bench / GAIA / LoCoMo / LongMemEval）
-- [075 评估工具对比：Ragas、LangSmith、Braintrust](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-075-evaluation-tools-comparison) — 商业评测平台（trace + UI + 协作）
-- [076 静态 Benchmark 陷阱](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap) — Benchmark 失效与"大脱钩"现象
-- [077 持续评估流水线](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-077-continuous-evaluation-pipeline) — 把 eval 从 one-shot 升级为 always-on
+- [072 Agent Benchmark：端到端测试设计](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-072-agent-benchmarks) — Benchmark 数据集层面（SWE-bench / GAIA / LoCoMo / LongMemEval）
+- [075 评估工具对比：Ragas、LangSmith、Braintrust](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-075-evaluation-tools-comparison) — 商业评测平台（trace + UI + 协作）
+- [076 静态 Benchmark 陷阱](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-076-static-benchmark-trap) — Benchmark 失效与"大脱钩"现象
+- [077 持续评估流水线](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-077-continuous-evaluation-pipeline) — 把 eval 从 one-shot 升级为 always-on
 

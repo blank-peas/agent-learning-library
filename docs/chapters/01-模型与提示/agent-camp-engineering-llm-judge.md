@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 **"LLM-as-judge" 作为一种评估方法本身的设计与陷阱**——pointwise vs pairwise、偏差识别、校准、边界。整体评估体系（benchmark 选型、人工标注、指标聚合）见 [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)；线上观测与反馈闭环见 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)；judge prompt 的工程化版本管理见 [提示词模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates)；judge 要不要 step-by-step 推理见 [CoT](./chapters/01-模型与提示/agent-camp-prompt-cot)。
+> **本文边界**：聚焦 **"LLM-as-judge" 作为一种评估方法本身的设计与陷阱**——pointwise vs pairwise、偏差识别、校准、边界。整体评估体系（benchmark 选型、人工标注、指标聚合）见 [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)；线上观测与反馈闭环见 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)；judge prompt 的工程化版本管理见 [提示词模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates)；judge 要不要 step-by-step 推理见 [CoT](/chapters/01-模型与提示/agent-camp-prompt-cot)。
 
 ### 面试官想考什么
 
@@ -291,7 +291,7 @@ verdict = llm.chat(PROMPT.format(q=q, a=a, b=b)).strip()
 请先用 200 字内分析每个维度的得分理由，最后再给出整体判断。
 ```
 
-为什么有效：让模型先输出推理过程，等同于在 judge 上应用 CoT（见 [CoT](./chapters/01-模型与提示/agent-camp-prompt-cot)）——能逼模型按 rubric 走，而不是凭"感觉"直接给分。Liu et al. 2023 *G-Eval* 证明带 chain-of-thought 的 judge 与人工评分的 Spearman 相关性比直接打分高 0.1-0.2。
+为什么有效：让模型先输出推理过程，等同于在 judge 上应用 CoT（见 [CoT](/chapters/01-模型与提示/agent-camp-prompt-cot)）——能逼模型按 rubric 走，而不是凭"感觉"直接给分。Liu et al. 2023 *G-Eval* 证明带 chain-of-thought 的 judge 与人工评分的 Spearman 相关性比直接打分高 0.1-0.2。
 
 代价：token 量增加 3-5 倍，成本上升。监控类高频 judge 可能要省 CoT，重要决策类 judge 必带。
 
@@ -709,5 +709,5 @@ RLAIF（Reinforcement Learning from AI Feedback）确实是用 LLM 反馈替代�
 - **工具：Promptfoo** ([promptfoo.dev](https://www.promptfoo.dev/docs/configuration/expected-outputs/model-graded/))
   开源 prompt 评估框架，内置多种 LLM-as-judge assertion（factuality、similarity、custom rubric）。轻量级团队可以直接拿来跑。
 
-- **配套阅读**：[评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — benchmark 选型和完整评估流程；[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — 把 judge 接入生产监控；[提示词模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates) — judge prompt 也要版本化；[CoT](./chapters/01-模型与提示/agent-camp-prompt-cot) — judge 要不要 step-by-step；[模型选型](./chapters/01-模型与提示/agent-camp-llm-models) — 选 judge 模型时的能力对照。
+- **配套阅读**：[评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) — benchmark 选型和完整评估流程；[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) — 把 judge 接入生产监控；[提示词模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates) — judge prompt 也要版本化；[CoT](/chapters/01-模型与提示/agent-camp-prompt-cot) — judge 要不要 step-by-step；[模型选型](/chapters/01-模型与提示/agent-camp-llm-models) — 选 judge 模型时的能力对照。
 

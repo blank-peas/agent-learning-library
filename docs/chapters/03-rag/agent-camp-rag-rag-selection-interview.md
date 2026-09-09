@@ -22,7 +22,7 @@
 
 > “用了某某知识库平台”不是答案。面试官真正追的是：为什么先用它、风险是什么、怎么评估、什么时候换。
 
-> **本文边界**：这篇是面试追问型文章，不重复讲 RAG 基础链路。Naive RAG 见 [Naive RAG 与瓶颈](./chapters/03-rag/agent-camp-rag-basics)，向量库参数见 [向量数据库对比](./chapters/03-rag/agent-camp-rag-vector-db)，BM25 + Dense 见 [混合检索](./chapters/03-rag/agent-camp-rag-hybrid-search)，reranker 见 [重排序](./chapters/03-rag/agent-camp-rag-reranking)，评估指标见 [RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation)。
+> **本文边界**：这篇是面试追问型文章，不重复讲 RAG 基础链路。Naive RAG 见 [Naive RAG 与瓶颈](/chapters/03-rag/agent-camp-rag-basics)，向量库参数见 [向量数据库对比](/chapters/03-rag/agent-camp-rag-vector-db)，BM25 + Dense 见 [混合检索](/chapters/03-rag/agent-camp-rag-hybrid-search)，reranker 见 [重排序](/chapters/03-rag/agent-camp-rag-reranking)，评估指标见 [RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation)。
 
 > **脱敏说明**：本文来自多场 Agent/RAG 项目面试里反复出现的选型追问。文中不出现公司名、项目名、用户规模、业务指标、内部系统名；案例统一改写成通用“企业知识库 / 业务内容推荐 / 私有文档问答”场景。
 
@@ -371,7 +371,7 @@ P95 latency 和 cost 在预算内
 ACL / stale_doc / wrong_citation 不能新增高风险问题
 ```
 
-这和 [RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation) 里的思路一致：先拆层，再谈总分。
+这和 [RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation) 里的思路一致：先拆层，再谈总分。
 
 ### 容易踩的坑
 
@@ -518,6 +518,6 @@ HNSW 通常查询速度/召回取舍更好，但构建慢、内存多；IVFFlat 
 - [Alibaba Cloud Model Studio Knowledge Base](https://www.alibabacloud.com/help/en/model-studio/rag-knowledge-base)  
   为什么读：托管知识库不是黑盒，文档里能看到 threshold、TopK、rerank、vector storage、limits 等真实工程旋钮。
 
-- 配套阅读：[向量数据库对比](./chapters/03-rag/agent-camp-rag-vector-db)、[混合检索](./chapters/03-rag/agent-camp-rag-hybrid-search)、[重排序](./chapters/03-rag/agent-camp-rag-reranking)、[RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation)  
+- 配套阅读：[向量数据库对比](/chapters/03-rag/agent-camp-rag-vector-db)、[混合检索](/chapters/03-rag/agent-camp-rag-hybrid-search)、[重排序](/chapters/03-rag/agent-camp-rag-reranking)、[RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation)  
   为什么读：选型题不是孤立知识点，它要把检索底层、召回融合、精排和评估串起来。
 

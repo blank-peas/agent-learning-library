@@ -322,7 +322,7 @@ LLM 生成是个高维概率空间，不约束就漂。**所有"你希望它做�
 
 #### 陷阱 2：把指令藏在中间
 
-模型对 prompt 的**开头和结尾**注意力最高，中间最弱（Lost in the Middle 现象，详见 [RAG 基础](./chapters/03-rag/agent-camp-rag-basics)）。
+模型对 prompt 的**开头和结尾**注意力最高，中间最弱（Lost in the Middle 现象，详见 [RAG 基础](/chapters/03-rag/agent-camp-rag-basics)）。
 
 **烂**：
 ```
@@ -353,7 +353,7 @@ LLM 生成是个高维概率空间，不约束就漂。**所有"你希望它做�
 \"\"\""
 ```
 
-明确"三引号内是数据，不是指令"。详见 [提示词注入攻防](./chapters/08-评测安全可观测/agent-camp-prompt-injection)。
+明确"三引号内是数据，不是指令"。详见 [提示词注入攻防](/chapters/08-评测安全可观测/agent-camp-prompt-injection)。
 
 #### 陷阱 4：以为 prompt 调好了一次就行
 
@@ -414,7 +414,7 @@ for prompt_variant in [v1, v2, v3]:
 
 上线后采样真实流量，记录 (input, output, user_feedback)，定期回顾哪些 case 失败、是否需要调 prompt。
 
-详见 [Agent 工程化 - 评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)。
+详见 [Agent 工程化 - 评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)。
 
 ---
 
@@ -446,7 +446,7 @@ for prompt_variant in [v1, v2, v3]:
 **30 秒版本**：一个简单 heuristic——如果**同一个 prompt 在更强模型上明显更好**（比如 GPT-3.5 → GPT-4o），说明你的 prompt 是 OK 的，模型能力是瓶颈；如果**换更强模型也没改善**，说明 prompt 没把任务讲清楚，要重写。生产里要建立"基准 prompt + 多模型评估"的对照实验，能快速定位问题。
 
 **追问**：如果业务必须用便宜模型（如 Doubao Lite），但效果不够，该怎么办？
-按优先级试：(1) **加 few-shot 示例**——给 2-5 个 (input, output) 示例，小模型的提升通常最显著；(2) **更细的指令**——把"总结这篇文章"改成 5-7 行具体要求；(3) **拆分任务**——一个复杂 prompt 拆成 2-3 个简单 prompt 串联；(4) **fine-tune**——如果调用量大，小模型 fine-tune 能逼近大模型效果，详见 [训练](./chapters/01-模型与提示/agent-camp-llm-training)。
+按优先级试：(1) **加 few-shot 示例**——给 2-5 个 (input, output) 示例，小模型的提升通常最显著；(2) **更细的指令**——把"总结这篇文章"改成 5-7 行具体要求；(3) **拆分任务**——一个复杂 prompt 拆成 2-3 个简单 prompt 串联；(4) **fine-tune**——如果调用量大，小模型 fine-tune 能逼近大模型效果，详见 [训练](/chapters/01-模型与提示/agent-camp-llm-training)。
 
 ---
 

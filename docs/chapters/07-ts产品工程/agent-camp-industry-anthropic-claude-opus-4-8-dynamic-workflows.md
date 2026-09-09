@@ -51,11 +51,11 @@ Dynamic Workflows 和本站几篇文章形成了一条很清晰的链：
 
 | 站内概念 | Dynamic Workflows 对应形态 |
 |---|---|
-| [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering) | 不再手动续 prompt，而是系统调度多个执行循环 |
-| [Orchestrator-Worker](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) | 主控 Claude 拆任务，subagents 执行局部工作 |
-| [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness) | 每个子任务仍需要状态、工具、验证和恢复 |
-| [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) | 并行任务必须能 trace 到每个 subagent 的输入和输出 |
-| [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) | 大任务成败不能靠最终主观判断，要靠测试和回归集 |
+| [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering) | 不再手动续 prompt，而是系统调度多个执行循环 |
+| [Orchestrator-Worker](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker) | 主控 Claude 拆任务，subagents 执行局部工作 |
+| [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness) | 每个子任务仍需要状态、工具、验证和恢复 |
+| [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) | 并行任务必须能 trace 到每个 subagent 的输入和输出 |
+| [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) | 大任务成败不能靠最终主观判断，要靠测试和回归集 |
 
 如果你自己设计类似系统，最容易漏掉的不是“怎么启动很多 Agent”，而是下面这些问题：
 
@@ -67,11 +67,11 @@ Dynamic Workflows 和本站几篇文章形成了一条很清晰的链：
 
 ### 和本站章节的关系
 
-- [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)：Dynamic Workflows 是产品化 loop engineering 的典型例子。
-- [多 Agent 架构模式](./chapters/05-编排与多agent/agent-camp-multi-agent-patterns)：它更接近 orchestrator-worker，而不是自由网络式 multi-agent。
-- [调度者-工作者模式](./chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)：理解主控层如何拆任务、并行、聚合。
-- [Agent Harness 设计](./chapters/09-codingagent/agent-camp-engineering-harness)：每个 subagent 都需要 harness，不能只是裸模型调用。
-- [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)：数百 subagents 会把 token 和并发成本推到新量级。
+- [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)：Dynamic Workflows 是产品化 loop engineering 的典型例子。
+- [多 Agent 架构模式](/chapters/05-编排与多agent/agent-camp-multi-agent-patterns)：它更接近 orchestrator-worker，而不是自由网络式 multi-agent。
+- [调度者-工作者模式](/chapters/05-编排与多agent/agent-camp-multi-agent-orchestrator-worker)：理解主控层如何拆任务、并行、聚合。
+- [Agent Harness 设计](/chapters/09-codingagent/agent-camp-engineering-harness)：每个 subagent 都需要 harness，不能只是裸模型调用。
+- [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)：数百 subagents 会把 token 和并发成本推到新量级。
 
 ### 面试追问
 

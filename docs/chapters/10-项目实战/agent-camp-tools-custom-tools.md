@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：这是工具调用专题的"集大成"文章。schema 字段细节请看 [Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)；错误返回结构看 [错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)；隔离执行环境看 [沙箱](./chapters/07-ts产品工程/agent-camp-tools-sandbox);  跨进程协议看 [MCP](./chapters/04-工具与mcp/agent-camp-tools-mcp)；并发触发看 [并行调用](./chapters/04-工具与mcp/agent-camp-tools-parallel)。本文聚焦把这些拼到一个可落地的开发流程里。
+> **本文边界**：这是工具调用专题的"集大成"文章。schema 字段细节请看 [Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)；错误返回结构看 [错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)；隔离执行环境看 [沙箱](/chapters/07-ts产品工程/agent-camp-tools-sandbox);  跨进程协议看 [MCP](/chapters/04-工具与mcp/agent-camp-tools-mcp)；并发触发看 [并行调用](/chapters/04-工具与mcp/agent-camp-tools-parallel)。本文聚焦把这些拼到一个可落地的开发流程里。
 
 ### 面试官想考什么
 
@@ -196,7 +196,7 @@ def list_files_next(cursor: Cursor) -> list: ...
 
 ### 阶段 3：Schema 编写
 
-需求和接口定下来，Schema 就是把这俩翻译成 JSON Schema。这部分细节在 [Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) 里全讲了，这里只强调三个**容易在工具开发流程里被忽略的点**：
+需求和接口定下来，Schema 就是把这俩翻译成 JSON Schema。这部分细节在 [Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design) 里全讲了，这里只强调三个**容易在工具开发流程里被忽略的点**：
 
 1. **description 不是注释，是 prompt** —— 它会被拼进 system prompt 给模型看。写 description 时换上"模型读者"的视角：模型看到这句话能不能判断要不要调？参数怎么填？
 2. **enum 比 string 安全** —— 凡是值域有限的字段（sort、status、type、language），全部用 enum。string 就是给模型留漏洞。
@@ -221,7 +221,7 @@ def list_files_next(cursor: Cursor) -> list: ...
 | 5 | 幂等性 | 同样参数调两次结果一致（写操作要更小心） |
 | 6 | 副作用隔离 | 写操作必须有 dry-run 或 confirm 机制 |
 
-错误处理的具体结构（return 还是 raise、错误信息怎么写）在 [错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling) 里详细展开。这里只记一条：**能让模型重试的错误，return 一个清楚的 error**；不能让模型重试的错误（鉴权失败、系统故障），让上层 agent loop catch 后停。
+错误处理的具体结构（return 还是 raise、错误信息怎么写）在 [错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling) 里详细展开。这里只记一条：**能让模型重试的错误，return 一个清楚的 error**；不能让模型重试的错误（鉴权失败、系统故障），让上层 agent loop catch 后停。
 
 ---
 
@@ -272,7 +272,7 @@ def test_schema_matches_impl():
 3. **schema 变更走 minor version**：兼容性变更（加 optional 字段）可以热更，break 变更（删字段、改类型）必须新版本号
 4. **监控埋点至少包含**：调用次数、p50/p95 延迟、按错误码分组的失败率、参数取值分布
 
-观测体系的设计原则见 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)。
+观测体系的设计原则见 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)。
 
 ---
 
@@ -424,7 +424,7 @@ def run_llm_eval(llm_client) -> dict:
 2. **多个 Agent / 服务共用 + 你自己控制** → HTTP API
 3. **要给别人（包括别的厂商的 Agent）用 + 要标准化** → MCP server
 
-[MCP](./chapters/04-工具与mcp/agent-camp-tools-mcp) 协议的本质就是"把工具调用从 Agent 进程里搬出去、用标准化协议跨进程通信"——本地函数和 HTTP API 是 MCP 之前的两种过渡形态。在 Claude Code / Cursor 这种"通用 IDE Agent"里，MCP 是事实标准；在内部业务 Agent 里，本地函数仍然是性价比最高的。
+[MCP](/chapters/04-工具与mcp/agent-camp-tools-mcp) 协议的本质就是"把工具调用从 Agent 进程里搬出去、用标准化协议跨进程通信"——本地函数和 HTTP API 是 MCP 之前的两种过渡形态。在 Claude Code / Cursor 这种"通用 IDE Agent"里，MCP 是事实标准；在内部业务 Agent 里，本地函数仍然是性价比最高的。
 
 实战做法：**核心实现写成纯函数**，然后用薄壳分别包装成三种形态。
 
@@ -538,7 +538,7 @@ Cursor 的代码修改工具叫 `apply`，输入是 `(file_path, old_string, new
 
 **根因**：工具开发者用"函数思维"——出错就抛异常。但 Agent 场景下，工具是给模型用的，错误要让**模型能读懂并自我修正**。
 
-**修法**：永远 return 一个结构化错误对象，不要 raise。详见 [错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling)。
+**修法**：永远 return 一个结构化错误对象，不要 raise。详见 [错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling)。
 
 #### 陷阱 5：忘了 timeout
 
@@ -546,7 +546,7 @@ Cursor 的代码修改工具叫 `apply`，输入是 `(file_path, old_string, new
 
 **根因**：HTTP 调用、子进程、文件读写——任何 IO 都可能卡。`requests.get(url)` 不带 timeout 会**永远等下去**。
 
-**修法**：所有 IO 必须带 timeout。子进程必须有 kill 机制。复杂工具用 [沙箱](./chapters/07-ts产品工程/agent-camp-tools-sandbox) 隔离。
+**修法**：所有 IO 必须带 timeout。子进程必须有 kill 机制。复杂工具用 [沙箱](/chapters/07-ts产品工程/agent-camp-tools-sandbox) 隔离。
 
 #### 陷阱 6：没有版本管理
 
@@ -560,7 +560,7 @@ Cursor 的代码修改工具叫 `apply`，输入是 `(file_path, old_string, new
 
 **现象**：description 写"Search GitHub repos via REST API v3"。看起来很专业，但模型读完根本不知道"什么时候该用"。
 
-**根因**：description 在 prompt 里——它是 prompt 工程的一部分，不是 API 文档。详见 [Prompt 模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates) 的相关讨论。
+**根因**：description 在 prompt 里——它是 prompt 工程的一部分，不是 API 文档。详见 [Prompt 模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates) 的相关讨论。
 
 **修法**：description 第一句话回答"做什么"，第二句话回答"什么时候用"（带例子），第三句话回答"什么时候不要用"（带反例）。三句话内说完。
 
@@ -612,7 +612,7 @@ debug 顺序：(1) 检查 description——是不是没写"什么时候用"的�
 四类最典型。(1) **字段名近似但不一致**——模型填 `lang` 你要 `language`，改 enum 或加 alias；(2) **enum 值发明**——模型填 `sort: "popularity"` 你只接受 `stars`/`updated`，要么扩 enum 要么在 description 里明确"sort 只能是 X 或 Y"；(3) **格式漂移**——日期填 "明天" 而不是 ISO 字符串，在 description 里给一个具体例子；(4) **必需字段缺失**——把 optional 字段 description 写成"和 X 一起使用"暗示了必需性。这些都是 schema 层的修正点，不要去改实现。
 
 **追问**：怎么持续监控这种问题不让它复发？
-两件事。(1) 把"参数填错率"做成持续指标——每天看一次，超过阈值（比如 5%）就触发 alert；(2) 把上面的"近似错误模式"做成 [LLM-as-judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 的检测器——专门用一个小模型扫近期调用，发现"调用了正确工具但参数语义可疑"的 case，人工 review。这两件事在 [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 那篇文章里有更系统的设计。
+两件事。(1) 把"参数填错率"做成持续指标——每天看一次，超过阈值（比如 5%）就触发 alert；(2) 把上面的"近似错误模式"做成 [LLM-as-judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 的检测器——专门用一个小模型扫近期调用，发现"调用了正确工具但参数语义可疑"的 case，人工 review。这两件事在 [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 那篇文章里有更系统的设计。
 
 #### Q: 本地函数 / HTTP API / MCP server 三种实现选哪种？
 
@@ -635,7 +635,7 @@ debug 顺序：(1) 检查 description——是不是没写"什么时候用"的�
   OpenAI 的 strict mode 文档值得读——它把"schema 一致性"做成了 API 层强约束，能学到一种工业级的做法。
 
 - **官方规范：Model Context Protocol** ([modelcontextprotocol.io](https://modelcontextprotocol.io/))
-  MCP 协议规范。读 Architecture 和 Tools 两章就能理解 MCP 怎么把工具开发标准化。本站 [MCP 详解](./chapters/04-工具与mcp/agent-camp-tools-mcp) 里有更深的对比。
+  MCP 协议规范。读 Architecture 和 Tools 两章就能理解 MCP 怎么把工具开发标准化。本站 [MCP 详解](/chapters/04-工具与mcp/agent-camp-tools-mcp) 里有更深的对比。
 
 - **博客：Anthropic - Building Effective Agents** ([anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents))
   Anthropic 工程团队写的 Agent 设计原则，里面对工具设计有大段讨论——尤其"Tool descriptions are prompts"的观点和本文阶段 1 / 阶段 3 的判断完全一致。
@@ -644,12 +644,12 @@ debug 顺序：(1) 检查 description——是不是没写"什么时候用"的�
   看 `BaseTool` 类怎么从 Pydantic 反生成 JSON Schema、怎么处理参数校验——这是"schema 和实现单一真相源"的工业级实现参考。
 
 - **配套阅读**：
-  - [Function Calling 基础](./chapters/04-工具与mcp/agent-camp-tools-function-calling) — 工具调用的底层协议机制
-  - [Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design) — 本文阶段 3 的字段级深挖
-  - [错误处理](./chapters/04-工具与mcp/agent-camp-tools-error-handling) — 本文阶段 4 的错误结构化深挖
-  - [沙箱执行](./chapters/07-ts产品工程/agent-camp-tools-sandbox) — 本文阶段 4 的隔离方案深挖
-  - [并行调用](./chapters/04-工具与mcp/agent-camp-tools-parallel) — 本文阶段 4 的并发优化深挖
-  - [MCP 协议](./chapters/04-工具与mcp/agent-camp-tools-mcp) — 本文工具形态章节的跨进程方案
-  - [Prompt 模板工程化](./chapters/01-模型与提示/agent-camp-prompt-templates) — description 作为 prompt 的工程管理
-  - [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) — 本文阶段 6 的监控埋点深挖
+  - [Function Calling 基础](/chapters/04-工具与mcp/agent-camp-tools-function-calling) — 工具调用的底层协议机制
+  - [Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design) — 本文阶段 3 的字段级深挖
+  - [错误处理](/chapters/04-工具与mcp/agent-camp-tools-error-handling) — 本文阶段 4 的错误结构化深挖
+  - [沙箱执行](/chapters/07-ts产品工程/agent-camp-tools-sandbox) — 本文阶段 4 的隔离方案深挖
+  - [并行调用](/chapters/04-工具与mcp/agent-camp-tools-parallel) — 本文阶段 4 的并发优化深挖
+  - [MCP 协议](/chapters/04-工具与mcp/agent-camp-tools-mcp) — 本文工具形态章节的跨进程方案
+  - [Prompt 模板工程化](/chapters/01-模型与提示/agent-camp-prompt-templates) — description 作为 prompt 的工程管理
+  - [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) — 本文阶段 6 的监控埋点深挖
 

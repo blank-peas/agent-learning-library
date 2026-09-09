@@ -330,5 +330,5 @@ def action(self, description: str, **kwargs):
 - **[Browser Use 官方文档](https://docs.browser-use.com)** — 理解 use_vision、自定义 action、并行任务等用法
 - **[OpenAI Operator / Computer Use](https://openai.com/index/computer-using-agent/)** — 闭源对标。理解端到端 vision Agent（直接输出坐标）和 Browser Use 的"vision + 索引"混合方案的区别
 - **[Anthropic Computer Use](https://docs.anthropic.com/en/docs/build-with-claude/computer-use)** — Claude 的 computer use 工具。同样是 GUI Agent，但走截图 + 坐标路线，和 Browser Use 的 DOM 索引路线形成对比
-- **[Claude Code 源码剖析](./chapters/09-codingagent/agent-camp-source-claude-code)** — 编程 Agent 的对照。浏览器 Agent（操作动态 GUI）和编程 Agent（操作文件/命令）是两类 Agent，对比能理解"环境的确定性"如何决定 Agent 的设计
+- **[Claude Code 源码剖析](/chapters/09-codingagent/agent-camp-source-claude-code)** — 编程 Agent 的对照。浏览器 Agent（操作动态 GUI）和编程 Agent（操作文件/命令）是两类 Agent，对比能理解"环境的确定性"如何决定 Agent 的设计
 

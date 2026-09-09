@@ -20,7 +20,7 @@
 
 
 
-> **本文边界**：聚焦 LlamaIndex Workflows 的设计理念和使用方法。图编排范式见 [LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph)；编排模式的通用理论见 [编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns)；LlamaIndex 框架全貌见 [LlamaIndex 框架](./chapters/07-ts产品工程/agent-camp-frameworks-llamaindex)。
+> **本文边界**：聚焦 LlamaIndex Workflows 的设计理念和使用方法。图编排范式见 [LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph)；编排模式的通用理论见 [编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns)；LlamaIndex 框架全貌见 [LlamaIndex 框架](/chapters/07-ts产品工程/agent-camp-frameworks-llamaindex)。
 
 ### 面试官想考什么
 
@@ -351,5 +351,5 @@ result = await workflow.run(query="什么是 RAG？")
 - **Arize AI：LlamaIndex Workflows** ([arize.com/blog/llamaindex-workflows](https://arize.com/blog/llamaindex-workflows-a-new-way-to-build-cyclical-agents/))
   Arize 团队的分析，侧重可观测性和调试——这正是事件驱动架构的痛点。
 
-- **配套阅读**：[LangGraph 深度解析](./chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 图编排范式的对照；[编排模式](./chapters/05-编排与多agent/agent-camp-workflow-patterns) — 四种基础控制流模式；[LlamaIndex 框架](./chapters/07-ts产品工程/agent-camp-frameworks-llamaindex) — LlamaIndex 生态全貌。
+- **配套阅读**：[LangGraph 深度解析](/chapters/05-编排与多agent/agent-camp-workflow-langgraph) — 图编排范式的对照；[编排模式](/chapters/05-编排与多agent/agent-camp-workflow-patterns) — 四种基础控制流模式；[LlamaIndex 框架](/chapters/07-ts产品工程/agent-camp-frameworks-llamaindex) — LlamaIndex 生态全貌。
 

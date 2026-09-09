@@ -44,9 +44,9 @@ harness 和 sandbox 的分离也很重要。harness 负责把模型意图翻译�
 
 ### 和本站章节的关系
 
-- [Agent 运行循环](./chapters/07-ts产品工程/agent-camp-agent-agent-loop)
-- [工具沙箱与权限](./chapters/07-ts产品工程/agent-camp-tools-sandbox)
-- [Agent 工程化 - 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)
+- [Agent 运行循环](/chapters/07-ts产品工程/agent-camp-agent-agent-loop)
+- [工具沙箱与权限](/chapters/07-ts产品工程/agent-camp-tools-sandbox)
+- [Agent 工程化 - 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)
 - [流程编排 Workflow](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

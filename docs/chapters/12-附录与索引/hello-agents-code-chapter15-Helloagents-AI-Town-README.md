@@ -23,14 +23,14 @@
 
 ### 📦 快速开始
 
-详见 [SETUP_GUIDE.md](./chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-SETUP-GUIDE)
+详见 [SETUP_GUIDE.md](/chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-SETUP-GUIDE)
 
 ### 📚 文档
 
-- [安装配置指南](./chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-SETUP-GUIDE)
-- [对话日志系统](./chapters/07-ts产品工程/hello-agents-code-chapter15-Helloagents-AI-Town-DIALOGUE-LOG-GUIDE)
-- [好感度系统](./chapters/07-ts产品工程/hello-agents-code-chapter15-Helloagents-AI-Town-AFFINITY-SYSTEM-GUIDE)
-- [记忆系统](./chapters/06-上下文与记忆/hello-agents-code-chapter15-Helloagents-AI-Town-MEMORY-SYSTEM-GUIDE)
+- [安装配置指南](/chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-SETUP-GUIDE)
+- [对话日志系统](/chapters/07-ts产品工程/hello-agents-code-chapter15-Helloagents-AI-Town-DIALOGUE-LOG-GUIDE)
+- [好感度系统](/chapters/07-ts产品工程/hello-agents-code-chapter15-Helloagents-AI-Town-AFFINITY-SYSTEM-GUIDE)
+- [记忆系统](/chapters/06-上下文与记忆/hello-agents-code-chapter15-Helloagents-AI-Town-MEMORY-SYSTEM-GUIDE)
 
 ### 📖 教程
 

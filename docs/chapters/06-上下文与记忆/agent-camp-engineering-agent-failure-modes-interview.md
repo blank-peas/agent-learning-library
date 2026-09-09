@@ -22,7 +22,7 @@
 
 > 真实 Agent 线上问题很少长得像“模型不会答”。更多时候是：RAG 捞出两份互相矛盾的资料，长期记忆和最新输入打架，Planner 一直重新规划，工具失败后反复重试。
 
-> **本文边界**：[RAG 选型面试深挖](./chapters/03-rag/agent-camp-rag-rag-selection-interview) 讲方案选择，[RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation) 讲指标，[Memory Governance](./chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview) 讲长期记忆治理，[工具调用死循环](./chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview) 讲工具 loop，[规划算法](./chapters/02-agent原理/agent-camp-agent-planning) 和 [Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute) 讲规划机制。本文只讲面试里更难的那层：**工程异常出现后怎么归因、裁决、停止、降级和复盘**。
+> **本文边界**：[RAG 选型面试深挖](/chapters/03-rag/agent-camp-rag-rag-selection-interview) 讲方案选择，[RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation) 讲指标，[Memory Governance](/chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview) 讲长期记忆治理，[工具调用死循环](/chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview) 讲工具 loop，[规划算法](/chapters/02-agent原理/agent-camp-agent-planning) 和 [Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute) 讲规划机制。本文只讲面试里更难的那层：**工程异常出现后怎么归因、裁决、停止、降级和复盘**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位里反复出现的系统深挖题。所有案例都改写成通用业务 Agent，不出现可识别组织、具体案例、真实数量、业务口径数字、内部称呼或私有数据。
 
@@ -190,7 +190,7 @@ RAG doc: 报告系统支持 PDF、Markdown、HTML。
 | 模型推断出的偏好 | 低 | 默认不应覆盖明确事实 |
 | 过期或 superseded 记忆 | 不注入 | 只能审计，不参与回答 |
 
-这部分和 [Memory Governance 面试深挖](./chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview) 的原则一致：长期记忆要有 `source`、`confidence`、`expires_at`、`status`、`supersedes`。没有这些字段，冲突时只能靠模型猜。
+这部分和 [Memory Governance 面试深挖](/chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview) 的原则一致：长期记忆要有 `source`、`confidence`、`expires_at`、`status`、`supersedes`。没有这些字段，冲突时只能靠模型猜。
 
 面试时可以这么答：
 
@@ -446,7 +446,7 @@ if __name__ == "__main__":
 - human escalation precision：转人工的样本是否值得转。
 - regression pass rate：修复后旧 case 有没有回退。
 
-这和 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 是同一套闭环：trace -> badcase -> slice -> regression。
+这和 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 是同一套闭环：trace -> badcase -> slice -> regression。
 
 ### 常见陷阱
 
@@ -502,11 +502,11 @@ if __name__ == "__main__":
 
 | 文章 | 解决的问题 | 本文的边界 |
 |---|---|---|
-| [RAG 选型面试深挖](./chapters/03-rag/agent-camp-rag-rag-selection-interview) | 托管/自建、向量库、评估指标和退出条件 | 本文只讲检索后证据冲突怎么裁决 |
-| [RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation) | retrieval / grounding / answer quality 指标 | 本文补充 conflict、abstain、planner_loop 这些异常 slice |
-| [Memory Governance](./chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview) | 记忆写入、TTL、权限、覆盖 | 本文只讲 memory 与当前输入/RAG 冲突时怎么决策 |
-| [工具调用死循环](./chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview) | 工具重复调用、状态机和 loop guard | 本文把工具循环放进更大的异常处理框架 |
-| [Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute) | 规划/执行/重规划模式 | 本文专讲规划死循环和停止条件 |
+| [RAG 选型面试深挖](/chapters/03-rag/agent-camp-rag-rag-selection-interview) | 托管/自建、向量库、评估指标和退出条件 | 本文只讲检索后证据冲突怎么裁决 |
+| [RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation) | retrieval / grounding / answer quality 指标 | 本文补充 conflict、abstain、planner_loop 这些异常 slice |
+| [Memory Governance](/chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview) | 记忆写入、TTL、权限、覆盖 | 本文只讲 memory 与当前输入/RAG 冲突时怎么决策 |
+| [工具调用死循环](/chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview) | 工具重复调用、状态机和 loop guard | 本文把工具循环放进更大的异常处理框架 |
+| [Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute) | 规划/执行/重规划模式 | 本文专讲规划死循环和停止条件 |
 
 ### 面试题深度解析
 
@@ -579,9 +579,9 @@ max_steps 是保险丝，不是修复。真正修复是 stop condition 和状态
 
 配套阅读：
 
-- [RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation)：把 conflict slice 接进 retrieval / grounding / answer quality 评估体系。
-- [Memory Governance 面试深挖](./chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview)：长期记忆冲突、覆盖和 TTL 的详细治理方案。
-- [工具调用死循环面试深挖](./chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview)：重复 tool call、no-progress detector 和 loop guard 的细节。
-- [Plan-and-Execute](./chapters/05-编排与多agent/agent-camp-agent-plan-execute)：规划/执行/重规划的基本模式。
-- [Agent 线上质量治理面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：把异常 trace 回流到 badcase 和回归集。
+- [RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation)：把 conflict slice 接进 retrieval / grounding / answer quality 评估体系。
+- [Memory Governance 面试深挖](/chapters/06-上下文与记忆/agent-camp-context-memory-governance-interview)：长期记忆冲突、覆盖和 TTL 的详细治理方案。
+- [工具调用死循环面试深挖](/chapters/04-工具与mcp/agent-camp-tools-tool-loop-interview)：重复 tool call、no-progress detector 和 loop guard 的细节。
+- [Plan-and-Execute](/chapters/05-编排与多agent/agent-camp-agent-plan-execute)：规划/执行/重规划的基本模式。
+- [Agent 线上质量治理面试深挖](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：把异常 trace 回流到 badcase 和回归集。
 

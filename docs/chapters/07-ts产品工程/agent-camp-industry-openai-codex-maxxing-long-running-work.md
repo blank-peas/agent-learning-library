@@ -15,7 +15,7 @@
 
 这篇文章配套一份由 Jason Liu 撰写的 guide，主题很直接：组织如何把 Codex 当成一个持续 workspace，而不是一次性 prompt 工具。它讨论的不是“怎么写一个更好的提示词”，而是怎么把大目标拆成可验证步骤、在多个工作流之间保持连续性、以及什么时候该把执行交给 Codex、什么时候人类必须接管。
 
-这和本站的 [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering) 非常贴：长周期 Agent 的关键不是让模型一直思考，而是给它稳定的目标、状态、验证和监督边界。
+这和本站的 [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering) 非常贴：长周期 Agent 的关键不是让模型一直思考，而是给它稳定的目标、状态、验证和监督边界。
 
 ### 核心内容
 
@@ -63,11 +63,11 @@
 
 ### 和本站章节的关系
 
-- [Loop Engineering](./chapters/01-模型与提示/agent-camp-engineering-loop-engineering)：Codex-Maxxing 是 loop engineering 的使用侧实践。
-- [Agent Harness](./chapters/09-codingagent/agent-camp-engineering-harness)：persistent workspace 需要任务状态、验证、checkpoint。
-- [Agent Runtime](./chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：组织内长周期工作需要运行时治理，而不只是个人技巧。
-- [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)：长期运行必须能追踪每个步骤和输出。
-- [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation)：verifiable steps 最终要进入回归集。
+- [Loop Engineering](/chapters/01-模型与提示/agent-camp-engineering-loop-engineering)：Codex-Maxxing 是 loop engineering 的使用侧实践。
+- [Agent Harness](/chapters/09-codingagent/agent-camp-engineering-harness)：persistent workspace 需要任务状态、验证、checkpoint。
+- [Agent Runtime](/chapters/07-ts产品工程/agent-camp-engineering-agent-runtime)：组织内长周期工作需要运行时治理，而不只是个人技巧。
+- [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)：长期运行必须能追踪每个步骤和输出。
+- [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation)：verifiable steps 最终要进入回归集。
 
 ### 面试追问
 

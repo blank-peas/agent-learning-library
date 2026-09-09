@@ -22,7 +22,7 @@
 
 > DAU 只能证明有人进来，不能证明 Agent 有价值。价值要落到完成了多少任务、少转了多少人工、少花了多少时间、质量有没有掉。
 
-> **本文边界**：线上质量归因、自动裁判和 badcase 回归见 [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)；成本压缩、模型路由和 batch 见 [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)；模型选型与灰度见 [模型选型与持续重评](./chapters/01-模型与提示/agent-camp-llm-model-selection-interview)。本文专讲面试里“上线后效果怎么样”的回答框架。
+> **本文边界**：线上质量归因、自动裁判和 badcase 回归见 [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)；成本压缩、模型路由和 batch 见 [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)；模型选型与灰度见 [模型选型与持续重评](/chapters/01-模型与提示/agent-camp-llm-model-selection-interview)。本文专讲面试里“上线后效果怎么样”的回答框架。
 
 > **脱敏说明**：本文抽象自多场 Agent 工程岗位里的效果追问。所有数字都使用示例数据，不对应任何真实业务。
 
@@ -303,7 +303,7 @@ Net Value =
 上线前用离线 eval 做准入，上线后用小流量灰度看真实 outcome。主指标是核心任务完成或自动化率，护栏指标是投诉、重复咨询、转人工、延迟和成本。只有主指标升、护栏不恶化，才扩大流量。
 ```
 
-这和 [评估体系](./chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 里的关系一样：离线 eval 是上线前的过滤器，A/B 是上线后的真实检验。
+这和 [评估体系](/chapters/08-评测安全可观测/agent-camp-engineering-evaluation) 里的关系一样：离线 eval 是上线前的过滤器，A/B 是上线后的真实检验。
 
 ### 指标冲突时怎么决策
 
@@ -419,11 +419,11 @@ P95 延迟 4.2 秒
 
 | 文章 | 重点 | 本文不重复什么 |
 |---|---|---|
-| [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | 技术质量、badcase、自动裁判 | 不展开 judge 和归因细节 |
-| [成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | 降低 token、延迟和推理成本 | 不把 ROI 简化成模型账单 |
-| [模型选型与持续重评](./chapters/01-模型与提示/agent-camp-llm-model-selection-interview) | 模型候选评估和灰度 | 不展开模型能力对比 |
-| [可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) | trace/span 和调试链路 | 不讲工具平台选型 |
-| [AI Coding SDLC](./chapters/11-面试与求职/agent-camp-engineering-ai-coding-sdlc-interview) | AI 编码流程和团队质量门禁 | 不聚焦研发效能指标 |
+| [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | 技术质量、badcase、自动裁判 | 不展开 judge 和归因细节 |
+| [成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization) | 降低 token、延迟和推理成本 | 不把 ROI 简化成模型账单 |
+| [模型选型与持续重评](/chapters/01-模型与提示/agent-camp-llm-model-selection-interview) | 模型候选评估和灰度 | 不展开模型能力对比 |
+| [可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) | trace/span 和调试链路 | 不讲工具平台选型 |
+| [AI Coding SDLC](/chapters/11-面试与求职/agent-camp-engineering-ai-coding-sdlc-interview) | AI 编码流程和团队质量门禁 | 不聚焦研发效能指标 |
 
 本文回答的是“这个 Agent 值不值得继续投”，不是“它技术上有没有做对”。
 
@@ -509,6 +509,6 @@ hard savings 是预算真的减少，例如外包量下降、加班下降、单�
 - [METR: Measuring AI Ability to Complete Long Tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)  
   为什么读：task horizon 是衡量 Agent 能力和真实影响的一个好视角，不只看单步 benchmark。
 
-- 配套阅读：[Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)、[成本优化](./chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)、[模型选型与持续重评](./chapters/01-模型与提示/agent-camp-llm-model-selection-interview)、[可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)。  
+- 配套阅读：[Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)、[成本优化](/chapters/07-ts产品工程/agent-camp-engineering-cost-optimization)、[模型选型与持续重评](/chapters/01-模型与提示/agent-camp-llm-model-selection-interview)、[可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)。  
   为什么读：业务效果要落到 trace、质量、成本和灰度上，不能孤立看。
 

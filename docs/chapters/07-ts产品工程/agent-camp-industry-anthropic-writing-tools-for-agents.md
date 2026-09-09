@@ -44,9 +44,9 @@
 
 ### 和本站章节的关系
 
-- [工具 Schema 设计](./chapters/07-ts产品工程/agent-camp-tools-schema-design)
-- [自定义工具开发](./chapters/10-项目实战/agent-camp-tools-custom-tools)
-- [错误处理与重试](./chapters/04-工具与mcp/agent-camp-tools-error-handling)
+- [工具 Schema 设计](/chapters/07-ts产品工程/agent-camp-tools-schema-design)
+- [自定义工具开发](/chapters/10-项目实战/agent-camp-tools-custom-tools)
+- [错误处理与重试](/chapters/04-工具与mcp/agent-camp-tools-error-handling)
 - [工具调用](https://github.com/yibo365/agent-camp)
 
 ### 面试追问

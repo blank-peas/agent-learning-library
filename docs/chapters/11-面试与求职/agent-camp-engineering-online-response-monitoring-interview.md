@@ -22,7 +22,7 @@
 
 > HTTP 200 只能说明接口返回了。Agent 的线上健康要继续追问：有没有答对、有没有按工具结果答、有没有越界、有没有让用户继续追问、有没有把失败伪装成成功。
 
-> **本文边界**：[Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) 讲 trace/span 怎么采集和排查；[Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 讲 badcase、eval 和回归闭环；[LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) 讲裁判模型偏差与校准；[Agent 流式输出安全](./chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview) 讲流式输出安全 gate。本文只回答一个更线上化的问题：**服务已经上线，怎么持续监测每一类回复是否“正常”并触发告警**。
+> **本文边界**：[Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) 讲 trace/span 怎么采集和排查；[Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) 讲 badcase、eval 和回归闭环；[LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) 讲裁判模型偏差与校准；[Agent 流式输出安全](/chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview) 讲流式输出安全 gate。本文只回答一个更线上化的问题：**服务已经上线，怎么持续监测每一类回复是否“正常”并触发告警**。
 
 > **脱敏说明**：本文来自多场 Agent 工程岗位里反复出现的上线追问。所有案例都改写成通用业务 Agent，不出现可识别组织、具体案例、真实数量、业务口径数字、内部称呼或私有数据。
 
@@ -226,7 +226,7 @@ response 却给了一个具体天数
 - context support judge：答案是否被上下文支持。
 - no-answer case：检索低置信时是否拒答或澄清。
 
-这和 [RAG 评估](./chapters/08-评测安全可观测/agent-camp-rag-evaluation) 里的 faithfulness 一致，但线上要更轻量：高风险问题必评，普通流量抽样。
+这和 [RAG 评估](/chapters/08-评测安全可观测/agent-camp-rag-evaluation) 里的 faithfulness 一致，但线上要更轻量：高风险问题必评，普通流量抽样。
 
 #### 4. Safety Drift：安全边界变松
 
@@ -256,7 +256,7 @@ final answer 始终未生成
 - no-new-state rounds。
 - max_steps forced stop rate。
 
-这和 [Agent 工程异常处理](./chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview) 里的规划死循环是一组问题。线上要把 loop abort rate 做成指标。
+这和 [Agent 工程异常处理](/chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview) 里的规划死循环是一组问题。线上要把 loop abort rate 做成指标。
 
 #### 6. Silent Degradation：某个版本发布后质量慢慢变差
 
@@ -553,11 +553,11 @@ Agent 退化常发生在发布后：
 
 | 文章 | 解决的问题 | 本文的边界 |
 |---|---|---|
-| [Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability) | trace/span 怎么采集、工具怎么选、投诉怎么反查 | 本文讲采集后如何定义线上回复健康和告警 |
-| [Agent 线上质量治理](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | badcase、裁判、回归集和质量治理闭环 | 本文更偏在线监测、实时信号、采样和告警 |
-| [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge) | 裁判模型偏差、校准和 pairwise/pointwise | 本文只把 judge 当一类异步监测信号 |
-| [Agent 工程异常处理](./chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview) | RAG 冲突、记忆冲突、规划死循环等异常处理 | 本文讲这些异常上线后怎么被发现 |
-| [Agent 流式输出安全](./chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview) | 流式输出前后的安全审查 | 本文把安全结果纳入线上 health event |
+| [Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability) | trace/span 怎么采集、工具怎么选、投诉怎么反查 | 本文讲采集后如何定义线上回复健康和告警 |
+| [Agent 线上质量治理](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview) | badcase、裁判、回归集和质量治理闭环 | 本文更偏在线监测、实时信号、采样和告警 |
+| [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge) | 裁判模型偏差、校准和 pairwise/pointwise | 本文只把 judge 当一类异步监测信号 |
+| [Agent 工程异常处理](/chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview) | RAG 冲突、记忆冲突、规划死循环等异常处理 | 本文讲这些异常上线后怎么被发现 |
+| [Agent 流式输出安全](/chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview) | 流式输出前后的安全审查 | 本文把安全结果纳入线上 health event |
 
 ### 面试题深度解析
 
@@ -628,9 +628,9 @@ trace 必须带模型、prompt、工具 schema、RAG index、guardrail 版本。
 
 配套阅读：
 
-- [Agent 可观测性](./chapters/08-评测安全可观测/agent-camp-engineering-observability)：先把 trace/span 采集打好。
-- [Agent 线上质量治理面试深挖](./chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：把线上监测信号沉淀成 badcase 和回归集。
-- [LLM-as-Judge](./chapters/01-模型与提示/agent-camp-engineering-llm-judge)：理解 judge 的偏差、校准和使用边界。
-- [Agent 工程异常处理面试深挖](./chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview)：看 RAG 冲突、规划死循环等异常如何处理。
-- [Agent 流式输出安全面试深挖](./chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview)：把流式安全事件纳入线上监测。
+- [Agent 可观测性](/chapters/08-评测安全可观测/agent-camp-engineering-observability)：先把 trace/span 采集打好。
+- [Agent 线上质量治理面试深挖](/chapters/11-面试与求职/agent-camp-engineering-agent-quality-interview)：把线上监测信号沉淀成 badcase 和回归集。
+- [LLM-as-Judge](/chapters/01-模型与提示/agent-camp-engineering-llm-judge)：理解 judge 的偏差、校准和使用边界。
+- [Agent 工程异常处理面试深挖](/chapters/06-上下文与记忆/agent-camp-engineering-agent-failure-modes-interview)：看 RAG 冲突、规划死循环等异常如何处理。
+- [Agent 流式输出安全面试深挖](/chapters/08-评测安全可观测/agent-camp-engineering-streaming-guardrail-interview)：把流式安全事件纳入线上监测。
 

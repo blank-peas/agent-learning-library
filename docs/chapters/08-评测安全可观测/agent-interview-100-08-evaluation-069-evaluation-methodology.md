@@ -453,7 +453,7 @@ class ProcessRewardModel:
     # PRM 能精确定位 Step 3 的运算符号错误
 ```
 
-实践建议：**两者结合**——ORM 做初筛（便宜、全量），PRM 对失败或争议案例做深入分析（贵、精准）。在 Agentic-RL 训练中，PRM 提供的逐步奖励信号比 ORM 更能稳定提升推理能力（参见 [#103](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)）。
+实践建议：**两者结合**——ORM 做初筛（便宜、全量），PRM 对失败或争议案例做深入分析（贵、精准）。在 Agentic-RL 训练中，PRM 提供的逐步奖励信号比 ORM 更能稳定提升推理能力（参见 [#103](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-103-agentic-rl-grpo)）。
 
 ##### 3. Faithfulness：推理忠实性评估
 
@@ -476,11 +476,11 @@ def check_faithfulness(model, problem, original_reasoning):
     return is_faithful
 ```
 
-判定逻辑：**篡改关键步骤后答案若不变，说明模型没有真正「使用」这条推理链**——它是装饰性的。OpenAI 的 CoT Monitorability 研究正系统性地探索思维链在多大程度上能被忠实监控；这与推理模型（[#055](./chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-055-reasoning-models)）的可解释性直接相关——如果一个推理模型的 CoT 不可忠实监控，那么基于 CoT 的安全审查就形同虚设。
+判定逻辑：**篡改关键步骤后答案若不变，说明模型没有真正「使用」这条推理链**——它是装饰性的。OpenAI 的 CoT Monitorability 研究正系统性地探索思维链在多大程度上能被忠实监控；这与推理模型（[#055](/chapters/02-agent原理/agent-interview-100-06-planning-and-reasoning-055-reasoning-models)）的可解释性直接相关——如果一个推理模型的 CoT 不可忠实监控，那么基于 CoT 的安全审查就形同虚设。
 
 ##### 4. 基于 Trace 的生产诊断规则
 
-生产环境里不可能逐条人工审推理，通常把推理与工具调用记录成 Trace（Span 级别，参见 [#074](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-074-traces-and-spans)），再用一组**启发式规则**自动标红异常轨迹。这组规则是对第十一节「生产环境指标」的补充——前者回答「指标是多少」，这里回答「什么模式说明出了问题」：
+生产环境里不可能逐条人工审推理，通常把推理与工具调用记录成 Trace（Span 级别，参见 [#074](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-074-traces-and-spans)），再用一组**启发式规则**自动标红异常轨迹。这组规则是对第十一节「生产环境指标」的补充——前者回答「指标是多少」，这里回答「什么模式说明出了问题」：
 
 ```python
 ## Trace 自动评估规则：命中即标记为可疑轨迹
@@ -496,7 +496,7 @@ trace_alert_rules = {
 ## 上述规则可配置为告警阈值，无需手写轮询逻辑。
 ```
 
-这四条规则分别对应推理过程的四类隐患——循环、重试、选型、开销——它们在生产监控中往往比「最终答案对不对」更早暴露问题，也更适合接入持续评估流水线（[#077](./chapters/08-评测安全可观测/agent-interview-100-08-evaluation-077-continuous-evaluation-pipeline)）。
+这四条规则分别对应推理过程的四类隐患——循环、重试、选型、开销——它们在生产监控中往往比「最终答案对不对」更早暴露问题，也更适合接入持续评估流水线（[#077](/chapters/08-评测安全可观测/agent-interview-100-08-evaluation-077-continuous-evaluation-pipeline)）。
 
 ### 常见误区 / 面试追问
 

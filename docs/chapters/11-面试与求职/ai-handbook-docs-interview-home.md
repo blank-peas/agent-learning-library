@@ -16,10 +16,10 @@
 
 ### 榜单入口
 
-- [Top50 必刷题](./chapters/11-面试与求职/ai-handbook-docs-interview-top50) — 按出现频次和难度加权排序的高频核心题
-- [按分类浏览](./chapters/12-附录与索引/ai-handbook-docs-interview-categories) — Agent / RAG / Prompt / MCP 等分类维度
-- [按公司浏览](./chapters/12-附录与索引/ai-handbook-docs-interview-companies) — 字节、阿里、百度等公司维度
-- [趋势洞察](./chapters/12-附录与索引/ai-handbook-docs-interview-insights) — 各分类题目数量分布与趋势变化
+- [Top50 必刷题](/chapters/11-面试与求职/ai-handbook-docs-interview-top50) — 按出现频次和难度加权排序的高频核心题
+- [按分类浏览](/chapters/12-附录与索引/ai-handbook-docs-interview-categories) — Agent / RAG / Prompt / MCP 等分类维度
+- [按公司浏览](/chapters/12-附录与索引/ai-handbook-docs-interview-companies) — 字节、阿里、百度等公司维度
+- [趋势洞察](/chapters/12-附录与索引/ai-handbook-docs-interview-insights) — 各分类题目数量分布与趋势变化
 
 ### 题目分类说明
 
