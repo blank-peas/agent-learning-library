@@ -10,9 +10,9 @@ slug: /
 
 ## 从这里开始
 
-- [阅读使用说明](./00-开始这里/README.md)
-- [开始学习路线](./chapters/01-模型与提示/README.md)
-- [直接进入面试与求职](/chapters/面试与求职/)
-- [进入 AI Agent 开发面经 QA 冲刺](./13-interview-qa/README.md)
+- [阅读使用说明](/00-开始这里/README.md)
+- [开始学习路线](/chapters/01-模型与提示/README.md)
+- [直接进入面试与求职](/chapters/11-面试与求职/README.md)
+- [进入 AI Agent 开发面经 QA 冲刺](/13-interview-qa/README.md)
 
 > 内容仅供本地学习整理。公开部署前，请阅读来源与许可边界。

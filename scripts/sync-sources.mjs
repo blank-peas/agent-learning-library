@@ -218,7 +218,7 @@ for (const chapter of chapters) {
   for (const document of chapterDocs) {
     writeFileSync(join(chapterDir, `${document.slug}.md`), `# ${document.title}\n\n${prepareContent(document)}\n`, 'utf8')
   }
-  const articleIndex = chapterDocs.map((document) => `- [${document.title}](${document.wikiPath}) · ${document.source.title}`).join('\n')
+  const articleIndex = chapterDocs.map((document) => `- [${document.title}](/${document.wikiPath.slice(2)}) · ${document.source.title}`).join('\n')
   writeFileSync(join(chapterDir, 'README.md'), `# ${chapter.title}\n\n**学习阶段：${chapter.weeks}**  
 ${chapter.goal}\n\n本章收录 ${chapterDocs.length} 篇独立文章。文章保留来源标记，原文中的可解析内部链接会跳转到本 Wiki 对应页面；不能映射的链接则回退到来源仓库，避免出现本地 404。\n\n## 本章文章\n\n${articleIndex || '暂无文章。'}\n`, 'utf8')
   sidebar.push({id: chapter.id, title: chapter.title, link: `/chapters/${chapterPath}/README`, documents: chapterDocs})

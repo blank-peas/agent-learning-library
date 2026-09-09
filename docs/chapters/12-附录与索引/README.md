@@ -7,124 +7,124 @@
 
 ## 本章文章
 
-- [🎮 赛博小镇 - GDScript脚本说明](./chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-helloagents-ai-town-scri) · Hello-Agents
-- [🤖 Agent Interview 100](./chapters/12-附录与索引/agent-interview-100-README) · Agent Interview 100
-- [🤖 Agent Interview Hub](./chapters/12-附录与索引/agent-interview-hub-README) · Agent Interview Hub
-- [2026 年 AI Agent 企业招聘需求分析](./chapters/12-附录与索引/ai-agent-interview-guide-docs-02-企业招聘分析-README) · AI Agent Interview Guide
-- [阿里巴巴 AI Agent 工程师 - 岗位要求](./chapters/12-附录与索引/agent-interview-hub-阿里巴巴-岗位要求) · Agent Interview Hub
-- [按分类浏览面试题](./chapters/12-附录与索引/ai-handbook-docs-interview-categories) · AI Handbook
-- [按公司浏览面试题](./chapters/12-附录与索引/ai-handbook-docs-interview-companies) · AI Handbook
-- [百度 AI Agent 工程师 - 岗位要求](./chapters/12-附录与索引/agent-interview-hub-百度-岗位要求) · Agent Interview Hub
-- [超越限流：扩展 Codex 与 Sora 的访问机制](./chapters/12-附录与索引/agent-camp-industry-openai-beyond-rate-limits) · Agent Camp
-- [初创公司 AI Agent 相关岗位要求](./chapters/12-附录与索引/agent-interview-hub-初创公司-岗位要求) · Agent Interview Hub
-- [创建一个目录](./chapters/12-附录与索引/ai-handbook-docs-rag-vector-search-and-generation-milvus-vector-search) · AI Handbook
-- [垂直领域 Agent](./chapters/12-附录与索引/agent-camp-vertical-index) · Agent Camp
-- [大模型基础](./chapters/12-附录与索引/agent-camp-llm-index) · Agent Camp
-- [第十二章示例代码](./chapters/12-附录与索引/hello-agents-code-chapter12-README) · Hello-Agents
-- [共创路径](./chapters/12-附录与索引/hello-agents-code-chapter16-共创路径) · Hello-Agents
-- [谷歌 AI Agent 相关岗位要求](./chapters/12-附录与索引/agent-interview-hub-谷歌-岗位要求) · Agent Interview Hub
-- [加速大规模 AI 训练的超算网络](./chapters/12-附录与索引/agent-camp-industry-openai-mrc-supercomputer-networking) · Agent Camp
-- [开源项目学习笔记](./chapters/12-附录与索引/ai-agent-interview-guide-docs-03-开源项目学习笔记-README) · AI Agent Interview Guide
-- [流程编排](./chapters/12-附录与索引/agent-camp-workflow-index) · Agent Camp
-- [面试算法题](./chapters/12-附录与索引/agent-interview-hub-面试算法题-README) · Agent Interview Hub
-- [企业级 AI Agent 服务](./chapters/12-附录与索引/ai-agent-interview-guide-project-python-README) · AI Agent Interview Guide
-- [企业级 AI Agent 项目面试问答集](./chapters/12-附录与索引/ai-agent-interview-guide-docs-06-面试问答集-README) · AI Agent Interview Guide
-- [趋势洞察](./chapters/12-附录与索引/ai-handbook-docs-interview-insights) · AI Handbook
-- [全库速览](./chapters/12-附录与索引/agent-interview-100-docs-index) · Agent Interview 100
-- [赛博小镇 - 安装配置指南](./chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-SETUP-GUIDE) · Hello-Agents
-- [赛博小镇 - AI NPC对话系统](./chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-README) · Hello-Agents
-- [赛博小镇 - FastAPI后端](./chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-backend-README) · Hello-Agents
-- [商汤科技 AI Agent 相关岗位要求](./chapters/12-附录与索引/agent-interview-hub-商汤科技-岗位要求) · Agent Interview Hub
-- [腾讯 AI Agent 工程师 - 岗位要求](./chapters/12-附录与索引/agent-interview-hub-腾讯-岗位要求) · Agent Interview Hub
-- [通用面经采集 Agent 提示词](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-generic-AGENT) · Agent Interview Hub
-- [微软 AI Agent 相关岗位要求](./chapters/12-附录与索引/agent-interview-hub-微软-岗位要求) · Agent Interview Hub
-- [项目 02：多 Agent 协作任务系统](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-02-多Agent团队协作) · Agent Interview Hub
-- [项目 03：ReAct 模式 Agent](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-03-ReAct模式Agent) · Agent Interview Hub
-- [项目 05：AI 调试挑战](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-05-AI调试挑战) · Agent Interview Hub
-- [项目 06：AI Code Review Agent](./chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-06-AI-CodeReview-Agent) · Agent Interview Hub
-- [项目演示目录](./chapters/12-附录与索引/hello-agents-code-chapter9-project-README) · Hello-Agents
-- [小红书 AI Agent 工程师 - 岗位要求](./chapters/12-附录与索引/agent-interview-hub-小红书-岗位要求) · Agent Interview Hub
-- [一线工程分享](./chapters/12-附录与索引/agent-camp-industry-index) · Agent Camp
-- [主流 Agent 框架](./chapters/12-附录与索引/agent-camp-frameworks-index) · Agent Camp
-- [字节跳动 AI Agent 工程师 - 岗位要求](./chapters/12-附录与索引/agent-interview-hub-字节跳动-岗位要求) · Agent Interview Hub
-- [Accelerate配置文件说明](./chapters/12-附录与索引/hello-agents-code-chapter11-accelerate-configs-README) · Hello-Agents
-- [Agent 工程化](./chapters/12-附录与索引/agent-camp-engineering-index) · Agent Camp
-- [Agent 核心理论](./chapters/12-附录与索引/agent-camp-agent-index) · Agent Camp
-- [Agent 源码解析](./chapters/12-附录与索引/agent-camp-source-index) · Agent Camp
-- [agent-architecture](./chapters/12-附录与索引/ai-handbook-docs-agent-from-rag-to-agent-02-agent-architecture) · AI Handbook
-- [agent-camp](./chapters/12-附录与索引/agent-camp-README) · Agent Camp
-- [AgentScope 三国狼人杀案例](./chapters/12-附录与索引/hello-agents-code-chapter6-AgentScopeDemo-README) · Hello-Agents
-- [AI Agent 从零到 Offer：完整学习路线图](./chapters/12-附录与索引/ai-agent-interview-guide-docs-00-学习路线图-README) · AI Agent Interview Guide
-- [AI Agent 面试八股文 -- 总目录](./chapters/12-附录与索引/ai-agent-interview-guide-docs-01-面试八股文-README) · AI Agent Interview Guide
-- [AI Agent 面试全攻略 -- 从零到 Offer](./chapters/12-附录与索引/ai-agent-interview-guide-README) · AI Agent Interview Guide
-- [AI Agent 企业级智能体平台（Go 版本）](./chapters/12-附录与索引/ai-agent-interview-guide-project-go-README) · AI Agent Interview Guide
-- [AI Agent 项目简历撰写指南（小白向 · 详细版）](./chapters/12-附录与索引/ai-agent-interview-guide-docs-04-简历模板-README) · AI Agent Interview Guide
-- [AI Agent Platform（Java 企业级版本）](./chapters/12-附录与索引/ai-agent-interview-guide-project-java-README) · AI Agent Interview Guide
-- [AIME题目生成统计报告](./chapters/12-附录与索引/hello-agents-code-chapter12-data-generation-generated-data-generation-re) · Hello-Agents
-- [Anthropic Engineering](./chapters/12-附录与索引/agent-camp-industry-anthropic-index) · Agent Camp
-- [AutoGen 软件开发团队协作案例](./chapters/12-附录与索引/hello-agents-code-chapter6-AutoGenDemo-README) · Hello-Agents
-- [bitmall-agent-intro](./chapters/12-附录与索引/ai-handbook-docs-agent-from-rag-to-agent-03-bitmall-agent-intro) · AI Handbook
-- [calling-llm-api](./chapters/12-附录与索引/ai-handbook-docs-rag-llm-basics-calling-llm-api) · AI Handbook
-- [Chapter 9 - 上下文工程示例代码](./chapters/12-附录与索引/hello-agents-code-chapter9-README) · Hello-Agents
-- [chunking-strategies](./chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-chunking-strategies) · AI Handbook
-- [Context Engineering](./chapters/12-附录与索引/agent-camp-context-index) · Agent Camp
-- [context-engineering](./chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-14-context-engineering) · AI Handbook
-- [conversation-memory](./chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-conversation-me) · AI Handbook
-- [Extra07 - 环境配置](./chapters/12-附录与索引/hello-agents-Extra-Chapter-Extra07-环境配置) · Hello-Agents
-- [function-call](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-function-call) · AI Handbook
-- [function-calling](./chapters/12-附录与索引/ai-handbook-docs-agent-react-core-08-function-calling) · AI Handbook
-- [GAIA评估报告](./chapters/12-附录与索引/hello-agents-code-chapter12-template-output-evaluation-reports-gaia-repo) · Hello-Agents
-- [Hello-Agents](./chapters/12-附录与索引/hello-agents-README) · Hello-Agents
-- [Hello-Agents](./chapters/12-附录与索引/hello-agents-docs-README) · Hello-Agents
-- [HelloAgents智能旅行助手 🌍✈️](./chapters/12-附录与索引/hello-agents-code-chapter13-helloagents-trip-planner-README) · Hello-Agents
-- [how-to-become-ai-engineer](./chapters/12-附录与索引/ai-handbook-docs-growth-01-how-to-become-ai-engineer) · AI Handbook
-- [index](./chapters/12-附录与索引/agent-camp-index) · Agent Camp
-- [intent-routing](./chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-intent-routing) · AI Handbook
-- [Interview Collector](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-claude-SKILL) · Agent Interview Hub
-- [Interview Collector Agent](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-README) · Agent Interview Hub
-- [Interview Collector Agent instructions](./chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-copilot-intervi) · Agent Interview Hub
-- [long-term-memory](./chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-13-long-term-memory) · AI Handbook
-- [mcp-java-sdk-deep-dive](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-java-sdk-deep-dive) · AI Handbook
-- [mcp-json-rpc](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-json-rpc) · AI Handbook
-- [mcp-protocol](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-protocol) · AI Handbook
-- [mcp-resources-and-prompts](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-resources-and-prompts) · AI Handbook
-- [memory-module](./chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-11-memory-module) · AI Handbook
-- [metadata-management](./chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-metadata-management) · AI Handbook
-- [Multi-Agent 系统](./chapters/12-附录与索引/agent-camp-multi-agent-index) · Agent Camp
-- [multi-agent-communication](./chapters/12-附录与索引/ai-handbook-docs-agent-multi-agent-23-multi-agent-communication) · AI Handbook
-- [multi-agent-landscape](./chapters/12-附录与索引/ai-handbook-docs-agent-multi-agent-21-multi-agent-landscape) · AI Handbook
-- [multi-agent-supervisor](./chapters/12-附录与索引/ai-handbook-docs-agent-multi-agent-22-multi-agent-supervisor) · AI Handbook
-- [my_README](./chapters/12-附录与索引/hello-agents-code-chapter10-my-README) · Hello-Agents
-- [N8N_INSTALL_GUIDE](./chapters/12-附录与索引/hello-agents-Additional-Chapter-N8N-INSTALL-GUIDE) · Hello-Agents
-- [OpenAI 如何大规模交付低延迟语音 AI](./chapters/12-附录与索引/agent-camp-industry-openai-delivering-low-latency-voice-ai-at-scale) · Agent Camp
-- [OpenAI Engineering](./chapters/12-附录与索引/agent-camp-industry-openai-index) · Agent Camp
-- [persistent-memory](./chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-12-persistent-memory) · AI Handbook
-- [plan-and-execute](./chapters/12-附录与索引/ai-handbook-docs-agent-planning-and-orchestration-15-plan-and-execute) · AI Handbook
-- [Preface](./chapters/12-附录与索引/hello-agents-docs-Preface) · Hello-Agents
-- [Prompt Engineering](./chapters/12-附录与索引/agent-camp-prompt-index) · Agent Camp
-- [query-rewriting](./chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-query-rewriting) · AI Handbook
-- [RAG 检索增强生成](./chapters/12-附录与索引/agent-camp-rag-index) · Agent Camp
-- [rag-as-tool](./chapters/12-附录与索引/ai-handbook-docs-agent-planning-and-orchestration-20-rag-as-tool) · AI Handbook
-- [rag-evaluation](./chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-rag-evaluation) · AI Handbook
-- [rag-overview](./chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-rag-overview) · AI Handbook
-- [rag-vs-agent](./chapters/12-附录与索引/ai-handbook-docs-agent-from-rag-to-agent-01-rag-vs-agent) · AI Handbook
-- [react-loop](./chapters/12-附录与索引/ai-handbook-docs-agent-react-core-05-react-loop) · AI Handbook
-- [react-prompt-design](./chapters/12-附录与索引/ai-handbook-docs-agent-react-core-07-react-prompt-design) · AI Handbook
-- [readme](./chapters/12-附录与索引/hello-agents-Extra-Chapter-readme) · Hello-Agents
-- [README](./chapters/12-附录与索引/ai-handbook-README) · AI Handbook
-- [reflection-error-handling](./chapters/12-附录与索引/ai-handbook-docs-agent-planning-and-orchestration-19-reflection-error-ha) · AI Handbook
-- [retrieval-and-reranking](./chapters/12-附录与索引/ai-handbook-docs-rag-vector-search-and-generation-retrieval-and-rerankin) · AI Handbook
-- [springboot-sse](./chapters/12-附录与索引/ai-handbook-docs-rag-streaming-springboot-sse) · AI Handbook
-- [sse-protocol](./chapters/12-附录与索引/ai-handbook-docs-rag-streaming-sse-protocol) · AI Handbook
-- [STAR 面试稿准备指南（小白版）](./chapters/12-附录与索引/ai-agent-interview-guide-docs-05-STAR面试稿-README) · AI Agent Interview Guide
-- [termination-control](./chapters/12-附录与索引/ai-handbook-docs-agent-react-core-09-termination-control) · AI Handbook
-- [Tool Use & Function Calling](./chapters/12-附录与索引/agent-camp-tools-index) · Agent Camp
-- [tool-calling-architecture](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-tool-calling-architecture) · AI Handbook
-- [tool-definition](./chapters/12-附录与索引/ai-handbook-docs-agent-react-core-06-tool-definition) · AI Handbook
-- [understanding-embedding](./chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-understanding-embedding) · AI Handbook
-- [understanding-llm](./chapters/12-附录与索引/ai-handbook-docs-rag-llm-basics-understanding-llm) · AI Handbook
-- [vector-database-principles](./chapters/12-附录与索引/ai-handbook-docs-rag-vector-search-and-generation-vector-database-princi) · AI Handbook
-- [Weather MCP Server](./chapters/12-附录与索引/hello-agents-code-chapter10-weather-mcp-server-README) · Hello-Agents
-- [what-is-react](./chapters/12-附录与索引/ai-handbook-docs-agent-react-core-04-what-is-react) · AI Handbook
-- [why-memory](./chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-10-why-memory) · AI Handbook
-- [why-not-http-or-grpc](./chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-why-not-http-or-grpc) · AI Handbook
+- [🎮 赛博小镇 - GDScript脚本说明](/chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-helloagents-ai-town-scri) · Hello-Agents
+- [🤖 Agent Interview 100](/chapters/12-附录与索引/agent-interview-100-README) · Agent Interview 100
+- [🤖 Agent Interview Hub](/chapters/12-附录与索引/agent-interview-hub-README) · Agent Interview Hub
+- [2026 年 AI Agent 企业招聘需求分析](/chapters/12-附录与索引/ai-agent-interview-guide-docs-02-企业招聘分析-README) · AI Agent Interview Guide
+- [阿里巴巴 AI Agent 工程师 - 岗位要求](/chapters/12-附录与索引/agent-interview-hub-阿里巴巴-岗位要求) · Agent Interview Hub
+- [按分类浏览面试题](/chapters/12-附录与索引/ai-handbook-docs-interview-categories) · AI Handbook
+- [按公司浏览面试题](/chapters/12-附录与索引/ai-handbook-docs-interview-companies) · AI Handbook
+- [百度 AI Agent 工程师 - 岗位要求](/chapters/12-附录与索引/agent-interview-hub-百度-岗位要求) · Agent Interview Hub
+- [超越限流：扩展 Codex 与 Sora 的访问机制](/chapters/12-附录与索引/agent-camp-industry-openai-beyond-rate-limits) · Agent Camp
+- [初创公司 AI Agent 相关岗位要求](/chapters/12-附录与索引/agent-interview-hub-初创公司-岗位要求) · Agent Interview Hub
+- [创建一个目录](/chapters/12-附录与索引/ai-handbook-docs-rag-vector-search-and-generation-milvus-vector-search) · AI Handbook
+- [垂直领域 Agent](/chapters/12-附录与索引/agent-camp-vertical-index) · Agent Camp
+- [大模型基础](/chapters/12-附录与索引/agent-camp-llm-index) · Agent Camp
+- [第十二章示例代码](/chapters/12-附录与索引/hello-agents-code-chapter12-README) · Hello-Agents
+- [共创路径](/chapters/12-附录与索引/hello-agents-code-chapter16-共创路径) · Hello-Agents
+- [谷歌 AI Agent 相关岗位要求](/chapters/12-附录与索引/agent-interview-hub-谷歌-岗位要求) · Agent Interview Hub
+- [加速大规模 AI 训练的超算网络](/chapters/12-附录与索引/agent-camp-industry-openai-mrc-supercomputer-networking) · Agent Camp
+- [开源项目学习笔记](/chapters/12-附录与索引/ai-agent-interview-guide-docs-03-开源项目学习笔记-README) · AI Agent Interview Guide
+- [流程编排](/chapters/12-附录与索引/agent-camp-workflow-index) · Agent Camp
+- [面试算法题](/chapters/12-附录与索引/agent-interview-hub-面试算法题-README) · Agent Interview Hub
+- [企业级 AI Agent 服务](/chapters/12-附录与索引/ai-agent-interview-guide-project-python-README) · AI Agent Interview Guide
+- [企业级 AI Agent 项目面试问答集](/chapters/12-附录与索引/ai-agent-interview-guide-docs-06-面试问答集-README) · AI Agent Interview Guide
+- [趋势洞察](/chapters/12-附录与索引/ai-handbook-docs-interview-insights) · AI Handbook
+- [全库速览](/chapters/12-附录与索引/agent-interview-100-docs-index) · Agent Interview 100
+- [赛博小镇 - 安装配置指南](/chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-SETUP-GUIDE) · Hello-Agents
+- [赛博小镇 - AI NPC对话系统](/chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-README) · Hello-Agents
+- [赛博小镇 - FastAPI后端](/chapters/12-附录与索引/hello-agents-code-chapter15-Helloagents-AI-Town-backend-README) · Hello-Agents
+- [商汤科技 AI Agent 相关岗位要求](/chapters/12-附录与索引/agent-interview-hub-商汤科技-岗位要求) · Agent Interview Hub
+- [腾讯 AI Agent 工程师 - 岗位要求](/chapters/12-附录与索引/agent-interview-hub-腾讯-岗位要求) · Agent Interview Hub
+- [通用面经采集 Agent 提示词](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-generic-AGENT) · Agent Interview Hub
+- [微软 AI Agent 相关岗位要求](/chapters/12-附录与索引/agent-interview-hub-微软-岗位要求) · Agent Interview Hub
+- [项目 02：多 Agent 协作任务系统](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-02-多Agent团队协作) · Agent Interview Hub
+- [项目 03：ReAct 模式 Agent](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-03-ReAct模式Agent) · Agent Interview Hub
+- [项目 05：AI 调试挑战](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-05-AI调试挑战) · Agent Interview Hub
+- [项目 06：AI Code Review Agent](/chapters/12-附录与索引/agent-interview-hub-项目实战-实操考题-06-AI-CodeReview-Agent) · Agent Interview Hub
+- [项目演示目录](/chapters/12-附录与索引/hello-agents-code-chapter9-project-README) · Hello-Agents
+- [小红书 AI Agent 工程师 - 岗位要求](/chapters/12-附录与索引/agent-interview-hub-小红书-岗位要求) · Agent Interview Hub
+- [一线工程分享](/chapters/12-附录与索引/agent-camp-industry-index) · Agent Camp
+- [主流 Agent 框架](/chapters/12-附录与索引/agent-camp-frameworks-index) · Agent Camp
+- [字节跳动 AI Agent 工程师 - 岗位要求](/chapters/12-附录与索引/agent-interview-hub-字节跳动-岗位要求) · Agent Interview Hub
+- [Accelerate配置文件说明](/chapters/12-附录与索引/hello-agents-code-chapter11-accelerate-configs-README) · Hello-Agents
+- [Agent 工程化](/chapters/12-附录与索引/agent-camp-engineering-index) · Agent Camp
+- [Agent 核心理论](/chapters/12-附录与索引/agent-camp-agent-index) · Agent Camp
+- [Agent 源码解析](/chapters/12-附录与索引/agent-camp-source-index) · Agent Camp
+- [agent-architecture](/chapters/12-附录与索引/ai-handbook-docs-agent-from-rag-to-agent-02-agent-architecture) · AI Handbook
+- [agent-camp](/chapters/12-附录与索引/agent-camp-README) · Agent Camp
+- [AgentScope 三国狼人杀案例](/chapters/12-附录与索引/hello-agents-code-chapter6-AgentScopeDemo-README) · Hello-Agents
+- [AI Agent 从零到 Offer：完整学习路线图](/chapters/12-附录与索引/ai-agent-interview-guide-docs-00-学习路线图-README) · AI Agent Interview Guide
+- [AI Agent 面试八股文 -- 总目录](/chapters/12-附录与索引/ai-agent-interview-guide-docs-01-面试八股文-README) · AI Agent Interview Guide
+- [AI Agent 面试全攻略 -- 从零到 Offer](/chapters/12-附录与索引/ai-agent-interview-guide-README) · AI Agent Interview Guide
+- [AI Agent 企业级智能体平台（Go 版本）](/chapters/12-附录与索引/ai-agent-interview-guide-project-go-README) · AI Agent Interview Guide
+- [AI Agent 项目简历撰写指南（小白向 · 详细版）](/chapters/12-附录与索引/ai-agent-interview-guide-docs-04-简历模板-README) · AI Agent Interview Guide
+- [AI Agent Platform（Java 企业级版本）](/chapters/12-附录与索引/ai-agent-interview-guide-project-java-README) · AI Agent Interview Guide
+- [AIME题目生成统计报告](/chapters/12-附录与索引/hello-agents-code-chapter12-data-generation-generated-data-generation-re) · Hello-Agents
+- [Anthropic Engineering](/chapters/12-附录与索引/agent-camp-industry-anthropic-index) · Agent Camp
+- [AutoGen 软件开发团队协作案例](/chapters/12-附录与索引/hello-agents-code-chapter6-AutoGenDemo-README) · Hello-Agents
+- [bitmall-agent-intro](/chapters/12-附录与索引/ai-handbook-docs-agent-from-rag-to-agent-03-bitmall-agent-intro) · AI Handbook
+- [calling-llm-api](/chapters/12-附录与索引/ai-handbook-docs-rag-llm-basics-calling-llm-api) · AI Handbook
+- [Chapter 9 - 上下文工程示例代码](/chapters/12-附录与索引/hello-agents-code-chapter9-README) · Hello-Agents
+- [chunking-strategies](/chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-chunking-strategies) · AI Handbook
+- [Context Engineering](/chapters/12-附录与索引/agent-camp-context-index) · Agent Camp
+- [context-engineering](/chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-14-context-engineering) · AI Handbook
+- [conversation-memory](/chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-conversation-me) · AI Handbook
+- [Extra07 - 环境配置](/chapters/12-附录与索引/hello-agents-Extra-Chapter-Extra07-环境配置) · Hello-Agents
+- [function-call](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-function-call) · AI Handbook
+- [function-calling](/chapters/12-附录与索引/ai-handbook-docs-agent-react-core-08-function-calling) · AI Handbook
+- [GAIA评估报告](/chapters/12-附录与索引/hello-agents-code-chapter12-template-output-evaluation-reports-gaia-repo) · Hello-Agents
+- [Hello-Agents](/chapters/12-附录与索引/hello-agents-README) · Hello-Agents
+- [Hello-Agents](/chapters/12-附录与索引/hello-agents-docs-README) · Hello-Agents
+- [HelloAgents智能旅行助手 🌍✈️](/chapters/12-附录与索引/hello-agents-code-chapter13-helloagents-trip-planner-README) · Hello-Agents
+- [how-to-become-ai-engineer](/chapters/12-附录与索引/ai-handbook-docs-growth-01-how-to-become-ai-engineer) · AI Handbook
+- [index](/chapters/12-附录与索引/agent-camp-index) · Agent Camp
+- [intent-routing](/chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-intent-routing) · AI Handbook
+- [Interview Collector](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-claude-SKILL) · Agent Interview Hub
+- [Interview Collector Agent](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-README) · Agent Interview Hub
+- [Interview Collector Agent instructions](/chapters/12-附录与索引/agent-interview-hub-agents-interview-collector-templates-copilot-intervi) · Agent Interview Hub
+- [long-term-memory](/chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-13-long-term-memory) · AI Handbook
+- [mcp-java-sdk-deep-dive](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-java-sdk-deep-dive) · AI Handbook
+- [mcp-json-rpc](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-json-rpc) · AI Handbook
+- [mcp-protocol](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-protocol) · AI Handbook
+- [mcp-resources-and-prompts](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-mcp-resources-and-prompts) · AI Handbook
+- [memory-module](/chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-11-memory-module) · AI Handbook
+- [metadata-management](/chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-metadata-management) · AI Handbook
+- [Multi-Agent 系统](/chapters/12-附录与索引/agent-camp-multi-agent-index) · Agent Camp
+- [multi-agent-communication](/chapters/12-附录与索引/ai-handbook-docs-agent-multi-agent-23-multi-agent-communication) · AI Handbook
+- [multi-agent-landscape](/chapters/12-附录与索引/ai-handbook-docs-agent-multi-agent-21-multi-agent-landscape) · AI Handbook
+- [multi-agent-supervisor](/chapters/12-附录与索引/ai-handbook-docs-agent-multi-agent-22-multi-agent-supervisor) · AI Handbook
+- [my_README](/chapters/12-附录与索引/hello-agents-code-chapter10-my-README) · Hello-Agents
+- [N8N_INSTALL_GUIDE](/chapters/12-附录与索引/hello-agents-Additional-Chapter-N8N-INSTALL-GUIDE) · Hello-Agents
+- [OpenAI 如何大规模交付低延迟语音 AI](/chapters/12-附录与索引/agent-camp-industry-openai-delivering-low-latency-voice-ai-at-scale) · Agent Camp
+- [OpenAI Engineering](/chapters/12-附录与索引/agent-camp-industry-openai-index) · Agent Camp
+- [persistent-memory](/chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-12-persistent-memory) · AI Handbook
+- [plan-and-execute](/chapters/12-附录与索引/ai-handbook-docs-agent-planning-and-orchestration-15-plan-and-execute) · AI Handbook
+- [Preface](/chapters/12-附录与索引/hello-agents-docs-Preface) · Hello-Agents
+- [Prompt Engineering](/chapters/12-附录与索引/agent-camp-prompt-index) · Agent Camp
+- [query-rewriting](/chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-query-rewriting) · AI Handbook
+- [RAG 检索增强生成](/chapters/12-附录与索引/agent-camp-rag-index) · Agent Camp
+- [rag-as-tool](/chapters/12-附录与索引/ai-handbook-docs-agent-planning-and-orchestration-20-rag-as-tool) · AI Handbook
+- [rag-evaluation](/chapters/12-附录与索引/ai-handbook-docs-rag-advanced-retrieval-and-conversation-rag-evaluation) · AI Handbook
+- [rag-overview](/chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-rag-overview) · AI Handbook
+- [rag-vs-agent](/chapters/12-附录与索引/ai-handbook-docs-agent-from-rag-to-agent-01-rag-vs-agent) · AI Handbook
+- [react-loop](/chapters/12-附录与索引/ai-handbook-docs-agent-react-core-05-react-loop) · AI Handbook
+- [react-prompt-design](/chapters/12-附录与索引/ai-handbook-docs-agent-react-core-07-react-prompt-design) · AI Handbook
+- [readme](/chapters/12-附录与索引/hello-agents-Extra-Chapter-readme) · Hello-Agents
+- [README](/chapters/12-附录与索引/ai-handbook-README) · AI Handbook
+- [reflection-error-handling](/chapters/12-附录与索引/ai-handbook-docs-agent-planning-and-orchestration-19-reflection-error-ha) · AI Handbook
+- [retrieval-and-reranking](/chapters/12-附录与索引/ai-handbook-docs-rag-vector-search-and-generation-retrieval-and-rerankin) · AI Handbook
+- [springboot-sse](/chapters/12-附录与索引/ai-handbook-docs-rag-streaming-springboot-sse) · AI Handbook
+- [sse-protocol](/chapters/12-附录与索引/ai-handbook-docs-rag-streaming-sse-protocol) · AI Handbook
+- [STAR 面试稿准备指南（小白版）](/chapters/12-附录与索引/ai-agent-interview-guide-docs-05-STAR面试稿-README) · AI Agent Interview Guide
+- [termination-control](/chapters/12-附录与索引/ai-handbook-docs-agent-react-core-09-termination-control) · AI Handbook
+- [Tool Use & Function Calling](/chapters/12-附录与索引/agent-camp-tools-index) · Agent Camp
+- [tool-calling-architecture](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-tool-calling-architecture) · AI Handbook
+- [tool-definition](/chapters/12-附录与索引/ai-handbook-docs-agent-react-core-06-tool-definition) · AI Handbook
+- [understanding-embedding](/chapters/12-附录与索引/ai-handbook-docs-rag-rag-core-understanding-embedding) · AI Handbook
+- [understanding-llm](/chapters/12-附录与索引/ai-handbook-docs-rag-llm-basics-understanding-llm) · AI Handbook
+- [vector-database-principles](/chapters/12-附录与索引/ai-handbook-docs-rag-vector-search-and-generation-vector-database-princi) · AI Handbook
+- [Weather MCP Server](/chapters/12-附录与索引/hello-agents-code-chapter10-weather-mcp-server-README) · Hello-Agents
+- [what-is-react](/chapters/12-附录与索引/ai-handbook-docs-agent-react-core-04-what-is-react) · AI Handbook
+- [why-memory](/chapters/12-附录与索引/ai-handbook-docs-agent-memory-and-context-10-why-memory) · AI Handbook
+- [why-not-http-or-grpc](/chapters/12-附录与索引/ai-handbook-docs-rag-tool-calling-and-mcp-why-not-http-or-grpc) · AI Handbook

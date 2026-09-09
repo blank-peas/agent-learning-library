@@ -25,8 +25,9 @@
         auto2top: true,
         // 与 Hello-Agents 一致：仅展开当前页面的正文目录。
         subMaxLevel: 3,
-        // 让嵌套的面经 QA 子模块中的相对链接保留当前目录。
-        relativePath: true,
+        // 所有生成的章节链接使用站点根路径，避免在 GitHub Pages 的嵌套路由
+        // 中被拼接到当前章节而产生 404。
+        relativePath: false,
         pagination: {
           previousText: '上一章节',
           nextText: '下一章节'
