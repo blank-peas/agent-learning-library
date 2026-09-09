@@ -1,0 +1,23 @@
+docs/index.html
+  s_efdcfec5c50839::t_1539bdc79437d0 28-30
+docs/index.md
+  s_efdcfec5c50839::t_1539bdc79437d0 13-16
+scripts/sync-sources.mjs
+  s_efdcfec5c50839::t_1539bdc79437d0 221
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "8e1b82f24b383a11167d4882a139e616046b79a8",
+  "prompts": {},
+  "sessions": {
+    "s_efdcfec5c50839": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08155-7c2a-71e1-9f5b-92d974699c6d",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "liuzhe.87 <liuzhe.87@jd.com>"
+    }
+  }
+}
