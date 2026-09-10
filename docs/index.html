@@ -37,10 +37,24 @@
           fontsize: '0.9em',
           color: 'rgb(90,90,90)',
           language: 'chinese'
+        },
+        // 将 Markdown 的 ```mermaid 代码块转换为可交互的 SVG 图，而非展示源码。
+        mermaidConfig: {
+          querySelector: '.mermaid'
         }
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'neutral',
+        securityLevel: 'strict',
+        flowchart: { htmlLabels: false }
+      })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-bash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-python.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@latest/dist/docsify-pagination.min.js"></script>
